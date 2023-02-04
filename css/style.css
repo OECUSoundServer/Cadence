@@ -192,7 +192,8 @@ ul.menu a:hover {
 /*    background: #9ddbfc;*/
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 900px){
+/*	767*/
 	.Two-column{
     	display: block;
 /*    border: 1px solid #333;*/
