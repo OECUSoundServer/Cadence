@@ -7,7 +7,7 @@ const sec = document.getElementById("sec");
 
 function countdown() {
   const now = new Date(); // 現在時刻を取得
-  const deadline = new Date('2023/02/28 23:59'); 
+  const deadline = new Date('2023/02/15 23:59'); 
   const diff = deadline - now.getTime(); // 時間の差を取得（ミリ秒）
 
   // ミリ秒から単位を修正
