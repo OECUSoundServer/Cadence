@@ -24,6 +24,21 @@ p {
 	text-indent: 1.0em;
 }
 
+p::selection {
+  color: #fff;
+  background-color: #1ABC9C;
+}
+
+b::selection {
+  color: #fff;
+  background-color: #1ABC9C;
+}
+
+strong::selection {
+  color: #fff;
+  background-color: #1ABC9C;
+}
+
 li{
 	list-style: none;
 }
@@ -47,6 +62,11 @@ li{
 	width:90%;
 	margin:5px auto;
 /*	background: #dff;*/
+}
+
+.choice::selection{
+	color: #fff;
+  	background-color: #3abec1;
 }
 
 /* ----------------------------------------------------------------
@@ -219,12 +239,14 @@ ul.menu a:hover {
 .title-U-line{
 	border-bottom: 3px solid silver;
 	width: 90%;
+	user-select: none;
 }
 
 .title-U-line-Max{
 	border-bottom: 3px solid silver;
 	width: 100%;
 	margin-left: 0;
+	user-select: none;
 }
 
 .title-U-line-blank{
@@ -509,6 +531,7 @@ summary::-webkit-details-marker {
   border: 1px solid #1ABC9C;
   font-weight: bold;
   color: #002255;
+  user-select: none;
 }
 
 /* --------アイコンを作ります-------- */
@@ -1030,6 +1053,10 @@ style-msg2 .sb-msg {
 }
 .c-form__label {
 	width: 90%;
+}
+.c-form__label::selection {
+  color: #fff;
+  background-color: #1ABC9C;
 }
 .c-form__input {
 	width: 90%;
