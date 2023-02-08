@@ -243,6 +243,10 @@ ul.menu a:hover {
   border-bottom: 3px solid silver;
   width: 90%;
   user-select: none;
+  /* font-family: "Mochiy Pop One", sans-serif; */
+  /* font-family: "M PLUS 2", sans-serif; */
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1.75rem;
 }
 
 .title-U-line-Max {
@@ -250,12 +254,17 @@ ul.menu a:hover {
   width: 100%;
   margin-left: 0;
   user-select: none;
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1.75rem;
 }
 
 .title-U-line-blank {
   padding-top: 100px;
   border-bottom: 3px solid silver;
   width: 90%;
+  user-select: none;
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1.75rem;
 }
 
 /* ----------------------------------------------------------------
@@ -269,6 +278,8 @@ ul.menu a:hover {
   position: sticky;
   top: 100vh;
   width: 100%;
+  font-family: "DotGothic16", sans-serif;
+  font-size: 1.75rem;
 }
 
 .device-lg.sticky-footer #top-bar,
