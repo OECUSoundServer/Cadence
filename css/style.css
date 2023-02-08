@@ -5,68 +5,77 @@
 	Basic
 -----------------------------------------------------------------*/
 html {
-  	height: 100%;
+  height: 100%;
 }
 
 body {
-   	margin: 0;
-   	padding: 0;
-	color: var(--black);
-	height: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+  height: 100%;
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
 }
 
-h2 h3{
-	text-transform: uppercase;
-	margin-left: 1em;
+/*Google Chrome、Safariへの対応*/
+.contents_box::-webkit-scrollbar {
+  display: none;
+}
+
+h2 h3 {
+  text-transform: uppercase;
+  margin-left: 1em;
 }
 
 p {
-	text-indent: 1.0em;
+  text-indent: 1em;
 }
 
 p::selection {
   color: #fff;
-  background-color: #1ABC9C;
+  background-color: #1abc9c;
 }
 
 b::selection {
   color: #fff;
-  background-color: #1ABC9C;
+  background-color: #1abc9c;
 }
 
 strong::selection {
   color: #fff;
-  background-color: #1ABC9C;
+  background-color: #1abc9c;
 }
 
-li{
-	list-style: none;
+li {
+  list-style: none;
 }
 
 .clear {
-	clear: both;
-	display: block;
-	font-size: 0px;
-	height: 0px;
-	line-height: 0;
-	width: 100%;
-	overflow:hidden;
+  clear: both;
+  display: block;
+  font-size: 0px;
+  height: 0px;
+  line-height: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .ma {
-	margin: 30px 0;
+  margin: 30px 0;
 }
 
-#main{
-/*	display:flex;*/
-	width:90%;
-	margin:5px auto;
-/*	background: #dff;*/
+#main {
+  /*	display:flex;*/
+  width: 90%;
+  margin: 5px auto;
+  /*	background: #dff;*/
 }
 
-.choice::selection{
-	color: #fff;
-  	background-color: #3abec1;
+.choice::selection {
+  color: #fff;
+  background-color: #3abec1;
 }
 
 /* ----------------------------------------------------------------
@@ -74,38 +83,37 @@ li{
 -----------------------------------------------------------------*/
 
 .Logo {
-	width: 80%;
-	margin: 0px 10%;
-	position: relative;
+  width: 80%;
+  margin: 0px 10%;
+  position: relative;
 }
 
 .flex {
-	display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-.flex p{
-    width: 10%;
-	vertical-align: middle;
+.flex p {
+  width: 10%;
+  vertical-align: middle;
 }
 
-.left-header{
-	width: 10%;
+.left-header {
+  width: 10%;
 }
 
-.right-header{
-	width: 90%;
-	align-items: flex-end;
-	padding-top: 3%;
+.right-header {
+  width: 90%;
+  align-items: flex-end;
+  padding-top: 3%;
 }
 
-@media screen and (min-width:1200px){
-	.right-header{
-	width: 100%;
-	align-items: flex-end;
-	padding-top: 3%;
-}
-
+@media screen and (min-width: 1200px) {
+  .right-header {
+    width: 100%;
+    align-items: flex-end;
+    padding-top: 3%;
+  }
 }
 
 /* ----------------------------------------------------------------
@@ -113,167 +121,170 @@ li{
 -----------------------------------------------------------------*/
 
 ul.menu {
-	margin: 0px;
-	padding: 0px 0px 0px 15px;
-/*	background:  aliceblue;*/
-	display:table;
-	table-layout: fixed;
-	width: 100%;
+  margin: 0px;
+  padding: 0px 0px 0px 15px;
+  /*	background:  aliceblue;*/
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
 ul.menu a {
-	background-color: #fff;
-	line-height: 40px;
-	text-align: center;
-	text-decoration: none;
-	font-weight: bold;
-	display: block;
-/*	border: 1px ridge #ffdddd;*/
+  background-color: #fff;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  /*	border: 1px ridge #ffdddd;*/
 }
 ul.menu a:hover {
-	background-color: #1ABC9C;
-	color: white;
+  background-color: #1abc9c;
+  color: white;
 }
 
-.head-table{
-	vertical-align: middle;
+.head-table {
+  vertical-align: middle;
 }
 
-@media screen and (max-width:1199px){
-	ul.menu li {
-		width: 100%;
-		display: inline-block;
-/*		display: table-cell;*/
-		list-style-type: none;
-		position: relative;
-	}
+@media screen and (max-width: 1199px) {
+  ul.menu li {
+    width: 100%;
+    display: inline-block;
+    /*		display: table-cell;*/
+    list-style-type: none;
+    position: relative;
+  }
 
-	ul.menu li:hover ul {
-		display: none;
-	}
+  ul.menu li:hover ul {
+    display: none;
+  }
 
-	ul.menu ul {
-		display: none;
-	}
+  ul.menu ul {
+    display: none;
+  }
 }
 
-@media screen and (min-width:1200px){
-	ul.menu li {
-		width: 15%;
-		display: inline-block;
-		list-style-type: none;
-		position: relative;
-	}
+@media screen and (min-width: 1200px) {
+  ul.menu li {
+    width: 15%;
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+  }
 
-	ul.menu li:hover ul {
-		display: block;
-	}
+  ul.menu li:hover ul {
+    display: block;
+  }
 
-	ul.menu ul {
-		margin: 0px;
-		padding: 0px;
-		display: none;
-		position: absolute;
-	}
+  ul.menu ul {
+    margin: 0px;
+    padding: 0px;
+    display: none;
+    position: absolute;
+  }
 
-	ul.menu ul li {
-		width: 150%;
-		border: 1px solid lightgreen;
-	}
-	ul.menu ul li a {
-		line-height: 35px;
-		text-align: left;
-		padding-left: 5px;
-		font-weight: normal;
-	}
-	ul.menu ul li a:hover {
-		background-color: #EDFFB3;
-		color: #005500;
-	}
+  ul.menu ul li {
+    width: 150%;
+    border: 1px solid lightgreen;
+  }
+  ul.menu ul li a {
+    line-height: 35px;
+    text-align: left;
+    padding-left: 5px;
+    font-weight: normal;
+  }
+  ul.menu ul li a:hover {
+    background-color: #edffb3;
+    color: #005500;
+  }
 }
 
 /* ----------------------------------------------------------------
 	Main
 -----------------------------------------------------------------*/
 
-.Two-column{
-    display: flex;
-/*    border: 1px solid #333;*/
+.Two-column {
+  display: flex;
+  /*    border: 1px solid #333;*/
 }
-.Two-column div{
-/*    border: 1px solid #333;*/
-}
-
-.right{
-	width: 50%;
-/*    background: #ffd87c;*/
-}
-.left{
-	width: 50%;
-/*    background: #9ddbfc;*/
+.Two-column div {
+  /*    border: 1px solid #333;*/
 }
 
-@media screen and (max-width: 1136px){
-/*	767*/
-	.Two-column{
-    	display: block;
-/*    border: 1px solid #333;*/
-	}
-	.Two-column div{
-/*    border: 1px solid #333;*/
-	}
+.right {
+  width: 50%;
+  /*    background: #ffd87c;*/
+}
+.left {
+  width: 50%;
+  /*    background: #9ddbfc;*/
+}
 
-	.right{
-		width: 90%;
-/*    background: #ffd87c;*/
-	}
-	.left{
-		width: 90%;
-/*    background: #9ddbfc;*/
-	}
+@media screen and (max-width: 1136px) {
+  /*	767*/
+  .Two-column {
+    display: block;
+    /*    border: 1px solid #333;*/
+  }
+  .Two-column div {
+    /*    border: 1px solid #333;*/
+  }
+
+  .right {
+    width: 90%;
+    /*    background: #ffd87c;*/
+  }
+  .left {
+    width: 90%;
+    /*    background: #9ddbfc;*/
+  }
 }
 
 .Title {
-	color: #1ABC9C;
+  color: #1abc9c;
 }
 
-.title-U-line{
-	border-bottom: 3px solid silver;
-	width: 90%;
-	user-select: none;
+.title-U-line {
+  border-bottom: 3px solid silver;
+  width: 90%;
+  user-select: none;
 }
 
-.title-U-line-Max{
-	border-bottom: 3px solid silver;
-	width: 100%;
-	margin-left: 0;
-	user-select: none;
+.title-U-line-Max {
+  border-bottom: 3px solid silver;
+  width: 100%;
+  margin-left: 0;
+  user-select: none;
 }
 
-.title-U-line-blank{
-	padding-top: 100px;
-	border-bottom: 3px solid silver;
-	width: 90%;
+.title-U-line-blank {
+  padding-top: 100px;
+  border-bottom: 3px solid silver;
+  width: 90%;
 }
 
 /* ----------------------------------------------------------------
 	Footer
 -----------------------------------------------------------------*/
 
-
 #footer {
-/*	position: relative;*/
-	background-color: #EEE;
-	border-top: 5px solid rgba(0,0,0,0.2);
-	position: sticky;
-  	top: 100vh;
-  	width: 100%;
+  /*	position: relative;*/
+  background-color: #eee;
+  border-top: 5px solid rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 100vh;
+  width: 100%;
 }
 
 .device-lg.sticky-footer #top-bar,
-.device-md.sticky-footer #top-bar { z-index: 299; }
+.device-md.sticky-footer #top-bar {
+  z-index: 299;
+}
 
 .device-lg.sticky-footer #header,
-.device-md.sticky-footer #header { z-index: 199; }
+.device-md.sticky-footer #header {
+  z-index: 199;
+}
 
 .device-lg.sticky-footer #slider,
 .device-lg.sticky-footer #page-submenu,
@@ -282,33 +293,35 @@ ul.menu a:hover {
 .device-md.sticky-footer #slider,
 .device-md.sticky-footer #page-submenu,
 .device-md.sticky-footer #page-title,
-.device-md.sticky-footer #content { z-index: 2; }
+.device-md.sticky-footer #content {
+  z-index: 2;
+}
 
 .device-lg.sticky-footer #footer,
 .device-md.sticky-footer #footer {
-	position: fixed;
-	top: auto;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .device-lg.sticky-footer:not(.stretched) #footer,
 .device-md.sticky-footer:not(.stretched) #footer {
-	left: 50%;
-	margin-left: -610px;
-	width: 1220px;
+  left: 50%;
+  margin-left: -610px;
+  width: 1220px;
 }
 
 .device-md.sticky-footer:not(.stretched) #footer {
-	margin-left: -500px;
-	width: 1000px;
+  margin-left: -500px;
+  width: 1000px;
 }
 
 #footer .footer-widgets-wrap {
-	position: relative;
-	padding: 80px 0;
+  position: relative;
+  padding: 80px 0;
 }
 
 .footer-widgets-wrap .col_full,
@@ -322,56 +335,64 @@ ul.menu a:hover {
 .footer-widgets-wrap .col_three_fifth,
 .footer-widgets-wrap .col_four_fifth,
 .footer-widgets-wrap .col_one_sixth,
-.footer-widgets-wrap .col_five_sixth { margin-bottom: 0; }
+.footer-widgets-wrap .col_five_sixth {
+  margin-bottom: 0;
+}
 
 #copyrights {
-	padding: 40px 0;
-	background-color: #DDD;
-	font-size: 14px;
-	line-height: 1.8;
+  padding: 40px 0;
+  background-color: #ddd;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 #copyrights i.footer-icon {
-	position: relative;
-	top: 1px;
-	font-size: 14px;
-	width: 14px;
-	text-align: center;
-	margin-right: 3px;
+  position: relative;
+  top: 1px;
+  font-size: 14px;
+  width: 14px;
+  text-align: center;
+  margin-right: 3px;
 }
 
 .copyright-links a {
-	display: inline-block;
-	margin: 0 3px;
-	color: #333;
-	border-bottom: 1px dotted #444;
+  display: inline-block;
+  margin: 0 3px;
+  color: #333;
+  border-bottom: 1px dotted #444;
 }
 
 .copyright-links a:hover {
-	color: #555;
-	border-bottom: 1px solid #666;
+  color: #555;
+  border-bottom: 1px solid #666;
 }
 
-.copyrights-menu { margin-bottom: 10px; }
+.copyrights-menu {
+  margin-bottom: 10px;
+}
 
 .copyrights-menu a {
-	font-size: 14px;
-	margin: 0 10px;
-	border-bottom: 0 !important;
+  font-size: 14px;
+  margin: 0 10px;
+  border-bottom: 0 !important;
 }
 
 #copyrights .col_half {
-	margin-bottom: 0 !important;
-	margin-left: 5%;
+  margin-bottom: 0 !important;
+  margin-left: 5%;
 }
 
-#copyrights a:first-child { margin-left: 0; }
+#copyrights a:first-child {
+  margin-left: 0;
+}
 
-#copyrights .tright a:last-child { margin-right: 0; }
+#copyrights .tright a:last-child {
+  margin-right: 0;
+}
 
 .footer-logo {
-	display: block;
-	margin-bottom: 30px;
+  display: block;
+  margin-bottom: 30px;
 }
 
 /* ----------------------------------------------------------------
@@ -421,7 +442,7 @@ input[type="radio"] {
   color: #999;
 }
 .filters label:hover {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 .targets {
@@ -439,8 +460,8 @@ input[type="radio"] {
   color: black;
 }
 .targets .target-title:hover {
-/*  text-decoration: underline;*/
-	color: #999;
+  /*  text-decoration: underline;*/
+  color: #999;
 }
 .targets figcaption {
   padding: 0.5rem;
@@ -459,31 +480,31 @@ input[type="radio"] {
 .targets .target-categories a {
   padding: 0.2rem 0.5rem;
   transition: all 0.1s;
-  color: #1ABC9C;
+  color: #1abc9c;
 }
 .targets .target-categories a:hover {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 /* フィルタリング  */
 [value="All"]:checked ~ .filters [for="All"],
 [value="sound"]:checked ~ .filters [for="sound"],
-[value="event"]:checked ~ .filters [for="event"], 
-[value="movie"]:checked ~ .filters [for="movie"], 
-[value="game"]:checked ~ .filters [for="game"], 
-[value="study"]:checked ~ .filters [for="study"], 
+[value="event"]:checked ~ .filters [for="event"],
+[value="movie"]:checked ~ .filters [for="movie"],
+[value="game"]:checked ~ .filters [for="game"],
+[value="study"]:checked ~ .filters [for="study"],
 [value="other"]:checked ~ .filters [for="other"] {
-  background: #1ABC9C;
+  background: #1abc9c;
   color: #fff;
 }
 [value="All"]:checked ~ .targets [data-category] {
   display: block;
 }
-[value="sound"]:checked ~ .targets .target:not([data-category~="sound"]), 
-[value="event"]:checked ~ .targets .target:not([data-category~="event"]), 
+[value="sound"]:checked ~ .targets .target:not([data-category~="sound"]),
+[value="event"]:checked ~ .targets .target:not([data-category~="event"]),
 [value="movie"]:checked ~ .targets .target:not([data-category~="movie"]),
-[value="game"]:checked ~ .targets .target:not([data-category~="game"]), 
-[value="study"]:checked ~ .targets .target:not([data-category~="study"]), 
+[value="game"]:checked ~ .targets .target:not([data-category~="game"]),
+[value="study"]:checked ~ .targets .target:not([data-category~="study"]),
 [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
   display: none;
 }
@@ -508,27 +529,27 @@ input[type="radio"] {
 -----------------------------------------------------------------*/
 
 summary {
-  	/* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
-  	display: block;
-	width: 80%;
-	padding: 0 5%;
+  /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
+  display: block;
+  width: 80%;
+  padding: 0 5%;
 }
 
 summary::-webkit-details-marker {
-  	/* Safariで表示されるデフォルトの三角形アイコンを消します */
-  	display: none;
-	width: 80%;
-	padding: 0 5%;
+  /* Safariで表示されるデフォルトの三角形アイコンを消します */
+  display: none;
+  width: 80%;
+  padding: 0 5%;
 }
 
-.summary_inner{
+.summary_inner {
   cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  border: 1px solid #1ABC9C;
+  border: 1px solid #1abc9c;
   font-weight: bold;
   color: #002255;
   user-select: none;
@@ -558,7 +579,7 @@ details[open] .icon {
   display: block;
   width: 15px;
   height: 3px;
-  background-color: #1ABC9C;
+  background-color: #1abc9c;
 }
 
 .icon::before {
@@ -571,31 +592,31 @@ details[open] .icon {
   transform: rotate(-45deg);
 }
 
-.anser{
-	padding: 0 15% 0 5%;
+.anser {
+  padding: 0 15% 0 5%;
 }
 
 /* ----------------------------------------------------------------
 	event
 -----------------------------------------------------------------*/
 
-.deadline{
-	color: #7E7E7E;
+.deadline {
+  color: #7e7e7e;
 }
 .event {
-	margin-bottom: 3px;
-	margin-top: 5px;
+  margin-bottom: 3px;
+  margin-top: 5px;
 }
 
-.kadomarubox{
-	display: inline-block;
-	padding: 5px;
-    margin: 5px 1px;
-  	background: #1ABC9C;
-	color: white;
-  	border-radius:20px;
-	text-align: center;
-	font-size: 2em;
+.kadomarubox {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px 1px;
+  background: #1abc9c;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 2em;
 }
 
 .area {
@@ -606,7 +627,7 @@ details[open] .icon {
 }
 
 .tab_class {
-  width: calc(95%/4);
+  width: calc(95% / 4);
   height: 50px;
   line-height: 50px;
   font-size: 15px;
@@ -620,209 +641,216 @@ details[open] .icon {
 input[name="tab_name"] {
   display: none;
 }
- 
+
 input:checked + .tab_class {
   background-color: cadetblue;
   color: aliceblue;
 }
- 
+
 .content_class {
   display: none;
   width: 100%;
 }
- 
+
 input:checked + .tab_class + .content_class {
   display: block;
 }
 
 .col_full {
-    clear: both;
-    float: none;
-    margin-right: 0;
-	display: block;
-    position: relative;
-    margin-right: 4%;
-    margin-bottom: 50px;
-    float: left;
-	width: 100%;
+  clear: both;
+  float: none;
+  margin-right: 0;
+  display: block;
+  position: relative;
+  margin-right: 4%;
+  margin-bottom: 50px;
+  float: left;
+  width: 100%;
 }
 
 .panel-default {
-    border-color: #dddddd;
+  border-color: #dddddd;
 }
 
 .panel-default > .panel-heading {
-    color: #333333;
-    background-color: #f5f5f5;
-    border-color: #dddddd;
+  color: #333333;
+  background-color: #f5f5f5;
+  border-color: #dddddd;
 }
 
 .panel-heading {
-    padding: 10px 15px;
-    border-bottom: 1px solid transparent;
-    border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
-	border: solid 1px #dddddd;
-    border-radius: 3px 3px 0 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border: solid 1px #dddddd;
+  border-radius: 3px 3px 0 0;
 }
 
 .panel-title {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    color: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
 }
 
 .panel-body {
-    padding: 5 15px;
-	border: solid 1px #dddddd;
-    border-radius: 0 0 3px 3px;
+  padding: 5 15px;
+  border: solid 1px #dddddd;
+  border-radius: 0 0 3px 3px;
 }
 
-.panel-body:before{
-	content: " ";
-    display: table;
+.panel-body:before {
+  content: " ";
+  display: table;
 }
 
-*:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.panel-body:after{
-	clear: both;
-	content: " ";
-    display: table;
+.panel-body:after {
+  clear: both;
+  content: " ";
+  display: table;
 }
 
-.panel > .list-group, .panel > .panel-collapse > .list-group {
-    margin-bottom: 0;
+.panel > .list-group,
+.panel > .panel-collapse > .list-group {
+  margin-bottom: 0;
 }
 
 .center {
-    text-align: center !important;
+  text-align: center !important;
 }
 
 .list-group {
-    margin-bottom: 20px;
-    padding-left: 0;
-	margin-top: 0;
+  margin-bottom: 20px;
+  padding-left: 0;
+  margin-top: 0;
 }
 
 .list-group-item {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #ffffff;
-/*    border: 1px solid #dddddd;*/
-	border: solid 1px #dddddd;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  /*    border: 1px solid #dddddd;*/
+  border: solid 1px #dddddd;
 }
 
-.list-group-center{
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-left: 0;
+.list-group-center {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
 }
 
 .panel-heading + .list-group .list-group-item:first-child {
-    border-top-width: 0;
+  border-top-width: 0;
 }
 
-.panel > .list-group .list-group-item, .panel > .panel-collapse > .list-group .list-group-item {
-    border-width: 1px 0;
-    border-radius: 0;
+.panel > .list-group .list-group-item,
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
 }
 
-.panel > .list-group .list-group-item, .panel > .panel-collapse > .list-group .list-group-item {
-    border-width: 1px 0;
-    border-radius: 0;
+.panel > .list-group .list-group-item,
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
 }
 
 .list-group-item-heading {
-    margin-top: 0;
-    margin-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 h4 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
-table{
-  border-collapse:collapse;
-	margin: 0 0 10px 0;
-	width: 90%;
+table {
+  border-collapse: collapse;
+  margin: 0 0 10px 0;
+  width: 90%;
 }
 
-tbody{
-	width: 100%;
+tbody {
+  width: 100%;
 }
 
-th{
-	width: 30%;
+th {
+  width: 30%;
 }
 
-td,th{
-  border-top:1px solid #CDCDCD;
+td,
+th {
+  border-top: 1px solid #cdcdcd;
   padding: 5px 10px;
-	text-align: left;
+  text-align: left;
 }
 tr:last-child td,
-tr:last-child th{
-  border-bottom:1px solid #666;  
+tr:last-child th {
+  border-bottom: 1px solid #666;
 }
 
-.credits{
-	width: 50%;
+.credits {
+  width: 50%;
 }
 
 .style-msg2 {
-    border-left: 4px solid rgba(0,0,0,0.2);
-	background-color: #EEE;
+  border-left: 4px solid rgba(0, 0, 0, 0.2);
+  background-color: #eee;
 }
 
 .style-msg2 .msgtitle {
-    background: rgba(0,0,0,0.15);
-    border-top: none;
-    border-bottom: none;
-    font-size: 15px;
-    font-weight: bold;
+  background: rgba(0, 0, 0, 0.15);
+  border-top: none;
+  border-bottom: none;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-.style-msg .sb-msg, .style-msg2 .msgtitle, .style-msg2 .sb-msg {
-    display: block;
-    padding: 15px;
-    border-left: 1px solid rgba(255,255,255,0.5);
-    font-size: 14px;
-    text-shadow: 1px 1px 1px rgb(255 255 255 / 60%);
+.style-msg .sb-msg,
+.style-msg2 .msgtitle,
+.style-msg2 .sb-msg {
+  display: block;
+  padding: 15px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  text-shadow: 1px 1px 1px rgb(255 255 255 / 60%);
 }
 
 style-msg2 .sb-msg {
-    font-weight: normal;
+  font-weight: normal;
 }
 
-.sb-msg-margin{
-	margin-top: 0;
-	margin-bottom: 0;
+.sb-msg-margin {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #check {
-    color: #f00;
-    font-weight: bold;
+  color: #f00;
+  font-weight: bold;
 }
 
-.notes{
-	list-style: inside;
-	margin: 10 0;
+.notes {
+  list-style: inside;
+  margin: 10 0;
 }
 
-.simekiri{
-	border-radius: 3px;
-	background-color: #CCCCFF;
-	text-align: center;
-	padding: 15px 0px;
-	font-size: 2em;
+.simekiri {
+  border-radius: 3px;
+  background-color: #ccccff;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 2em;
 }
 
 /* ----------------------------------------------------------------
@@ -838,10 +866,13 @@ style-msg2 .sb-msg {
 }
 
 .time {
-  margin: .1rem;
+  margin: 0.1rem;
 }
 
-#day, #hour,#min,#sec {
+#day,
+#hour,
+#min,
+#sec {
   font-size: 3rem;
   margin-right: 0.5rem;
 }
@@ -852,71 +883,71 @@ style-msg2 .sb-msg {
 
 /* 動画を囲うdiv */
 .video {
-  	position: relative;
-  	width:90%; /* 横幅は100%にしておく(ここを変えたい場合は実装コード2の方法を確認してください) */
-  	height:0; /* 高さは0にしておく(padding-topで高さを指定するため) */
-  	padding-top: 56.25%; /* 高さを指定(16:9) */
+  position: relative;
+  width: 90%; /* 横幅は100%にしておく(ここを変えたい場合は実装コード2の方法を確認してください) */
+  height: 0; /* 高さは0にしておく(padding-topで高さを指定するため) */
+  padding-top: 56.25%; /* 高さを指定(16:9) */
 }
 
 /* YouTube埋め込み用のiframe */
-.video iframe{
-  	position: absolute;
-  	top: 0;
-  	left: 20px;
-  	width: 100%;
-  	height: 100%;
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 /* 動画を囲うdiv */
 .video-min {
-  	position: relative;
-  	width:90%; /* 横幅は100%にしておく(ここを変えたい場合は実装コード2の方法を確認してください) */
-  	height:0; /* 高さは0にしておく(padding-topで高さを指定するため) */
-  	padding-top: 56.25%; /* 高さを指定(16:9) */
-	padding-bottom: 0;
-	margin-bottom: 0;
+  position: relative;
+  width: 90%; /* 横幅は100%にしておく(ここを変えたい場合は実装コード2の方法を確認してください) */
+  height: 0; /* 高さは0にしておく(padding-topで高さを指定するため) */
+  padding-top: 56.25%; /* 高さを指定(16:9) */
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* YouTube埋め込み用のiframe */
-.video-min iframe{
-  	position: absolute;
-  	top: 60px;
-  	left: 15%;
-  	width: 70%;
-  	height: 70%;
+.video-min iframe {
+  position: absolute;
+  top: 60px;
+  left: 15%;
+  width: 70%;
+  height: 70%;
 }
 
-.btn{
-	border-radius: 5px;
-  	background-color: #1ABC9C;
-  	padding: 5px;
-  	text-decoration: none;
-  	color: white;
+.btn {
+  border-radius: 5px;
+  background-color: #1abc9c;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
 }
 
-.btn:hover{
-	background-color: #88DD99;
+.btn:hover {
+  background-color: #88dd99;
 }
 
-.syousai:hover{
-	background-color: #88DD99;
+.syousai:hover {
+  background-color: #88dd99;
 }
 
-.syousai{
-	padding: 15px;
-	border-radius: 5px;
-  	background-color: #1ABC9C;
-  	text-decoration: none;
-  	color: white;
-	margin-top: 30px;
+.syousai {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #1abc9c;
+  text-decoration: none;
+  color: white;
+  margin-top: 30px;
 }
 
 /* ----------------------------------------------------------------
 	icon
 -----------------------------------------------------------------*/
 
-.icon-ma{
-	margin: 0 2;
+.icon-ma {
+  margin: 0 2;
 }
 
 .follow-me {
@@ -942,168 +973,399 @@ style-msg2 .sb-msg {
   font-size: 32px;
   height: 42px; /* Button height */
   line-height: 42px; /* Button height */
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
   width: 84px; /* Button width */
 }
 .follow-me li a[href*="amazon.co.jp"]::before,
-.follow-me li a[href*="amazon.com"]::before         { border-color: #ff9900; color: #ff9900; content: "\f270"; }
-.follow-me li a[href*="codepen.io"]::before         { border-color: #000000; color: #000000; content: "\f1cb"; }
-.follow-me li a[href*="delicious.com"]::before      { border-color: #3399ff; color: #3399ff; content: "\f1a5"; }
-.follow-me li a[href*="deviantart.com"]::before     { border-color: #05cc47; color: #05cc47; content: "\f1bd"; }
-.follow-me li a[href*="digg.com"]::before           { border-color: #000000; color: #000000; content: "\f1a6"; }
-.follow-me li a[href*="discord.gg"]::before         { border-color: #000000; color: #000000; content: "\f392"; }
-.follow-me li a[href*="dribble.com"]::before        { border-color: #000000; color: #ea4c89; content: "\f17d"; }
-.follow-me li a[href*="dropbox.com"]::before        { border-color: #007ee5; color: #007ee5; content: "\f16b"; }
-.follow-me li a[href*="facebook.com"]::before       { border-color: #3b5998; color: #3b5998; content: "\f09a"; }
-.follow-me li a[href*="feedly.com"]::before         { border-color: #6cc655; color: #6cc655; content: "\f09e"; }
-.follow-me li a[href*="flickr.com"]::before         { border-color: #0063cc; color: #0063dc; content: "\f16e"; }
-.follow-me li a[href*="foursquare.com"]::before     { border-color: #f94877; color: #f94877; content: "\f180"; }
-.follow-me li a[href*="github.com"]::before         { border-color: #181717; color: #181717; content: "\f09b"; }
-.follow-me li a[href*="plus.google.com"]::before    { border-color: #dc4e41; color: #dc4e41; content: "\f0d5"; }
-.follow-me li a[href*="b.hatena.ne.jp"]::before     { border-color: #008fde; color: #008fde; content: "\f027"; font-family: blogicon; }
-.follow-me li a[href*="instagram.com"]::before      { border-color: #125688; color: #125688; content: "\f16d"; }
-.follow-me li a[href*="last.fm"]::before            { border-color: #d51007; color: #d51007; content: "\f202"; }
-.follow-me li a[href*="linkedin.com"]::before       { border-color: #0077b5; color: #0077b5; content: "\f0e1"; }
-.follow-me li a[href*="nicovideo.jp"]::before       { border-color: #eaeaea; color: #eaeaea; content: "\f047"; font-family: blogicon; }
-.follow-me li a[href*="pinterest.com"]::before      { border-color: #bd081c; color: #bd081c; content: "\f0d2"; }
-.follow-me li a[href*="getpocket.com"]::before      { border-color: #ef3f56; color: #ef3f56; content: "\f265"; }
-.follow-me li a[href*="reddit.com"]::before         { border-color: #ff4500; color: #ff4500; content: "\f1a1"; }
+.follow-me li a[href*="amazon.com"]::before {
+  border-color: #ff9900;
+  color: #ff9900;
+  content: "\f270";
+}
+.follow-me li a[href*="codepen.io"]::before {
+  border-color: #000000;
+  color: #000000;
+  content: "\f1cb";
+}
+.follow-me li a[href*="delicious.com"]::before {
+  border-color: #3399ff;
+  color: #3399ff;
+  content: "\f1a5";
+}
+.follow-me li a[href*="deviantart.com"]::before {
+  border-color: #05cc47;
+  color: #05cc47;
+  content: "\f1bd";
+}
+.follow-me li a[href*="digg.com"]::before {
+  border-color: #000000;
+  color: #000000;
+  content: "\f1a6";
+}
+.follow-me li a[href*="discord.gg"]::before {
+  border-color: #000000;
+  color: #000000;
+  content: "\f392";
+}
+.follow-me li a[href*="dribble.com"]::before {
+  border-color: #000000;
+  color: #ea4c89;
+  content: "\f17d";
+}
+.follow-me li a[href*="dropbox.com"]::before {
+  border-color: #007ee5;
+  color: #007ee5;
+  content: "\f16b";
+}
+.follow-me li a[href*="facebook.com"]::before {
+  border-color: #3b5998;
+  color: #3b5998;
+  content: "\f09a";
+}
+.follow-me li a[href*="feedly.com"]::before {
+  border-color: #6cc655;
+  color: #6cc655;
+  content: "\f09e";
+}
+.follow-me li a[href*="flickr.com"]::before {
+  border-color: #0063cc;
+  color: #0063dc;
+  content: "\f16e";
+}
+.follow-me li a[href*="foursquare.com"]::before {
+  border-color: #f94877;
+  color: #f94877;
+  content: "\f180";
+}
+.follow-me li a[href*="github.com"]::before {
+  border-color: #181717;
+  color: #181717;
+  content: "\f09b";
+}
+.follow-me li a[href*="plus.google.com"]::before {
+  border-color: #dc4e41;
+  color: #dc4e41;
+  content: "\f0d5";
+}
+.follow-me li a[href*="b.hatena.ne.jp"]::before {
+  border-color: #008fde;
+  color: #008fde;
+  content: "\f027";
+  font-family: blogicon;
+}
+.follow-me li a[href*="instagram.com"]::before {
+  border-color: #125688;
+  color: #125688;
+  content: "\f16d";
+}
+.follow-me li a[href*="last.fm"]::before {
+  border-color: #d51007;
+  color: #d51007;
+  content: "\f202";
+}
+.follow-me li a[href*="linkedin.com"]::before {
+  border-color: #0077b5;
+  color: #0077b5;
+  content: "\f0e1";
+}
+.follow-me li a[href*="nicovideo.jp"]::before {
+  border-color: #eaeaea;
+  color: #eaeaea;
+  content: "\f047";
+  font-family: blogicon;
+}
+.follow-me li a[href*="pinterest.com"]::before {
+  border-color: #bd081c;
+  color: #bd081c;
+  content: "\f0d2";
+}
+.follow-me li a[href*="getpocket.com"]::before {
+  border-color: #ef3f56;
+  color: #ef3f56;
+  content: "\f265";
+}
+.follow-me li a[href*="reddit.com"]::before {
+  border-color: #ff4500;
+  color: #ff4500;
+  content: "\f1a1";
+}
 .follow-me li a[href*="skype.com"]::before,
-.follow-me li a[href*="skype:"]::before             { border-color: #00aff0; color: #00aff0; content: "\f17e"; }
-.follow-me li a[href*="slideshare.net"]::before     { border-color: #2d2d2d; color: #2d2d2d; content: "\f1e7"; }
-.follow-me li a[href*="spotify.com"]::before        { border-color: #84bd00; color: #84bd00; content: "\f1bc"; }
-.follow-me li a[href*="steamcommunity.com"]::before { border-color: #171a21; color: #171a21; content: "\f1b6"; }
-.follow-me li a[href*="stumbleupon.com"]::before    { border-color: #eb4929; color: #eb4929; content: "\f1a4"; }
-.follow-me li a[href*="tumblr.com"]::before         { border-color: #36465d; color: #36465d; content: "\f173"; }
-.follow-me li a[href*="twitch.tv"]::before          { border-color: #6441a5; color: #6441a5; content: "\f1e8"; }
-.follow-me li a[href*="twitter.com"]::before        { border-color: #55acee; color: #55acee; content: "\f099"; }
-.follow-me li a[href*="vimeo.com"]::before          { border-color: #1ab7ea; color: #1ab7ea; content: "\f27d"; }
-.follow-me li a[href*="vine.co"]::before            { border-color: #11b58a; color: #11b58a; content: "\f1ca"; }
-.follow-me li a[href*="weibo.com"]::before          { border-color: #e6162d; color: #e6162d; content: "\f18a"; }
-.follow-me li a[href*="whatsapp.com"]::before       { border-color: #64d548; color: #64d548; content: "\f232"; }
+.follow-me li a[href*="skype:"]::before {
+  border-color: #00aff0;
+  color: #00aff0;
+  content: "\f17e";
+}
+.follow-me li a[href*="slideshare.net"]::before {
+  border-color: #2d2d2d;
+  color: #2d2d2d;
+  content: "\f1e7";
+}
+.follow-me li a[href*="spotify.com"]::before {
+  border-color: #84bd00;
+  color: #84bd00;
+  content: "\f1bc";
+}
+.follow-me li a[href*="steamcommunity.com"]::before {
+  border-color: #171a21;
+  color: #171a21;
+  content: "\f1b6";
+}
+.follow-me li a[href*="stumbleupon.com"]::before {
+  border-color: #eb4929;
+  color: #eb4929;
+  content: "\f1a4";
+}
+.follow-me li a[href*="tumblr.com"]::before {
+  border-color: #36465d;
+  color: #36465d;
+  content: "\f173";
+}
+.follow-me li a[href*="twitch.tv"]::before {
+  border-color: #6441a5;
+  color: #6441a5;
+  content: "\f1e8";
+}
+.follow-me li a[href*="twitter.com"]::before {
+  border-color: #55acee;
+  color: #55acee;
+  content: "\f099";
+}
+.follow-me li a[href*="vimeo.com"]::before {
+  border-color: #1ab7ea;
+  color: #1ab7ea;
+  content: "\f27d";
+}
+.follow-me li a[href*="vine.co"]::before {
+  border-color: #11b58a;
+  color: #11b58a;
+  content: "\f1ca";
+}
+.follow-me li a[href*="weibo.com"]::before {
+  border-color: #e6162d;
+  color: #e6162d;
+  content: "\f18a";
+}
+.follow-me li a[href*="whatsapp.com"]::before {
+  border-color: #64d548;
+  color: #64d548;
+  content: "\f232";
+}
 .follow-me li a[href*="wordpress.com"]::before,
-.follow-me li a[href*="wordpress.org"]::before      { border-color: #21759b; color: #21759b; content: "\f19a"; }
-.follow-me li a[href*="youtube.com"]::before        { border-color: #cd201f; color: #cd201f; content: "\f16a"; }
-.follow-me li a[href$="/feed"]::before              { border-color: #ffa500; color: #ffa500; content: "\f09e"; }
-.follow-me li a[href$="/subscribe"]::before         { border-color: #363636; color: #363636; content: "\f000"; font-family: blogicon; }
+.follow-me li a[href*="wordpress.org"]::before {
+  border-color: #21759b;
+  color: #21759b;
+  content: "\f19a";
+}
+.follow-me li a[href*="youtube.com"]::before {
+  border-color: #cd201f;
+  color: #cd201f;
+  content: "\f16a";
+}
+.follow-me li a[href$="/feed"]::before {
+  border-color: #ffa500;
+  color: #ffa500;
+  content: "\f09e";
+}
+.follow-me li a[href$="/subscribe"]::before {
+  border-color: #363636;
+  color: #363636;
+  content: "\f000";
+  font-family: blogicon;
+}
 .follow-me li a:hover::before {
   color: #fff;
 }
 .follow-me li a[href*="amazon.co.jp"]:hover::before,
-.follow-me li a[href*="amazon.com"]:hover::before         { background-color: #ff9900; }
-.follow-me li a[href*="codepen.io"]:hover::before         { background-color: #000000; }
-.follow-me li a[href*="delicious.com"]:hover::before      { background-color: #3399ff; }
-.follow-me li a[href*="deviantart.com"]:hover::before     { background-color: #05cc47; }
-.follow-me li a[href*="digg.com"]:hover::before           { background-color: #000000; }
-.follow-me li a[href*="discord.gg"]:hover::before         { background-color: #000000; }
-.follow-me li a[href*="dribble.com"]:hover::before        { background-color: #ea4c89; }
-.follow-me li a[href*="dropbox.com"]:hover::before        { background-color: #007ee5; }
-.follow-me li a[href*="facebook.com"]:hover::before       { background-color: #3b5998; }
-.follow-me li a[href*="feedly.com"]:hover::before         { background-color: #6cc655; }
-.follow-me li a[href*="flickr.com"]:hover::before         { background-color: #0063dc; }
-.follow-me li a[href*="foursquare.com"]:hover::before     { background-color: #f94877; }
-.follow-me li a[href*="github.com"]:hover::before         { background-color: #181717; }
-.follow-me li a[href*="plus.google.com"]:hover::before    { background-color: #dc4e41; }
-.follow-me li a[href*="b.hatena.ne.jp"]:hover::before     { background-color: #008fde; }
-.follow-me li a[href*="instagram.com"]:hover::before      { background-color: #125688; }
-.follow-me li a[href*="last.fm"]:hover::before            { background-color: #d51007; }
-.follow-me li a[href*="linkedin.com"]:hover::before       { background-color: #0077b5; }
-.follow-me li a[href*="nicovideo.jp"]:hover::before       { background-color: #eaeaea; }
-.follow-me li a[href*="pinterest.com"]:hover::before      { background-color: #bd081c; }
-.follow-me li a[href*="getpocket.com"]:hover::before      { background-color: #ef3f56; }
-.follow-me li a[href*="reddit.com"]:hover::before         { background-color: #ff4500; }
+.follow-me li a[href*="amazon.com"]:hover::before {
+  background-color: #ff9900;
+}
+.follow-me li a[href*="codepen.io"]:hover::before {
+  background-color: #000000;
+}
+.follow-me li a[href*="delicious.com"]:hover::before {
+  background-color: #3399ff;
+}
+.follow-me li a[href*="deviantart.com"]:hover::before {
+  background-color: #05cc47;
+}
+.follow-me li a[href*="digg.com"]:hover::before {
+  background-color: #000000;
+}
+.follow-me li a[href*="discord.gg"]:hover::before {
+  background-color: #000000;
+}
+.follow-me li a[href*="dribble.com"]:hover::before {
+  background-color: #ea4c89;
+}
+.follow-me li a[href*="dropbox.com"]:hover::before {
+  background-color: #007ee5;
+}
+.follow-me li a[href*="facebook.com"]:hover::before {
+  background-color: #3b5998;
+}
+.follow-me li a[href*="feedly.com"]:hover::before {
+  background-color: #6cc655;
+}
+.follow-me li a[href*="flickr.com"]:hover::before {
+  background-color: #0063dc;
+}
+.follow-me li a[href*="foursquare.com"]:hover::before {
+  background-color: #f94877;
+}
+.follow-me li a[href*="github.com"]:hover::before {
+  background-color: #181717;
+}
+.follow-me li a[href*="plus.google.com"]:hover::before {
+  background-color: #dc4e41;
+}
+.follow-me li a[href*="b.hatena.ne.jp"]:hover::before {
+  background-color: #008fde;
+}
+.follow-me li a[href*="instagram.com"]:hover::before {
+  background-color: #125688;
+}
+.follow-me li a[href*="last.fm"]:hover::before {
+  background-color: #d51007;
+}
+.follow-me li a[href*="linkedin.com"]:hover::before {
+  background-color: #0077b5;
+}
+.follow-me li a[href*="nicovideo.jp"]:hover::before {
+  background-color: #eaeaea;
+}
+.follow-me li a[href*="pinterest.com"]:hover::before {
+  background-color: #bd081c;
+}
+.follow-me li a[href*="getpocket.com"]:hover::before {
+  background-color: #ef3f56;
+}
+.follow-me li a[href*="reddit.com"]:hover::before {
+  background-color: #ff4500;
+}
 .follow-me li a[href*="skype.com"]:hover::before,
-.follow-me li a[href*="skype:"]:hover::before             { background-color: #00aff0; }
-.follow-me li a[href*="slideshare.net"]:hover::before     { background-color: #2d2d2d; }
-.follow-me li a[href*="spotify.com"]:hover::before        { background-color: #84bd00; }
-.follow-me li a[href*="steamcommunity.com"]:hover::before { background-color: #171a21; }
-.follow-me li a[href*="stumbleupon.com"]:hover::before    { background-color: #eb4929; }
-.follow-me li a[href*="tumblr.com"]:hover::before         { background-color: #36465d; }
-.follow-me li a[href*="twitch.tv"]:hover::before          { background-color: #6441a5; }
-.follow-me li a[href*="twitter.com"]:hover::before        { background-color: #55acee; }
-.follow-me li a[href*="vimeo.com"]:hover::before          { background-color: #1ab7ea; }
-.follow-me li a[href*="vine.co"]:hover::before            { background-color: #11b58a; }
-.follow-me li a[href*="weibo.com"]:hover::before          { background-color: #e6162d; }
-.follow-me li a[href*="whatsapp.com"]:hover::before       { background-color: #64d548; }
+.follow-me li a[href*="skype:"]:hover::before {
+  background-color: #00aff0;
+}
+.follow-me li a[href*="slideshare.net"]:hover::before {
+  background-color: #2d2d2d;
+}
+.follow-me li a[href*="spotify.com"]:hover::before {
+  background-color: #84bd00;
+}
+.follow-me li a[href*="steamcommunity.com"]:hover::before {
+  background-color: #171a21;
+}
+.follow-me li a[href*="stumbleupon.com"]:hover::before {
+  background-color: #eb4929;
+}
+.follow-me li a[href*="tumblr.com"]:hover::before {
+  background-color: #36465d;
+}
+.follow-me li a[href*="twitch.tv"]:hover::before {
+  background-color: #6441a5;
+}
+.follow-me li a[href*="twitter.com"]:hover::before {
+  background-color: #55acee;
+}
+.follow-me li a[href*="vimeo.com"]:hover::before {
+  background-color: #1ab7ea;
+}
+.follow-me li a[href*="vine.co"]:hover::before {
+  background-color: #11b58a;
+}
+.follow-me li a[href*="weibo.com"]:hover::before {
+  background-color: #e6162d;
+}
+.follow-me li a[href*="whatsapp.com"]:hover::before {
+  background-color: #64d548;
+}
 .follow-me li a[href*="wordpress.com"]:hover::before,
-.follow-me li a[href*="wordpress.org"]:hover::before      { background-color: #21759b; }
-.follow-me li a[href*="youtube.com"]:hover::before        { background-color: #cd201f; }
-.follow-me li a[href$="/feed"]:hover::before              { background-color: #ffa500; }
-.follow-me li a[href$="/subscribe"]:hover::before         { background-color: #363636; }
+.follow-me li a[href*="wordpress.org"]:hover::before {
+  background-color: #21759b;
+}
+.follow-me li a[href*="youtube.com"]:hover::before {
+  background-color: #cd201f;
+}
+.follow-me li a[href$="/feed"]:hover::before {
+  background-color: #ffa500;
+}
+.follow-me li a[href$="/subscribe"]:hover::before {
+  background-color: #363636;
+}
 
 /* ----------------------------------------------------------------
 	form
 -----------------------------------------------------------------*/
 
 .c-form {
-	max-width: 600px;
-	margin: 0 auto;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .c-form__item {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
 }
 .c-form__label,
 .c-form__input {
-	padding: 10px;
+  padding: 10px;
 }
 .c-form__label {
-	width: 90%;
+  width: 90%;
 }
 .c-form__label::selection {
   color: #fff;
-  background-color: #1ABC9C;
+  background-color: #1abc9c;
 }
 .c-form__input {
-	width: 90%;
-	font-size: 16px;
-	border: solid 1px #333;
-	border-radius: 4px;
+  width: 90%;
+  font-size: 16px;
+  border: solid 1px #333;
+  border-radius: 4px;
 }
 .c-form__input:focus-visible {
-	outline: #1ABC9C auto 1px;
+  outline: #1abc9c auto 1px;
 }
 .c-form__required {
-	color: #fff;
-	background-color: #1ABC9C;
-	border-radius: 4px;
-	padding: 5px 5px;
-	margin: 0 0 0 18px;
+  color: #fff;
+  background-color: #1abc9c;
+  border-radius: 4px;
+  padding: 5px 5px;
+  margin: 0 0 0 18px;
 }
 textarea.c-form__input {
-	height: 160px;
+  height: 160px;
 }
 .c-form__submit {
-	text-align: center;
+  text-align: center;
 }
 .c-form__submit button {
-	font-size: 18px;
-	font-weight: bold;
-	color: #fff;
-	background-color: #1ABC9C;
-	border: solid 1px #1ABC9C;
-	border-radius: 4px;
-	padding: 5px 32px;
-	transition: 0.4s;
-	cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1abc9c;
+  border: solid 1px #1abc9c;
+  border-radius: 4px;
+  padding: 5px 32px;
+  transition: 0.4s;
+  cursor: pointer;
 }
 .c-form__submit button:hover {
-	color: green;
-	background-color: transparent;
+  color: green;
+  background-color: transparent;
 }
 
 @media (min-width: 640px) {
-	.c-form__item {
-		flex-wrap: nowrap;
-	}
-	.c-form__label {
-		width: 40%;
-	}
-	.c-form__input {
-		width: 55%;
-	}
+  .c-form__item {
+    flex-wrap: nowrap;
+  }
+  .c-form__label {
+    width: 40%;
+  }
+  .c-form__input {
+    width: 55%;
+  }
 }
