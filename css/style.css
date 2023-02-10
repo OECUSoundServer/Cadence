@@ -32,9 +32,20 @@ h2 h3 {
 
 p {
   text-indent: 1em;
+  margin: 10px 0 10px 0;
 }
 
 p::selection {
+  color: #fff;
+  background-color: #1abc9c;
+}
+
+td::selection {
+  color: #fff;
+  background-color: #1abc9c;
+}
+
+th::selection {
   color: #fff;
   background-color: #1abc9c;
 }
@@ -462,7 +473,8 @@ input[type="radio"] {
 }
 .targets .target-title {
   font-size: 1.2rem;
-  margin: 1rem 0 1rem 0.25rem;
+  /* margin: 1rem 0 1rem 0.25rem; */
+  margin: 0.7rem 0 0.7rem 0;
   color: black;
 }
 .targets .target-title:hover {
@@ -470,12 +482,14 @@ input[type="radio"] {
   color: #999;
 }
 .targets figcaption {
-  padding: 0.5rem;
+  margin-top: 3px;
   font-size: 0.75rem;
+  color: #888;
 }
 .targets .target-categories {
-  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.75rem; */
   font-size: 0.75rem;
+  padding-left: 0;
 }
 .targets .target-categories * {
   display: inline-block;
@@ -499,6 +513,7 @@ input[type="radio"] {
 [value="movie"]:checked ~ .filters [for="movie"],
 [value="game"]:checked ~ .filters [for="game"],
 [value="study"]:checked ~ .filters [for="study"],
+[value="booth"]:checked ~ .filters [for="booth"],
 [value="other"]:checked ~ .filters [for="other"] {
   background: #1abc9c;
   color: #fff;
@@ -511,6 +526,7 @@ input[type="radio"] {
 [value="movie"]:checked ~ .targets .target:not([data-category~="movie"]),
 [value="game"]:checked ~ .targets .target:not([data-category~="game"]),
 [value="study"]:checked ~ .targets .target:not([data-category~="study"]),
+[value="booth"]:checked ~ .targets .target:not([data-category~="booth"]),
 [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
   display: none;
 }
@@ -528,6 +544,11 @@ input[type="radio"] {
   .targets {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+figure {
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
 }
 
 /* ----------------------------------------------------------------
@@ -1374,4 +1395,176 @@ textarea.c-form__input {
   .c-form__input {
     width: 55%;
   }
+}
+
+/* ----------------------------------------------------------------
+	slider
+-----------------------------------------------------------------*/
+
+.slider {
+  width: 94%;
+  margin: 0 auto;
+}
+
+.slider img {
+  width: 60vw;
+  height: auto;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);
+  transition: all 0.5s;
+  opacity: 0.5;
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 42%;
+  cursor: pointer;
+  outline: none;
+  border-top: 2px solid #666;
+  border-right: 2px solid #666;
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 8px;
+  height: 16px;
+  display: block;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.slick-dots .slick-active button {
+  background: #333;
+}
+
+/* ----------------------------------------------------------------
+	label
+-----------------------------------------------------------------*/
+
+.label-danger {
+  background-color: #d9534f;
+}
+
+.label-primary {
+  background-color: #337ab7;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label-default {
+  background-color: #777777;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label {
+  display: inline;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+}
+
+.button.button-3d {
+  border-radius: 3px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.button.button-rounded {
+  border-radius: 3px;
+}
+
+.button.button-mini {
+  padding: 0 14px;
+  font-size: 11px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.portfolio-desc span a {
+  color: #888;
+}
+
+.button-red {
+  background-color: #c02942;
+}
+
+.button-blue {
+  background-color: #1265a8;
+}
+
+.button-green {
+  background-color: #12a819;
+}
+
+.button-yellow {
+  background-color: #a6a812;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  margin: 10px 5px;
+  padding: 0 22px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  /* background-color: #1abc9c; */
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
 }
