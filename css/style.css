@@ -1,6 +1,25 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*-----------------------------------------------------------------------------------
+
+	- Basic
+  - Logo
+  - Menu
+  - Main
+  - Footer
+  - Portfolio
+  - Details
+  - Event
+  - Timer
+  - Video
+  - Icon
+  - Form
+  - Slider
+  - Label
+  - Pagetop
+-----------------------------------------------------------------------------------*/
+
 /* ----------------------------------------------------------------
 	Basic
 -----------------------------------------------------------------*/
@@ -135,7 +154,6 @@ li {
 ul.menu {
   margin: 0px;
   padding: 0px 0px 0px 15px;
-  /*	background:  aliceblue;*/
   display: table;
   table-layout: fixed;
   width: 100%;
@@ -147,7 +165,6 @@ ul.menu a {
   text-decoration: none;
   font-weight: bold;
   display: block;
-  /*	border: 1px ridge #ffdddd;*/
 }
 ul.menu a:hover {
   background-color: #1abc9c;
@@ -162,7 +179,6 @@ ul.menu a:hover {
   ul.menu li {
     width: 100%;
     display: inline-block;
-    /*		display: table-cell;*/
     list-style-type: none;
     position: relative;
   }
@@ -217,32 +233,26 @@ ul.menu a:hover {
 
 .Two-column {
   display: flex;
-  /*    border: 1px solid #333;*/
 }
 
 .right {
   width: 50%;
-  /*    background: #ffd87c;*/
 }
 .left {
   width: 50%;
-  /*    background: #9ddbfc;*/
 }
 
 @media screen and (max-width: 1136px) {
   /*	767*/
   .Two-column {
     display: block;
-    /*    border: 1px solid #333;*/
   }
 
   .right {
     width: 90%;
-    /*    background: #ffd87c;*/
   }
   .left {
     width: 90%;
-    /*    background: #9ddbfc;*/
   }
 }
 
@@ -283,7 +293,6 @@ ul.menu a:hover {
 -----------------------------------------------------------------*/
 
 #footer {
-  /*	position: relative;*/
   background-color: #eee;
   border-top: 5px solid rgba(0, 0, 0, 0.2);
   position: sticky;
@@ -413,7 +422,7 @@ ul.menu a:hover {
 }
 
 /* ----------------------------------------------------------------
-	portfolio
+	Portfolio
 -----------------------------------------------------------------*/
 
 .prettifydiv {
@@ -473,7 +482,6 @@ input[type="radio"] {
 }
 .targets .target-title {
   font-size: 1.2rem;
-  /* margin: 1rem 0 1rem 0.25rem; */
   margin: 0.7rem 0 0.7rem 0;
   color: black;
 }
@@ -487,7 +495,6 @@ input[type="radio"] {
   color: #888;
 }
 .targets .target-categories {
-  /* margin-bottom: 0.75rem; */
   font-size: 0.75rem;
   padding-left: 0;
 }
@@ -601,7 +608,7 @@ figure {
 }
 
 /* ----------------------------------------------------------------
-	details
+	Details
 -----------------------------------------------------------------*/
 
 summary {
@@ -673,7 +680,7 @@ details[open] .icon {
 }
 
 /* ----------------------------------------------------------------
-	event
+	Event
 -----------------------------------------------------------------*/
 
 .deadline {
@@ -695,53 +702,56 @@ details[open] .icon {
   font-size: 2em;
 }
 
-.area {
-  width: 90%;
-  margin: auto;
-  flex-wrap: wrap;
+.tab-wrap {
   display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
-
-.tab_class {
-  width: calc(95% / 4);
-  height: 50px;
-  line-height: 50px;
-  font-size: 15px;
-  text-align: center;
+.tab-wrap:after {
+  content: "";
+  width: 100%;
+  height: 3px;
   display: block;
-  float: left;
   order: -1;
-  border: solid 1px #dddddd;
 }
-
-input[name="tab_name"] {
-  display: none;
-}
-
-input:checked + .tab_class {
-  background-color: cadetblue;
-  color: aliceblue;
-}
-
-.content_class {
-  display: none;
-  width: 100%;
-}
-
-input:checked + .tab_class + .content_class {
-  display: block;
-}
-
-.col_full {
-  clear: both;
-  float: none;
-  margin-right: 0;
-  display: block;
+.tab-label {
+  color: White;
+  background: LightGray;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  text-align: center;
+  padding: 10px 0.5em;
+  order: -1;
   position: relative;
-  margin-right: 4%;
-  margin-bottom: 50px;
-  float: left;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  flex: 1;
+}
+.tab-label:not(:last-of-type) {
+  margin-right: 5px;
+}
+.tab-content {
   width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+/* アクティブなタブ */
+.tab-switch:checked + .tab-label {
+  background: #1abc9c;
+}
+.tab-switch:checked + .tab-label + .tab-content {
+  height: auto;
+  overflow: auto;
+  padding: 15px;
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+/* ラジオボタン非表示 */
+.tab-switch {
+  display: none;
 }
 
 .panel-default {
@@ -815,7 +825,6 @@ input:checked + .tab_class + .content_class {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #ffffff;
-  /*    border: 1px solid #dddddd;*/
   border: solid 1px #dddddd;
 }
 
@@ -929,8 +938,75 @@ style-msg2 .sb-msg {
   font-size: 2em;
 }
 
+.portfolio-item {
+  float: left;
+  position: relative;
+  width: 25%;
+  height: auto;
+  padding: 0 12px 12px 0;
+}
+
+.button.button-desc {
+  text-align: left;
+  padding: 24px 34px;
+  font-size: 22px;
+  height: auto;
+  line-height: 1;
+  font-family: "Raleway", sans-serif;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+  margin: 5px;
+  padding: 0 22px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #1abc9c;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+}
+
+.button.button-desc span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: "Crete Round", serif;
+  font-style: italic;
+  text-transform: none;
+}
+
+.portfolio-desc h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 19px;
+}
+
+.portfolio-desc span {
+  display: block;
+  margin-top: 3px;
+  color: #888;
+}
+
+.button-green {
+  background-color: #1abc9c;
+}
+
+.button-pink {
+  background-color: #f89fa1;
+}
+
 /* ----------------------------------------------------------------
-	timer
+	Timer
 -----------------------------------------------------------------*/
 
 .countdown-container {
@@ -945,16 +1021,16 @@ style-msg2 .sb-msg {
   margin: 0.1rem;
 }
 
-#day,
-#hour,
-#min,
-#sec {
-  font-size: 3rem;
+.countdown-day,
+.countdown-hour,
+.countdown-min,
+.countdown-sec {
+  font-size: 2rem;
   margin-right: 0.5rem;
 }
 
 /* ----------------------------------------------------------------
-	video
+	Video
 -----------------------------------------------------------------*/
 
 /* 動画を囲うdiv */
@@ -1019,7 +1095,7 @@ style-msg2 .sb-msg {
 }
 
 /* ----------------------------------------------------------------
-	icon
+	Icon
 -----------------------------------------------------------------*/
 
 .icon-ma {
@@ -1372,7 +1448,7 @@ style-msg2 .sb-msg {
 }
 
 /* ----------------------------------------------------------------
-	form
+	Form
 -----------------------------------------------------------------*/
 
 .c-form {
@@ -1447,7 +1523,7 @@ textarea.c-form__input {
 }
 
 /* ----------------------------------------------------------------
-	slider
+	Slider
 -----------------------------------------------------------------*/
 
 .slider {
@@ -1523,7 +1599,7 @@ textarea.c-form__input {
 }
 
 /* ----------------------------------------------------------------
-	label
+	Label
 -----------------------------------------------------------------*/
 
 .label-danger {
@@ -1626,4 +1702,16 @@ pre {
   color: #fff; /* 文字色 */
   white-space: pre-wrap; /* はみ出たときに折り返す */
   user-select: none;
+}
+
+/* ----------------------------------------------------------------
+	Pagetop
+-----------------------------------------------------------------*/
+
+#pagetop {
+  position: fixed;
+  right: 10px;
+  bottom: 0px;
+  cursor: pointer;
+  z-index: 10;
 }
