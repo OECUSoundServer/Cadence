@@ -1715,3 +1715,35 @@ pre {
   cursor: pointer;
   z-index: 10;
 }
+
+/* ----------------------------------------------------------------
+	MouseStalker
+-----------------------------------------------------------------*/
+
+.shine {
+  position: fixed;
+  top: -15px;
+  left: -15px;
+  width: 5%;
+  height: 5%;
+  background: url(../img/nikukyu.png) 50% 50% no-repeat;
+  background-size: contain;
+  z-index: 2;
+  animation: shine 0.5s ease-out 0s forwards;
+  transform: rotate(330deg);
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
