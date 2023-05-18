@@ -58,27 +58,7 @@ p {
   margin: 10px 0 10px 0;
 }
 
-p::selection {
-  color: #fff;
-  background-color: #1abc9c;
-}
-
-td::selection {
-  color: #fff;
-  background-color: #1abc9c;
-}
-
-th::selection {
-  color: #fff;
-  background-color: #1abc9c;
-}
-
-b::selection {
-  color: #fff;
-  background-color: #1abc9c;
-}
-
-strong::selection {
+::selection {
   color: #fff;
   background-color: #1abc9c;
 }
@@ -108,10 +88,10 @@ li {
   /*	background: #dff;*/
 }
 
-.choice::selection {
+/* .choice::selection {
   color: #fff;
   background-color: #3abec1;
-}
+} */
 
 /* ----------------------------------------------------------------
 	Logo
@@ -141,6 +121,7 @@ li {
   width: 90%;
   align-items: flex-end;
   padding-top: 3%;
+  z-index: 9999;
 }
 
 @media screen and (min-width: 1200px) {
