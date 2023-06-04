@@ -2744,3 +2744,12 @@ body {
     width: 80%;
   }
 }
+
+.checkbox-container {
+  display: inline-block;
+}
+
+.MainTagContainer {
+  display: inline-block;
+  margin-right: 10px;
+}
