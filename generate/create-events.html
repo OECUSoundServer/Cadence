@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<!-- InstanceBegin template="/Templates/Cadence.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head prefix="og: https://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <!-- InstanceBeginEditable name="meta" -->
+    <meta name=”description“ content="作品ページを作成します。" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="#1ABC9C">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@OECU51904255" />
+    <meta property="og:url" content="https://oecusoundserver.github.io/Cadence/generate/main.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cadence Generate" />
+    <meta property=”og:description“ content="作品ページを作成します。" />
+    <meta property="og:site_name" content="Cadence" />
+    <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+    <!-- InstanceEndEditable -->
+    <!-- Stylesheet  ============================================= -->
+    <link
+        href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"
+        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <!-- InstanceBeginEditable name="edit" -->
+    <link href="../../Cadence/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../img/yellow.png">
+    <!-- InstanceEndEditable -->
+    <!-- Document Title　============================================= -->
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Cadence - Generate</title>
+    <!-- InstanceEndEditable -->
+    <style>
+        /* ラジオボタンのスタイル */
+        .radio-container {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .radio-container input[type="radio"] {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .radio-container label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .radio-container input[type="radio"]:checked+label {
+            background-color: #1ABC9C;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- InstanceBeginEditable name="head" -->
+    <header>
+        <div class="Two-column">
+            <div class="left-header">
+
+                <p><a href="../index.html"><img src="../img/yellow.png" alt="cadencs" class="Logo"></a></p>
+            </div>
+            <div class="right-header">
+                <p align="center">
+                <table width="100%">
+                    <ul class="menu">
+                        <li><a href="../index.html" target="_parent">トップページ</a></li>
+                        <li><a href="./index.html" target="_parent">サークルについて</a></li>
+                        <li><a href="../portfolio/index.html" target="_parent">作品</a>
+                            <ul>
+                                <li><a href="../special/dl.html" target="_parent">ダウンロードコンテンツ</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../event/index.html" target="_parent">イベント</a>
+                            <ul>
+                                <li><a href="../event/SDFirst.html" target="_parent">【入門編】サウンド＋デザインジャム</a></li>
+                                <li><a href="../event/Nawafes.html" target="_parent">なわフェス2022</a></li>
+                                <li><a href="../portfolio/vocakore.html" target="_parent">ボカコレ2022秋</a></li>
+                                <!-- <li><a href="../event/SoundStudy.html" target="_parent">第1回サウンド講習会</a></li> -->
+                                <li><a href="../portfolio/fatty.html" target="_parent">けもケット13</a></li>
+                                <li><a href="../event/taikenkai.html" target="_parent">作詞作曲体験会</a></li>
+                                <li><a href="../event/c102.html" target="_parent">コミックマーケット102</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../special/bosyu.html" target="_parent">募集</a></li>
+                        <li><a href="../link.html" target="_parent">リンク</a></li>
+                    </ul>
+                </table>
+                </p>
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div id="main">
+        <div>
+            <h2 class="title-U-line">イベント作成ツール</h2>
+            <form id="inputForm">
+                <div class="form-group">
+                    <label for="Title">タイトル:</label>
+                    <input type="text" name="Title" id="Title" placeholder="ポートフォリオのタイトルを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="htmlURL">HTMLのURL:</label>
+                    <input type="text" name="htmlURL" id="htmlURL" placeholder="HTMLのURLを入力してください">
+                </div>
+                <input type="submit" value="変換">
+            </form>
+
+            <textarea id="convertedHTML" rows="3" cols="100" readonly></textarea>
+            <br>
+            <button id="copyButton" type="button"
+                onclick="selectText(); document.execCommand('copy'); alert('変換結果をクリップボードにコピーしました。')">コピー</button>
+
+            <script>
+                document.getElementById("inputForm").addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        var htmlURL = document.getElementById("htmlURL").value;
+                        var title = document.getElementById("Title").value;
+
+                        var convertedHTML = '<div>\n' +
+                            '  <h2 class="title-U-line"><a href="' + htmlURL + '">' + title + '</a></h2>\n' +
+                            '</div>';
+
+                        document.getElementById("convertedHTML").value = convertedHTML;
+                    });
+
+                    function selectText() {
+                        var textBox = document.getElementById("convertedHTML");
+                        textBox.select();
+                        textBox.setSelectionRange(0, 99999);
+                    }
+            </script>
+        </div>
+    </div>
+
+    <div id="pagetop" hidden>
+        <img src="../img/TOP.png" .png" width="80">
+    </div>
+    <!-- InstanceEndEditable -->
+
+    <!-- InstanceBeginEditable name="footer" -->
+    <footer id="footer" class="dark">
+        <div id="copyrights">
+            <div class="container clearfix">
+                <div class="col_half">
+                    <!-- Copyrights　============================================= -->
+                    Copyrights &copy; Cadence<br>
+                    <a href="./index.html">About This Circle</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- InstanceEndEditable -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../js/pagetop.js"></script>
+    <script src="../js/stkr.js"></script>
+</body>
+
+</html>
