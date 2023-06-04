@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<!-- InstanceBegin template="/Templates/Cadence.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head prefix="og: https://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <!-- InstanceBeginEditable name="meta" -->
+    <meta name=”description“ content="ポートフォリオページのパーツを作成します。" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="#1ABC9C">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@OECU51904255" />
+    <meta property="og:url" content="https://oecusoundserver.github.io/Cadence/generate/main.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cadence Generate" />
+    <meta property=”og:description“ content="ポートフォリオページのパーツを作成します。" />
+    <meta property="og:site_name" content="Cadence" />
+    <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+    <!-- InstanceEndEditable -->
+    <!-- Stylesheet  ============================================= -->
+    <link
+        href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"
+        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <!-- InstanceBeginEditable name="edit" -->
+    <link href="../../Cadence/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../img/yellow.png">
+    <!-- InstanceEndEditable -->
+    <!-- Document Title　============================================= -->
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Cadence - Generate</title>
+    <!-- InstanceEndEditable -->
+    <style>
+        /* ラジオボタンのスタイル */
+        .radio-container {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .radio-container input[type="radio"] {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .radio-container label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .radio-container input[type="radio"]:checked+label {
+            background-color: #1ABC9C;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- InstanceBeginEditable name="head" -->
+    <header>
+        <div class="Two-column">
+            <div class="left-header">
+
+                <p><a href="../index.html"><img src="../img/yellow.png" alt="cadencs" class="Logo"></a></p>
+            </div>
+            <div class="right-header">
+                <p align="center">
+                <table width="100%">
+                    <ul class="menu">
+                        <li><a href="../index.html" target="_parent">トップページ</a></li>
+                        <li><a href="./index.html" target="_parent">サークルについて</a></li>
+                        <li><a href="../portfolio/index.html" target="_parent">作品</a>
+                            <ul>
+                                <li><a href="../special/dl.html" target="_parent">ダウンロードコンテンツ</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../event/index.html" target="_parent">イベント</a>
+                            <ul>
+                                <li><a href="../event/SDFirst.html" target="_parent">【入門編】サウンド＋デザインジャム</a></li>
+                                <li><a href="../event/Nawafes.html" target="_parent">なわフェス2022</a></li>
+                                <li><a href="../portfolio/vocakore.html" target="_parent">ボカコレ2022秋</a></li>
+                                <!-- <li><a href="../event/SoundStudy.html" target="_parent">第1回サウンド講習会</a></li> -->
+                                <li><a href="../portfolio/fatty.html" target="_parent">けもケット13</a></li>
+                                <li><a href="../event/taikenkai.html" target="_parent">作詞作曲体験会</a></li>
+                                <li><a href="../event/c102.html" target="_parent">コミックマーケット102</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../special/bosyu.html" target="_parent">募集</a></li>
+                        <li><a href="../link.html" target="_parent">リンク</a></li>
+                    </ul>
+                </table>
+                </p>
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div id="main">
+        <div>
+            <h2 class="title-U-line">ポートフォリオページ作成ツール</h2>
+            <form action="" method="post" id="createForm">
+                <div class="form-group">
+                    <label for="portfolioTitle">タイトル:</label>
+                    <input type="text" name="portfolioTitle" id="portfolioTitle" placeholder="ポートフォリオのタイトルを入力してください">
+                </div>
+                タグ：
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="sound" id="soundTag">
+                    <label for="soundTag">サウンド</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="event" id="eventTag">
+                    <label for="eventTag">イベント</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="video" id="videoTag">
+                    <label for="videoTag">映像</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="game" id="gameTag">
+                    <label for="gameTag">ゲーム</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="lesson" id="lessonTag">
+                    <label for="lessonTag">講習会</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="booth" id="boothTag">
+                    <label for="boothTag">BOOTH</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" name="mainTag" value="other" id="otherTag">
+                    <label for="otherTag">その他</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="imagePath">画像パス:</label>
+                    <input type="text" name="imagePath" id="imagePath" placeholder="画像のパスを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="htmlURL">HTMLのURL:</label>
+                    <input type="text" name="htmlURL" id="htmlURL" placeholder="HTMLのURLを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="unityURL">UnityroomのURL:</label>
+                    <input type="text" name="unityURL" id="unityURL" placeholder="UNITYのURLを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="boothURL">BOOTHのURL:</label>
+                    <input type="text" name="boothURL" id="boothURL" placeholder="BOOTHのURLを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="figcaption">figcaption:</label>
+                    <input type="text" name="figcaption" id="figcaption" placeholder="figcaptionを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="eventDate">実施日:</label>
+                    <input type="text" name="eventDate" id="eventDate" placeholder="実施した日付を入力してください (例: 2023/06/04)">
+                </div>
+                <input type="submit" value="作成">
+            </form>
+            <textarea id="convertedHTML" rows="10" cols="100" readonly></textarea><br>
+            <button id="copyButton" type="button"
+                onclick="selectText(); document.execCommand('copy'); alert('変換結果をクリップボードにコピーしました。')">コピー</button>
+            
+            <script>
+                document.getElementById("createForm").addEventListener("submit", function (event) {
+                    event.preventDefault(); // フォームのデフォルトの送信動作をキャンセル
+
+                    // フォームの入力値を取得
+                    var mainTag = document.querySelector('input[name="mainTag"]:checked').value;
+                    var imagePath = document.getElementById("imagePath").value;
+                    var htmlURL = document.getElementById("htmlURL").value;
+                    var unityURL = document.getElementById("unityURL").value;
+                    var boothURL = document.getElementById("boothURL").value;
+                    var portfolioTitle = document.getElementById("portfolioTitle").value;
+                    var eventDate = document.getElementById("eventDate").value;
+                    var figcaptionDate = document.getElementById("figcaption").value;
+
+                    // HTMLの変換
+                    var convertedHTML = '<li class="target" data-category="' + mainTag + '">\n';
+                    convertedHTML += '\t<figure>\n';
+                    convertedHTML += '\t\t<div class="portfolio-overlay">\n';
+                    convertedHTML += '\t\t\t<a href="' + htmlURL + '"><img src="' + imagePath + '" alt=""></a>\n';
+                    convertedHTML += '\t\t\t<div class="hover-mask">\n';
+                    convertedHTML += '\t\t\t\t<p>\n';
+                    convertedHTML += '\t\t\t\t\t<div class="circle">\n';
+                    convertedHTML += '\t\t\t\t\t\t<h2><a href="' + imagePath + '"><i class="fa fa-plus"></i></a></h2>\n';
+                    convertedHTML += '\t\t\t\t\t</div>\n';
+                    convertedHTML += '\t\t\t\t\t<div class="circle">\n';
+                    convertedHTML += '\t\t\t\t\t\t<h2><a href="' + htmlURL + '"><i class="fa fa-bars"></i></a></h2>\n';
+                    convertedHTML += '\t\t\t\t\t</div>\n';
+                    convertedHTML += '\t\t\t\t</p>\n';
+                    convertedHTML += '\t\t\t</div>\n';
+                    convertedHTML += '\t\t</div>\n';
+
+                    // Unityボタンの追加
+                    if (unityURL) {
+                        convertedHTML += '\t\t<a href="' + unityURL + '" class="button button-3d button-mini button-rounded button-green" style="color:#fff;">Unity</a>\n';
+                    }
+
+                    // BOOTHボタンの追加
+                    if (boothURL) {
+                        convertedHTML += '\t\t<a href="' + boothURL + '" class="button button-3d button-mini button-rounded button-red" style="color:#fff;">BOOTH</a>\n';
+                    }
+
+                    convertedHTML += '\t\t<h2 class="target-title"><a href="' + htmlURL + '">' + portfolioTitle + '</a></h2>\n';
+                    convertedHTML += '\t\t<ol class="target-categories">\n';
+                    convertedHTML += '\t\t\t<li><strong class="label ' + getLabelClass(mainTag) + '">' + capitalizeFirstLetter(mainTag) + '</strong></li>\n';
+                    convertedHTML += '\t\t\t<time datetime="' + convertDateFormat(eventDate) + '"></time>\n';
+                    convertedHTML += '\t\t</ol>\n';
+                    convertedHTML += '\t\t<figcaption>' + figcaptionDate + '</figcaption>\n';
+                    convertedHTML += '\t\t<figcaption>' + eventDate + ' ' + portfolioTitle + '</figcaption>\n';
+                    convertedHTML += '\t</figure>\n';
+                    convertedHTML += '</li>';
+
+                    // 変換結果を表示
+                    document.getElementById("convertedHTML").value = convertedHTML;
+                });
+
+                // タグのクラス属性を取得する関数
+                function getLabelClass(tag) {
+                    switch (tag) {
+                        case "sound":
+                            return "label-primary";
+                        case "event":
+                            return "label-danger";
+                        case "game":
+                            return "label-success";
+                        case "video":
+                            return "label-warning";
+                        case "other":
+                            return "label-default";
+                        default:
+                            return "label-default";
+                    }
+                }
+
+                // 文字列の最初の文字を大文字にする関数
+                function capitalizeFirstLetter(string) {
+                    return string.charAt(0).toUpperCase() + string.slice(1);
+                }
+
+                // 日付の形式を変換する関数
+                function convertDateFormat(date) {
+                    return date.replace(/\//g, '-');
+                }
+
+                // テキストボックスをクリックしたときにテキストを選択する関数
+                    function selectText() {
+                        var textBox = document.getElementById("convertedHTML");
+                        textBox.select();
+                        textBox.setSelectionRange(0, 99999); // テキストをすべて選択（モバイルデバイス用）
+                    }
+            </script>
+        </div>
+    </div>
+    <div id="pagetop" hidden>
+        <img src="../img/TOP.png" .png" width="80">
+    </div>
+    <!-- InstanceEndEditable -->
+
+    <!-- InstanceBeginEditable name="footer" -->
+    <footer id="footer" class="dark">
+        <div id="copyrights">
+            <div class="container clearfix">
+                <div class="col_half">
+                    <!-- Copyrights　============================================= -->
+                    Copyrights &copy; Cadence<br>
+                    <a href="./index.html">About This Circle</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- InstanceEndEditable -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../js/pagetop.js"></script>
+    <script src="../js/stkr.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<!-- InstanceBegin template="/Templates/Cadence.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head prefix="og: https://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <!-- InstanceBeginEditable name="meta" -->
+    <meta name=”description“ content="作品ページを作成します。" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" content="#1ABC9C">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@OECU51904255" />
+    <meta property="og:url" content="https://oecusoundserver.github.io/Cadence/generate/main.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cadence Generate" />
+    <meta property=”og:description“ content="作品ページを作成します。" />
+    <meta property="og:site_name" content="Cadence" />
+    <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+    <!-- InstanceEndEditable -->
+    <!-- Stylesheet  ============================================= -->
+    <link
+        href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"
+        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <!-- InstanceBeginEditable name="edit" -->
+    <link href="../../Cadence/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../img/yellow.png">
+    <!-- InstanceEndEditable -->
+    <!-- Document Title　============================================= -->
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Cadence - Generate</title>
+    <!-- InstanceEndEditable -->
+    <style>
+        /* ラジオボタンのスタイル */
+        .radio-container {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .radio-container input[type="radio"] {
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .radio-container label {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .radio-container input[type="radio"]:checked+label {
+            background-color: #1ABC9C;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- InstanceBeginEditable name="head" -->
+    <header>
+        <div class="Two-column">
+            <div class="left-header">
+
+                <p><a href="../index.html"><img src="../img/yellow.png" alt="cadencs" class="Logo"></a></p>
+            </div>
+            <div class="right-header">
+                <p align="center">
+                <table width="100%">
+                    <ul class="menu">
+                        <li><a href="../index.html" target="_parent">トップページ</a></li>
+                        <li><a href="./index.html" target="_parent">サークルについて</a></li>
+                        <li><a href="../portfolio/index.html" target="_parent">作品</a>
+                            <ul>
+                                <li><a href="../special/dl.html" target="_parent">ダウンロードコンテンツ</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../event/index.html" target="_parent">イベント</a>
+                            <ul>
+                                <li><a href="../event/SDFirst.html" target="_parent">【入門編】サウンド＋デザインジャム</a></li>
+                                <li><a href="../event/Nawafes.html" target="_parent">なわフェス2022</a></li>
+                                <li><a href="../portfolio/vocakore.html" target="_parent">ボカコレ2022秋</a></li>
+                                <!-- <li><a href="../event/SoundStudy.html" target="_parent">第1回サウンド講習会</a></li> -->
+                                <li><a href="../portfolio/fatty.html" target="_parent">けもケット13</a></li>
+                                <li><a href="../event/taikenkai.html" target="_parent">作詞作曲体験会</a></li>
+                                <li><a href="../event/c102.html" target="_parent">コミックマーケット102</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../special/bosyu.html" target="_parent">募集</a></li>
+                        <li><a href="../link.html" target="_parent">リンク</a></li>
+                    </ul>
+                </table>
+                </p>
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div id="main">
+        <div>
+            <h2 class="title-U-line">インフォメーション作成ツール</h2>
+            <form id="inputForm">
+                <div id="infoInputs">
+                    <div class="infoInput">
+                        <label for="infoTitle1">infoTitle:</label>
+                        <input type="text" name="infoTitle1" placeholder="infoTitleを入力してください">
+                        <label for="infoName1">infoName:</label>
+                        <input type="text" name="infoName1" placeholder="infoNameを入力してください">
+                        <button type="button" onclick="removeInfoInput(this)">削除</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addInfoInput()">インフォメーション追加</button>
+                <br><br>
+                <div id="creditInputs">
+                    <div class="creditInput">
+                        <label for="creditTitle1">creditTitle:</label>
+                        <input type="text" name="creditTitle1" placeholder="creditTitleを入力してください">
+                        <label for="creditName1">creditName:</label>
+                        <input type="text" name="creditName1" placeholder="creditNameを入力してください">
+                        <button type="button" onclick="removeCreditInput(this)">削除</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addCreditInput()">クレジット追加</button>
+                <br><br>
+                <input type="submit" value="変換">
+            </form>
+            
+            <textarea id="convertedHTML" rows="10" cols="100" readonly></textarea>
+            <br>
+            <button id="copyButton" type="button"
+                onclick="selectText(); document.execCommand('copy'); alert('変換結果をクリップボードにコピーしました。')">コピー</button>
+            
+            <script>
+                var infoCount = 1;
+                var creditCount = 1;
+
+                function addInfoInput() {
+                    var infoInputs = document.getElementById("infoInputs");
+
+                    var div = document.createElement("div");
+                    div.classList.add("infoInput");
+
+                    var infoInput = '<label for="infoTitle' + infoCount + '">infoTitle:</label>' +
+                        '<input type="text" name="infoTitle' + infoCount + '" placeholder="infoTitleを入力してください">' +
+                        '<label for="infoName' + infoCount + '">infoName:</label>' +
+                        '<input type="text" name="infoName' + infoCount + '" placeholder="infoNameを入力してください">' +
+                        '<button type="button" onclick="removeInfoInput(this)">削除</button>';
+
+                    div.innerHTML = infoInput;
+                    infoInputs.appendChild(div);
+
+                    infoCount++;
+                }
+
+                function removeInfoInput(button) {
+                    var div = button.parentNode;
+                    div.parentNode.removeChild(div);
+                }
+
+                function addCreditInput() {
+                    var creditInputs = document.getElementById("creditInputs");
+
+                    var div = document.createElement("div");
+                    div.classList.add("creditInput");
+
+                    var creditInput = '<label for="creditTitle' + creditCount + '">creditTitle:</label>' +
+                        '<input type="text" name="creditTitle' + creditCount + '" placeholder="creditTitleを入力してください">' +
+                        '<label for="creditName' + creditCount + '">creditName:</label>' +
+                        '<input type="text" name="creditName' + creditCount + '" placeholder="creditNameを入力してください">' +
+                        '<button type="button" onclick="removeCreditInput(this)">削除</button>';
+
+                    div.innerHTML = creditInput;
+                    creditInputs.appendChild(div);
+
+                    creditCount++;
+                }
+
+                function removeCreditInput(button) {
+                    var div = button.parentNode;
+                    div.parentNode.removeChild(div);
+                }
+
+                document.getElementById("inputForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    var infoTitleList = document.querySelectorAll('input[name^="infoTitle"]');
+                    var infoNameList = document.querySelectorAll('input[name^="infoName"]');
+                    var creditTitleList = document.querySelectorAll('input[name^="creditTitle"]');
+                    var creditNameList = document.querySelectorAll('input[name^="creditName"]');
+
+                    var convertedHTML = '<div>\n' +
+                        '  <section id="other_info">\n' +
+                        '    <div class="content-wrap">\n' +
+                        '      <div class="col_half" class="ma">\n' +
+                        '        <div class="Two-column">\n' +
+                        '          <div class="left">\n' +
+                        '            <h3 class="title-U-line">Information</h3>\n' +
+                        '            <table id="infoTable">\n';
+
+                    for (var i = 0; i < infoTitleList.length; i++) {
+                        var infoTitle = infoTitleList[i].value;
+                        var infoName = infoNameList[i].value;
+
+                        convertedHTML += '              <tr><th>' + infoTitle + '</th><td>' + infoName + '</td></tr>\n';
+                    }
+
+                    convertedHTML += '            </table>\n' +
+                        '          </div>\n' +
+                        '          <div class="right">\n' +
+                        '            <h3 class="title-U-line">Credits</h3>\n' +
+                        '            <table id="creditsTable">\n';
+
+                    for (var i = 0; i < creditTitleList.length; i++) {
+                        var creditTitle = creditTitleList[i].value;
+                        var creditName = creditNameList[i].value;
+
+                        convertedHTML += '              <tr><th class="credits">' + creditTitle + '</th><td>' + creditName + '</td></tr>\n';
+                    }
+
+                    convertedHTML += '            </table>\n' +
+                        '          </div>\n' +
+                        '        </div>\n' +
+                        '      </div>\n' +
+                        '    </div>\n' +
+                        '  </section>\n' +
+                        '</div>';
+
+                    document.getElementById("convertedHTML").value = convertedHTML;
+                });
+                // テキストボックスをクリックしたときにテキストを選択する関数
+                    function selectText() {
+                        var textBox = document.getElementById("convertedHTML");
+                        textBox.select();
+                        textBox.setSelectionRange(0, 99999); // テキストをすべて選択（モバイルデバイス用）
+                    }
+            </script>
+        </div>
+    </div>
+
+    <div id="pagetop" hidden>
+        <img src="../img/TOP.png" .png" width="80">
+    </div>
+    <!-- InstanceEndEditable -->
+
+    <!-- InstanceBeginEditable name="footer" -->
+    <footer id="footer" class="dark">
+        <div id="copyrights">
+            <div class="container clearfix">
+                <div class="col_half">
+                    <!-- Copyrights　============================================= -->
+                    Copyrights &copy; Cadence<br>
+                    <a href="./index.html">About This Circle</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- InstanceEndEditable -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../js/pagetop.js"></script>
+    <script src="../js/stkr.js"></script>
+</body>
+
+</html>
