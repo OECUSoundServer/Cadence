@@ -5,7 +5,7 @@
 <head prefix="og: https://ogp.me/ns#">
     <meta charset="UTF-8">
     <!-- InstanceBeginEditable name="meta" -->
-    <meta name=”description“ content="サークルサイトを作成します。" />
+    <meta name=”description“ content="作品ページを作成します。" />
     <meta name="viewport" content="width=device-width">
     <meta name="theme-color" content="#1ABC9C">
     <meta name="twitter:card" content="summary" />
@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://oecusoundserver.github.io/Cadence/generate/main.html" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Cadence Generate" />
-    <meta property=”og:description“ content="Cadenceについてや、楽曲利用について説明しています。" />
+    <meta property=”og:description“ content="作品ページを作成します。" />
     <meta property="og:site_name" content="Cadence" />
     <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
     <!-- InstanceEndEditable -->
@@ -65,13 +65,46 @@
     </header>
     <div id="main">
         <div>
-            <h2 class="title-U-line">作成ツール</h2>
+            <h2 class="title-U-line">募集ページ作成ツール</h2>
+            <form id="inputForm">
+                <div class="form-group">
+                    <label for="Title">タイトル:</label>
+                    <input type="text" name="Title" id="Title" placeholder="ポートフォリオのタイトルを入力してください">
+                </div>
+                <div class="form-group">
+                    <label for="htmlURL">HTMLのURL:</label>
+                    <input type="text" name="htmlURL" id="htmlURL" placeholder="HTMLのURLを入力してください">
+                </div>
+                <input type="submit" value="変換">
+            </form>
+
+            <textarea id="convertedHTML" rows="3" cols="100" readonly></textarea>
+            <br>
+            <button id="copyButton" type="button"
+                onclick="selectText(); document.execCommand('copy'); alert('変換結果をクリップボードにコピーしました。')">コピー</button>
+
+            <script>
+                document.getElementById("inputForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    var htmlURL = document.getElementById("htmlURL").value;
+                    var title = document.getElementById("Title").value;
+
+                    var convertedHTML = '<div>\n' +
+                        '  <h2 class="title-U-line"><a href="' + htmlURL + '">' + title + '</a></h2>\n' +
+                        '</div>';
+
+                    document.getElementById("convertedHTML").value = convertedHTML;
+                });
+
+                function selectText() {
+                    var textBox = document.getElementById("convertedHTML");
+                    textBox.select();
+                    textBox.setSelectionRange(0, 99999);
+                }
+            </script>
         </div>
     </div>
-    <div id="pagetop" hidden>
-        <img src="../img/TOP.png" .png" width="80">
-    </div>
-    <!-- InstanceEndEditable -->
 
     <div id="pagetop" hidden>
         <img src="../img/TOP.png" .png" width="80">
