@@ -53,6 +53,19 @@ h2 h3 {
   margin-left: 1em;
 }
 
+.stripe {
+  background: repeating-linear-gradient(
+    135deg,
+    #06b000,
+    #06b000 5px,
+    #3dd020 5px,
+    #3dd020 10px
+  );
+  padding: 1rem 0 1rem 0;
+  text-indent: 1rem;
+  margin-bottom: 0;
+}
+
 p {
   text-indent: 1em;
   margin: 10px 0 10px 0;
