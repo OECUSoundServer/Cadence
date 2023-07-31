@@ -429,7 +429,7 @@ textarea.c-form__input {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  /* background-color: #1abc9c; */
+  background-color: #1abc9c;
   border: solid 1px #1abc9c;
   border-radius: 4px;
   padding: 5px 32px;
