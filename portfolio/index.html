@@ -1,289 +1,349 @@
 <!doctype html>
-<html>
-<!-- InstanceBegin template="/Templates/Cadence.dwt" codeOutsideHTMLIsLocked="false" -->
+<html lang="ja">
+	<head prefix="og: https://ogp.me/ns#">
+		<meta charset="utf-8" />
+		<meta name="author" content="mixtuti" />
+		<!-- Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#1abc9c" id="meta-theme-color" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://oecusoundserver.github.io/Cadence/portfolio/index.html" />
+		<meta property="og:title" content="Cadence｜作品" />
+		<meta property="og:description" 　content="当サークルの制作物及びイベント一覧です。" />
+		<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@OECU51904255" />
+		<meta name="twitter:title" 　content="Cadence｜作品" />
+		<meta name="twitter:description" content="当サークルの制作物及びイベント一覧です。" />
+		<meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+		<meta name="”keywords”" content="サウンド,大阪電気通信大学,作品">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Icon -->
+		<link rel="icon" href="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="https://oecusoundserver.github.io/Cadence/img/yellow.png">
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="../css/style2.css" type="text/css">
+		<link rel="stylesheet" href="../css/responsive.css" type="text/css">
+		<!-- Web CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+		<!-- Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+		<!-- Icon -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Document Title -->
+		<title>Cadence｜作品</title>
+	</head>
 
-<head prefix="og: https://ogp.me/ns#">
-	<meta charset="UTF-8">
-	<meta name="author" content="mixtuti" />
-	<!-- InstanceBeginEditable name="meta" -->
-	<meta name="description" content="当サークルの制作物及びイベント一覧です。" />
-	<meta name="viewport" content="width=device-width">
-	<meta name="theme-color" content="#1ABC9C">
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@OECU51904255" />
-	<meta property="og:url" content="https://oecusoundserver.github.io/Cadence/portfolio/index.html" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Cadence Portfolio" />
-	<meta property="og:description" content="当サークルの制作物及びイベント一覧です。" />
-	<meta property="og:site_name" content="Cadence" />
-	<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
-	<!-- InstanceEndEditable -->
-	<!-- Stylesheet  ============================================= -->
-	<link
-		href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"
-		rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-	<!-- InstanceBeginEditable name="edit" -->
-	<link href="../css/style.css" rel="stylesheet" type="text/css">
-	<link rel="icon" href="../img/yellow.png">
-	<!-- InstanceEndEditable -->
-	<!-- Document Title　============================================= -->
-	<!-- InstanceBeginEditable name="doctitle" -->
-	<title>Cadence - Portfolio</title>
-	<!-- InstanceEndEditable -->
-</head>
-
-<body>
-	<!-- InstanceBeginEditable name="head" -->
-	<header>
-		<iframe src="../header.html" frameborder="0" width="100%" height="100%"></iframe>
-	</header>
-	<!-- InstanceEndEditable -->
-	<!-- InstanceBeginEditable name="body" -->
-
-	<div id="main">
-		<div>
-			<h2 class="title-U-line"><span class="Title">Portfolio</span></h2>
-
-			<section class="gallery">
-				<div class="container">
-					<input type="radio" id="All" name="categories" value="All" checked>
-					<input type="radio" id="sound" name="categories" value="sound">
-					<input type="radio" id="event" name="categories" value="event">
-					<input type="radio" id="movie" name="categories" value="movie">
-					<input type="radio" id="game" name="categories" value="game">
-					<input type="radio" id="study" name="categories" value="study">
-					<input type="radio" id="booth" name="categories" value="booth">
-					<input type="radio" id="other" name="categories" value="other">
-					<ol class="filters">
-						<li><label for="All">All</label></li>
-						<li><label for="sound">サウンド</label></li>
-						<li><label for="event">イベント</label></li>
-						<li><label for="movie">映像</label></li>
-						<li><label for="game">ゲーム</label></li>
-						<li><label for="study">講習会</label></li>
-						<li><label for="booth">BOOTH Available</label></li>
-						<li><label for="other">その他</label></li>
-					</ol>
-					<ol class="targets">
-						<li class="target" data-category="sound event booth">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href="../event/c102.html"><img src="../img/ToyBox.png" alt=""></a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/ToyBox.png"><i class="fa fa-plus"></i></a></h2>
-										</div>
-										<div class="circle">
-											<h2><a href="../event/c102.html"><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<h2 class="target-title"><a href="../event/c102.html">ToyBox</a></h2>
-								<ol class="target-categories">
-									<li><strong class="label label-primary">Sound</strong></li>
-									<time datetime="2023-08-13"></time>
-								</ol>
-								<figcaption>オリジナル</figcaption>
-								<figcaption>2023/08/13 コミケ102</figcaption>
-							</figure>
-						</li>
-
-						<li class="target" data-category="sound event study">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href=""> <img src="../img/yellow.png" alt=""> </a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
-										</div>
-						
-										<div class="circle">
-											<h2><a href=""><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<h2 class="target-title"> <a href="">作詞作曲体験会</a> </h2>
-								<ol class="target-categories">
-									<li><strong class="label label-danger">Event</strong></li>
-									<time datetime="2023-05-14"></time>
-								</ol>
-								<figcaption>イベント</figcaption>
-								<figcaption>2023/05/14 作詞作曲体験会</figcaption>
-							</figure>
-						</li>
-
-						<li class="target" data-category="game event booth sound">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href="../portfolio/fatty.html"> <img src="../img/kemo.png" alt=""> </a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/kemo.png"><i class="fa fa-plus"></i></a></h2>
-										</div>
-						
-										<div class="circle">
-											<h2><a href="../portfolio/fatty.html"><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<a href="https://cadence.booth.pm/items/4713030" class="button button-3d button-mini button-rounded button-red"
-									style="color:#fff;">booth</a>
-								<a href="https://unityroom.com/games/fattycat" class="button button-3d button-mini button-rounded button-green"
-									style="color: #fff;">Unity</a>
-								<h2 class="target-title"> <a href="../portfolio/fatty.html">ふぁってい・きゃっと</a> </h2>
-								<ol class="target-categories">
-									<li><strong class="label label-success">Game</strong></li>
-									<li><strong class="label label-danger">Event</strong></li>
-									<time datetime="2023-05-06"></time>
-								</ol>
-								<figcaption>オリジナル</figcaption>
-								<figcaption>2023/05/06 けもケット13</figcaption>
-							</figure>
-						</li>
-						
-						<li class="target" data-category="sound event">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href="../event/SDFirst.html"> <img src="../img/SD_1.jpg" alt=""> </a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/SD_1.jpg"><i class="fa fa-plus"></i></a></h2>
-										</div>
-
-										<div class="circle">
-											<h2><a href="../event/SDFirst.html"><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<h2 class="target-title"> <a href="../event/SDFirst.html">サウンド+デザインジャム</a> </h2>
-								<ol class="target-categories">
-									<li><strong class="label label-primary">Sound</strong></li>
-									<li><strong class="label label-danger">Event</strong></li>
-									<time datetime="2022-08-28"></time>
-								</ol>
-								<figcaption>イベント</figcaption>
-								<figcaption>2022/08/28 サウンド＋デザインジャム</figcaption>
-							</figure>
-						</li>
-
-						<li class="target" data-category="sound event">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href="../event/Nawafes.html"> <img src="../img/Nawafes_1.png" alt=""> </a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/Nawafes_1.png"><i class="fa fa-plus"></i></a></h2>
-										</div>
-
-										<div class="circle">
-											<h2><a href="../event/Nawafes.html"><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<h2 class="target-title"> <a href="../event/Nawafes.html">なわフェス2022</a> </h2>
-								<ol class="target-categories">
-									<li><strong class="label label-primary">Sound</strong></li>
-									<li><strong class="label label-danger">Event</strong></li>
-									<time datetime="2022-11-03"></time>
-								</ol>
-								<figcaption>オリジナル</figcaption>
-								<figcaption>2022/11/03 なわフェス2022</figcaption>
-							</figure>
-						</li>
-						<li class="target" data-category="sound movie">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href="../portfolio/vocakore.html"> <img src="../img/dice_1.jpg" alt=""> </a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/dice_1.jpg"><i class="fa fa-plus"></i></a></h2>
-										</div>
-
-										<div class="circle">
-											<h2><a href="../portfolio/vocakore.html"><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<h2 class="target-title"> <a href="../portfolio/vocakore.html">サイコロタイムジェリー</a> </h2>
-								<ol class="target-categories">
-									<li><strong class="label label-primary">Sound</strong></li>
-									<li><strong class="label label-warning">Movie</strong></li>
-									<time datetime="2022-10-10"></time>
-								</ol>
-								<figcaption>オリジナル</figcaption>
-								<figcaption>2022/10/10 ボカコレ2022秋</figcaption>
-							</figure>
-						</li>
-
-						<li class="target" data-category="other">
-							<figure>
-								<div class="portfolio-overlay">
-									<a href="../special/dl.html"> <img src="../img/yellow.png" alt=""> </a>
-									<div class="hover-mask">
-										<p>
-										<div class="circle">
-											<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
-										</div>
-
-										<div class="circle">
-											<h2><a href="../special/dl.html"><i class="fa fa-bars"></i></a></h2>
-										</div>
-										</p>
-									</div>
-								</div>
-								<h2 class="target-title"> <a href="../special/dl.html">DLC</a> </h2>
-								<ol class="target-categories">
-									<li><strong class="label label-default">Other</strong></li>
-									<time datetime="2022-10-10"></time>
-								</ol>
-								<figcaption>DLC</figcaption>
-							</figure>
-						</li>
-					</ol>
-				</div>
-			</section>
-		</div>
-	</div>
-	<div id="pagetop" hidden>
-		<img src="../img/TOP.png" .png" width="80">
-	</div>
-	<!-- InstanceEndEditable -->
-
-	<!-- InstanceBeginEditable name="footer" -->
-	<footer id="footer" class="dark">
-		<div id="copyrights">
-			<div class="container clearfix">
-				<div class="col_half">
-					<!-- Copyrights　============================================= -->
-					Copyrights &copy; Cadence<br>
-					<a href="../about/index.html">About This Circle</a>
+	<body>
+		<!-- ロード画面 -->
+		<script data-cfasync="false" data-no-defer="1">var ewww_webp_supported = false;</script>
+		<div id="loftloader-wrapper" class="pl-imgloading" data-show-close-time="5000" data-max-load-time="60000">
+			<div class="loader-section section-up"></div>
+			<div class="loader-section section-down"></div>
+			<div class="loader-inner">
+				<div id="loader">
+					<div class="imgloading-container"><span class="lazyload"
+							data-back="https://oecusoundserver.github.io/Cadence/img/nikukyu.png"></span>
+					</div><img width="76" height="59" data-no-lazy="1" class="skip-lazy" alt="loader image"
+						src="https://oecusoundserver.github.io/Cadence/img/nikukyu.png">
 				</div>
 			</div>
+			<div class="loader-close-button" style="display: none;"><span class="screen-reader-text">Close</span></div>
 		</div>
-	</footer>
-	<!-- InstanceEndEditable -->
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="../js/pagetop.js"></script>
-	<script src="../js/stkr.js"></script>
-	<script src="../js/new.js"></script>
-</body>
-<!-- InstanceEnd -->
+		
+		<!-- ヘッダー -->
+		<header class="header">
+			<!-- Header Logo -->
+			<div class="logo">
+				<a href="#">
+					<p><a href="https://oecusoundserver.github.io/Cadence/index.html"><img
+								src="https://oecusoundserver.github.io/Cadence/img/yellow.png" alt="Cadence_Icon"
+								class="logo"></a></p>
+				</a>
+			</div>
+		
+			<!-- Menu -->
+			<div id="hamburger">
+				<div class="icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<!-- Nav Phon -->
+			<nav class="nav sm">
+				<ul>
+					<li><a href="https://oecusoundserver.github.io/Cadence/index.html">トップページ</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/about/index.html">サークルについて</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html">作品</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/event/index.html">イベント</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/special/bosyu.html">募集</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/link.html">リンク</a></li>
+				</ul>
+			</nav>
+			<!-- Nav PC -->
+			<nav class="nav pc">
+				<ul>
+					<li><a href="https://oecusoundserver.github.io/Cadence/index.html">トップページ</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/about/index.html">サークルについて</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html">作品</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/event/index.html">イベント</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/special/bosyu.html">募集</a></li>
+					<li><a href="https://oecusoundserver.github.io/Cadence/link.html">リンク</a></li>
+				</ul>
+			</nav>
+		</header>
+		<hr>
 
+		<!-- 本文 -->
+		<main class="top">
+			<article>
+				<div>
+					<h2 class="title DotGothic16">Portfolio</h2>
+				
+					<section class="gallery">
+						<div class="container">
+							<input type="radio" id="All" name="categories" value="All" checked>
+							<input type="radio" id="sound" name="categories" value="sound">
+							<input type="radio" id="event" name="categories" value="event">
+							<input type="radio" id="movie" name="categories" value="movie">
+							<input type="radio" id="game" name="categories" value="game">
+							<input type="radio" id="study" name="categories" value="study">
+							<input type="radio" id="booth" name="categories" value="booth">
+							<input type="radio" id="other" name="categories" value="other">
+							<ol class="filters">
+								<li><label for="All">All</label></li>
+								<li><label for="sound">サウンド</label></li>
+								<li><label for="event">イベント</label></li>
+								<li><label for="movie">映像</label></li>
+								<li><label for="game">ゲーム</label></li>
+								<li><label for="study">講習会</label></li>
+								<li><label for="booth">BOOTH Available</label></li>
+								<li><label for="other">その他</label></li>
+							</ol>
+							<ol class="targets">
+								<li class="target" data-category="sound event booth">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/c102.html"><img src="../img/ToyBox.png" alt=""></a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/ToyBox.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+												<div class="circle">
+													<h2><a href="../event/c102.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"><a href="../event/c102.html">ToyBox</a></h2>
+										<ol class="target-categories">
+											<li><strong class="label label-primary">Sound</strong></li>
+											<time datetime="2023-08-13"></time>
+										</ol>
+										<figcaption>オリジナル</figcaption>
+										<figcaption>2023/08/13 コミケ102</figcaption>
+									</figure>
+								</li>
+				
+								<li class="target" data-category="sound event study">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/taikenkai.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../event/taikenkai.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/taikenkai.html">作詞作曲体験会</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-danger">Event</strong></li>
+											<time datetime="2023-05-14"></time>
+										</ol>
+										<figcaption>イベント</figcaption>
+										<figcaption>2023/05/14 作詞作曲体験会</figcaption>
+									</figure>
+								</li>
+				
+								<li class="target" data-category="game event booth sound">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../portfolio/fatty.html"> <img src="../img/kemo.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/kemo.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../portfolio/fatty.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<a href="https://cadence.booth.pm/items/4713030"
+											class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
+										<a href="https://unityroom.com/games/fattycat"
+											class="button button-3d button-mini button-rounded button-green"
+											style="color: #fff;">Unity</a>
+										<h2 class="target-title"> <a href="../portfolio/fatty.html">ふぁってい・きゃっと</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-success">Game</strong></li>
+											<li><strong class="label label-danger">Event</strong></li>
+											<time datetime="2023-05-06"></time>
+										</ol>
+										<figcaption>オリジナル</figcaption>
+										<figcaption>2023/05/06 けもケット13</figcaption>
+									</figure>
+								</li>
+				
+								<li class="target" data-category="sound event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/SDFirst.html"> <img src="../img/SD_1.jpg" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/SD_1.jpg"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../event/SDFirst.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/SDFirst.html">サウンド+デザインジャム</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-primary">Sound</strong></li>
+											<li><strong class="label label-danger">Event</strong></li>
+											<time datetime="2022-08-28"></time>
+										</ol>
+										<figcaption>イベント</figcaption>
+										<figcaption>2022/08/28 サウンド＋デザインジャム</figcaption>
+									</figure>
+								</li>
+				
+								<li class="target" data-category="sound event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/Nawafes.html"> <img src="../img/Nawafes_1.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/Nawafes_1.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../event/Nawafes.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/Nawafes.html">なわフェス2022</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-primary">Sound</strong></li>
+											<li><strong class="label label-danger">Event</strong></li>
+											<time datetime="2022-11-03"></time>
+										</ol>
+										<figcaption>オリジナル</figcaption>
+										<figcaption>2022/11/03 なわフェス2022</figcaption>
+									</figure>
+								</li>
+								<li class="target" data-category="sound movie">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../portfolio/vocakore.html"> <img src="../img/dice_1.jpg" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/dice_1.jpg"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../portfolio/vocakore.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../portfolio/vocakore.html">サイコロタイムジェリー</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-primary">Sound</strong></li>
+											<li><strong class="label label-warning">Movie</strong></li>
+											<time datetime="2022-10-10"></time>
+										</ol>
+										<figcaption>オリジナル</figcaption>
+										<figcaption>2022/10/10 ボカコレ2022秋</figcaption>
+									</figure>
+								</li>
+				
+								<li class="target" data-category="other">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../special/dl.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../special/dl.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../special/dl.html">DLC</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-default">Other</strong></li>
+											<time datetime="2022-10-10"></time>
+										</ol>
+										<figcaption>DLC</figcaption>
+									</figure>
+								</li>
+							</ol>
+						</div>
+					</section>
+				</div>
+			</article>
+		</main>
+
+		<div id="pagetop" hidden>
+			<img src="../img/TOP.png" .png" width="80">
+		</div>
+
+		<!-- フッター -->
+		<footer id="footer" class="dark">
+			<div id="copyrights">
+				<div class="container clearfix">
+					<div class="col_half">
+						<!-- Copyrights -->
+						Copyrights &copy; Cadence<br>
+						<a href="../about/index.html">About This Circle</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- jQuery JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script src="../js/menu.js"></script>
+		<script src="../js/slider.js"></script>
+		<script src="../js/pagetop.js"></script>
+		<script src="../js/stkr.js"></script>
+		<script src="../js/emoji.js"></script>
+		<script src='../js/loader.js'></script>
+		<script src="../js/new.js"></script>
+	</body>
 </html>

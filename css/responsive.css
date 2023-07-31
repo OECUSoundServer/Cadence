@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*-----------------------------------------------------------------------------------
+
+  - Main
+  - Header
+  - Works
+  - Form
+
+-----------------------------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+	Main
+-----------------------------------------------------------------*/
+@media screen and (max-width: 1136px) {
+  .Two-column {
+    display: block;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    width: 100%;
+  }
+  .title-half:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 7px;
+    background: -webkit-repeating-linear-gradient(
+      -45deg,
+      #6ad1c8,
+      #6ad1c8 2px,
+      #fff 2px,
+      #fff 4px
+    );
+    background: repeating-linear-gradient(
+      -45deg,
+      #6ad1c8,
+      #6ad1c8 2px,
+      #fff 2px,
+      #fff 4px
+    );
+  }
+
+  h5 {
+    margin: 2px;
+  }
+}
+
+/* ----------------------------------------------------------------
+	Header
+-----------------------------------------------------------------*/
+@media (max-width: 900px) {
+  .pc {
+    display: none;
+  }
+
+  #hamburger {
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    height: 60px;
+    width: 60px;
+  }
+
+  .icon span {
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 4px;
+    background-color: #555;
+    border-radius: 8px;
+    transition: ease 0.75s;
+  }
+
+  .icon span:nth-of-type(1) {
+    top: 16px;
+  }
+  .icon span:nth-of-type(2) {
+    top: 28px;
+  }
+  .icon span:nth-of-type(3) {
+    bottom: 16px;
+  }
+
+  .close span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 28px;
+  }
+
+  .close span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .close span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+  }
+
+  .sm {
+    top: 60px;
+    left: 0px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    /* background-color: #1abc9c; */
+    background-color: #eee;
+  }
+
+  .nav ul {
+    flex-direction: column;
+  }
+
+  .nav a {
+    text-align: center;
+    border-top: solid 0.5px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* ----------------------------------------------------------------
+	Form
+-----------------------------------------------------------------*/
+@media (min-width: 640px) {
+  .c-form__item {
+    flex-wrap: nowrap;
+  }
+  .c-form__label {
+    width: 40%;
+  }
+  .c-form__input {
+    width: 55%;
+  }
+}
+
+/* ----------------------------------------------------------------
+	Portfolio
+-----------------------------------------------------------------*/
+@media screen and (max-width: 900px) {
+  .targets {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 14px;
+  }
+  .targets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
