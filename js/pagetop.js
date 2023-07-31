@@ -4,7 +4,7 @@ $(function(){
  
   //ボタンの表示設定
   $(window).scroll(function(){
-    if($(this).scrollTop()>600){
+    if($(this).scrollTop()>300){
       //---- 画面を600pxスクロールしたら、ボタンを表示する
       topBtn.fadeIn();
     }else{
