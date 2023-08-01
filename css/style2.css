@@ -83,6 +83,10 @@ li {
   overflow: hidden;
 }
 
+.ma {
+  padding: 10px 0 10px 0;
+}
+
 /* ----------------------------------------------------------------
 	Main
 -----------------------------------------------------------------*/
@@ -492,6 +496,7 @@ textarea.c-form__input {
 .emoji {
   all: initial;
   vertical-align: text-bottom;
+  position: relative;
 }
 
 /* ----------------------------------------------------------------
@@ -1704,6 +1709,26 @@ pre {
   user-select: none;
 }
 
+.button.button-3d {
+  border-radius: 3px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  text-transform: uppercase;
+}
+
+.button.button-rounded {
+  border-radius: 3px;
+}
+
+.button.button-mini {
+  padding: 0 14px;
+  font-size: 11px;
+  height: 28px;
+  line-height: 28px;
+}
+
 /* ----------------------------------------------------------------
 	Timer
 -----------------------------------------------------------------*/
@@ -2226,4 +2251,43 @@ details[open] .icon_d {
   left: 15%;
   width: 70%;
   height: 70%;
+}
+
+/* ----------------------------------------------------------------
+	Download
+-----------------------------------------------------------------*/
+.download-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  justify-content: center;
+}
+
+.download-text {
+  display: inline-block;
+  margin-left: 10px;
+  color: #000; /* 任意の色を指定 */
+}
+
+/* フォームとボタンを横並びに配置するためのスタイル */
+.download-container > label,
+.download-container > #download-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.download-btn {
+  display: none;
+  margin-left: 10px;
+  padding: 5px 10px;
+  /* background-color: #007bff; */
+  background-color: #1abc9c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.download-btn:hover {
+  /* background-color: #0056b3; */
+  background-color: #6ad1c8;
 }
