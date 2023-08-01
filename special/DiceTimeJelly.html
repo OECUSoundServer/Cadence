@@ -101,9 +101,58 @@
 		<main class="top">
 			<article>
 				<div>
-					<h2 class="title DotGothic16">サイコロタイムジェリー <span class="Title">インストのDL</span></h2>
-					<a href="https://drive.google.com/file/d/1DxLfDgFunYY_EEde0XjTIhjlA-TzmUii/view" class="btn" target="_blank"><i class="fa fa-download"></i> DLする</a>
-					<p>上のDLするボタンを開くと、新たにタブが開き、そこからダウンロードができます。歌ってみたなどの動画制作によければお使いください。</p>
+					<h2 class="title DotGothic16"><img class="emoji" src="../img/dice-solid.svg" style="bottom: 0.2rem;"> サイコロタイムジェリー <span class="Title">インストのDL</span></h2>
+					<div>
+						<div>
+							<div class="Two-column">
+								<div class="left">
+									<img src="../img/dice.jpg" width="90%">
+								</div>
+
+								<div class="right">
+									<h3 style="text-align: center">「サイコロタイムジェリー」</h3><br>
+									<p>上のDLするボタンを開くと、新たにタブが開き、そこから自動でダウンロードされます。歌ってみたなどの動画制作によければお使いください。</p>
+									<p>ダウンロードできないなどの問題が発生した場合は、<a href="../index.html#contact-info" target="_blank"><u>こちらのフォーム</u></a>まで問い合わせお願いします。</p>
+								</div>
+							</div>
+							<div class="download-container">
+								<label for="file-format">ファイル形式を選択 :&nbsp;</label>
+								<select id="file-format" style="font-size: 1.1rem;">
+									<option value="" disabled selected>形式を選択してください</option>
+									<option value="mp3">MP3 - 3.8MB</option>
+								</select>
+						
+								<div id="download-buttons">
+									<span id="download-prompt" class="download-text">形式を選択してください</span>
+									<a href="https://drive.google.com/uc?export=download&id=1DxLfDgFunYY_EEde0XjTIhjlA-TzmUii" id="mp3-btn" class="download-btn" style="display: none;">.mp3をダウンロード</a>
+									<!-- <a href="#" id="wav-btn" class="download-btn" style="display: none;">.wavをダウンロード</a>
+									<a href="#" id="flac-btn" class="download-btn" style="display: none;">.flacをダウンロード</a> -->
+								</div>
+							</div>
+						</div>
+						<!-- <a href="https://drive.google.com/uc?export=download&id=1DxLfDgFunYY_EEde0XjTIhjlA-TzmUii" class="btn" target="_blank"><i class="fa fa-download"></i> DLする</a> -->
+					</div>
+
+					<h2 class="title DotGothic16"><i class="fab fa-youtube"></i> 動画(オンボーカル)</h2>
+					<div>
+						<div class="Two-column">
+							<div class="left">
+								<div class="video">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/9QlH0fQZBUw"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+							<div class="right">
+								<div class="video">
+									<script type="application/javascript"
+										src="https://embed.nicovideo.jp/watch/sm41207815/script?w=640&h=360"></script><noscript><a
+											href="https://www.nicovideo.jp/watch/sm41207815">サイコロタイムジェリー feat. 可不</a></noscript>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="ma">
@@ -151,5 +200,6 @@
 		<script src="../js/emoji.js"></script>
 		<script src='../js/loader.js'></script>
 		<script src="../js/timer.js"></script>
+		<script src="../js/data.js"></script>
 	</body>
 <!-- InstanceEnd --></html>
