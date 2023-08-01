@@ -156,3 +156,21 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ----------------------------------------------------------------
+	Download
+-----------------------------------------------------------------*/
+@media (max-width: 767px) {
+  .download-container {
+    flex-direction: column;
+  }
+
+  #file-format {
+    margin: 10px auto;
+  }
+
+  .download-btn {
+    display: block;
+    margin: 10px auto;
+  }
+}
