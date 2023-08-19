@@ -1519,6 +1519,28 @@ input[type="radio"] {
   color: #fff;
 }
 
+/* 並び替えボタン */
+/* ボタン要素にクラスを追加してスタイルを適用 */
+.custom-button-button {
+  text-align: center;
+  display: inline-block;
+  color: #999;
+  background-color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.25rem;
+  min-width: 50px;
+  line-height: normal;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* ボタン要素にホバーエフェクトを追加 */
+.custom-button-button:hover {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
 .targets {
   display: grid;
   grid-gap: 1.5rem;
@@ -1578,6 +1600,13 @@ input[type="radio"] {
 [value="game"]:checked ~ .filters [for="game"],
 [value="study"]:checked ~ .filters [for="study"],
 [value="booth"]:checked ~ .filters [for="booth"],
+[value="bandcamp"]:checked ~ .filters [for="bandcamp"],
+[value="discontinued"]:checked ~ .filters [for="discontinued"],
+[value="free"]:checked ~ .filters [for="free"],
+[value="new"]:checked ~ .filters [for="new"],
+[value="cd"]:checked ~ .filters [for="cd"],
+[value="card"]:checked ~ .filters [for="card"],
+[value="sticker"]:checked ~ .filters [for="sticker"],
 [value="other"]:checked ~ .filters [for="other"] {
   background: #1abc9c;
   color: #fff;
@@ -1592,6 +1621,15 @@ input[type="radio"] {
 [value="game"]:checked ~ .targets .target:not([data-category~="game"]),
 [value="study"]:checked ~ .targets .target:not([data-category~="study"]),
 [value="booth"]:checked ~ .targets .target:not([data-category~="booth"]),
+[value="bandcamp"]:checked ~ .targets .target:not([data-category~="bandcamp"]),
+[value="discontinued"]:checked
+  ~ .targets
+  .target:not([data-category~="discontinued"]),
+[value="free"]:checked ~ .targets .target:not([data-category~="free"]),
+[value="new"]:checked ~ .targets .target:not([data-category~="new"]),
+[value="cd"]:checked ~ .targets .target:not([data-category~="cd"]),
+[value="card"]:checked ~ .targets .target:not([data-category~="card"]),
+[value="sticker"]:checked ~ .targets .target:not([data-category~="sticker"]),
 [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
   display: none;
 }
