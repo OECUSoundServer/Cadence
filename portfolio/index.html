@@ -113,6 +113,9 @@
 							<input type="radio" id="game" name="categories" value="game">
 							<input type="radio" id="study" name="categories" value="study">
 							<input type="radio" id="booth" name="categories" value="booth">
+							<input type="radio" id="bandcamp" name="categories" value="bandcamp">
+							<input type="radio" id="discontinued" name="categories" value="discontinued">
+							<input type="radio" id="free" name="categories" value="free">
 							<input type="radio" id="other" name="categories" value="other">
 							<ol class="filters">
 								<li><label for="All">All</label></li>
@@ -121,9 +124,15 @@
 								<li><label for="movie">映像</label></li>
 								<li><label for="game">ゲーム</label></li>
 								<li><label for="study">講習会</label></li>
-								<li><label for="booth">BOOTH Available</label></li>
+								<li><label for="booth">BOOTH</label></li>
+								<!-- <li><label for="booth">BOOTH Available</label></li> -->
+								<li><label for="bandcamp">Bandcamp</label></li>
+								<li><label for="discontinued">在庫切れ</label></li>
+								<li><label for="free">無料・特典</label></li>
 								<li><label for="other">その他</label></li>
+								<button class="custom-button-button" id="sortButton"><i class="fas fa-random"></i></button>
 							</ol>
+							
 							<ol class="targets">
 								<li class="target" data-category="sound event booth">
 									<figure>
@@ -307,9 +316,10 @@
 										<h2 class="target-title"> <a href="../special/dl.html">DLC</a> </h2>
 										<ol class="target-categories">
 											<li><strong class="label label-default">Other</strong></li>
-											<time datetime="2022-10-10"></time>
+											<time datetime="2022-06-29"></time>
 										</ol>
 										<figcaption>DLC</figcaption>
+										<figcaption>2022/06/29</figcaption>
 									</figure>
 								</li>
 							</ol>
@@ -345,5 +355,6 @@
 		<script src="../js/emoji.js"></script>
 		<script src='../js/loader.js'></script>
 		<script src="../js/new.js"></script>
+		<script src="../js/sort.js"></script>
 	</body>
 </html>
