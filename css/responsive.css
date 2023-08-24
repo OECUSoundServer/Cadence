@@ -184,3 +184,9 @@
     width: 100%; /* 画面幅いっぱいに広げる */
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .portfolio-item {
+    width: 50%; /* 画面幅の半分に設定して2列にする */
+  }
+}
