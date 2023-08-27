@@ -2355,3 +2355,60 @@ details[open] .icon_d {
   height: 100%;
   object-fit: contain; /* 画像をコンテナに合わせて縮小/拡大 */
 }
+
+/* ----------------------------------------------------------------
+	Sort
+-----------------------------------------------------------------*/
+
+#albumTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#albumTable th,
+#albumTable td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#albumTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#albumTable th {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* 調整した幅のスタイル */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 10%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 25%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 20%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 5%;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(6),
+td:nth-child(6) {
+  width: 15%;
+}
+
+.search-button-container {
+  text-align: right;
+}
