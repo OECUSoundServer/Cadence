@@ -37,7 +37,11 @@
     <!-- Document Title -->
     <title>Cadence｜Other</title>
     <style>
-        
+        /* テーブルコンテナのスタイル */
+        .table-container {
+            overflow-x: auto; /* 横スクロール可能にする */
+            max-width: 100%; /* 横幅が画面に収まるようにする */
+        }
     </style>
 </head>
 
@@ -109,246 +113,33 @@
                 <input type="text" id="searchInput" placeholder="検索キーワード" oninput="searchData()">
             </div>
 
-            <table id="albumTable">
-                <!-- <thead>
-                    <tr>
-                        <th onclick="sortTable(0)">型番 <i class="fa fa-sort"></i></th>
-                        <th onclick="sortTable(1)">アルバム名 <i class="fa fa-sort"></i></th>
-                        <th onclick="sortTable(2)">曲名 <i class="fa fa-sort"></i></th>
-                        <th onclick="sortTable(3)">原曲名 <i class="fa fa-sort"></i></th>
-                        <th onclick="sortTable(4)">番号 <i class="fa fa-sort"></i></th>
-                        <th onclick="sortTable(5)">アーティスト名 <i class="fa fa-sort"></i></th>
-                        <th onclick="sortTable(6)">発行日 <i class="fa fa-sort"></i></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>ambience</td>
-                        <td>オリジナル</td>
-                        <td>1</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>attack</td>
-                        <td>オリジナル</td>
-                        <td>２</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cancel</td>
-                        <td>オリジナル</td>
-                        <td>3</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cat_attacked_1</td>
-                        <td>オリジナル</td>
-                        <td>4</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cat_attacked_2</td>
-                        <td>オリジナル</td>
-                        <td>5</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cat_attacked_3</td>
-                        <td>オリジナル</td>
-                        <td>6</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cat_standby_1</td>
-                        <td>オリジナル</td>
-                        <td>7</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cat_standby_2</td>
-                        <td>オリジナル</td>
-                        <td>8</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>cat_standby_3</td>
-                        <td>オリジナル</td>
-                        <td>9</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>done</td>
-                        <td>オリジナル</td>
-                        <td>10</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>e_found</td>
-                        <td>オリジナル</td>
-                        <td>11</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>e_tail</td>
-                        <td>オリジナル</td>
-                        <td>12</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>e_walk</td>
-                        <td>オリジナル</td>
-                        <td>13</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>p_jump_h</td>
-                        <td>オリジナル</td>
-                        <td>14</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>p_jump_n</td>
-                        <td>オリジナル</td>
-                        <td>15</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>p_walk</td>
-                        <td>オリジナル</td>
-                        <td>16</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>purr</td>
-                        <td>オリジナル</td>
-                        <td>17</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>select</td>
-                        <td>オリジナル</td>
-                        <td>18</td>
-                        <td>⊥S!7!H!N</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0001</td>
-                        <td>FATTY CAT</td>
-                        <td>StageBGM</td>
-                        <td>オリジナル</td>
-                        <td>19</td>
-                        <td>mixtuti</td>
-                        <td>2023-05-06</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0002</td>
-                        <td>ToyBox</td>
-                        <td>【Question】BOX</td>
-                        <td>オリジナル</td>
-                        <td>1</td>
-                        <td>Hiro_DG</td>
-                        <td>2023-08-13</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0002</td>
-                        <td>ToyBox</td>
-                        <td>ToyBox Future</td>
-                        <td>オリジナル</td>
-                        <td>2</td>
-                        <td>Infill</td>
-                        <td>2023-08-13</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0002</td>
-                        <td>ToyBox</td>
-                        <td>ToyBox Future(Remix ver)</td>
-                        <td>ToyBox Future</td>
-                        <td>3</td>
-                        <td>klokirb</td>
-                        <td>2023-08-13</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0002</td>
-                        <td>ToyBox</td>
-                        <td>【Question】BOX(Remix ver)</td>
-                        <td>【Question】BOX</td>
-                        <td>4</td>
-                        <td>mixtuti</td>
-                        <td>2023-08-13</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0003</td>
-                        <td>ToyBox(購入特典)</td>
-                        <td>【Question】BOX(instrumental)</td>
-                        <td>オリジナル</td>
-                        <td>1</td>
-                        <td>Hiro_DG</td>
-                        <td>2023-08-13</td>
-                    </tr>
-                    <tr>
-                        <td>CAD-0003</td>
-                        <td>ToyBox(購入特典)</td>
-                        <td>ToyBox Future(instrumental)</td>
-                        <td>オリジナル</td>
-                        <td>2</td>
-                        <td>Infill</td>
-                        <td>2023-08-13</td>
-                    </tr>
-                </tbody> -->
-            </table>
+            <div class="table-container">
+                <table id="albumTable" style="width: 100%;">
+                    <!-- <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">型番 <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(1)">アルバム名 <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(2)">曲名 <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(3)">原曲名 <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(4)">番号 <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(5)">アーティスト名 <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(6)">発行日 <i class="fa fa-sort"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CAD-0001</td>
+                            <td>FATTY CAT</td>
+                            <td>ambience</td>
+                            <td>オリジナル</td>
+                            <td>1</td>
+                            <td>⊥S!7!H!N</td>
+                            <td>2023-05-06</td>
+                        </tr>
+                    </tbody> -->
+                </table>
+            </div>
+            
         </article>
     </main>
 
