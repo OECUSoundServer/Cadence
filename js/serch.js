@@ -51,7 +51,6 @@ function displayTableData(data) {
     table.appendChild(tbody);
 }
 
-// テーブルをソートする関数
 function sortTable(column) {
     if (currentSortColumn === column) {
         currentSortOrder *= -1; // クリックした列が既にソート対象の場合、昇順と降順を切り替える
@@ -68,7 +67,22 @@ function sortTable(column) {
     rows.sort((a, b) => {
         const aValue = a.querySelector(`td:nth-child(${columnIndex(column)})`).textContent;
         const bValue = b.querySelector(`td:nth-child(${columnIndex(column)})`).textContent;
-        return aValue.localeCompare(bValue) * currentSortOrder;
+
+        // 日付を解析してDateオブジェクトに変換
+        const aDate = parseDate(aValue);
+        const bDate = parseDate(bValue);
+
+        // 数値の比較を行うために数値に変換
+        const aValueNumeric = parseFloat(aValue);
+        const bValueNumeric = parseFloat(bValue);
+
+        if (aDate && bDate) {
+            return (aDate - bDate) * currentSortOrder;
+        } else if (!isNaN(aValueNumeric) && !isNaN(bValueNumeric)) {
+            return (aValueNumeric - bValueNumeric) * currentSortOrder;
+        } else {
+            return aValue.localeCompare(bValue) * currentSortOrder;
+        }
     });
 
     tbody.innerHTML = "";
@@ -80,6 +94,18 @@ function sortTable(column) {
     const sortIcon = header.querySelector("i.fa-sort");
     sortIcon.classList.remove("fa-sort");
     sortIcon.classList.add(currentSortOrder === 1 ? "fa-sort-up" : "fa-sort-down");
+}
+
+// 日付を解析してDateオブジェクトに変換する関数
+function parseDate(dateString) {
+    const dateParts = dateString.split('-');
+    if (dateParts.length === 3) {
+        const year = parseInt(dateParts[0], 10);
+        const month = parseInt(dateParts[1], 10) - 1; // 月は0から11で表現されるため
+        const day = parseInt(dateParts[2], 10);
+        return new Date(year, month, day);
+    }
+    return null; // 不正な日付の場合はnullを返す
 }
 
 // ソートアイコンをリセット
