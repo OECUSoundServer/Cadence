@@ -2412,3 +2412,91 @@ td:nth-child(6) {
 .search-button-container {
   text-align: right;
 }
+
+.kiyaku li {
+  list-style-type: decimal;
+  margin-left: 24px;
+}
+
+.kiyaku ul li {
+  list-style-type: disc;
+  margin-left: 24px;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+}
+
+.circle img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: none;
+}
+
+.inner {
+  height: 400px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.member h1 {
+  position: relative; /*相対位置*/
+  line-height: 1.4; /*行高*/
+  display: inline-block;
+}
+
+.member h1:before,
+.member h1:after {
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  display: inline-block;
+  font-size: 1em;
+  color: #ff6a6a;
+}
+.member h1:before {
+  content: "\f053"; /*アイコン種類*/
+  padding-right: 0.5em;
+}
+.member h1:after {
+  content: "\f054"; /*アイコン種類*/
+  padding-left: 0.5em;
+}
+
+.user {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  background-color: #89baeb;
+  width: 1em;
+  height: 1em;
+  font-size: 200px;
+  overflow: hidden;
+}
+.user::before,
+.user::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #3388dd;
+  content: "";
+}
+.user::before {
+  top: 0.15em;
+  width: 0.4em;
+  height: 0.4em;
+}
+.user::after {
+  bottom: -0.4em;
+  width: 0.8em;
+  height: 0.8em;
+}
