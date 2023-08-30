@@ -497,6 +497,7 @@ textarea.c-form__input {
   all: initial;
   vertical-align: text-bottom;
   position: relative;
+  font-size: inherit;
 }
 
 /* ----------------------------------------------------------------
@@ -2413,6 +2414,10 @@ td:nth-child(6) {
   text-align: right;
 }
 
+/* ----------------------------------------------------------------
+	Kiyaku
+-----------------------------------------------------------------*/
+
 .kiyaku li {
   list-style-type: decimal;
   margin-left: 24px;
@@ -2423,7 +2428,11 @@ td:nth-child(6) {
   margin-left: 24px;
 }
 
-.circle {
+/* ----------------------------------------------------------------
+	Member
+-----------------------------------------------------------------*/
+
+.circle-photo {
   width: 300px;
   height: 300px;
   overflow: hidden;
@@ -2431,7 +2440,7 @@ td:nth-child(6) {
   border-radius: 50%;
 }
 
-.circle img {
+.circle-photo img {
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -2471,14 +2480,26 @@ td:nth-child(6) {
   padding-left: 0.5em;
 }
 
+.member h1 {
+  position: relative;
+  line-height: 1.4;
+  display: inline-flex; /* インラインフレックスコンテナを使用 */
+  align-items: center; /* 中央垂直配置 */
+}
+
+.member h1 .emoji {
+  font-size: inherit; /* 親要素のフォントサイズを継承 */
+  vertical-align: middle; /* ベースラインに合わせて垂直配置 */
+}
+
 .user {
   display: inline-block;
   position: relative;
   border-radius: 50%;
   background-color: #89baeb;
-  width: 1em;
-  height: 1em;
-  font-size: 200px;
+  width: 100%;
+  height: 100%;
+  font-size: 20px; /* フォントサイズを200pxから20pxに変更 */
   overflow: hidden;
 }
 .user::before,
@@ -2491,12 +2512,12 @@ td:nth-child(6) {
   content: "";
 }
 .user::before {
-  top: 0.15em;
-  width: 0.4em;
-  height: 0.4em;
+  top: 15%; /* 0.15emから15%に変更 */
+  width: 40%; /* 0.4emから40%に変更 */
+  height: 40%; /* 0.4emから40%に変更 */
 }
 .user::after {
-  bottom: -0.4em;
-  width: 0.8em;
-  height: 0.8em;
+  bottom: -40%; /* -0.4emから-40%に変更 */
+  width: 80%; /* 0.8emから80%に変更 */
+  height: 80%; /* 0.8emから80%に変更 */
 }
