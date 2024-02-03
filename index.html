@@ -35,21 +35,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <!-- Document Title -->
         <title>Cadence｜トップページ</title>
-        <script>
-            // クッキーを設定する関数
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + value + expires + "; path=/; Secure; SameSite=None";
-            }
-
-            // 使用例
-            setCookie("myCookie", "myValue", 7);
-        </script>
     </head>
 
     <body>
@@ -70,7 +55,47 @@
         </div>
 
         <!-- ヘッダー -->
-        <header id="header"></header>
+        <header class="header">
+            <!-- Header Logo -->
+            <div class="logo">
+                <a href="#">
+                    <p><a href="https://oecusoundserver.github.io/Cadence/index.html"><img src="https://oecusoundserver.github.io/Cadence/img/yellow.png" alt="Cadence_Icon" class="logo"></a></p>
+                </a>
+            </div>
+        
+            <!-- Menu -->
+            <div id="hamburger">
+                <div class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- Nav Phon -->
+            <nav class="nav sm">
+                <ul>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/index.html">トップページ</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/about/index.html">サークルについて</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html">作品</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/event/index.html">イベント</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/special/bosyu.html">募集</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/link.html">リンク</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/Other/index.html">その他</a></li>
+                </ul>
+            </nav>
+            <!-- Nav PC -->
+            <nav class="nav pc">
+                <ul>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/index.html">トップページ</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/about/index.html">サークルについて</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html">作品</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/event/index.html">イベント</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/special/bosyu.html">募集</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/link.html">リンク</a></li>
+                    <li><a href="https://oecusoundserver.github.io/Cadence/Other/index.html">その他</a></li>
+                </ul>
+            </nav>
+        </header>
         <hr>
 
         <!-- スライダー制御 -->
@@ -184,6 +209,5 @@
         <script src="js/stkr.js"></script>
         <script src="js/emoji.js"></script>
         <script src='js/loader.js'></script>
-        <script src="js/include.js"></script>
     </body>
 </html>
