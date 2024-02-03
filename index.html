@@ -35,6 +35,21 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <!-- Document Title -->
         <title>Cadence｜トップページ</title>
+        <script>
+            // クッキーを設定する関数
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + value + expires + "; path=/; Secure; SameSite=None";
+            }
+
+            // 使用例
+            setCookie("myCookie", "myValue", 7);
+        </script>
     </head>
 
     <body>
