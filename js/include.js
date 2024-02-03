@@ -5,6 +5,11 @@ includeHeader.onreadystatechange = function () {
     const headerHTML = includeHeader.responseText;
     const header = document.querySelector("#header");
     header.insertAdjacentHTML("afterbegin", headerHTML);
+
+    // ハンバーガーメニューのスクリプトを追加
+    const hamburgerScript = document.createElement("script");
+    hamburgerScript.src = "./js/menu.js";
+    document.body.appendChild(hamburgerScript);
   }
 };
 includeHeader.send();
