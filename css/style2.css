@@ -126,14 +126,14 @@ li {
 /* ----------------------------------------------------------------
 	Header
 -----------------------------------------------------------------*/
-.header {
+header {
   height: 60px;
   width: 100%;
   padding: 0px 15px;
   background-color: #fff;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
   display: flex;
   border-bottom: solid #f0f0f0;
 }
