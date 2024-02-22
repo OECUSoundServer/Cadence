@@ -131,7 +131,7 @@ function columnIndex(column) {
 
 // リアルタイムでテーブルデータを検索して表示する関数
 function searchData() {
-    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const searchInput = document.getElementById("searchInput").value.trim().toLowerCase();
     const table = document.getElementById("albumTable");
     const rows = table.getElementsByTagName("tr");
 
@@ -157,6 +157,14 @@ function searchData() {
         } else {
             rows[i].style.display = "none";
         }
+    }
+
+    // 検索欄が空の場合、すべてのハイライトを消す
+    if (searchInput === "") {
+        const highlights = document.querySelectorAll(".highlight");
+        highlights.forEach(element => {
+            element.outerHTML = element.innerHTML; // ハイライトを削除
+        });
     }
 }
 
