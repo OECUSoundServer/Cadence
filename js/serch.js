@@ -140,14 +140,10 @@ function searchData() {
         let found = false;
 
         for (let j = 1; j < cells.length - 1; j++) { // すべての列を対象
-            // const cellText = cells[j].textContent; // 大文字と小文字の区別をなくす
-            if (cellText === searchInput) { // 完全一致の場合のみハイライト
+            const cellText = cells[j].textContent; // 大文字と小文字の区別をなくす
+            if (cellText.includes(searchInput)) { // 完全一致の場合のみハイライト
                 found = true; // 一致するデータが見つかったらtrueを返す
-                const beforeText = cellText.substring(0, index);
-                const searchText = cellText.substring(index, index + searchInput.length);
-                const afterText = cellText.substring(index + searchInput.length);
-                
-                cells[j].innerHTML = beforeText + '<span class="highlight">' + searchText + '</span>' + afterText;
+                cells[j].innerHTML = cellText.replace(new RegExp(searchInput, 'gi'), '<span class="highlight">$&</span>'); // ハイライトする
             }
         }
 
@@ -166,6 +162,7 @@ function searchData() {
         });
     }
 }
+
 
 // ページ読み込み時に外部データを読み込む
 loadExternalData();
