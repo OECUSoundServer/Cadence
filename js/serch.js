@@ -144,9 +144,11 @@ function searchData() {
             const index = cellText.indexOf(searchInput); // 検索文字列のインデックスを取得
             if (index !== -1) {
                 found = true; // 一致するデータが見つかったらtrueを返す
-                const text = cells[j].textContent;
-                const highlightedText = text.substring(0, index) + '<span class="highlight">' + text.substring(index, index + searchInput.length) + '</span>' + text.substring(index + searchInput.length);
-                cells[j].innerHTML = highlightedText;
+                const beforeText = cellText.substring(0, index);
+                const searchText = cellText.substring(index, index + searchInput.length);
+                const afterText = cellText.substring(index + searchInput.length);
+                
+                cells[j].innerHTML = beforeText + '<span class="highlight">' + searchText + '</span>' + afterText;
             }
         }
 
