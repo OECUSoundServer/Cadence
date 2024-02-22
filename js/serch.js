@@ -140,7 +140,7 @@ function searchData() {
         let found = false;
 
         for (let j = 1; j < cells.length - 1; j++) { // すべての列を対象
-            const cellText = cells[j].textContent; // 大文字と小文字の区別をなくす
+            // const cellText = cells[j].textContent; // 大文字と小文字の区別をなくす
             if (cellText === searchInput) { // 完全一致の場合のみハイライト
                 found = true; // 一致するデータが見つかったらtrueを返す
                 const beforeText = cellText.substring(0, index);
