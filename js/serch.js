@@ -144,16 +144,9 @@ function searchData() {
             const index = cellText.indexOf(searchInput); // 検索文字列のインデックスを取得
             if (index !== -1) {
                 found = true; // 一致するデータが見つかったらtrueを返す
-                const textNode = cells[j].firstChild; // テキストノードを取得
-                const before = document.createTextNode(cellText.substring(0, index)); // 検索文字列の前の部分
-                const middle = document.createElement("span"); // 検索文字列を含む部分を<span>で囲む
-                middle.textContent = cellText.substring(index, index + searchInput.length);
-                middle.classList.add("highlight");
-                const after = document.createTextNode(cellText.substring(index + searchInput.length)); // 検索文字列の後の部分
-                cells[j].innerHTML = ''; // テキストノードをクリア
-                cells[j].appendChild(before);
-                cells[j].appendChild(middle);
-                cells[j].appendChild(after);
+                const text = cells[j].textContent;
+                const highlightedText = text.substring(0, index) + '<span class="highlight">' + text.substring(index, index + searchInput.length) + '</span>' + text.substring(index + searchInput.length);
+                cells[j].innerHTML = highlightedText;
             }
         }
 
