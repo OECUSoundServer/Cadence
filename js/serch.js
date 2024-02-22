@@ -131,7 +131,7 @@ function columnIndex(column) {
 
 // リアルタイムでテーブルデータを検索して表示する関数
 function searchData() {
-    const searchInput = document.getElementById("searchInput").value.trim(); // 大文字と小文字の区別をなくすためtrim()のみ適用
+    const searchInput = document.getElementById("searchInput").value.trim(); // 検索文字列を取得し、前後の空白を削除
     const table = document.getElementById("albumTable");
     const rows = table.getElementsByTagName("tr");
 
@@ -140,10 +140,10 @@ function searchData() {
         let found = false;
 
         for (let j = 1; j < cells.length - 1; j++) { // すべての列を対象
-            const cellText = cells[j].textContent; // 大文字と小文字の区別をなくす
-            if (cellText.includes(searchInput)) { // 完全一致の場合のみハイライト
+            const cellText = cells[j].textContent; // セル内のテキストを取得
+            if (cellText.includes(searchInput)) { // 検索文字列が含まれているかチェック（大文字と小文字を区別する）
                 found = true; // 一致するデータが見つかったらtrueを返す
-                cells[j].innerHTML = cellText.replace(new RegExp(searchInput, 'gi'), '<span class="highlight">$&</span>'); // ハイライトする
+                cells[j].innerHTML = cellText.replace(new RegExp(searchInput, 'g'), '<span class="highlight">$&</span>'); // ハイライトする
             }
         }
 
@@ -162,7 +162,6 @@ function searchData() {
         });
     }
 }
-
 
 // ページ読み込み時に外部データを読み込む
 loadExternalData();
