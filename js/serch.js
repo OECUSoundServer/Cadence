@@ -143,7 +143,11 @@ function searchData() {
             const cellText = cells[j].textContent.toLowerCase();
             if (cellText.includes(searchInput)) {
                 found = true; // 一致するデータが見つかったらtrueを返す
-                break;
+                cells[j].classList.add("highlight"); //ハイライトクラスを追加
+                // break;
+            }
+            else {
+                cells[j].classList.remove("highlight"); //ハイライトクラスを削除
             }
         }
 
