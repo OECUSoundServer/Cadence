@@ -112,6 +112,16 @@
 
     <main class="top">
         <article>
+            <h2 class="title DotGothic16"><img class="emoji" src="../img/nikukyu.svg">アルバム情報</h2>
+            <div class="search-button-container">
+                <input type="text" id="searchInput" placeholder="検索キーワード" oninput="searchData()">
+            </div>
+
+            <div class="table-container">
+                <table id="albumTable" style="width: 100%;">
+                </table>
+            </div>
+            
             <h2 class="title DotGothic16"><img class="emoji" src="../img/nikukyu.svg">メンバーリスト</h2>
             <div class="Two-column">
                 <div class="left">
@@ -168,7 +178,7 @@
                 </div>
             </div>
 
-            <div class="kiyaku">
+            <!-- <div class="kiyaku">
                 <h2 class="title DotGothic16"><img class="emoji" src="../img/nikukyu.svg">Cadence サークル規則</h2>
                 <h3 class="DotGothic16">第１章 総則</h3>
                 <h4 class="DotGothic16">第１条（名称）</h4>
@@ -300,7 +310,7 @@
 
                 <p>この会則の記載内容について、事実と相違ないことを証明します。</p>
                 <p>令和　　5年　　8月　　25日</p>
-            </div>
+            </div> -->
         </article>
     </main>
 
@@ -329,6 +339,7 @@
     <script src="../js/pagetop.js"></script>
     <script src="../js/stkr.js"></script>
     <script src="../js/emoji.js"></script>
+    <script src="../js/serch.js"></script>
     <script src='../js/loader.js'></script>
 </body>
 
