@@ -500,7 +500,7 @@ textarea.c-form__input {
 
 .emoji {
   all: initial;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   position: relative;
   font-size: inherit;
 }
