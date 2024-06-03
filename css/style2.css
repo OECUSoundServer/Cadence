@@ -78,6 +78,11 @@ li {
   background-color: #1a66bc;
 }
 
+.selbrown ::selection {
+  color: #fff;
+  background-color: #923a21;
+}
+
 .clear {
   clear: both;
   display: block;
@@ -2268,6 +2273,16 @@ details[open] .icon_d {
     #9ad6e8 5px,
     #c5e6f9 5px,
     #c5e6f9 10px
+  );
+}
+
+.stripe.brown {
+  background: repeating-linear-gradient(
+    135deg,
+    #937b69,
+    #937b69 5px,
+    #b18b55 5px,
+    #b18b55 10px
   );
 }
 
