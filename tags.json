@@ -1,5 +1,5 @@
 [
-	"タグ1",
-	"タグ2",
-	"タグ3"
+	{"name": "タグ1", "url": "https://oecusoundserver.github.io/Cadence/index.html"},
+	{"name": "タグ2", "url": "https://oecusoundserver.github.io/Cadence/about/index.html"},
+	{"name": "タグ3", "url": "https://oecusoundserver.github.io/Cadence/portfolio/index.html"}
 ]
