@@ -1,15 +1,28 @@
 window.addEventListener('DOMContentLoaded', function() {
     // 初期表示でAllが表示されるように設定
     const selectedCategoryElement = document.getElementById('selectedCategory');
-    selectedCategoryElement.textContent = "All";
+    const selectedTagCountElement = document.getElementById('selectedTagCount');
     
     // name 属性が categories の input 要素（ラジオボタン）を取得
     const input_categories = document.querySelectorAll("input[name=categories]");
     // 全ての .target の要素（target クラスを指定された div 要素）を取得
     const targets = document.querySelectorAll(".target");
-    // 初期表示時にALLのタグ数をカウントして表示
-    const selectedTagCountElement = document.getElementById('selectedTagCount');
-    selectedTagCountElement.textContent = targets.length;
+    
+    // 初期表示時にチェックされているラジオボタンを取得
+    const checkedRadioButton = document.querySelector('input[name=categories]:checked');
+    if (checkedRadioButton) {
+        const checkedValue = checkedRadioButton.value;
+        selectedCategoryElement.textContent = checkedValue;
+        
+        let selectedCount = 0;
+        if (checkedValue !== 'All') {
+            const checkedCategories = document.querySelectorAll('.target[data-category~=' + '"' + checkedValue + '"]');
+            selectedCount = checkedCategories.length;
+        } else {
+            selectedCount = targets.length;
+        }
+        selectedTagCountElement.textContent = selectedCount;
+    }
 
     // ラジオボタンの value の値（カテゴリ名）を格納する配列
     const category_array = [];
@@ -38,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // ラジオボタンの value の値を配列（category_array）に追加
         category_array.push(input_category.getAttribute('value'));
     }
-    
+
     // カテゴリ名（ラジオボタンの value の値）をキーとする連想配列の初期化
     const category_vars = {};
     // カテゴリ名をキーとする連想配列の要素を生成し値（カウント数）に初期値 0 を設定
@@ -69,8 +82,9 @@ function valueChange(event) {
     selectedCategoryElement.textContent = selectedValue;
 }
 
-let radioButtons = document.querySelectorAll('input[type="radio"][name="categories"]');
-
-radioButtons.forEach(function(radioButton) {
-    radioButton.addEventListener('change', valueChange);
+document.addEventListener('DOMContentLoaded', function() {
+    let radioButtons = document.querySelectorAll('input[type="radio"][name="categories"]');
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('change', valueChange);
+    });
 });
