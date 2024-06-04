@@ -2557,3 +2557,81 @@ td:nth-child(6) {
   width: 80%; /* 0.8emから80%に変更 */
   height: 80%; /* 0.8emから80%に変更 */
 }
+
+/* ----------------------------------------------------------------
+	Blog
+-----------------------------------------------------------------*/
+.blog {
+  padding: 0 5% 0 5%;
+}
+
+.blogTitle {
+  padding-left: 1rem;
+  margin-bottom: 2px;
+}
+
+.author {
+  margin-top: 5px;
+}
+
+.blogTag {
+  margin: 10px 0 5px 0;
+}
+
+.blogMain {
+  width: 70%;
+}
+
+.blogSub {
+  width: 30%;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.blogvideo {
+  position: relative;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.blogvideo iframe {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.left-min {
+  width: 20%;
+}
+
+.right-max {
+  width: 80%;
+}
+
+.author-photo {
+  border-radius:50%;
+  width: 50%;
+  margin: auto;
+}
+
+.authorcontainer {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.authorname {
+  align-items: center;
+  white-space: nowrap; /* 改行させない */
+  font-size: x-large;
+  font-family:"Meiryo", "メイリオ";
+}
+.authorname i {
+  margin-right: 8px;
+}
+.handle {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 20px; /* 左の余白を自動にして右側に寄せる */
+}
+.handle i {
+  margin-right: 8px;
+}

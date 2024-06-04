@@ -25,6 +25,31 @@
   .left {
     width: 100%;
   }
+
+  .blogMain, .authorinfo {
+    width: 100%;
+  }
+
+  .blogSub {
+    width: 100%;
+  }
+
+  .right-max {
+    width: 100%;
+  }
+
+  .left-min {
+    width: 100%;
+  }
+
+  .author-photo {
+    width: 30%;
+  }
+
+  .blogSub {
+    padding: 1rem 0 1rem 0;
+  }
+
   .title-half:after {
     content: "";
     position: absolute;
