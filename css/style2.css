@@ -1621,6 +1621,7 @@ input[type="radio"] {
 [value="card"]:checked ~ .filters [for="card"],
 [value="sticker"]:checked ~ .filters [for="sticker"],
 [value="keyring"]:checked ~ .filters [for="keyring"],
+[value="blog"]:checked ~ .filters [for="blog"],
 [value="other"]:checked ~ .filters [for="other"] {
   background: #1abc9c;
   color: #fff;
@@ -1645,6 +1646,7 @@ input[type="radio"] {
 [value="card"]:checked ~ .targets .target:not([data-category~="card"]),
 [value="sticker"]:checked ~ .targets .target:not([data-category~="sticker"]),
 [value="keyring"]:checked ~ .targets .target:not([data-category~="keyring"]),
+[value="blog"]:checked ~ .targets .target:not([data-category~="blog"]),
 [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
   display: none;
 }
