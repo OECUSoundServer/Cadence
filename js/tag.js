@@ -75,7 +75,9 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 function valueChange(event) {
-    let selectedValue = event.target.value;
+    let selectedId = event.target.id; // 選択されたラジオボタンのIDを取得
+    let label = document.querySelector('label[for="' + selectedId + '"]'); // 選択されたラジオボタンに対応するラベルを取得
+    let selectedValue = label.textContent.trim(); // ラベルのテキストを取得
     console.log('選択されているのは ' + selectedValue + ' です。');
     // 表示を更新する要素を取得
     let selectedCategoryElement = document.getElementById('selectedCategory');
