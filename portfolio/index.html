@@ -115,24 +115,26 @@
 							<input type="radio" id="game" name="categories" value="game">
 							<input type="radio" id="study" name="categories" value="study">
 							<input type="radio" id="booth" name="categories" value="booth">
-							<input type="radio" id="bandcamp" name="categories" value="bandcamp">
+							<!-- <input type="radio" id="bandcamp" name="categories" value="bandcamp"> -->
 							<input type="radio" id="discontinued" name="categories" value="discontinued">
 							<input type="radio" id="free" name="categories" value="free">
 							<input type="radio" id="other" name="categories" value="other">
 							<ol class="filters" style="padding-left: 0;">
-								<li><label for="All">All</label></li>
-								<li><label for="sound">サウンド</label></li>
-								<li><label for="event">イベント</label></li>
-								<li><label for="movie">映像</label></li>
-								<li><label for="game">ゲーム</label></li>
-								<li><label for="study">講習会</label></li>
-								<li><label for="booth">BOOTH</label></li>
+								<li><label for="All"><i class="fas fa-hashtag"></i>All</label></li>
+								<li><label for="sound"><i class="fas fa-hashtag"></i>サウンド</label></li>
+								<li><label for="event"><i class="fas fa-hashtag"></i>イベント</label></li>
+								<li><label for="movie"><i class="fas fa-hashtag"></i>映像</label></li>
+								<li><label for="game"><i class="fas fa-hashtag"></i>ゲーム</label></li>
+								<li><label for="study"><i class="fas fa-hashtag"></i>講習会</label></li>
+								<li><label for="booth"><i class="fas fa-hashtag"></i>BOOTH</label></li>
 								<!-- <li><label for="booth">BOOTH Available</label></li> -->
-								<li><label for="bandcamp">Bandcamp</label></li>
-								<li><label for="discontinued">在庫切れ</label></li>
-								<li><label for="free">無料・特典</label></li>
-								<li><label for="other">その他</label></li>
+								<!-- <li><label for="bandcamp"><i class="fas fa-hashtag"></i>Bandcamp</label></li> -->
+								<li><label for="discontinued"><i class="fas fa-hashtag"></i>在庫切れ</label></li>
+								<li><label for="free"><i class="fas fa-hashtag"></i>無料・特典</label></li>
+								<li><label for="other"><i class="fas fa-hashtag"></i>その他</label></li>
 							</ol>
+
+							<center><h3>「<span id="selectedCategory"></span>」のカテゴリ一覧：<span id="selectedTagCount"></span>件</h3></center>
 							
 							<ol class="targets" style="padding-left: 0;">
 								<li class="target" data-category="keyring">
@@ -163,7 +165,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="booth sound">
+								<li class="target" data-category="booth sound cd card">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/CAD-0004.html"> <img src="../img/PrettyFurry.png" alt=""> </a>
@@ -182,65 +184,11 @@
 										</div>
 										<a href="https://cadence.booth.pm/items/5525775"
 											class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
-										<h2 class="target-title"> <a href="../event/CAD-0004.html">Pretty Furry VGM Remix Collection(DL版)</a>
+										<h2 class="target-title"> <a href="../event/CAD-0004.html">Pretty Furry VGM Remix Collection</a>
 										</h2>
 										<ol class="target-categories">
 											<li><strong class="label label-primary">Sound</strong></li>
-											<time datetime="2023-11-05"></time>
-										</ol>
-										<figcaption>VGM Remix</figcaption>
-										<figcaption>2023/11/05 大学祭</figcaption>
-									</figure>
-								</li>
-
-								<li class="target" data-category="cd sound">
-									<figure>
-										<div class="portfolio-overlay">
-											<a href="../event/CAD-0004.html"> <img src="../img/PrettyFurry.png" alt=""> </a>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/PrettyFurry.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-								
-												<div class="circle">
-													<h2><a href="../event/CAD-0004.html"><i class="fa fa-bars"></i></a>
-													</h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"> <a href="../event/CAD-0004.html">Pretty Furry VGM Remix Collection(CD版)</a>
-										</h2>
-										<ol class="target-categories">
 											<li><strong class="label label-danger">CD</strong></li>
-											<time datetime="2023-11-05"></time>
-										</ol>
-										<figcaption>VGM Remix</figcaption>
-										<figcaption>2023/11/05 大学祭</figcaption>
-									</figure>
-								</li>
-								
-								<li class="target" data-category="card sound">
-									<figure>
-										<div class="square-image">
-											<a href="#"> <img src="../img/PrettyFurry_Card.png" alt=""> </a>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/PrettyFurry_Card.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-								
-												<div class="circle">
-													<h2><a href="../event/CAD-0004.html"><i class="fa fa-bars"></i></a>
-													</h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"> <a href="../event/CAD-0004.html">Pretty Furry VGM Remix Collection(ポストカード版)</a>
-										</h2>
-										<ol class="target-categories">
 											<li><strong class="label label-success">ポストカード</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
@@ -249,7 +197,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="booth sound">
+								<li class="target" data-category="booth sound cd card">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="#"> <img src="../img/YouthfulBlue.png" alt=""> </a>
@@ -268,65 +216,11 @@
 										</div>
 										<a href="https://cadence.booth.pm/items/5515850"
 											class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
-										<h2 class="target-title"> <a href="../event/CAD-0005.html">Youthful Blue(DL版)</a>
+										<h2 class="target-title"> <a href="../event/CAD-0005.html">Youthful Blue</a>
 										</h2>
 										<ol class="target-categories">
 											<li><strong class="label label-primary">Sound</strong></li>
-											<time datetime="2023-11-05"></time>
-										</ol>
-										<figcaption>ブルーアーカイブ</figcaption>
-										<figcaption>2023/11/05 大学祭</figcaption>
-									</figure>
-								</li>
-								
-								<li class="target" data-category="cd sound">
-									<figure>
-										<div class="portfolio-overlay">
-											<a href="#"> <img src="../img/YouthfulBlue.png" alt=""> </a>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/YouthfulBlue.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-								
-												<div class="circle">
-													<h2><a href="../event/CAD-0005.html"><i class="fa fa-bars"></i></a>
-													</h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"> <a href="../event/CAD-0005.html">Youthful Blue(CD版)</a>
-										</h2>
-										<ol class="target-categories">
 											<li><strong class="label label-danger">CD</strong></li>
-											<time datetime="2023-11-05"></time>
-										</ol>
-										<figcaption>ブルーアーカイブ</figcaption>
-										<figcaption>2023/11/05 大学祭</figcaption>
-									</figure>
-								</li>
-								
-								<li class="target" data-category="card sound">
-									<figure>
-										<div class="square-image">
-											<a href="../event/CAD-0005.html"> <img src="../img/YouthfulBlue_card.png" alt=""> </a>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/YouthfulBlue_card.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-								
-												<div class="circle">
-													<h2><a href="../event/CAD-0005.html"><i class="fa fa-bars"></i></a>
-													</h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"> <a href="../event/CAD-0005.html">Youthful Blue(ポストカード版)</a>
-										</h2>
-										<ol class="target-categories">
 											<li><strong class="label label-success">ポストカード</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
@@ -392,7 +286,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="sound booth">
+								<li class="target" data-category="sound booth cd card">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/CAD-0002.html"><img src="../img/ToyBox.png" alt=""></a>
@@ -409,63 +303,10 @@
 										</div>
 										<a href="https://cadence.booth.pm/items/5515748"
 											class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
-										<h2 class="target-title"><a href="../event/CAD-0002.html">ToyBox(DL版)</a></h2>
+										<h2 class="target-title"><a href="../event/CAD-0002.html">ToyBox</a></h2>
 										<ol class="target-categories">
 											<li><strong class="label label-primary">Sound</strong></li>
-											<time datetime="2023-08-13"></time>
-										</ol>
-										<figcaption>オリジナル</figcaption>
-										<figcaption>2023/08/13 コミックマーケット102</figcaption>
-									</figure>
-								</li>
-
-								<li class="target" data-category="sound cd">
-									<figure>
-										<div class="portfolio-overlay">
-											<a href="../event/CAD-0002.html"><img src="../img/ToyBox.png" alt=""></a>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/ToyBox.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-												<div class="circle">
-													<h2><a href="../event/CAD-0002.html"><i class="fa fa-bars"></i></a></h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"><a href="../event/CAD-0002.html">ToyBox(CD版)</a></h2>
-										<ol class="target-categories">
 											<li><strong class="label label-danger">CD</strong></li>
-											<time datetime="2023-08-13"></time>
-										</ol>
-										<figcaption>オリジナル</figcaption>
-										<figcaption>2023/08/13 コミックマーケット102</figcaption>
-									</figure>
-								</li>
-
-								<li class="target" data-category="card sound">
-									<figure>
-										<div class="portfolio-overlay">
-											<div class="square-image">
-												<a href="../event/CAD-0002.html"> <img src="../img/ToyBox-Postcard.png" alt=""> </a>
-											</div>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/ToyBox-Postcard.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-								
-												<div class="circle">
-													<h2><a href="../event/CAD-0002.html"><i class="fa fa-bars"></i></a>
-													</h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"> <a href="../event/CAD-0002.html">ToyBox(ポストカード版)</a>
-										</h2>
-										<ol class="target-categories">
 											<li><strong class="label label-success">ポストカード</strong></li>
 											<time datetime="2023-08-13"></time>
 										</ol>
@@ -530,7 +371,7 @@
 									</figure>
 								</li>
 				
-								<li class="target" data-category="game event booth sound">
+								<li class="target" data-category="game event booth sound card">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../portfolio/fatty.html"> <img src="../img/kemo.png" alt=""> </a>
@@ -555,37 +396,6 @@
 										<ol class="target-categories">
 											<li><strong class="label label-success">Game</strong></li>
 											<li><strong class="label label-danger">Event</strong></li>
-											<time datetime="2023-05-06"></time>
-										</ol>
-										<figcaption>オリジナル</figcaption>
-										<figcaption>2023/05/06 けもケット13</figcaption>
-									</figure>
-								</li>
-
-								<li class="target" data-category="card booth">
-									<figure>
-										<div class="portfolio-overlay">
-											<div class="square-image">
-												<a href="../portfolio/fatty.html"> <img src="../img/fatty_card.png" alt=""> </a>
-											</div>
-								
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/fatty_card.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-												<div class="circle">
-													<h2><a href="../portfolio/fatty.html"><i class="fa fa-bars"></i></a></h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<a href="https://cadence.booth.pm/items/4713030" class="button button-3d button-mini button-rounded button-red"
-											style="color:#fff;">booth</a>
-										<a href="https://unityroom.com/games/fattycat" class="button button-3d button-mini button-rounded button-green2"
-											style="color: #fff;">Unity</a>
-										<h2 class="target-title"> <a href="../portfolio/fatty.html">ふぁってい・きゃっと(ポストカード版)</a> </h2>
-										<ol class="target-categories">
 											<li><strong class="label label-success">ポストカード</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
@@ -813,7 +623,7 @@
 		</main>
 
 		<div id="pagetop" hidden>
-			<img src="../img/TOP.png" .png" width="80">
+			<img src="../img/TOP.png" width="80">
 		</div>
 
 		<!-- フッター -->
@@ -836,7 +646,9 @@
 		<script src="../js/pagetop.js"></script>
 		<script src="../js/stkr.js"></script>
 		<script src="../js/emoji.js"></script>
-		<script src='../js/loader.js'></script>
+		<script src="../js/loader.js"></script>
 		<script src="../js/new.js"></script>
+		<script src="../js/tag.js"></script>
+        <script src="../js/settag.js"></script>
 	</body>
 </html>
