@@ -12,7 +12,9 @@ window.addEventListener('DOMContentLoaded', function() {
     const checkedRadioButton = document.querySelector('input[name=categories]:checked');
     if (checkedRadioButton) {
         const checkedValue = checkedRadioButton.value;
-        selectedCategoryElement.textContent = checkedValue;
+        const checkedLabel = document.querySelector('label[for="' + checkedRadioButton.id + '"]');
+        const selectedText = checkedLabel.textContent.trim();
+        selectedCategoryElement.textContent = selectedText;
         
         let selectedCount = 0;
         if (checkedValue !== 'All') {
@@ -47,6 +49,9 @@ window.addEventListener('DOMContentLoaded', function() {
             }
             // カウントを表示
             selectedTagCountElement.textContent = selectedCount;
+            // 選択されたラジオボタンのラベルのテキストを取得して表示
+            const selectedLabel = document.querySelector('label[for="' + this.id + '"]');
+            selectedCategoryElement.textContent = selectedLabel.textContent.trim();
         });
         // ラジオボタンの value の値を配列（category_array）に追加
         category_array.push(input_category.getAttribute('value'));
