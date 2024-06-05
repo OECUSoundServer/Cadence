@@ -9,11 +9,11 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://oecusoundserver.github.io/Cadence/portfolio/index.html" />
 		<meta property="og:title" content="Cadence｜作品" />
-		<meta property="og:description" 　content="当サークルの制作物及びイベント一覧です。" />
+		<meta property="og:description" content="当サークルの制作物及びイベント一覧です。" />
 		<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@OECU51904255" />
-		<meta name="twitter:title" 　content="Cadence｜作品" />
+		<meta name="twitter:title" content="Cadence｜作品" />
 		<meta name="twitter:description" content="当サークルの制作物及びイベント一覧です。" />
 		<meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 		<meta name="”keywords”" content="サウンド,大阪電気通信大学,作品">
@@ -104,39 +104,101 @@
 		<main class="top">
 			<article>
 				<div>
-					<h2 class="title DotGothic16">Portfolio</h2>
+					<h2 class="title DotGothic16"><i class="far fa-newspaper"></i> 記事一覧</h2>
 				
 					<section class="gallery">
+						<center>All Tag</center>
 						<div class="container">
 							<input type="radio" id="All" name="categories" value="All" checked>
 							<input type="radio" id="sound" name="categories" value="sound">
 							<input type="radio" id="event" name="categories" value="event">
 							<input type="radio" id="movie" name="categories" value="movie">
 							<input type="radio" id="game" name="categories" value="game">
-							<input type="radio" id="study" name="categories" value="study">
+							<input type="radio" id="other" name="categories" value="other">
 							<input type="radio" id="booth" name="categories" value="booth">
 							<!-- <input type="radio" id="bandcamp" name="categories" value="bandcamp"> -->
 							<input type="radio" id="discontinued" name="categories" value="discontinued">
 							<input type="radio" id="free" name="categories" value="free">
-							<input type="radio" id="other" name="categories" value="other">
-							<ol class="filters" style="padding-left: 0;">
+							<input type="radio" id="cd" name="categories" value="cd">
+                        	<input type="radio" id="card" name="categories" value="card">
+                        	<input type="radio" id="sticker" name="categories" value="sticker">
+                       		<input type="radio" id="keyring" name="categories" value="keyring">
+							<input type="radio" id="blog" name="categories" value="blog">
+							<ol class="filters" style="padding-left: 0; margin: 2px 0 2px 0;">
 								<li><label for="All"><i class="fas fa-hashtag"></i>All</label></li>
 								<li><label for="sound"><i class="fas fa-hashtag"></i>サウンド</label></li>
 								<li><label for="event"><i class="fas fa-hashtag"></i>イベント</label></li>
 								<li><label for="movie"><i class="fas fa-hashtag"></i>映像</label></li>
 								<li><label for="game"><i class="fas fa-hashtag"></i>ゲーム</label></li>
-								<li><label for="study"><i class="fas fa-hashtag"></i>講習会</label></li>
+								<li><label for="blog"><i class="fas fa-hashtag"></i>ブログ</label></li>
+								<li><label for="other"><i class="fas fa-hashtag"></i>その他</label></li>
 								<li><label for="booth"><i class="fas fa-hashtag"></i>BOOTH</label></li>
 								<!-- <li><label for="booth">BOOTH Available</label></li> -->
 								<!-- <li><label for="bandcamp"><i class="fas fa-hashtag"></i>Bandcamp</label></li> -->
 								<li><label for="discontinued"><i class="fas fa-hashtag"></i>在庫切れ</label></li>
 								<li><label for="free"><i class="fas fa-hashtag"></i>無料・特典</label></li>
-								<li><label for="other"><i class="fas fa-hashtag"></i>その他</label></li>
+								<li><label for="cd"><i class="fas fa-hashtag"></i>CD</label></li>
+								<li><label for="card"><i class="fas fa-hashtag"></i>カード</label></li>
+								<li><label for="sticker"><i class="fas fa-hashtag"></i>ステッカー</label></li>
+								<li><label for="keyring"><i class="fas fa-hashtag"></i>アクリルグッズ</label></li>
 							</ol>
 
-							<center><h3>「<span id="selectedCategory"></span>」のカテゴリ一覧：<span id="selectedTagCount"></span>件</h3></center>
+							<center><h3 style="margin-top: 5px;">「<span id="selectedCategory"></span>」のカテゴリ一覧：<span id="selectedTagCount"></span>件</h3></center>
 							
 							<ol class="targets" style="padding-left: 0;">
+								<li class="target" data-category="other blog">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../sample.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png">+</a></h2>
+												</div>
+												<div class="circle">
+													<h2><a href="../sample.html">≡</a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../sample.html">サンプル記事</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-default" data-category="blog" onclick="document.getElementById('blog').click();"><i class="fas fa-hashtag"></i>ブログ</strong></li>
+											<li><strong class="label label-default" data-category="other" onclick="document.getElementById('other').click();"><i class="fas fa-hashtag"></i>その他</strong></li>
+											<!-- 下記と同じ書き方で時間を入れる -->
+											<time datetime="2024-06-04"></time>
+										</ol>
+										<figcaption>サンプル記事の内容を簡単に書くところです。ある程度まで来たら勝手に続きを読むというように表示したい。</figcaption>
+										<figcaption>2024/06/04 mixtuti桜餅</figcaption>
+									</figure>
+								</li>
+
+								<li class="target" data-category="event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/paclan.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+								
+												<div class="circle">
+													<h2><a href="../event/paclan.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/paclan.html">PACLAN</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<time datetime="2023-12-03"></time>
+										</ol>
+										<figcaption>お品書き</figcaption>
+										<figcaption>2023/12/03 PACLAN</figcaption>
+									</figure>
+								</li>
+
 								<li class="target" data-category="keyring">
 									<figure>
 										<div class="portfolio-overlay">
@@ -157,10 +219,36 @@
 										<h2 class="target-title"> <a href="#">アクリルキーホルダー</a>
 										</h2>
 										<ol class="target-categories">
-											<li><strong class="label label-success">キーホルダー</strong></li>
+											<li><strong class="label label-default" data-category="keyring" onclick="document.getElementById('keyring').click();"><i class="fas fa-hashtag"></i>アクリルグッズ</strong></li>
 											<time datetime="2023-12-02"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
+										<figcaption>2023/12/02 オリComi Osaka10</figcaption>
+									</figure>
+								</li>
+
+								<li class="target" data-category="event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/oricomi10.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+								
+												<div class="circle">
+													<h2><a href="../event/oricomi10.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/oricomi10.html">オリComi Osaka10</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<time datetime="2023-12-02"></time>
+										</ol>
+										<figcaption>お品書き</figcaption>
 										<figcaption>2023/12/02 オリComi Osaka10</figcaption>
 									</figure>
 								</li>
@@ -187,9 +275,10 @@
 										<h2 class="target-title"> <a href="../event/CAD-0004.html">Pretty Furry VGM Remix Collection</a>
 										</h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">Sound</strong></li>
-											<li><strong class="label label-danger">CD</strong></li>
-											<li><strong class="label label-success">ポストカード</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-default" data-category="booth" onclick="document.getElementById('booth').click();"><i class="fas fa-hashtag"></i>BOOTH</strong></li>
+											<li><strong class="label label-default" data-category="cd" onclick="document.getElementById('cd').click();"><i class="fas fa-hashtag"></i>CD</strong></li>
+											<li><strong class="label label-default" data-category="card" onclick="document.getElementById('card').click();"><i class="fas fa-hashtag"></i>ポストカード</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
 										<figcaption>VGM Remix</figcaption>
@@ -219,9 +308,10 @@
 										<h2 class="target-title"> <a href="../event/CAD-0005.html">Youthful Blue</a>
 										</h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">Sound</strong></li>
-											<li><strong class="label label-danger">CD</strong></li>
-											<li><strong class="label label-success">ポストカード</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-default" data-category="booth" onclick="document.getElementById('booth').click();"><i class="fas fa-hashtag"></i>BOOTH</strong></li>
+											<li><strong class="label label-default" data-category="cd" onclick="document.getElementById('cd').click();"><i class="fas fa-hashtag"></i>CD</strong></li>
+											<li><strong class="label label-default" data-category="card" onclick="document.getElementById('card').click();"><i class="fas fa-hashtag"></i>ポストカード</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
 										<figcaption>ブルーアーカイブ</figcaption>
@@ -249,8 +339,8 @@
 										<h2 class="target-title"> <a href="#">アクリルスタンド(20cm)</a>
 										</h2>
 										<ol class="target-categories">
-											<li><strong class="label label-success">スタンド</strong></li>
-											<li><strong class="label label-default">Sold Out</strong></li>
+											<li><strong class="label label-default" data-category="keyring" onclick="document.getElementById('keyring').click();"><i class="fas fa-hashtag"></i>アクリルグッズ</strong></li>
+											<li><strong class="label label-default" data-category="discontinued" onclick="document.getElementById('discontinued').click();"><i class="fas fa-hashtag"></i>在庫切れ</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -278,10 +368,36 @@
 										<h2 class="target-title"> <a href="#">アクリルキーホルダー</a>
 										</h2>
 										<ol class="target-categories">
-											<li><strong class="label label-success">キーホルダー</strong></li>
+											<li><strong class="label label-default" data-category="keyring" onclick="document.getElementById('keyring').click();"><i class="fas fa-hashtag"></i>アクリルグッズ</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
+										<figcaption>2023/11/05 大学祭</figcaption>
+									</figure>
+								</li>
+
+								<li class="target" data-category="event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/daigakusai.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+								
+												<div class="circle">
+													<h2><a href="../event/daigakusai.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/daigakusai.html">大学祭</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<time datetime="2023-11-05"></time>
+										</ol>
+										<figcaption>お品書き</figcaption>
 										<figcaption>2023/11/05 大学祭</figcaption>
 									</figure>
 								</li>
@@ -305,9 +421,10 @@
 											class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
 										<h2 class="target-title"><a href="../event/CAD-0002.html">ToyBox</a></h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">Sound</strong></li>
-											<li><strong class="label label-danger">CD</strong></li>
-											<li><strong class="label label-success">ポストカード</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-default" data-category="booth" onclick="document.getElementById('booth').click();"><i class="fas fa-hashtag"></i>BOOTH</strong></li>
+											<li><strong class="label label-default" data-category="cd" onclick="document.getElementById('cd').click();"><i class="fas fa-hashtag"></i>CD</strong></li>
+											<li><strong class="label label-default" data-category="card" onclick="document.getElementById('card').click();"><i class="fas fa-hashtag"></i>ポストカード</strong></li>
 											<time datetime="2023-08-13"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -336,16 +453,42 @@
 										</div>
 										<h2 class="target-title"> <a href="../event/CAD-0002.html">ToyBox(会場購入特典)</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-success">ポストカード</strong></li>
-											<li><strong class="label label-success">無料</strong></li>
-											<time datetime="2023-05-06"></time>
+											<li><strong class="label label-default" data-category="free" onclick="document.getElementById('free').click();"><i class="fas fa-hashtag"></i>無料</strong></li>
+											<li><strong class="label label-default" data-category="card" onclick="document.getElementById('card').click();"><i class="fas fa-hashtag"></i>ポストカード</strong></li>
+											<time datetime="2023-08-13"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
 										<figcaption>2023/08/13 コミックマーケット102</figcaption>
 									</figure>
 								</li>
+
+								<li class="target" data-category="event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/c102.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+								
+												<div class="circle">
+													<h2><a href="../event/c102.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/c102.html">コミックマーケット102</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<time datetime="2023-08-13"></time>
+										</ol>
+										<figcaption>お品書き</figcaption>
+										<figcaption>2023/08/13 コミックマーケット102</figcaption>
+									</figure>
+								</li>
 				
-								<li class="target" data-category="sound event study">
+								<li class="target" data-category="sound event">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/taikenkai.html"> <img src="../img/yellow.png" alt=""> </a>
@@ -363,7 +506,7 @@
 										</div>
 										<h2 class="target-title"> <a href="../event/taikenkai.html">作詞作曲体験会</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-danger">Event</strong></li>
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
 											<time datetime="2023-05-14"></time>
 										</ol>
 										<figcaption>イベント</figcaption>
@@ -371,7 +514,7 @@
 									</figure>
 								</li>
 				
-								<li class="target" data-category="game event booth sound card">
+								<li class="target" data-category="game booth sound card">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../portfolio/fatty.html"> <img src="../img/kemo.png" alt=""> </a>
@@ -394,9 +537,10 @@
 											style="color: #fff;">Unity</a>
 										<h2 class="target-title"> <a href="../portfolio/fatty.html">ふぁってい・きゃっと</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-success">Game</strong></li>
-											<li><strong class="label label-danger">Event</strong></li>
-											<li><strong class="label label-success">ポストカード</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-success" data-category="game" onclick="document.getElementById('game').click();"><i class="fas fa-hashtag"></i>ゲーム</strong></li>
+											<li><strong class="label label-default" data-category="booth" onclick="document.getElementById('booth').click();"><i class="fas fa-hashtag"></i>BOOTH</strong></li>
+											<li><strong class="label label-default" data-category="card" onclick="document.getElementById('card').click();"><i class="fas fa-hashtag"></i>ポストカード</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -424,7 +568,7 @@
 										</div>
 										<h2 class="target-title"> <a href="#">宇宙ネコ</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-success">ポストカード</strong></li>
+											<li><strong class="label label-default" data-category="card" onclick="document.getElementById('card').click();"><i class="fas fa-hashtag"></i>ポストカード</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -450,7 +594,7 @@
 										</div>
 										<h2 class="target-title"> <a href="#">正方形ステッカー</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">ステッカー</strong></li>
+											<li><strong class="label label-default" data-category="sticker" onclick="document.getElementById('sticker').click();"><i class="fas fa-hashtag"></i>ステッカー</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -476,7 +620,7 @@
 										</div>
 										<h2 class="target-title"> <a href="#">お座りステッカー</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">ステッカー</strong></li>
+											<li><strong class="label label-default" data-category="sticker" onclick="document.getElementById('sticker').click();"><i class="fas fa-hashtag"></i>ステッカー</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -502,10 +646,36 @@
 										</div>
 										<h2 class="target-title"> <a href="#">ジャンプステッカー</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">ステッカー</strong></li>
+											<li><strong class="label label-default" data-category="sticker" onclick="document.getElementById('sticker').click();"><i class="fas fa-hashtag"></i>ステッカー</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
+										<figcaption>2023/05/06 けもケット13</figcaption>
+									</figure>
+								</li>
+
+								<li class="target" data-category="event">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../event/kk13.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+								
+												<div class="circle">
+													<h2><a href="../event/kk13.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../event/kk13.html">けもケット13</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<time datetime="2023-05-06"></time>
+										</ol>
+										<figcaption>お品書き</figcaption>
 										<figcaption>2023/05/06 けもケット13</figcaption>
 									</figure>
 								</li>
@@ -528,8 +698,8 @@
 										</div>
 										<h2 class="target-title"> <a href="../event/SDFirst.html">サウンド+デザインジャム</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">Sound</strong></li>
-											<li><strong class="label label-danger">Event</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
 											<time datetime="2022-08-28"></time>
 										</ol>
 										<figcaption>イベント</figcaption>
@@ -555,8 +725,8 @@
 										</div>
 										<h2 class="target-title"> <a href="../event/Nawafes.html">なわフェス2022</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">Sound</strong></li>
-											<li><strong class="label label-danger">Event</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
 											<time datetime="2022-11-03"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -581,8 +751,8 @@
 										</div>
 										<h2 class="target-title"> <a href="../portfolio/vocakore.html">サイコロタイムジェリー</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-primary">Sound</strong></li>
-											<li><strong class="label label-warning">Movie</strong></li>
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('sound').click();"><i class="fas fa-hashtag"></i>サウンド</strong></li>
+											<li><strong class="label label-warning" data-category="movie" onclick="document.getElementById('movie').click();"><i class="fas fa-hashtag"></i>映像</strong></li>
 											<time datetime="2022-10-10"></time>
 										</ol>
 										<figcaption>オリジナル</figcaption>
@@ -608,7 +778,7 @@
 										</div>
 										<h2 class="target-title"> <a href="../special/dl.html">DLC</a> </h2>
 										<ol class="target-categories">
-											<li><strong class="label label-default">Other</strong></li>
+											<li><strong class="label label-default" data-category="other" onclick="document.getElementById('other').click();"><i class="fas fa-hashtag"></i>その他</strong></li>
 											<time datetime="2022-06-29"></time>
 										</ol>
 										<figcaption>DLC</figcaption>
