@@ -188,9 +188,27 @@
     <script src="../js/pagetop.js"></script>
     <script src="../js/stkr.js"></script>
     <script src="../js/emoji.js"></script>
-    <script src='../js/loader.js'></script>
+    <script src="../js/loader.js"></script>
     <script src="../js/timer.js"></script>
     <script src="../js/data.js"></script>
+    <script>
+    	// ページがロードされたときに実行される関数
+        window.onload = function() {
+            // 現在のURLを取得
+            var currentURL = window.location.href;
+    
+            // リダイレクトしたい隠しページのURLを指定
+            var hiddenPageURL = "https://oecusoundserver.github.io/Cadence/special/PrettyFurry.html";
+
+            // リファラーを取得
+            var referrer = document.referrer;
+
+            // もし現在のURLが隠しページのURLと一致し、リファラーが空でない場合は、指定した別のページにリダイレクトする
+            if (currentURL === hiddenPageURL && referrer === "") {
+                window.location.href = "https://oecusoundserver.github.io/Cadence/special/dl.html";
+            }
+        }
+    </script>
 </body>
 <!-- InstanceEnd -->
 
