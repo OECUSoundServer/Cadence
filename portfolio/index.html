@@ -124,6 +124,7 @@
                         	<input type="radio" id="sticker" name="categories" value="sticker">
                        		<input type="radio" id="keyring" name="categories" value="keyring">
 							<input type="radio" id="blog" name="categories" value="blog">
+							<input type="radio" id="oshinagaki" name="categories" value="oshinagaki">
 							<ol class="filters" style="padding-left: 0; margin: 2px 0 2px 0;">
 								<li><label for="All"><i class="fas fa-hashtag"></i>All</label></li>
 								<li><label for="sound"><i class="fas fa-hashtag"></i>サウンド</label></li>
@@ -141,11 +142,38 @@
 								<li><label for="card"><i class="fas fa-hashtag"></i>カード</label></li>
 								<li><label for="sticker"><i class="fas fa-hashtag"></i>ステッカー</label></li>
 								<li><label for="keyring"><i class="fas fa-hashtag"></i>アクリルグッズ</label></li>
+								<li><label for="oshinagaki"><i class="fas fa-hashtag"></i>お品書き</label></li>
 							</ol>
 
 							<center><h3 style="margin-top: 5px;">「<span id="selectedCategory"></span>」のカテゴリ一覧：<span id="selectedTagCount"></span>件</h3></center>
 							
 							<ol class="targets" style="padding-left: 0;">
+								<li class="target" data-category="other">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../special/dl.html"> <img src="../img/yellow.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../special/dl.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../special/dl.html">DLC</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-default" data-category="other" onclick="document.getElementById('other').click();"><i class="fas fa-hashtag"></i>その他</strong></li>
+											<time datetime="2022-06-29"></time>
+										</ol>
+										<figcaption>DLC</figcaption>
+										<figcaption>2022/06/29</figcaption>
+									</figure>
+								</li>
+
 								<li class="target" data-category="other blog">
 									<figure>
 										<div class="portfolio-overlay">
@@ -173,7 +201,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="event">
+								<li class="target" data-category="event oshinagaki">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/paclan.html"> <img src="../img/yellow.png" alt=""> </a>
@@ -192,6 +220,7 @@
 										<h2 class="target-title"> <a href="../event/paclan.html">PACLAN</a> </h2>
 										<ol class="target-categories">
 											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<li><strong class="label label-default" data-category="oshinagaki" onclick="document.getElementById('oshinagaki').click();"><i class="fas fa-hashtag"></i>お品書き</strong></li>
 											<time datetime="2023-12-03"></time>
 										</ol>
 										<figcaption>お品書き</figcaption>
@@ -227,7 +256,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="event">
+								<li class="target" data-category="event oshinagaki">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/oricomi10.html"> <img src="../img/yellow.png" alt=""> </a>
@@ -246,6 +275,7 @@
 										<h2 class="target-title"> <a href="../event/oricomi10.html">オリComi Osaka10</a> </h2>
 										<ol class="target-categories">
 											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<li><strong class="label label-default" data-category="oshinagaki" onclick="document.getElementById('oshinagaki').click();"><i class="fas fa-hashtag"></i>お品書き</strong></li>
 											<time datetime="2023-12-02"></time>
 										</ol>
 										<figcaption>お品書き</figcaption>
@@ -376,7 +406,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="event">
+								<li class="target" data-category="event oshinagaki">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/daigakusai.html"> <img src="../img/yellow.png" alt=""> </a>
@@ -395,6 +425,7 @@
 										<h2 class="target-title"> <a href="../event/daigakusai.html">大学祭</a> </h2>
 										<ol class="target-categories">
 											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<li><strong class="label label-default" data-category="oshinagaki" onclick="document.getElementById('oshinagaki').click();"><i class="fas fa-hashtag"></i>お品書き</strong></li>
 											<time datetime="2023-11-05"></time>
 										</ol>
 										<figcaption>お品書き</figcaption>
@@ -462,7 +493,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="event">
+								<li class="target" data-category="event oshinagaki">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/c102.html"> <img src="../img/yellow.png" alt=""> </a>
@@ -481,6 +512,7 @@
 										<h2 class="target-title"> <a href="../event/c102.html">コミックマーケット102</a> </h2>
 										<ol class="target-categories">
 											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<li><strong class="label label-default" data-category="oshinagaki" onclick="document.getElementById('oshinagaki').click();"><i class="fas fa-hashtag"></i>お品書き</strong></li>
 											<time datetime="2023-08-13"></time>
 										</ol>
 										<figcaption>お品書き</figcaption>
@@ -654,7 +686,7 @@
 									</figure>
 								</li>
 
-								<li class="target" data-category="event">
+								<li class="target" data-category="event oshinagaki">
 									<figure>
 										<div class="portfolio-overlay">
 											<a href="../event/kk13.html"> <img src="../img/yellow.png" alt=""> </a>
@@ -673,6 +705,7 @@
 										<h2 class="target-title"> <a href="../event/kk13.html">けもケット13</a> </h2>
 										<ol class="target-categories">
 											<li><strong class="label label-danger" data-category="event" onclick="document.getElementById('event').click();"><i class="fas fa-hashtag"></i>イベント</strong></li>
+											<li><strong class="label label-default" data-category="oshinagaki" onclick="document.getElementById('oshinagaki').click();"><i class="fas fa-hashtag"></i>お品書き</strong></li>
 											<time datetime="2023-05-06"></time>
 										</ol>
 										<figcaption>お品書き</figcaption>
@@ -757,32 +790,6 @@
 										</ol>
 										<figcaption>オリジナル</figcaption>
 										<figcaption>2022/10/10 ボカコレ2022秋</figcaption>
-									</figure>
-								</li>
-				
-								<li class="target" data-category="other">
-									<figure>
-										<div class="portfolio-overlay">
-											<a href="../special/dl.html"> <img src="../img/yellow.png" alt=""> </a>
-											<div class="hover-mask">
-												<p>
-												<div class="circle">
-													<h2><a href="../img/yellow.png"><i class="fa fa-plus"></i></a></h2>
-												</div>
-				
-												<div class="circle">
-													<h2><a href="../special/dl.html"><i class="fa fa-bars"></i></a></h2>
-												</div>
-												</p>
-											</div>
-										</div>
-										<h2 class="target-title"> <a href="../special/dl.html">DLC</a> </h2>
-										<ol class="target-categories">
-											<li><strong class="label label-default" data-category="other" onclick="document.getElementById('other').click();"><i class="fas fa-hashtag"></i>その他</strong></li>
-											<time datetime="2022-06-29"></time>
-										</ol>
-										<figcaption>DLC</figcaption>
-										<figcaption>2022/06/29</figcaption>
 									</figure>
 								</li>
 							</ol>
