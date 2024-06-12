@@ -1622,6 +1622,7 @@ input[type="radio"] {
 [value="sticker"]:checked ~ .filters [for="sticker"],
 [value="keyring"]:checked ~ .filters [for="keyring"],
 [value="blog"]:checked ~ .filters [for="blog"],
+[value="oshinagaki"]:checked ~ .filters [for="oshinagaki"],
 [value="other"]:checked ~ .filters [for="other"] {
   background: #1abc9c;
   color: #fff;
@@ -1647,6 +1648,7 @@ input[type="radio"] {
 [value="sticker"]:checked ~ .targets .target:not([data-category~="sticker"]),
 [value="keyring"]:checked ~ .targets .target:not([data-category~="keyring"]),
 [value="blog"]:checked ~ .targets .target:not([data-category~="blog"]),
+[value="oshinagaki"]:checked ~ .targets .target:not([data-category~="oshinagaki"]),
 [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
   display: none;
 }
@@ -2636,4 +2638,41 @@ td:nth-child(6) {
 }
 .handle i {
   margin-right: 8px;
+}
+
+/* ----------------------------------------------------------------
+	Articles
+-----------------------------------------------------------------*/
+
+.articles {
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article {
+  width: 90%;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+.article img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.article h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.article p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.article:hover .target-title {
+  color: #999;
 }
