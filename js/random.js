@@ -16,12 +16,12 @@ const articles = [
     },
     {
         image: "https://oecusoundserver.github.io/Cadence/img/ToyBox.png",
-        title: "<a href='https://oecusoundserver.github.io/Cadence/event/CAD-0002.html'>Pretty Furry VGM Remix Collection</a>",
+        title: "<a href='https://oecusoundserver.github.io/Cadence/event/CAD-0002.html'>ToyBox</a>",
         description: "Cadenceとボカロ部の運営スタッフが作詞・作曲した楽曲を参加者の皆さんがアレンジし、一つのCDにします。"
     },
     {
         image: "https://oecusoundserver.github.io/Cadence/img/kemo.png",
-        title: "<a href='https://oecusoundserver.github.io/Cadence/portfolio/fatty.html'>Pretty Furry VGM Remix Collection</a>",
+        title: "<a href='https://oecusoundserver.github.io/Cadence/portfolio/fatty.html'>ふぁってい・きゃっと</a>",
         description: "このゲームは、3Dアクションゲームです。主人公の猫はコロコロと転がりながら移動し、ヒップドロップで衝撃波を出します。衝撃波を敵にぶつけ、一定数の敵を倒すことでゲームクリアになります。"
     }
 ];
