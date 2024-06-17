@@ -29,7 +29,7 @@ const articles = [
 const randomArticles = [];
 
 // Randomly select 2 articles for PC and 1 article for mobile
-if (window.innerWidth >= 1024) {
+if (window.innerWidth > 1024) {
     while (randomArticles.length < 3) {
         const randomIndex = Math.floor(Math.random() * articles.length);
         if (!randomArticles.includes(randomIndex)) {
