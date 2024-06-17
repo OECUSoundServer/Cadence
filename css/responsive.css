@@ -236,3 +236,19 @@
     border-radius: 10px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .article {
+    width: 80%;
+    margin: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+  }
+}
