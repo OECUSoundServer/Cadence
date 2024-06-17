@@ -221,7 +221,7 @@
 	Articles
 -----------------------------------------------------------------*/
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   .articles {
     display: flex;
     flex-wrap: wrap;
@@ -237,7 +237,7 @@
   }
 }
 
-@media screen and @media screen and (min-width: 376px) and (max-width: 768px) {
+@media screen and @media screen and (min-width: 415px) and (max-width: 768px) {
   .articles {
     display: flex;
     flex-wrap: wrap;
