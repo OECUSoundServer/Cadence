@@ -2360,6 +2360,16 @@ details[open] .icon_d {
   );
 }
 
+.stripe.yellow {
+  background: repeating-linear-gradient(
+    135deg,
+    #ffd5a0,
+    #ffd5a0 5px,
+    #ffe0b0 5px,
+    #ffe0b0 10px
+  );
+}
+
 /* ----------------------------------------------------------------
 	Video
 -----------------------------------------------------------------*/
