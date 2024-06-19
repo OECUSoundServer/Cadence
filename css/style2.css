@@ -2157,12 +2157,6 @@ style-msg2 .sb-msg {
   font-weight: normal;
 }
 
-.sb-msg-margin {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-right: 1em;
-}
-
 /* ----------------------------------------------------------------
 	Notes - New
 -----------------------------------------------------------------*/
@@ -2239,7 +2233,13 @@ span.marker.blue {
 
 .notes {
   list-style: inside;
-  margin: 10px 0;
+  margin: 5px 0;
+}
+
+.sb-msg-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1em;
 }
 
 /* ----------------------------------------------------------------
