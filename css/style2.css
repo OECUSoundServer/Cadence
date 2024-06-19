@@ -2068,6 +2068,10 @@ table {
   /* width: 90%; */
 }
 
+table.cdinfo {
+  width: 90%;
+}
+
 tbody {
   width: 100%;
 }
