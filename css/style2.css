@@ -2160,6 +2160,7 @@ style-msg2 .sb-msg {
 .sb-msg-margin {
   margin-top: 0;
   margin-bottom: 0;
+  padding-right: 1em;
 }
 
 /* ----------------------------------------------------------------
@@ -2238,7 +2239,7 @@ span.marker.blue {
 
 .notes {
   list-style: inside;
-  margin: 10 0;
+  margin: 10px 0;
 }
 
 /* ----------------------------------------------------------------
