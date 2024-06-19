@@ -22,6 +22,7 @@
   - Label
   - Timer
   - Event
+  - Notes
   - Button
   - Details
   - Pattern
@@ -2090,6 +2091,26 @@ tr:last-child th {
   width: 50%;
 }
 
+.simekiri {
+  border-radius: 3px;
+  background-color: #ccccff;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 2em;
+}
+
+.portfolio-item {
+  float: left;
+  position: relative;
+  width: 25%;
+  height: auto;
+  padding: 0 12px 12px 0;
+}
+
+/* ----------------------------------------------------------------
+	Notes - Old
+-----------------------------------------------------------------*/
+
 .style-msg2 {
   border-left: 4px solid rgba(0, 0, 0, 0.2);
   background-color: #eee;
@@ -2122,30 +2143,83 @@ style-msg2 .sb-msg {
   margin-bottom: 0;
 }
 
+/* ----------------------------------------------------------------
+	Notes - New
+-----------------------------------------------------------------*/
+
+.notes-tape {
+  background: #ccccbb;
+  opacity: 0.2; transform:
+  rotate(2deg); width: 35%; 
+  height: 35px; margin: 0 auto -2.2em auto;
+}
+
+.notes-masking {
+  background-color: #ffffff;
+  background-image: linear-gradient(-45deg, rgba(250,215,215,.5) 25%, transparent 25%, transparent 50%, rgba(250,215,215,.5) 50%, rgba(250,215,215,.5) 75%, transparent 75%, transparent 100%), linear-gradient(45deg, rgba(250,215,215,.5) 25%, transparent 25%, transparent 50%, rgba(250,215,215,.5) 50%, rgba(250,215,215,.5) 75%, transparent 75%, transparent 100%); background-size: 40px 40px;
+  transform: rotate(2deg);
+  width: 35%; 
+  height: 35px;
+  margin: 0 auto -2.2em auto;
+}
+
+.notes-shadow {
+  border: 0px solid #59a136;
+  background: #ffffff;
+  box-shadow:3px 3px 6px -2px #555;
+}
+
+.notes-title {
+  padding: 25px 15px 15px 15px;
+  text-shadow: 1px 1px 1px rgb(255 255 255 / 60%);
+}
+
+.notes-sticky {
+  background: #dbffdb;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
+.notes-sticky.blue {
+  background: #e6f2ff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
+.notes-sticky.brown {
+  background: #e4cba7;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
+.notes-sticky.yellow {
+  background: #ffffcc;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
+span.marker {
+  background: linear-gradient(transparent 40%, #21ff00 90%);
+}
+
+span.marker.yellow {
+  background: linear-gradient(transparent 40%, #ffff00 90%);
+}
+
+span.marker.blue {
+  background: linear-gradient(transparent 40%, #33ccff 90%);
+}
+
 #check {
   color: #f00;
   font-weight: bold;
+  /* background: linear-gradient(transparent 60%, #FFFF00 100%); */
 }
+
 
 .notes {
   list-style: inside;
   margin: 10 0;
-}
-
-.simekiri {
-  border-radius: 3px;
-  background-color: #ccccff;
-  text-align: center;
-  padding: 15px 0px;
-  font-size: 2em;
-}
-
-.portfolio-item {
-  float: left;
-  position: relative;
-  width: 25%;
-  height: auto;
-  padding: 0 12px 12px 0;
 }
 
 /* ----------------------------------------------------------------
