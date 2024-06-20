@@ -1,4 +1,14 @@
 const articles = [
+	{
+        image: "file:///C:/Users/User/Downloads/Cadence-main/Cadence-main/img/touhou.png",
+        title: "<a href='https://oecusoundserver.github.io/Cadence/event/CAD-0007.html'>東方アレンジコンピアルバム(仮)</a>",
+        description: "東方Project関係なら、どの曲をアレンジしてもOK。テーマやジャンルなどの指定もなく、好きなように作って頂くという、超ゆる～い(？)CDです。"
+    },
+	{
+        image: "file:///C:/Users/User/Downloads/Cadence-main/Cadence-main/img/shintyoku.jpg",
+        title: "<a href='https://oecusoundserver.github.io/Cadence/event/CAD-0006.html'>進捗どうですか？</a>",
+        description: "入稿の締め切りギリギリ、そんな限界状態の時にふと思い立って作った限界CD。締め切りを目前に控え追い詰められてる人へ、届け～このCD！！"
+    },
     {
         image: "https://oecusoundserver.github.io/Cadence/img/yellow.png",
         title: "<a href='https://oecusoundserver.github.io/Cadence/sample.html'>サンプル記事</a>",
