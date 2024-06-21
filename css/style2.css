@@ -1939,7 +1939,7 @@ pre {
   flex: 1;
 }
 .tab-label:not(:last-of-type) {
-  margin-right: 5px;
+  margin-right: 3px;
 }
 .tab-content {
   width: 100%;
