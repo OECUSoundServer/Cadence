@@ -113,6 +113,11 @@ li {
   background-color: #b4b422;
 }
 
+.selpink ::selection {
+  color: #fff;
+  background-color: #ff69b4;
+}
+
 .clear {
   clear: both;
   display: block;
@@ -2107,6 +2112,10 @@ table.cdinfo {
   width: 90%;
 }
 
+#creditsTable {
+  width: 100%;
+}
+
 tbody {
   width: 100%;
 }
@@ -2212,6 +2221,12 @@ style-msg2 .sb-msg {
   padding-bottom: 2em;
 }
 
+.notes-sticky.pink {
+  background: #ffcce6;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
 span.marker {
   background: linear-gradient(transparent 40%, #21ff00 90%);
 }
@@ -2222,6 +2237,10 @@ span.marker.yellow {
 
 span.marker.blue {
   background: linear-gradient(transparent 40%, #33ccff 90%);
+}
+
+span.marker.pink {
+  background: linear-gradient(transparent 40%, #ff33cc 90%);
 }
 
 #check {
@@ -2466,6 +2485,16 @@ details[open] .icon_d {
     #ffd5a0 5px,
     #ffe0b0 5px,
     #ffe0b0 10px
+  );
+}
+
+.stripe.pink {
+  background: repeating-linear-gradient(
+    135deg,
+    #ffb6c1,
+    #ffb6c1 5px,
+    #ffb8e6 5px,
+    #ffb8e6 10px
   );
 }
 
