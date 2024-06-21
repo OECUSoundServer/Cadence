@@ -101,6 +101,8 @@
         <hr>
 
         <img class="cover-img" src="../img/fattytitle.png" alt="FattyCat Title">
+        <img src="../img/CircleLogo.png" class="circle-logo" alt="サークルロゴ">
+    <!-- <img src="https://mixtuti.github.io/mixtuti/img/IMG_0255.png" class="title-logo" alt="FattyCat"> -->
 
         <main class="top">
             <article>
@@ -113,9 +115,10 @@
                         </div>
                 
                         <div class="right">
-                            <p>跳ねて敵をやっつけよう！！</p>
+                            <p><b>ー 跳ねて敵をやっつけよう！！</b></p>
+                            <p>このゲームは、<!--2023年03月22日から03月24日に開催された、春のゲームジャム2023で作成された作品です。-->「つたえる」をテーマに制作した3Dアクションゲーム。コロコロと転がりながら移動し、ヒップドロップで衝撃波を出す。衝撃波を敵にぶつけ、一定数の敵を倒すことでゲームクリアとなる。</p>
                             <br>
-                            <table>
+                            <table class="cdinfo">
                                 <tr>
                                     <th>ゲーム名</th>
                                     <td>ふぁってぃ・きゃっと</td>
@@ -126,7 +129,7 @@
                                 </tr>
                                 <tr>
                                     <th>制作期間</th>
-                                    <td>2023年3月〜</td>
+                                    <td>2023年3月</td>
                                 </tr>
                                 <tr>
                                     <th>制作人数</th>
@@ -148,18 +151,23 @@
                                     <th>頒布価格</th>
                                     <td>200円(Disc版)</td>
                                 </tr>
+                                <tr>
+                                    <th>備考</th>
+                                    <td>ー</td>
+                                </tr>
+                                <tr>
+                                    <th>委託先</th>
+                                    <td>
+                                    	<a href="https://cadence.booth.pm/items/4713030" class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
+                    					<a href="https://unityroom.com/games/fattycat" class="button button-3d button-mini button-rounded button-green2" style="color: #fff;">Unity</a>
+                    				</td>
+                                </tr>
                             </table>
                         </div>
                     </div>
                 
                     <div class="clear"></div>
-                
-                    <p>このゲームは、2023年03月22日から03月24日に開催された、春のゲームジャム2023で作成された作品です。テーマは「つたえる」で制作しました。</p>
-                
-                    <h3><img class="emoji" src="../img/nikukyu.svg"> 概要</h3>
-                    <p>このゲームは、3Dアクションゲームです。主人公の猫はコロコロと転がりながら移動し、ヒップドロップで衝撃波を出します。衝撃波を敵にぶつけ、一定数の敵を倒すことでゲームクリアになります。</p>
-                
-                    <h3><img class="emoji" src="../img/nikukyu.svg"> スクリーンショット(開発中画面)</h3>
+                    <h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg"> スクリーンショット(開発中画面)</h3>
                 
                     <div class="Two-column">
                         <div class="left">
@@ -169,24 +177,111 @@
                             <li><img src="https://oecusoundserver.github.io/Cadence/img/enemyDog.png" alt="" class="cover-square"></li>
                         </div>
                     </div>
-                
-                    <div class="Two-column">
-                        <div class="left">
-                            <h3><img class="emoji" src="../img/nikukyu.svg"> ゲームプレイリンク</h3>
-                            <p>現状の最新版です。挙動がおかしかったり、仕様が変更されることは十全にあり得ますのであらかじめご了承ください。</p>
-                            <a href="https://cadence.booth.pm/items/4713030"
-                                class="button button-3d button-mini button-rounded button-red" style="color:#fff;">booth</a>
-                            <a href="https://unityroom.com/games/fattycat"
-                                class="button button-3d button-mini button-rounded button-green2" style="color: #fff;">Unity</a>
-                        </div>
-                
-                        <div class="right">
-                            <h3><img class="emoji" src="../img/nikukyu.svg"> プレイ動画</h3>
-                            <p>準備中・・・</p>
-                        </div>
+                    
+                    <h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg"> 注意事項</h3>
+                    <p>都合により開発を終了しました。これ以上のアップデートなど行う予定は現状ありません。</p>
+                    <p>当ソフトの利用にあたって、何らかの不具合やトラブルが生じたとしても、当サークルは一切の責任を負いません。自己責任でご利用ください。</p>
+                    <hr>
+                    <p id="check">インストーラーの設定ミスの都合でインストーラーから直接起動できません。</p>
+                    <p>デフォルトの状態ですと「C:\Program Files (x86)\FattyCat」にフォルダが生成されます。その中にある「FattyCat_UE5.exe」からゲームを起動してください。</p>
+                    <hr>
+                    <p><span id="check">BOOTHからダウンローできるデータは現状の最新版です。</span>Disc版を購入された方は、お手数ですがBOOTHから最新版をダウンロードしてください。</p>
+                    <p>Disc版は過去のバージョンで遊びたい人向けになる予定です。</p>
+                    <hr>
+                    <p>Original Sound Trackは、<span id="check">けもケット13など、イベント当日に頒布のポストカードかDisc版を購入して頂いた人のみの予定です。</span></p>
+                    <p>効果音18種とBGM1種あります。</p>
+                    <p>ポストカードに載せているキーをzip解凍時に入力して下さい。</p>
+                    
+                    <section id="content_t"><a name="Track"></a>
+                <h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg">Track List</h3>
+                <div class="content-wrap">
+                    <div class="panel panel-default">
+                        <ul class="list-group-center">
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">1. ambience / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">2. attack / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">3. cancel / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">4. cat_attacked_1 / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">5. cat_attacked_2 / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">6. cat_attacked_3 / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">7. cat_standby_1 / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">8. cat_standby_2 / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">9. cat_standby_3 / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">10. done / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">11. e_found / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">12. e_tail / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">13. e_walk / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">14. p_jump_h / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">15. p_jump_n / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">16. p_walk / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">17. purr / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">18. select / ⊥S!7!H!N</h4>
+                                オリジナル
+                            </li>
+                            <li class="list-group-item">
+                                <h4 class="list-group-item-heading">19. StageBGM / mixtuti</h4>
+                                オリジナル
+                            </li>
+                        </ul>
                     </div>
+                </div>
+            </section>
+                    
+                    <h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg"> プレイ動画</h3>
+                    <p>準備中・・・</p>
                 
-                    <h3><img class="emoji" src="../img/nikukyu.svg"> その他</h3>
+                    <h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg"> その他</h3>
                     <img src="https://oecusoundserver.github.io/Cadence/img/kk13.png">
                     <p>▲提出したサークルカット</p><br>
                 
