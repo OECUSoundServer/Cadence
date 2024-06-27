@@ -106,7 +106,8 @@
 				<div>
 		  			<h2 class="title DotGothic16"><!--<i class="fas fa-paw"></i>--><i class="fas fa-edit"></i> 記事を作成する</h2>
 				</div>
-				<p>このページの詳しい使い方は、<a href="https://oecusoundserver.github.io/Cadence/sample.html"><u>コチラ</u></a>に記載します。</p>
+				<p>このページの詳しい使い方は、<a href="#howToMake"><u>コチラ</u></a>に記載します。</p>
+				<p>記事の見た目などの参考例は、<a href="https://oecusoundserver.github.io/Cadence/sample.html"><u>コチラ</u></a>からどうぞ。</p>
 				<div class="Two-column">
 					<div class="left">
 						<div style="width: 80%; background-color: #edffff; padding: 5px;">
@@ -117,12 +118,12 @@
 							記事概要：<input type="text" id="overview-text" size="45" placeholder='記事を一言で説明する文章を書く'><br>
 							メタタグ(最大４個くらいまで)：<input type="text" id="metatag-text" size="45" placeholder='タグ1,タグ2'><br>
 							X(旧Twitter)：<input type="text" id="x-text" size="30" placeholder='@以降を入力'><br>
-							自己紹介(3行程度)：<textarea type="text" id="introduction-text" rows="3" cols="50" maxlength="150" placeholder='自己紹介' style="resize: none;"></textarea><br>
+							自己紹介(3行程度)：<textarea type="text" id="introduction-text" rows="3" cols="50" style="width: 90%;"　maxlength="150" placeholder='自己紹介' style="resize: none;"></textarea><br>
 							<!-- タグ入力フォーム -->
 						    <div id="tag-inputs">
 						        <div class="tag-input">
 						            日本語タグ：<input type="text" class="tag-name" placeholder="例) ブログ"><br>
-						            英語タグ：<input type="text" class="tag-en" placeholder="blog">
+						            英語タグ：<input type="text" class="tag-en" placeholder="blog ↑とセットで記載">
 						            <button onclick="deleteTagInput(this)">削除</button><br>
 						        </div>
 						    </div>
@@ -138,7 +139,7 @@
 							<div id="content-inputs">
 							    <div class="content-input">
 							        コンテンツタイトル：<input type="text" class="content-title" placeholder="コンテンツタイトル"><br>
-							        コンテンツ本文：<textarea class="content-body" rows="4" cols="50" placeholder="コンテンツ本文を入力してください"></textarea>
+							        コンテンツ本文：<textarea class="content-body" rows="4" cols="50" style="width: 90%;" placeholder="コンテンツ本文を入力してください"></textarea>
 							        <button onclick="deleteInput(this)">削除</button><br>
 							    </div>
 							</div>
@@ -174,13 +175,29 @@
 						</code>
 					</pre>
 					<p>上記のように記載していただけると、運営側で画像やhtmlをアップロードするときに非常に助かります。その際、ファイル名は一致させておいてください。</p>
-					<p>動画の場合はそのままコンテンツ本文に埋め込んでおいてください。運営の方で少しだけ調整いたします。</p>
+					<p>動画の場合は、URLをそのまま記載しておいてください。運営の方で埋めこみを作成いたします。</p>
 					<h3><img class="emoji" src="https://oecusoundserver.github.io/Cadence/img/nikukyu.svg"> 作者画像について</h3>
 					<p>作者画像は、正方形の「.png」形式でお願いします。また、ファイル名は、上記フォームの作者名と同じにしておいてください。</p>
 					<h3><img class="emoji" src="https://oecusoundserver.github.io/Cadence/img/nikukyu.svg"> ファイル提出先について</h3>
 					<p>画像や、生成されたhtmlファイルは、Discordサーバーの指定したチャンネルに投稿してください。それ以外の場所からのものは提出を受け付けません。全てのファイルをまとめて「.zip」で提出をお願いします。</p>
 					<p>ファイルの中身の確認が済み次第、順次公開に踏み切ります。公開された場合も、Discord内で告知します。</p>
 				</div>
+			</article>
+			
+			<a name="howToMake"></a>
+			<article>
+				<div>
+		  			<h2 class="title DotGothic16"><i class="fas fa-wrench"></i> 使い方</h2>
+				</div>
+				<p>まずは必要事項を記入してください。以下は例です。</p>
+				<img src="https://oecusoundserver.github.io/Cadence/img/howTomake.png" alt="" style="border: 1px solid #f0f0f0;">
+				<p>記入ができたら、生成ボタンを押します。</p>
+				<img src="https://oecusoundserver.github.io/Cadence/img/howTomake1.png" alt="" style="border: 1px solid #f0f0f0;">
+				<p>「生成する」ボタンを押すと自動で生成されます。</p>
+				<img src="https://oecusoundserver.github.io/Cadence/img/howTomake2.png" alt="" style="border: 1px solid #f0f0f0;">
+				<p>「コピー」を選択すると、クリップボードにコピーされます。好きなテキストエディタに張り付けて編集してください。</p>
+				<p>「HTMLファイルを生成」を押すと、HTMLファイルが自動でダウンロードされます。編集をしない場合は、このまま指定した場所に提出してください。</p>
+				<p>基本的には、HTMLを生成してから編集の方をお勧めします。</p>
 			</article>
 		</main>
 			
