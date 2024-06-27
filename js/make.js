@@ -92,7 +92,8 @@ function generateHTML() {
 	<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@${linkText}" />
-	<meta name="twitter:title" content="Cadence｜${titleText}" /><meta name="twitter:description" content="${overviewText}" />
+	<meta name="twitter:title" content="Cadence｜${titleText}" />
+ 	<meta name="twitter:description" content="${overviewText}" />
 	<meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
     <meta name="keywords" content="${metaTagText}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
