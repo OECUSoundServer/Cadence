@@ -22,7 +22,7 @@ function addInput() {
 	newInput.classList.add("content-input");
 	newInput.innerHTML = `
 		コンテンツタイトル：<input type="text" class="content-title" placeholder="コンテンツタイトル"><br>
-		コンテンツ本文：<textarea class="content-body" rows="4" cols="50" placeholder="コンテンツ本文を入力してください"></textarea>
+		コンテンツ本文：<textarea class="content-body" rows="4" cols="50" style="width: 90%;" placeholder="コンテンツ本文を入力してください"></textarea>
 		<button onclick="deleteInput(this)">削除</button><br>
 	`;
 	contentInputs.appendChild(newInput);
