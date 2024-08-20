@@ -113,13 +113,13 @@
 					<div class="left">
 						<div style="width: 80%; background-color: #edffff; padding: 5px;">
 							<h3><img class="emoji" src="https://oecusoundserver.github.io/Cadence/img/nikukyu.svg"> メタ情報</h3>
-							ファイル名(半角英数のみ)<span style="color: red; font-size: small;">※</span>：<input pattern="^[a-zA-Z0-9]+$" type="text" id="file-text" size="15" maxlength="15" placeholder='sample'><br>
-							作者名(15文字以内)<span style="color: red; font-size: small;">※</span>：<input type="text" id="author-text" size="15" maxlength="15" required placeholder='山田太郎'><br>
-							記事タイトル<span style="color: red; font-size: small;">※</span>：<input type="text" id="title-text" size="30" required placeholder='サンプル記事'><br>
-							記事概要：<input type="text" id="overview-text" size="30" placeholder='記事を一言で説明する文章を書く'><br>
-							メタタグ(最大４個くらいまで)：<input type="text" id="metatag-text" size="30" placeholder='タグ1,タグ2'><br>
-							X(旧Twitter)：<input type="text" id="x-text" size="30" placeholder='@以降を入力'><br>
-							自己紹介(3行程度)：<textarea type="text" id="introduction-text" rows="3" cols="50" style="width: 90%;"　maxlength="150" placeholder='自己紹介' style="resize: none;"></textarea><br>
+							ファイル名(半角英数のみ)<span style="color: red; font-size: small;">※</span>：<input pattern="^[a-zA-Z0-9]+$" type="text" id="file-text" size="15" maxlength="15" placeholder="sample"><br>
+							作者名(15文字以内)<span style="color: red; font-size: small;">※</span>：<input type="text" id="author-text" size="15" maxlength="15" required placeholder="山田太郎"><br>
+							記事タイトル<span style="color: red; font-size: small;">※</span>：<input type="text" id="title-text" size="30" required placeholder="サンプル記事"><br>
+							記事概要：<input type="text" id="overview-text" size="30" placeholder="記事を一言で説明する文章を書く"><br>
+							メタタグ(最大４個くらいまで)：<input type="text" id="metatag-text" size="30" placeholder="タグ1,タグ2"><br>
+							X(旧Twitter)：<input type="text" id="x-text" size="30" placeholder="@以降を入力"><br>
+							自己紹介(3行程度)：<textarea type="text" id="introduction-text" rows="3" cols="50" style="width: 90%; resize: none;" maxlength="150" placeholder="自己紹介"></textarea><br>
 							<!-- タグ入力フォーム -->
 						    <div id="tag-inputs">
 						        <div class="tag-input">
@@ -144,7 +144,14 @@
 							        <button onclick="deleteInput(this)">削除</button><br>
 							    </div>
 							</div>
-							<button onclick="addInput()">コンテンツ追加</button><br>
+							<div id="contentV-inputs">
+							    <div class="contentV-input">
+							        YouTubeのURL：<input type="text" class="content-URL" placeholder="https://www.youtube.com/watch?v=ここを入力" size="40">
+							        <button onclick="deleteInput(this)">削除</button><br>
+							    </div>
+							</div>
+							<button onclick="addInput()">コンテンツ追加</button>
+							<button onclick="addMovie()">YouTube動画追加</button><br>
 						</div>
 					</div>
 				</div>
