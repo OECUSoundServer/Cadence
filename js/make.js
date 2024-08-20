@@ -28,6 +28,18 @@ function addInput() {
 	contentInputs.appendChild(newInput);
 }
 
+// 動画を追加する関数
+function addMovie() {
+	var contentInputs = document.getElementById("contentV-inputs");
+	var newVInput = document.createElement("div");
+	newVInput.classList.add("contentV-input");
+	newVInput.innerHTML = `
+		YouTubeのURL：<input type="text" class="content-URL" placeholder="https://www.youtube.com/watch?v=ここを入力" size="40">
+		<button onclick="deleteInput(this)">削除</button><br>
+	`;
+	contentInputs.appendChild(newVInput);
+}
+
 // 削除ボタンが押された時の処理
 function deleteInput(button) {
 	var inputDiv = button.parentElement;
@@ -58,6 +70,7 @@ function generateHTML() {
 	
 	// コンテンツ情報を取得
 	var contentInputs = document.getElementsByClassName("content-input");
+	var contentVInputs = document.getElementsByClassName("contentV-input");
 	var contentsHTML = "";
 	
 	for (var j = 0; j < contentInputs.length; j++) {
@@ -72,6 +85,26 @@ function generateHTML() {
 				<h2><img class="emoji" src="https://oecusoundserver.github.io/Cadence/img/nikukyu.svg"> ${contentTitle} <img class="emoji" src="https://oecusoundserver.github.io/Cadence/img/nikukyu.svg"></h2>
 				${paragraphs}
 			</div>
+		`;
+	}
+
+	for (var j = 0; j < contentVInputs.length; j++) {
+		var contentURL = contentVInputs[j].querySelector(".content-URL").value;
+		
+		// 改行を<p>タグで区切る
+		// var paragraphs = contentBody.split('\n').map(p => `<p>${p}</p>`).join('');
+		
+		contentsHTML += `
+			<div class="ma"></div>
+			<div class="content">
+				<div class="blogvideo">
+					<iframe width="100%" height="auto" src="https://www.youtube.com/embed/${contentURL}" title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="ma"></div>
 		`;
 	}
 	
