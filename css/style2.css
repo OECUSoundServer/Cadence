@@ -1701,6 +1701,7 @@ input[type="radio"] {
 [value="keyring"]:checked ~ .filters [for="keyring"],
 [value="blog"]:checked ~ .filters [for="blog"],
 [value="oshinagaki"]:checked ~ .filters [for="oshinagaki"],
+[value="entertainment"]:checked ~ .filters [for="entertainment"],
 [value="other"]:checked ~ .filters [for="other"] {
   background: #1abc9c;
   color: #fff;
@@ -1727,6 +1728,7 @@ input[type="radio"] {
 [value="keyring"]:checked ~ .targets .target:not([data-category~="keyring"]),
 [value="blog"]:checked ~ .targets .target:not([data-category~="blog"]),
 [value="oshinagaki"]:checked ~ .targets .target:not([data-category~="oshinagaki"]),
+[value="entertainment"]:checked ~ .targets .target:not([data-category~="entertainment"]),
 [value="other"]:checked ~ .targets .target:not([data-category~="other"]) {
   display: none;
 }
