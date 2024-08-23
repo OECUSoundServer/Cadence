@@ -120,11 +120,12 @@
 							<input type="radio" id="discontinued" name="categories" value="discontinued">
 							<input type="radio" id="free" name="categories" value="free">
 							<input type="radio" id="cd" name="categories" value="cd">
-                        	<input type="radio" id="card" name="categories" value="card">
-                        	<input type="radio" id="sticker" name="categories" value="sticker">
-                       		<input type="radio" id="keyring" name="categories" value="keyring">
+			                        	<input type="radio" id="card" name="categories" value="card">
+			                        	<input type="radio" id="sticker" name="categories" value="sticker">
+			                       		<input type="radio" id="keyring" name="categories" value="keyring">
 							<input type="radio" id="blog" name="categories" value="blog">
 							<input type="radio" id="oshinagaki" name="categories" value="oshinagaki">
+							<input type="radio" id="entertainment" name="categories" value="entertainment">
 							<ol class="filters" style="padding-left: 0; margin: 2px 0 2px 0; font-size: small;">
 								<li><label for="All"><i class="fas fa-hashtag"></i>All</label></li>
 								<li><label for="sound"><i class="fas fa-hashtag"></i>サウンド</label></li>
@@ -143,6 +144,7 @@
 								<li><label for="sticker"><i class="fas fa-hashtag"></i>ステッカー</label></li>
 								<li><label for="keyring"><i class="fas fa-hashtag"></i>アクリルグッズ</label></li>
 								<li><label for="oshinagaki"><i class="fas fa-hashtag"></i>お品書き</label></li>
+								<li><label for="entertainment"><i class="fas fa-hashtag"></i>エンタメ</label></li>
 							</ol>
 
 							<center><h3 style="margin-top: 5px;">「<span id="selectedCategory"></span>」のカテゴリ一覧：<span id="selectedTagCount"></span>件</h3></center>
@@ -237,6 +239,33 @@
 										</ol>
 										<figcaption>東方Project</figcaption>
 										<figcaption>2024/10/06 東方紅楼夢20</figcaption>
+									</figure>
+								</li>
+
+								<li class="target" data-category="blog entertainment">
+									<figure>
+										<div class="portfolio-overlay">
+											<a href="../blog/self-introduction.html"> <img src="../img/alius2.png" alt=""> </a>
+											<div class="hover-mask">
+												<p>
+												<div class="circle">
+													<h2><a href="../img/alius2.png"><i class="fa fa-plus"></i></a></h2>
+												</div>
+				
+												<div class="circle">
+													<h2><a href="../blog/self-introduction.html"><i class="fa fa-bars"></i></a></h2>
+												</div>
+												</p>
+											</div>
+										</div>
+										<h2 class="target-title"> <a href="../blog/self-introduction.html">Vtuberデビュー！</a> </h2>
+										<ol class="target-categories">
+											<li><strong class="label label-primary" data-category="sound" onclick="document.getElementById('blog').click();"><i class="fas fa-hashtag"></i>ブログ</strong></li>
+											<li><strong class="label label-warning" data-category="movie" onclick="document.getElementById('entertainment').click();"><i class="fas fa-hashtag"></i>エンタメ</strong></li>
+											<time datetime="2024-08-23"></time>
+										</ol>
+										<figcaption>ブログ</figcaption>
+										<figcaption>2024/08/23</figcaption>
 									</figure>
 								</li>
 
