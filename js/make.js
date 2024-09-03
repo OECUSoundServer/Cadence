@@ -3,8 +3,8 @@ function addTagInput() {
 	var newTagInput = document.createElement("div");
 	newTagInput.classList.add("tag-input");
 	newTagInput.innerHTML = `
-		日本語タグ：<input type="text" class="tag-name" placeholder="タグ名"><br>
-		英語タグ：<input type="text" class="tag-en" placeholder="tag">
+		日本語タグ：<input type="text" class="tag-name" placeholder="例) ブログ"><br>
+		英語タグ：<input type="text" class="tag-en" placeholder="blog ↑とセットで記載">
 		<button onclick="deleteTagInput(this)">削除</button><br>
 	`;
 	tagInputs.appendChild(newTagInput);
@@ -74,8 +74,16 @@ function generateHTML() {
 	var contentsHTML = "";
 	
 	for (var j = 0; j < contentInputs.length; j++) {
-		var contentTitle = contentInputs[j].querySelector(".content-title").value;
-		var contentBody = contentInputs[j].querySelector(".content-body").value;
+		var contentTitleElement = contentInputs[j].querySelector(".content-title");
+		var contentBodyElement = contentInputs[j].querySelector(".content-body");
+		
+		// content-titleまたはcontent-bodyが存在しない場合は、このループをスキップ
+		if (!contentTitleElement || !contentBodyElement) {
+			continue;
+		}
+		
+		var contentTitle = contentTitleElement.value;
+		var contentBody = contentBodyElement.value;
 		
 		// 改行を<p>タグで区切る
 		var paragraphs = contentBody.split('\n').map(p => `<p>${p}</p>`).join('');
@@ -87,12 +95,16 @@ function generateHTML() {
 			</div>
 		`;
 	}
-
+	
 	for (var j = 0; j < contentVInputs.length; j++) {
-		var contentURL = contentVInputs[j].querySelector(".content-URL").value;
+		var contentURLElement = contentVInputs[j].querySelector(".content-URL");
 		
-		// 改行を<p>タグで区切る
-		// var paragraphs = contentBody.split('\n').map(p => `<p>${p}</p>`).join('');
+		// content-URLが存在しない場合は、このループをスキップ
+		if (!contentURLElement) {
+			continue;
+		}
+		
+		var contentURL = contentURLElement.value;
 		
 		contentsHTML += `
 			<div class="ma"></div>
@@ -108,9 +120,9 @@ function generateHTML() {
 		`;
 	}
 	
+	
 	// 今回は固定のサンプルHTMLを生成する例として、メタタグの内容を利用する。
-	var generatedHTML = `
-<!doctype html>
+	var generatedHTML = `<!doctype html>
 <html lang="ja">
 <head prefix="og: https://ogp.me/ns#">
 	<meta charset="utf-8" />
@@ -289,6 +301,10 @@ function generateHTML() {
 </html>`;
 	// 生成したHTMLコードをテキストボックスに表示する
 	document.getElementById("generatedCode").value = generatedHTML;
+
+	// iframe に生成されたHTMLコードを表示
+    var previewFrame = document.getElementById("preview-frame");
+    previewFrame.srcdoc = generatedHTML;
 }
 
 function copyToClipboard() {
