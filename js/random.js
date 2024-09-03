@@ -10,9 +10,9 @@ const articles = [
         description: "入稿の締め切りギリギリ、そんな限界状態の時にふと思い立って作った限界CD。締め切りを目前に控え追い詰められてる人へ、届け～このCD！！"
     },
     {
-        image: "https://oecusoundserver.github.io/Cadence/img/yellow.png",
-        title: "<a href='https://oecusoundserver.github.io/Cadence/sample.html'>サンプル記事</a>",
-        description: "サンプル記事の内容を簡単に書くところです。ある程度まで来たら勝手に続きを読むというように表示したい。"
+        image: "https://oecusoundserver.github.io/Cadence/img/alius2.png",
+        title: "<a href='https://oecusoundserver.github.io/Cadence/blog/self-introduction.html'>Vtuberデビュー！</a>",
+        description: "この度、Vtuberデビュー致しました。今後はゲーム配信や自主制作作品の作業配信を行っていこうかと考えております。"
     },
     {
         image: "https://oecusoundserver.github.io/Cadence/img/YouthfulBlue.png",
