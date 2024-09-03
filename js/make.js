@@ -134,17 +134,17 @@ function generateHTML() {
 	<meta property="og:url" content="https://oecusoundserver.github.io/Cadence/article/${fileName}.html" />
 	<meta property="og:title" content="Cadence｜${titleText}" />
 	<meta property="og:description" content="${overviewText}" />
-	<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+	<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/${authorName}.png" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@${linkText}" />
 	<meta name="twitter:title" content="Cadence｜${titleText}" />
  	<meta name="twitter:description" content="${overviewText}" />
-	<meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+	<meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/${authorName}.png" />
     <meta name="keywords" content="${metaTagText}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Icon -->
-    <link rel="icon" href="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://oecusoundserver.github.io/Cadence/img/yellow.png">
+    <link rel="icon" href="https://oecusoundserver.github.io/Cadence/img/${authorName}.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://oecusoundserver.github.io/Cadence/img/${authorName}.png">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://oecusoundserver.github.io/Cadence/css/style2.css" type="text/css">
     <link rel="stylesheet" href="https://oecusoundserver.github.io/Cadence/css/responsive.css" type="text/css">
