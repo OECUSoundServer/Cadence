@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>コード制作支援ツール β版</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                max-width: 700px;
+                margin: 2em auto;
+            }
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin: 8px 0;
+            }
+            .suggestions button {
+                margin: 4px;
+                padding: 6px 10px;
+                font-size: 1em;
+            }
+            .result {
+                margin-top: 1em;
+                font-weight: bold;
+            }
+            #patternList {
+                background: #f8f8f8;
+                padding: 10px;
+                border: 1px solid #ccc;
+                margin-top: 10px;
+                font-size: 0.95em;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>コード進行 支援ツール</h1>
+
+        <label>曲のKeyを選択：</label>
+        <select id="keySelect" onchange="suggestNextChord(); updateUrlFromInput()">
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select>
+
+        <label>コード進行を入力（スペース区切り）:</label>
+        <input type="text" id="codeInput" placeholder="例: C G Am" oninput="suggestNextChord(); updateUrlFromInput()">
+
+        <div class="result">次に来そうなコード候補：</div>
+        <div class="suggestions" id="suggestionsBox"></div>
+
+        <div class="result">コードの役割：</div>
+        <div id="functionBox" style="margin-bottom: 1em;"></div>
+
+        <div class="result">代理コード候補：</div>
+        <div id="substitutionBox"></div>
+
+        <div class="result">自由発想コード候補(テスト):</div>
+        <div id="creativeBox"></div>
+
+        <div class="result">ランダムコード:</div>
+        <div id="randomBox"></div>
+
+        <div class="result">雰囲気スコア：</div>
+        <div id="moodBox"></div>
+
+        <div class="result">コード使用統計：</div>
+        <div id="usageBox"></div>
+
+        <hr>
+        <h3>コード進行パターンをファイルから追加（JSON形式）:</h3>
+        <input type="file" id="patternFile" accept=".json" onchange="loadPatternFile()">
+
+        <h3>
+            <button onclick="togglePatternList()">📖 パターン一覧を表示/非表示</button>
+        </h3>
+        <div id="patternList"></div>
+
+        <button onclick="copyCurrentUrl()">🔗 現在のURLをコピー</button>
+        <button onclick="exportCurrentPattern()">📥 現在のコード進行をパターンとして保存</button>
+
+        <script>
+            const chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+
+            const patterns = [
+                { name: "王道進行", chords: ["C", "G", "Am", "F"] },
+                { name: "カノン進行", chords: ["C", "G", "Am", "Em", "F", "C", "F", "G"] },
+                { name: "小室進行", chords: ["Am", "F", "G", "C"] },
+                { name: "爽やか進行", chords: ["C", "Em", "F", "G"] },
+                { name: "循環コード", chords: ["Dm7", "G7", "Cmaj7", "Am7"] },
+                { name: "丸サ進行", chords: ["F", "G", "Em", "Am"] },
+                { name: "J-POP定番進行", chords: ["Em", "G", "C", "D"] },
+                { name: "切ない進行", chords: ["Am", "G", "F", "G"] },
+                { name: "幻想的進行", chords: ["C", "F", "G", "Em"] },
+                { name: "エモーショナル進行", chords: ["C", "Am", "F", "G"] },
+                { name: "暗い雰囲気進行", chords: ["Am", "F", "Dm", "E"] },
+                { name: "ナチュラルマイナー進行", chords: ["Am", "G", "F", "E"] },
+                { name: "昭和歌謡進行", chords: ["C", "Am", "D7", "G7"] },
+                { name: "レトロゲーム風", chords: ["Dm", "Bb", "Gm", "A"] },
+                { name: "ZUN進行", chords: ["A#", "C", "Dm"] }, // F→G→Am → 移調で A#→C→Dm
+                { name: "泥酔", chords: ["Dm", "C", "A#"] }, // Am→G→F → 移調で Dm→C→A#
+                { name: "じらし", chords: ["A#", "C", "A#", "C", "Dm"] }, // F→G→F→G→Am → A#→C→A#→C→Dm
+                { name: "ダーク神主", chords: ["A#", "C", "C#dim"] }, // F→G→G#dim → A#→C→C#dim
+                { name: "エンジェル神主", chords: ["A#", "C", "D"] }, // F→G→A（借用）→ A#→C→D
+                { name: "昇竜拳", chords: ["A#", "C", "E", "F#", "A#", "C", "Dm"] }, // F→G→B→C#→F→G→Am → A#→C→E→F#→A#→C→Dm
+                { name: "どんでん返し", chords: ["A#", "C", "G"] }, // F→G→C → A#→C→G
+                { name: "四段流し", chords: ["Dm", "C", "A#", "A"] }, // Am→G→F→E → Dm→C→A#→A
+                { name: "漸近線", chords: ["Dm", "C", "F"] }, // Am→G→D → Dm→C→F
+                { name: "博麗進行", chords: ["Dm", "F", "Em", "A#", "C"] },// Am→C→Bm→F→G → Dm→F→Em→A#→C
+                { name: "十字軍進行", chords: ["Dm", "A#", "C", "Am", "A#", "D", "G"] }
+            ];
+
+            const chordFunctionsInC = {
+                "C":        { degree: "I", role: "トニック" },
+                "Cmaj7":    { degree: "Imaj7", role: "トニック（柔らかい）" },
+                "C7":       { degree: "I7", role: "ドミナント的な変化" },
+                "Dm":       { degree: "ii", role: "サブドミナント" },
+                "Dm7":      { degree: "ii7", role: "サブドミナント（柔らかい）" },
+                "Em":       { degree: "iii", role: "トニック的" },
+                "Em7":      { degree: "iii7", role: "トニック的（ジャジー）" },
+                "F":        { degree: "IV", role: "サブドミナント" },
+                "G":        { degree: "V", role: "ドミナント" },
+                "G7":       { degree: "V7", role: "ドミナント（強い）" },
+                "Am":       { degree: "vi", role: "トニック的（切ない）" },
+                "Am7":      { degree: "vi7", role: "トニック的（柔らかい）" },
+                "Bdim":     { degree: "vii°", role: "ドミナント的（不安定）" },
+                "Csus4":    { degree: "I(sus4)", role: "装飾的トニック" },
+                "Cadd9":    { degree: "I(add9)", role: "爽やかトニック" }
+            };
+            
+
+            const substitutionMap = {
+                "C": [
+                    { chord: "Am", reason: "構成音が重なりトニック的な役割を持つ" },
+                    { chord: "Em", reason: "同じトニック機能を持つ" },
+                    { chord: "Cmaj7", reason: "テンションを加えたトニックコード" }
+                ],
+                "Am": [
+                    { chord: "C", reason: "構成音が近くトニック機能が共通する" },
+                    { chord: "Em", reason: "同じトニック的な役割を持つ" },
+                    { chord: "F", reason: "平行調からの借用による柔らかい響き" }
+                ],
+                "F": [
+                    { chord: "Dm", reason: "機能的に近いため（サブドミナント）" },
+                    { chord: "Bb", reason: "IVの代理（借用コード）" },
+                    { chord: "Fmaj7", reason: "テンションを加えたサブドミナント" }
+                ],
+                "Dm": [
+                    { chord: "F", reason: "機能的に近いため（サブドミナント）" },
+                    { chord: "Bb", reason: "代理的なIV" },
+                    { chord: "Fmaj7", reason: "和声的に近いサブドミナント" }
+                ],
+                "G": [
+                    { chord: "Bdim", reason: "同じドミナント的機能を持つ" },
+                    { chord: "E7", reason: "セカンダリードミナント（Aマイナーへ）" },
+                    { chord: "G7", reason: "より強いドミナント感を持たせる" }
+                ],
+                "G7": [
+                    { chord: "G", reason: "より安定した響きへの簡略化" },
+                    { chord: "Bdim", reason: "ドミナント代理として使用可能" }
+                ],
+                "Bdim": [
+                    { chord: "G", reason: "ドミナントの代理として使われる" },
+                    { chord: "E7", reason: "より強くトニックへ進行させる代理コード" }
+                ],
+                "Em": [
+                    { chord: "Cmaj7", reason: "トニック的な響きを持つ" },
+                    { chord: "Am", reason: "トニック的な代理コード" }
+                ],
+                "Cmaj7": [
+                    { chord: "Em", reason: "構成音が似ておりトニック的" },
+                    { chord: "Am7", reason: "柔らかく響く代理トニック" }
+                ],
+                "Fmaj7": [
+                    { chord: "Dm7", reason: "構成音が似たサブドミナント的コード" },
+                    { chord: "Bbmaj7", reason: "IVの借用コード" }
+                ],
+                "D7": [
+                    { chord: "F#dim", reason: "セカンダリードミナントの代理" }
+                ],
+                "A7": [
+                    { chord: "C#dim", reason: "ドミナントセブンスの代理として機能する" }
+                ],
+                "E7": [
+                    { chord: "G#dim", reason: "セカンダリードミナントの代理" }
+                ],
+                "Csus4": [
+                    { chord: "C", reason: "解決先として使われる安定コード" }
+                ],
+                "Cadd9": [
+                    { chord: "C", reason: "基本コードにテンションを加えた形" }
+                ]
+            };
+
+            const brightnessScoreInC = {
+                "C": 1,
+                "C7": 0,
+                "Cm": -1,
+                "Cm7": -1,
+                "CM7": 1,
+                "CmM7": -1,
+                "Csus4": 0,
+                "C7sus4": 0,
+                "Cdim": -2,
+                "Cm7-5": -2,
+                "Caug": 0,
+                "Cadd9": 1,
+                "C6": 1,
+                "Cm6": -1,
+                "C#": 1,
+                "C#7": 0,
+                "C#m": -1,
+                "C#m7": -1,
+                "C#M7": 1,
+                "C#mM7": -1,
+                "C#sus4": 0,
+                "C#7sus4": 0,
+                "C#dim": -2,
+                "C#m7-5": -2,
+                "C#aug": 0,
+                "C#add9": 1,
+                "C#6": 1,
+                "C#m6": -1,
+                "D": 1,
+                "D7": 0,
+                "Dm": -1,
+                "Dm7": -1,
+                "DM7": 1,
+                "DmM7": -1,
+                "Dsus4": 0,
+                "D7sus4": 0,
+                "Ddim": -2,
+                "Dm7-5": -2,
+                "Daug": 0,
+                "Dadd9": 1,
+                "D6": 1,
+                "Dm6": -1,
+                "D#": 1,
+                "D#7": 0,
+                "D#m": -1,
+                "D#m7": -1,
+                "D#M7": 1,
+                "D#mM7": -1,
+                "D#sus4": 0,
+                "D#7sus4": 0,
+                "D#dim": -2,
+                "D#m7-5": -2,
+                "D#aug": 0,
+                "D#add9": 1,
+                "D#6": 1,
+                "D#m6": -1,
+                "E": 1,
+                "E7": 0,
+                "Em": -1,
+                "Em7": -1,
+                "EM7": 1,
+                "EmM7": -1,
+                "Esus4": 0,
+                "E7sus4": 0,
+                "Edim": -2,
+                "Em7-5": -2,
+                "Eaug": 0,
+                "Eadd9": 1,
+                "E6": 1,
+                "Em6": -1,
+                "F": 1,
+                "F7": 0,
+                "Fm": -1,
+                "Fm7": -1,
+                "FM7": 1,
+                "FmM7": -1,
+                "Fsus4": 0,
+                "F7sus4": 0,
+                "Fdim": -2,
+                "Fm7-5": -2,
+                "Faug": 0,
+                "Fadd9": 1,
+                "F6": 1,
+                "Fm6": -1,
+                "F#": 1,
+                "F#7": 0,
+                "F#m": -1,
+                "F#m7": -1,
+                "F#M7": 1,
+                "F#mM7": -1,
+                "F#sus4": 0,
+                "F#7sus4": 0,
+                "F#dim": -2,
+                "F#m7-5": -2,
+                "F#aug": 0,
+                "F#add9": 1,
+                "F#6": 1,
+                "F#m6": -1,
+                "G": 1,
+                "G7": 0,
+                "Gm": -1,
+                "Gm7": -1,
+                "GM7": 1,
+                "GmM7": -1,
+                "Gsus4": 0,
+                "G7sus4": 0,
+                "Gdim": -2,
+                "Gm7-5": -2,
+                "Gaug": 0,
+                "Gadd9": 1,
+                "G6": 1,
+                "Gm6": -1,
+                "G#": 1,
+                "G#7": 0,
+                "G#m": -1,
+                "G#m7": -1,
+                "G#M7": 1,
+                "G#mM7": -1,
+                "G#sus4": 0,
+                "G#7sus4": 0,
+                "G#dim": -2,
+                "G#m7-5": -2,
+                "G#aug": 0,
+                "G#add9": 1,
+                "G#6": 1,
+                "G#m6": -1,
+                "A": 1,
+                "A7": 0,
+                "Am": -1,
+                "Am7": -1,
+                "AM7": 1,
+                "AmM7": -1,
+                "Asus4": 0,
+                "A7sus4": 0,
+                "Adim": -2,
+                "Am7-5": -2,
+                "Aaug": 0,
+                "Aadd9": 1,
+                "A6": 1,
+                "Am6": -1,
+                "A#": 1,
+                "A#7": 0,
+                "A#m": -1,
+                "A#m7": -1,
+                "A#M7": 1,
+                "A#mM7": -1,
+                "A#sus4": 0,
+                "A#7sus4": 0,
+                "A#dim": -2,
+                "A#m7-5": -2,
+                "A#aug": 0,
+                "A#add9": 1,
+                "A#6": 1,
+                "A#m6": -1,
+                "B": 1,
+                "B7": 0,
+                "Bm": -1,
+                "Bm7": -1,
+                "BM7": 1,
+                "BmM7": -1,
+                "Bsus4": 0,
+                "B7sus4": 0,
+                "Bdim": -2,
+                "Bm7-5": -2,
+                "Baug": 0,
+                "Badd9": 1,
+                "B6": 1,
+                "Bm6": -1
+            };
+
+            const chordFrequency = {
+                "C": 15,
+                "C7": 8,
+                "Cm": 3,
+                "Cm7": 3,
+                "CM7": 6,
+                "CmM7": 1,
+                "Csus4": 5,
+                "C7sus4": 3,
+                "Cdim": 2,
+                "Cm7-5": 2,
+                "Caug": 2,
+                "Cadd9": 5,
+                "C6": 8,
+                "Cm6": 2,
+                "C#": 6,
+                "C#7": 4,
+                "C#m": 2,
+                "C#m7": 2,
+                "C#M7": 3,
+                "C#mM7": 1,
+                "C#sus4": 2,
+                "C#7sus4": 2,
+                "C#dim": 1,
+                "C#m7-5": 1,
+                "C#aug": 1,
+                "C#add9": 2,
+                "C#6": 4,
+                "C#m6": 1,
+                "Db": 3,
+                "Db7": 2,
+                "Dbm": 1,
+                "Dbm7": 1,
+                "DbM7": 2,
+                "DbmM7": 1,
+                "Dbsus4": 1,
+                "Db7sus4": 1,
+                "Dbdim": 1,
+                "Dbm7-5": 1,
+                "Dbaug": 1,
+                "Dbadd9": 1,
+                "Db6": 2,
+                "Dbm6": 1,
+                "D": 8,
+                "D7": 7,
+                "Dm": 6,
+                "Dm7": 6,
+                "DM7": 5,
+                "DmM7": 1,
+                "Dsus4": 3,
+                "D7sus4": 2,
+                "Ddim": 2,
+                "Dm7-5": 2,
+                "Daug": 2,
+                "Dadd9": 3,
+                "D6": 6,
+                "Dm6": 2,
+                "D#": 6,
+                "D#7": 4,
+                "D#m": 2,
+                "D#m7": 2,
+                "D#M7": 3,
+                "D#mM7": 1,
+                "D#sus4": 2,
+                "D#7sus4": 2,
+                "D#dim": 1,
+                "D#m7-5": 1,
+                "D#aug": 1,
+                "D#add9": 2,
+                "D#6": 4,
+                "D#m6": 1,
+                "Eb": 5,
+                "Eb7": 3,
+                "Ebm": 2,
+                "Ebm7": 2,
+                "EbM7": 2,
+                "EbmM7": 1,
+                "Ebsus4": 2,
+                "Eb7sus4": 2,
+                "Ebdim": 2,
+                "Ebm7-5": 1,
+                "Ebaug": 1,
+                "Ebadd9": 2,
+                "Eb6": 3,
+                "Ebm6": 1,
+                "E": 7,
+                "E7": 6,
+                "Em": 6,
+                "Em7": 6,
+                "EM7": 4,
+                "EmM7": 2,
+                "Esus4": 3,
+                "E7sus4": 2,
+                "Edim": 2,
+                "Em7-5": 2,
+                "Eaug": 2,
+                "Eadd9": 4,
+                "E6": 6,
+                "Em6": 3,
+                "F": 12,
+                "F7": 8,
+                "Fm": 3,
+                "Fm7": 3,
+                "FM7": 7,
+                "FmM7": 2,
+                "Fsus4": 4,
+                "F7sus4": 3,
+                "Fdim": 2,
+                "Fm7-5": 2,
+                "Faug": 2,
+                "Fadd9": 5,
+                "F6": 8,
+                "Fm6": 3,
+                "F#": 7,
+                "F#7": 5,
+                "F#m": 2,
+                "F#m7": 2,
+                "F#M7": 3,
+                "F#mM7": 1,
+                "F#sus4": 2,
+                "F#7sus4": 2,
+                "F#dim": 1,
+                "F#m7-5": 1,
+                "F#aug": 1,
+                "F#add9": 2,
+                "F#6": 4,
+                "F#m6": 1,
+                "Gb": 3,
+                "Gb7": 2,
+                "Gbm": 1,
+                "Gbm7": 1,
+                "GbM7": 2,
+                "GbmM7": 1,
+                "Gbsus4": 1,
+                "Gb7sus4": 1,
+                "Gbdim": 1,
+                "Gbm7-5": 1,
+                "Gbaug": 1,
+                "Gbadd9": 1,
+                "Gb6": 2,
+                "Gbm6": 1,
+                "G": 13,
+                "G7": 10,
+                "Gm": 3,
+                "Gm7": 3,
+                "GM7": 8,
+                "GmM7": 2,
+                "Gsus4": 5,
+                "G7sus4": 4,
+                "Gdim": 2,
+                "Gm7-5": 2,
+                "Gaug": 2,
+                "Gadd9": 5,
+                "G6": 10,
+                "Gm6": 3,
+                "G#": 5,
+                "G#7": 4,
+                "G#m": 2,
+                "G#m7": 2,
+                "G#M7": 3,
+                "G#mM7": 1,
+                "G#sus4": 2,
+                "G#7sus4": 2,
+                "G#dim": 1,
+                "G#m7-5": 1,
+                "G#aug": 1,
+                "G#add9": 2,
+                "G#6": 4,
+                "G#m6": 1,
+                "Ab": 3,
+                "Ab7": 2,
+                "Abm": 1,
+                "Abm7": 1,
+                "AbM7": 2,
+                "AbmM7": 1,
+                "Absus4": 1,
+                "Ab7sus4": 1,
+                "Abdim": 1,
+                "Abm7-5": 1,
+                "Abaug": 1,
+                "Abadd9": 1,
+                "Ab6": 2,
+                "Abm6": 1,
+                "A": 7,
+                "A7": 6,
+                "Am": 10,
+                "Am7": 10,
+                "AM7": 4,
+                "AmM7": 2,
+                "Asus4": 3,
+                "A7sus4": 2,
+                "Adim": 2,
+                "Am7-5": 2,
+                "Aaug": 2,
+                "Aadd9": 4,
+                "A6": 6,
+                "Am6": 4,
+                "A#": 4,
+                "A#7": 3,
+                "A#m": 3,
+                "A#m7": 3,
+                "A#M7": 2,
+                "A#mM7": 1,
+                "A#sus4": 2,
+                "A#7sus4": 2,
+                "A#dim": 1,
+                "A#m7-5": 1,
+                "A#aug": 1,
+                "A#add9": 2,
+                "A#6": 3,
+                "A#m6": 1,
+                "Bb": 5,
+                "Bb7": 3,
+                "Bbm": 2,
+                "Bbm7": 2,
+                "BbM7": 2,
+                "BbmM7": 1,
+                "Bbsus4": 2,
+                "Bb7sus4": 2,
+                "Bbdim": 1,
+                "Bbm7-5": 1,
+                "Bbaug": 1,
+                "Bbadd9": 2,
+                "Bb6": 3,
+                "Bbm6": 1,
+                "B": 5,
+                "B7": 4,
+                "Bm": 4,
+                "Bm7": 4,
+                "BM7": 2,
+                "BmM7": 1,
+                "Bsus4": 2,
+                "B7sus4": 2,
+                "Bdim": 1,
+                "Bm7-5": 2,
+                "Baug": 1,
+                "Badd9": 2,
+                "B6": 3,
+                "Bm6": 2
+            };
+
+            function normalizeChord(chord) {
+                return chord.trim().replace(/[^A-G#bm7]/g, "");
+            }
+
+            function transposeChord(chord, semitoneShift) {
+                const rootMatch = chord.match(/^[A-G][#b]?/);
+                if (!rootMatch) return chord;
+                const root = rootMatch[0];
+                const suffix = chord.slice(root.length);
+                const index = chromatic.indexOf(root);
+                if (index === -1) return chord;
+                const transposed = chromatic[(index + semitoneShift + 12) % 12];
+                return transposed + suffix;
+            }
+
+            function getSemitoneShift(fromKey, toKey) {
+                return chromatic.indexOf(toKey) - chromatic.indexOf(fromKey);
+            }
+
+            function matchPatterns(userChordsInC) {
+                const matches = [];
+                const userNorm = userChordsInC.map(normalizeChord);
+                for (const pattern of patterns) {
+                    const patternNorm = pattern.chords.map(normalizeChord);
+                    if (userNorm.join(",") === patternNorm.join(",")) {
+                        matches.push({ name: pattern.name, score: 1.0 });
+                        continue;
+                    }
+                    for (let i = 0; i <= userNorm.length - patternNorm.length; i++) {
+                        const slice = userNorm.slice(i, i + patternNorm.length);
+                        let matchCount = 0;
+                        for (let j = 0; j < patternNorm.length; j++) {
+                            if (slice[j] === patternNorm[j]) matchCount++;
+                        }
+                        const score = matchCount / patternNorm.length;
+                        if (score >= 0.75) {
+                            matches.push({ name: pattern.name, score });
+                            break;
+                        }
+                    }
+                }
+                return matches;
+            }
+
+            function suggestNextChord() {
+                const key = document.getElementById("keySelect").value;
+                const userChords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const userKeyShift = getSemitoneShift(key, "C");
+
+                const box = document.getElementById("suggestionsBox");
+                box.innerHTML = "";
+
+                if (userChords.length === 0) {
+                    box.textContent = "コードを入力してください。";
+                    return;
+                }
+
+                const lastUserChord = userChords[userChords.length - 1];
+                const lastChordInC = transposeChord(lastUserChord, userKeyShift);
+
+                const nextCounts = {};
+                let totalNext = 0;
+
+                for (const pattern of patterns) {
+                    for (let i = 0; i < pattern.chords.length - 1; i++) {
+                        const curr = normalizeChord(pattern.chords[i]);
+                        const next = pattern.chords[i + 1];
+                        if (curr === normalizeChord(lastChordInC)) {
+                            const nextInUserKey = transposeChord(next, -userKeyShift);
+                            nextCounts[nextInUserKey] = (nextCounts[nextInUserKey] || 0) + 1;
+                            totalNext++;
+                        }
+                    }
+                }
+
+                if (totalNext === 0) {
+                    box.textContent = "候補が見つかりませんでした。";
+                } else {
+                    Object.entries(nextCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .forEach(([chord, count]) => {
+                        const percent = Math.round((count / totalNext) * 100);
+                        const btn = document.createElement("button");
+                        btn.textContent = `${chord}（${percent}%）`;
+                        btn.onclick = () => {
+                            document.getElementById("codeInput").value += " " + chord;
+                            suggestNextChord();
+                            updateUrlFromInput();
+                        };
+                        box.appendChild(btn);
+                    });
+                }
+
+                const userChordsInC = userChords.map(chord => transposeChord(chord, userKeyShift));
+                const matchedList = matchPatterns(userChordsInC);
+
+                if (matchedList.length > 0) {
+                    const group = document.createElement("div");
+                    group.style.marginTop = "1em";
+                    matchedList.forEach(m => {
+                        const msg = document.createElement("div");
+                        msg.style.fontWeight = "bold";
+                        msg.style.color = m.score === 1.0 ? "green" : "orange";
+                        msg.textContent = m.score === 1.0 ?
+                            `この進行は「${m.name}」そのものです！` :
+                            `「${m.name}」に似ています（${Math.round(m.score * 100)}%一致）`;
+                        group.appendChild(msg);
+                    });
+                    box.appendChild(group);
+                }
+
+                showChordFunctions();
+                showSubstitutions();
+                showMoodScore();
+                showCreativeSuggestions();
+                showChordUsageStats();
+            }
+
+            function getFunctionColor(role) {
+                if (role.includes("トニック")) return "#d0eaff"; // 青系
+                if (role.includes("サブドミナント")) return "#d9f5d9"; // 緑系
+                if (role.includes("ドミナント")) return "#ffd6d6"; // 赤系
+                return "#eeeeee"; // その他
+            }
+
+            function showChordFunctions() {
+                const key = document.getElementById("keySelect").value;
+                const inputChords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const userKeyShift = getSemitoneShift(key, "C");
+
+                const functionBox = document.getElementById("functionBox");
+                functionBox.innerHTML = "";
+
+                const maxVisible = 5; // 常時表示する件数
+                const hiddenContainer = document.createElement("div");
+                hiddenContainer.id = "hiddenFunctionContainer";
+                hiddenContainer.style.display = "none";
+
+                inputChords.forEach((ch, idx) => {
+                    const chordInC = transposeChord(ch, userKeyShift);
+                    const chordFunctions = isMinorKey(key) ? chordFunctionsInAm : chordFunctionsInC;
+                    const info = chordFunctions[normalizeChord(chordInC)];
+                    // const info = chordFunctionsInC[normalizeChord(chordInC)];
+                    const div = document.createElement("div");
+
+                    if (info) {
+                        div.textContent = `${ch}（${info.degree}：${info.role}）`;
+                        div.style.background = getFunctionColor(info.role);
+                        div.style.padding = "4px";
+                        div.style.margin = "2px 0";
+                        div.style.borderRadius = "4px";
+                    } else {
+                        div.textContent = `${ch}（不明なコード）`;
+                        div.style.background = "#f0f0f0";
+                        div.style.padding = "4px";
+                        div.style.margin = "2px 0";
+                        div.style.borderRadius = "4px";
+                    }
+
+                    if (idx < inputChords.length - maxVisible) {
+                        hiddenContainer.appendChild(div);
+                    } else {
+                        functionBox.appendChild(div);
+                    }
+                });
+
+                if (hiddenContainer.children.length > 0) {
+                    const toggleBtn = document.createElement("button");
+                    toggleBtn.textContent = "▼すべて表示";
+                    toggleBtn.style.marginTop = "6px";
+                    toggleBtn.onclick = () => {
+                        const isHidden = hiddenContainer.style.display === "none";
+                        hiddenContainer.style.display = isHidden ? "block" : "none";
+                        toggleBtn.textContent = isHidden ? "▲たたむ" : "▼すべて表示";
+                    };
+                    functionBox.prepend(hiddenContainer);
+                    functionBox.appendChild(toggleBtn);
+                }
+            }
+
+            function showSubstitutions() {
+                const key = document.getElementById("keySelect").value;
+                const inputChords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const userKeyShift = getSemitoneShift(key, "C");
+                const subBox = document.getElementById("substitutionBox");
+                subBox.innerHTML = "";
+                if (inputChords.length === 0) return;
+                const lastChord = inputChords[inputChords.length - 1];
+                const chInC = normalizeChord(transposeChord(lastChord, userKeyShift));
+                const subs = substitutionMap[chInC];
+                if (subs) {
+                    const wrapper = document.createElement("div");
+                    wrapper.style.display = "inline-flex";
+                    wrapper.style.flexWrap = "wrap";
+                    wrapper.style.alignItems = "center";
+
+                    const line = document.createElement("span");
+                    line.textContent = `${lastChord} → 代わりに使える：`;
+                    line.style.marginRight = "6px";
+                    wrapper.appendChild(line);
+
+                    subs.forEach(subObj => {
+                        const sub = subObj.chord;
+                        const reason = subObj.reason || "代理コードです";
+                        const subInUserKey = transposeChord(sub, -userKeyShift);
+
+                        const container = document.createElement("div");
+                        container.style.marginRight = "12px";
+                        container.style.marginBottom = "10px";
+
+                        const btn = document.createElement("button");
+                        btn.textContent = subInUserKey;
+                        btn.onclick = () => {
+                            const input = document.getElementById("codeInput");
+                            const chords = input.value.trim().split(/\s+/);
+                            chords[chords.length - 1] = subInUserKey;
+                            input.value = chords.join(" ");
+                            suggestNextChord();
+                            updateUrlFromInput();
+                        };
+
+                        const reasonText = document.createElement("div");
+                        reasonText.textContent = `理由：${reason}`;
+                        reasonText.style.fontSize = "0.85em";
+                        reasonText.style.color = "#555";
+
+                        container.appendChild(btn);
+                        container.appendChild(reasonText);
+                        wrapper.appendChild(container);
+                    });
+
+                    subBox.appendChild(wrapper);
+                }
+            }
+
+            function showMoodScore() {
+                const key = document.getElementById("keySelect").value;
+                const inputChords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const userKeyShift = getSemitoneShift(key, "C");
+                const moodBox = document.getElementById("moodBox");
+                let total = 0, count = 0;
+                inputChords.forEach(ch => {
+                    const chInC = normalizeChord(transposeChord(ch, userKeyShift));
+                    if (chInC in brightnessScoreInC) {
+                        total += brightnessScoreInC[chInC];
+                        count++;
+                    }
+                });
+                const avg = count ? (total / count) : 0;
+                let mood = "中性的";
+                if (avg > 0.5) mood = "明るめ";
+                else if (avg < -0.5) mood = "暗め";
+                moodBox.textContent = `雰囲気：${mood}（スコア: ${avg.toFixed(2)}）`;
+            }
+
+            function loadPatternFile() {
+                const input = document.getElementById('patternFile');
+                if (!input.files || input.files.length === 0) return;
+                const file = input.files[0];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const newPatterns = JSON.parse(e.target.result);
+                        if (!Array.isArray(newPatterns)) throw new Error("不正なフォーマットです");
+                        let addedCount = 0;
+                        newPatterns.forEach(p => {
+                            if (typeof p.name === "string" && Array.isArray(p.chords)) {
+                                patterns.push({ name: p.name, chords: p.chords });
+                                addedCount++;
+                            }
+                    });
+                    alert(`進行パターンを ${addedCount} 件追加しました！`);
+                    updatePatternList();
+                    suggestNextChord();
+                    } catch (err) {
+                        alert("ファイルの読み込みに失敗しました: " + err.message);
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            function updatePatternList() {
+                const container = document.getElementById("patternList");
+                container.innerHTML = "";
+                patterns.forEach(p => {
+                    const div = document.createElement("div");
+                    div.textContent = `・${p.name}: ${p.chords.join(" → ")}`;
+                    container.appendChild(div);
+                });
+            }
+
+            function togglePatternList() {
+                const container = document.getElementById("patternList");
+                if (container.style.display === "none" || container.style.display === "") {
+                    updatePatternList();
+                    container.style.display = "block";
+                } else {
+                    container.style.display = "none";
+                }
+            }
+
+            function showCreativeSuggestions() {
+                const key = document.getElementById("keySelect").value;
+                const chords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const creativeBox = document.getElementById("creativeBox");
+                creativeBox.innerHTML = "";
+
+                if (chords.length === 0) return;
+
+                const lastChord = chords[chords.length - 1];
+                const userKeyShift = getSemitoneShift(key, "C");
+                const lastChordInC = normalizeChord(transposeChord(lastChord, userKeyShift));
+
+                let creativeSuggestions = [];
+
+                if (lastChordInC === "C") {
+                    creativeSuggestions = [
+                    { chord: "E7", reason: "次に来るマイナーコードへの強い導音を作るセカンダリードミナント" },
+                    { chord: "A7", reason: "新しいコード領域へ展開するためのドミナント機能を持つコード" },
+                    { chord: "Ab", reason: "平行調から借用されたコードで、雰囲気の変化をもたらす" },
+                    { chord: "Bb", reason: "予想外の色合いを持つコードで、進行に変化を与える" }
+                    ];
+                } else if (lastChordInC === "Am") {
+                    creativeSuggestions = [
+                    { chord: "F#", reason: "クロマチックな動きで浮遊感や不安定さを生むコード" },
+                    { chord: "D7", reason: "次のコードに強く進行させるためのセカンダリードミナント" },
+                    { chord: "Cmaj7", reason: "安定した雰囲気を強調する構成音を持つコード" }
+                    ];
+                } else if (lastChordInC === "G") {
+                    creativeSuggestions = [
+                    { chord: "B7", reason: "サブドミナントマイナー領域への橋渡しをするコード" },
+                    { chord: "F", reason: "一時的なモードチェンジを意識させるコード" },
+                    { chord: "Eb", reason: "大胆な変化を加えるための借用コード" }
+                    ];
+                } else if (lastChordInC === "F") {
+                    creativeSuggestions = [
+                        { chord: "D7", reason: "ドミナントセブンスで意外性を生む" },
+                        { chord: "A", reason: "平行調AmのV度で色彩を与える" },
+                        { chord: "Db", reason: "大胆なクロマチック変化を作るコード" }
+                    ];
+                } else if (lastChordInC === "Em") {
+                    creativeSuggestions = [
+                        { chord: "G#", reason: "半音の緊張感でエモーショナルな展開を作る" },
+                        { chord: "Cmaj7", reason: "同じトニック領域からの柔らかい変化" },
+                        { chord: "A7", reason: "ドミナント感を持って次への推進力を加える" }
+                    ];
+                } else if (lastChordInC === "Dm") {
+                    creativeSuggestions = [
+                        { chord: "F#", reason: "異なるモードからの借用コードで雰囲気を変える" },
+                        { chord: "Bdim", reason: "不安定感を加えて進行に推進力を与える" },
+                        { chord: "A7", reason: "トニックへの強い解決を促すセカンダリードミナント" },
+                    ];
+                }
+
+                if (creativeSuggestions.length > 0) {
+                    const container = document.createElement("div");
+                    container.style.display = "flex";
+                    container.style.flexDirection = "column";
+                    container.style.gap = "4px";
+
+                    const header = document.createElement("div");
+                    header.textContent = `${lastChord} → こんな変化も面白いかも：`;
+                    header.style.marginBottom = "4px";
+                    container.appendChild(header);
+
+                    creativeSuggestions.forEach(suggestion => {
+                    const chordInUserKey = transposeChord(suggestion.chord, -userKeyShift);
+                    const row = document.createElement("div");
+
+                    const btn = document.createElement("button");
+                    btn.textContent = chordInUserKey;
+                    btn.onclick = () => {
+                        document.getElementById("codeInput").value += " " + chordInUserKey;
+                        suggestNextChord();
+                        updateUrlFromInput();
+                    };
+                    btn.style.marginRight = "8px";
+
+                    const reason = document.createElement("span");
+                    reason.textContent = `→ ${suggestion.reason}`;
+
+                    row.appendChild(btn);
+                    row.appendChild(reason);
+                    container.appendChild(row);
+                    });
+
+                    creativeBox.appendChild(container);
+                }
+            }
+
+
+            function showChordUsageStats() {
+                const inputChords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const total = inputChords.length;
+                if (total === 0) return;
+
+                const countMap = {};
+                inputChords.forEach(ch => {
+                    countMap[ch] = (countMap[ch] || 0) + 1;
+                });
+
+                const usageBox = document.getElementById("usageBox");
+                usageBox.innerHTML = "";
+
+                const table = document.createElement("table");
+                table.style.width = "100%";
+                table.style.borderCollapse = "collapse";
+
+                const header = document.createElement("tr");
+                ["コード", "回数", "割合"].forEach(text => {
+                    const th = document.createElement("th");
+                    th.textContent = text;
+                    th.style.borderBottom = "1px solid #ccc";
+                    th.style.textAlign = "left";
+                    th.style.padding = "4px";
+                    header.appendChild(th);
+                });
+                table.appendChild(header);
+
+                Object.entries(countMap).sort((a, b) => b[1] - a[1]).forEach(([chord, count]) => {
+                    const row = document.createElement("tr");
+                    [chord, count, `${((count / total) * 100).toFixed(1)}%`].forEach(text => {
+                    const td = document.createElement("td");
+                    td.textContent = text;
+                    td.style.padding = "4px";
+                    row.appendChild(td);
+                    });
+                    table.appendChild(row);
+                });
+
+                usageBox.appendChild(table);
+            }
+
+            function copyCurrentUrl() {
+                const key = document.getElementById("keySelect").value;
+                const chords = document.getElementById("codeInput").value.trim().replace(/\s+/g, '+');
+                const url = `${location.origin}${location.pathname}?key=${key}&chords=${chords}`;
+                navigator.clipboard.writeText(url).then(() => {
+                    alert("URLをコピーしました！");
+                }).catch(() => {
+                    alert("コピーに失敗しました");
+                });
+            }
+
+            function loadFromUrl() {
+                const params = new URLSearchParams(location.search);
+                const key = params.get("key");
+                const chords = params.get("chords");
+
+                if (key) {
+                    document.getElementById("keySelect").value = key;
+                }
+                if (chords) {
+                    document.getElementById("codeInput").value = chords.replace(/\+/g, ' ');
+                }
+            }
+
+            function updateUrlFromInput() {
+                const key = document.getElementById("keySelect").value;
+                const chords = document.getElementById("codeInput").value.trim().replace(/\s+/g, '+');
+                const urlParams = new URLSearchParams();
+                urlParams.set("key", key);
+                urlParams.set("chords", chords);
+                const newUrl = `${location.pathname}?${urlParams.toString()}`;
+                history.replaceState(null, "", newUrl);
+            }
+
+            function exportCurrentPattern() {
+                const key = document.getElementById("keySelect").value;
+                const chords = document.getElementById("codeInput").value.trim().split(/\s+/).filter(Boolean);
+                const name = prompt("保存する進行名を入力してください:", "新しい進行");
+
+                if (!name || chords.length === 0) {
+                    alert("進行名が空、またはコードが未入力です。");
+                    return;
+                }
+
+                const patternData = [
+                    {
+                    name: name,
+                    chords: chords
+                    }
+                ];
+
+                const blob = new Blob([JSON.stringify(patternData, null, 2)], { type: "application/json" });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `${name}.json`;
+                a.click();
+
+                URL.revokeObjectURL(url);
+            }
+
+            function getWeightedRandomChords(count = 5) {
+                const pool = [];
+                for (const [chord, weight] of Object.entries(chordFrequency)) {
+                    for (let i = 0; i < weight; i++) {
+                        pool.push(chord);
+                    }
+                }
+
+                const result = new Set();
+                while (result.size < count && pool.length > 0) {
+                    const rand = Math.floor(Math.random() * pool.length);
+                    result.add(pool[rand]);
+                }
+
+                return Array.from(result);
+            }
+
+            function showRandomChords() {
+                const randomBox = document.getElementById("randomBox");
+                randomBox.innerHTML = ""; // 表示リセット
+
+                const allChords = Object.keys(chordFrequency); // 使用頻度定義済みコード
+                const specialChords = allChords.filter(c => !["dim", "aug", "sus", "7sus", "m7-5"].some(s => c.includes(s)));
+
+                const pickWeighted = () => {
+                    const pool = [];
+                    for (let chord in chordFrequency) {
+                        const weight = chordFrequency[chord];
+                        if (weight > 8) { // ← ここで重み8以下を除外
+                            for (let i = 0; i < weight; i++) {
+                                pool.push(chord);
+                            }
+                        }
+                    }
+                    return pool.length > 0
+                        ? pool[Math.floor(Math.random() * pool.length)]
+                        : null; // poolが空ならnullを返す
+                };
+
+                const pickWeightedWithNoise = () => {
+                    const pool = [];
+                    for (let chord in chordFrequency) {
+                        const base = chordFrequency[chord];
+                        const noisyWeight = Math.max(1, base + Math.floor(Math.random() * 3) - 1);
+                        if (!["dim", "aug", "sus", "7sus", "m7-5"].some(s => chord.includes(s))) {
+                            for (let i = 0; i < noisyWeight; i++) pool.push(chord);
+                        }
+                    }
+                    return pool[Math.floor(Math.random() * pool.length)];
+                };
+
+                const pickTrulyRandom = () => {
+                    const fullList = Object.keys(chordFrequency);
+                    return fullList[Math.floor(Math.random() * fullList.length)];
+                };
+
+                const candidates = [
+                    { chord: pickWeighted(), color: "#d9f5d9" },
+                    { chord: pickWeighted(), color: "#d9f5d9" },
+                    { chord: pickWeightedWithNoise(), color: "#fff3cd" },
+                    { chord: pickWeightedWithNoise(), color: "#fff3cd" },
+                    { chord: pickTrulyRandom(), color: "#f8d7da" }
+                ];
+
+                candidates.forEach(({ chord, color }) => {
+                    const btn = document.createElement("button");
+                    btn.textContent = chord;
+                    btn.onclick = () => {
+                        const input = document.getElementById("codeInput");
+                        input.value += (input.value.trim() ? " " : "") + chord;
+                        suggestNextChord?.();
+                        updateUrlFromInput?.();
+                        showRandomChords(); // 押すたびに再抽選
+                    };
+                    btn.style.marginRight = "6px";
+                    btn.style.marginBottom = "6px";
+                    btn.style.backgroundColor = color;
+                    btn.style.border = "1px solid #ccc";
+                    btn.style.borderRadius = "4px";
+                    btn.style.padding = "4px 8px";
+                    randomBox.appendChild(btn);
+                });
+            }
+
+            // 初期表示でも呼び出したい場合は以下を有効に：
+            document.addEventListener("DOMContentLoaded", () => {
+                showRandomChords();
+            });
+
+            function isMinorKey(key) {
+                return key.endsWith("m");
+            }
+
+            const chordFunctionsInAm = {
+                "Am":   { degree: "i", role: "トニック" },
+                "Bdim": { degree: "ii°", role: "サブドミナント的" },
+                "C":    { degree: "III", role: "トニック的" },
+                "Dm":   { degree: "iv", role: "サブドミナント" },
+                "E":    { degree: "V", role: "ドミナント" },
+                "F":    { degree: "VI", role: "トニック的" },
+                "G":    { degree: "VII", role: "ドミナント的" }
+            };
+
+            loadFromUrl();
+            suggestNextChord();
+            updateUrlFromInput();
+        </script>
+    </body>
+</html>

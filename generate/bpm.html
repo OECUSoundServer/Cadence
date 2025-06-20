@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>BPM & 小節 計算ツール</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 2em auto;
+    }
+    input, select {
+      padding: 6px;
+      margin: 4px 0;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 1em;
+    }
+    .form-row label {
+      white-space: nowrap;
+    }
+    .form-row input, .form-row select {
+      flex: 1;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>BPM・小節・曲時間 計算ツール</h1>
+
+  <div class="form-row">
+    <label>BPM（テンポ）:</label>
+    <input type="number" id="bpm" value="120" min="1">
+  </div>
+
+  <div class="form-row">
+    <label>拍子:</label>
+    <input type="number" id="numerator" value="4" min="1" style="width: 60px;"> /
+    <select id="denominator" style="width: 80px;">
+      <option value="2">2</option>
+      <option value="4" selected>4</option>
+      <option value="8">8</option>
+      <option value="16">16</option>
+      <option value="32">32</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label>小節数:</label>
+    <input type="number" id="bars" value="32" min="1">
+  </div>
+
+  <button onclick="calculateDuration()">→ 曲の長さを計算</button>
+
+  <div class="result" id="durationResult"></div>
+
+  <hr>
+
+  <div class="form-row">
+    <label>曲の長さ（秒）:</label>
+    <input type="number" id="durationSeconds" value="180" min="1">
+  </div>
+
+  <button onclick="calculateBars()">→ 小節数を計算</button>
+
+  <div class="result" id="barsResult"></div>
+
+  <script>
+    function calculateDuration() {
+      const bpm = parseFloat(document.getElementById('bpm').value);
+      const numerator = parseInt(document.getElementById('numerator').value);
+      const denominator = parseInt(document.getElementById('denominator').value);
+      const bars = parseInt(document.getElementById('bars').value);
+
+      const beatDuration = (60 / bpm) * (4 / denominator);
+      const totalBeats = bars * numerator;
+      const seconds = totalBeats * beatDuration;
+
+      const minutes = Math.floor(seconds / 60);
+      const remainSec = Math.round(seconds % 60);
+
+      document.getElementById('durationResult').textContent =
+        `${bars}小節（${numerator}/${denominator}） → 約 ${minutes}分${remainSec}秒`;
+    }
+
+    function calculateBars() {
+      const bpm = parseFloat(document.getElementById('bpm').value);
+      const numerator = parseInt(document.getElementById('numerator').value);
+      const denominator = parseInt(document.getElementById('denominator').value);
+      const durationSeconds = parseFloat(document.getElementById('durationSeconds').value);
+
+      const beatDuration = (60 / bpm) * (4 / denominator);
+      const totalBeats = durationSeconds / beatDuration;
+      const bars = totalBeats / numerator;
+
+      document.getElementById('barsResult').textContent =
+        `約 ${bars.toFixed(1)} 小節（拍子 ${numerator}/${denominator}）`;
+    }
+  </script>
+
+</body>
+</html>
