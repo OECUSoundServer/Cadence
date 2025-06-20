@@ -672,16 +672,17 @@
                 let totalNext = 0;
 
                 for (const pattern of patterns) {
-                    for (let i = 0; i < pattern.chords.length - 1; i++) {
-                        const curr = normalizeChord(pattern.chords[i]);
-                        const next = pattern.chords[i + 1];
-                        if (curr === normalizeChord(lastChordInC)) {
-                            const nextInUserKey = transposeChord(next, -userKeyShift);
-                            nextCounts[nextInUserKey] = (nextCounts[nextInUserKey] || 0) + 1;
-                            totalNext++;
-                        }
-                    }
-                }
+    const len = pattern.chords.length;
+    for (let i = 0; i < len; i++) {
+        const curr = normalizeChord(pattern.chords[i]);
+        const next = pattern.chords[(i + 1) % len]; // 最後→最初をループ
+        if (curr === normalizeChord(lastChordInC)) {
+            const nextInUserKey = transposeChord(next, -userKeyShift);
+            nextCounts[nextInUserKey] = (nextCounts[nextInUserKey] || 0) + 1;
+            totalNext++;
+        }
+    }
+}
 
                 if (totalNext === 0) {
                     box.textContent = "候補が見つかりませんでした。";
