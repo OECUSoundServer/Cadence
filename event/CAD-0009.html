@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/RebootingWorld_logo.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@OECU51904255" />
-    <meta name="twitter:title" 　content="Cadence｜Rebooting World" />
+    <meta name="twitter:title" content="Cadence｜Rebooting World" />
     <meta name="twitter:description" content="OneShot限定のCDについての情報です。関西けもケット10をはじめとした、イベントにて頒布予定です。" />
     <meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/RebootingWorld_logo.png" />
     <meta name="”keywords”" content="サウンド,OneShot,Cadence">
@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <!-- Icon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Document Title -->
     <title>Cadence｜Rebooting World</title>
@@ -240,7 +241,7 @@
             </section>
 
             <div>
-                <section id="other_info">
+                <section class="other_info">
                     <div class="content-wrap">
                         <div class="col_half,ma">
                             <h3 class="stripe pink"><img class="emoji" src="../img/nikukyu.svg">Credits</h3>
@@ -290,10 +291,19 @@
     <footer id="footer" class="dark">
         <div id="copyrights">
             <div class="container clearfix">
-                <div class="col_half">
-                    <!-- Copyrights -->
-                    Copyrights &copy; Cadence<br>
-                    <a href="../about/index.html">About This Circle</a>
+                <div class="Two-column">
+                    <div class="left">
+                        <div class="col_half">
+                            <!-- Copyrights -->
+                            Copyrights &copy; Cadence<br>
+                            <a href="../about/index.html">About This Circle</a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <!-- 共有ボタン置き場 -->
+                        <div id="share-buttons" class="share-bar" data-hashtags="Cadence" data-share-title="テストテキスト"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,6 +319,7 @@
     <script src="../js/emoji.js"></script>
     <script src="../js/loader.js"></script>
     <script src="../js/timer.js"></script>
+    <script src="../js/share.js"></script>
 </body>
 
 </html>

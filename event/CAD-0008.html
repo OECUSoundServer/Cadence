@@ -14,7 +14,7 @@
     <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/Refrain_log.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@OECU51904255" />
-    <meta name="twitter:title" 　content="Cadence｜Refrain" />
+    <meta name="twitter:title" content="Cadence｜Refrain" />
     <meta name="twitter:description" content="Changed限定のCDについての情報です。新春けもケット11をはじめとした、イベントにて頒布予定です。" />
     <meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/Refrain_log.png" />
     <meta name="”keywords”" content="サウンド,Changed,Cadence">
@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <!-- Icon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Document Title -->
     <title>Cadence｜REFRAIN</title>
@@ -113,7 +114,7 @@
                     <h3 class="stripe blue"><img class="emoji" src="../img/nikukyu.svg"> Information</h3>
                     <div class="Two-column">
                         <div class="left">
-                            <img src="../img/Refrain.png" alt="jacket" width=80% style="display: block; margin: auto;">
+                            <img src="../img/Refrain.png" alt="jacket" width="80%" style="display: block; margin: auto;">
                         </div>
 
                         <div class="right">
@@ -125,7 +126,7 @@
                             <div>
                                 <section id="other_info">
                                     <div class="content-wrap">
-                                        <div class="col_half" class="ma">
+                                        <div class="col_half ma">
                                             <table id="infoTable" class="cdinfo">
                                                 <tr>
                                                     <th>タイトル</th>
@@ -237,9 +238,9 @@
             </section>
 
             <div>
-                <section id="other_info">
+                <section class="other_info">
                     <div class="content-wrap">
-                        <div class="col_half" class="ma">
+                        <div class="col_half ma">
                             <h3 class="stripe blue"><img class="emoji" src="../img/nikukyu.svg">Credits</h3>
                             <table id="creditsTable">
                                 <tr>
@@ -254,7 +255,7 @@
                                     <th class="credits">ロゴデザイン</th>
                                     <td>alius</td>
                                 </tr>
-				<tr>
+				                <tr>
                                     <th class="credits">マスタリング</th>
                                     <td>mixtuti桜餅</td>
                                 </tr>
@@ -280,7 +281,7 @@
             <a name="changed"></a>
 					<h2 class="title DotGothic16">ChangedアレンジCD <span class="Title">- 募集概要 -</span></h2>
 				
-					<section id="content_t"><a name="event"></a>
+					<section class="content_t"><a name="event"></a>
 						<div class="content-wrap">
 							<div class="Two-column">
 								<div class="left">
@@ -301,7 +302,7 @@
 								                	<h3 class="notes-title"><span class="marker">備考 (Notes)</span></h3>
 								                	<ul class="sb-msg-margin">
 									                	<li class="notes">本企画でご制作頂いた楽曲を収録したCDは、有償での頒布を予定しております。</li>
-														<li class="notes">本企画に参加するにあたり、参加費等を含め、<span id="check">費用のお支払いの必要は一切ありません。</span></li>
+														<li class="notes">本企画に参加するにあたり、参加費等を含め、<span class="check">費用のお支払いの必要は一切ありません。</span></li>
 														<li class="notes">参加していただいた方には、本CDを一枚お渡しする予定です。</li>
 														<li class="notes">各作品の著作権は、制作者様ご自身に帰属します。</li>
 														<li class="notes">頒布日以降であれば、個人の作品として Web や物販で自由に公開していただいて結構です。</li>
@@ -397,10 +398,19 @@
     <footer id="footer" class="dark">
         <div id="copyrights">
             <div class="container clearfix">
-                <div class="col_half">
-                    <!-- Copyrights -->
-                    Copyrights &copy; Cadence<br>
-                    <a href="../about/index.html">About This Circle</a>
+                <div class="Two-column">
+                    <div class="left">
+                        <div class="col_half">
+                            <!-- Copyrights -->
+                            Copyrights &copy; Cadence<br>
+                            <a href="../about/index.html">About This Circle</a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <!-- 共有ボタン置き場 -->
+                        <div id="share-buttons" class="share-bar" data-hashtags="Cadence" data-share-title="テストテキスト"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -416,6 +426,7 @@
     <script src="../js/emoji.js"></script>
     <script src="../js/loader.js"></script>
     <script src="../js/timer.js"></script>
+    <script src="../js/share.js"></script>
 </body>
 
 </html>

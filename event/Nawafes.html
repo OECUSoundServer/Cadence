@@ -13,7 +13,7 @@
 		<meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@OECU51904255" />
-		<meta name="twitter:title" 　content="Cadence｜Event(なわフェス)" />
+		<meta name="twitter:title" content="Cadence｜Event(なわフェス)" />
 		<meta name="twitter:description" content="当サークルがなわフェス2022に参加した作品についての情報です。" />
 		<meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 		<meta name="”keywords”" content="サウンド,大阪電気通信大学,なわフェス">
@@ -32,6 +32,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 		<!-- Icon -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- Document Title -->
 		<title>Cadence｜Event(なわフェス)</title>
@@ -108,7 +109,7 @@
 					<h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg"> Information</h3>
 					<div class="Two-column">
 						<div class="left">
-							<img src="../img/Nawafes_1.png" alt="jacket" width=80% style="display: block; margin: auto;">
+							<img src="../img/Nawafes_1.png" alt="jacket" width="80%" style="display: block; margin: auto;">
 						</div>
 						
 						<div class="right">
@@ -220,7 +221,7 @@
 					<section id="other_info">
 				
 						<div class="content-wrap">
-							<div class="col_half" class="ma">
+							<div class="col_half ma">
 								<h3 class="stripe"><img class="emoji" src="../img/nikukyu.svg">Credits</h3>
 							
 								<table id="creditsTable">
@@ -279,7 +280,7 @@
 				<div>
 					<h2 class="title DotGothic16">イベント概要</h2>
 				
-					<section id="content_t"><a name="event"></a>
+					<section class="content_t"><a name="event"></a>
 						<div class="content-wrap">
 							<div class="Two-column">
 								<div class="left">
@@ -319,7 +320,7 @@
 												</tr>
 												<tr>
 													<th>アニメーション</th>
-													<td>.mp4（グリーンバックやブルーバックなど、透過したい場所は単色）</br>
+													<td>.mp4（グリーンバックやブルーバックなど、透過したい場所は単色）<br>
 														*サイズが大きすぎて貼れない場合は以下のリンクから作品を提出し、「提出しました」などのコメントをお願いします。</td>
 												</tr>
 												<tr>
@@ -404,21 +405,30 @@
 		</main>
 		
 		<div id="pagetop" hidden>
-			<img src="../img/TOP.png" .png" width="80">
+			<img src="../img/TOP.png" width="80">
 		</div>
 		
 		<!-- フッター -->
 		<footer id="footer" class="dark">
-			<div id="copyrights">
-				<div class="container clearfix">
-					<div class="col_half">
-						<!-- Copyrights -->
-						Copyrights &copy; Cadence<br>
-						<a href="../about/index.html">About This Circle</a>
-					</div>
-				</div>
-			</div>
-		</footer>
+        <div id="copyrights">
+            <div class="container clearfix">
+                <div class="Two-column">
+                    <div class="left">
+                        <div class="col_half">
+                            <!-- Copyrights -->
+                            Copyrights &copy; Cadence<br>
+                            <a href="../about/index.html">About This Circle</a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <!-- 共有ボタン置き場 -->
+                        <div id="share-buttons" class="share-bar" data-hashtags="Cadence" data-share-title="テストテキスト"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 		
 		<!-- jQuery JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -430,5 +440,6 @@
 		<script src="../js/emoji.js"></script>
 		<script src="../js/loader.js"></script>
 		<script src="../js/timer.js"></script>
+		<script src="../js/share.js"></script>
 	</body>
 </html>
