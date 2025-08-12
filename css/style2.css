@@ -421,6 +421,11 @@ header {
   position: relative;
 }
 
+.title_nav {
+  position: relative;
+  font-weight: 600;
+}
+
 .title:after {
   content: "";
   position: absolute;
@@ -1831,6 +1836,19 @@ figure {
   font-weight: bold;
   line-height: 1;
   color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+}
+
+.label_nav {
+  display: inline;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
