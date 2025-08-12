@@ -30,7 +30,15 @@
   function tidyTitle(s) {
     if (!s) return s;
     s = s.trim();
-    return CONFIG.trimSiteSuffix ? s.replace(/\s*[\|\-–—]\s*Cadence\s*$/i, "").trim() : s;
+
+    // 先頭の「Cadence｜」または「Cadence -」を削除
+    s = s.replace(/^Cadence\s*[｜\|\-–—]\s*/i, "");
+
+    // 末尾の「｜Cadence」または「- Cadence」も削除
+    if (CONFIG.trimSiteSuffix) {
+        s = s.replace(/\s*[｜\|\-–—]\s*Cadence\s*$/i, "");
+    }
+    return s.trim();
   }
 
   async function fetchPrettyTitle(url) {
