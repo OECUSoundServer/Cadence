@@ -13,7 +13,7 @@
         <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@OECU51904255" />
-        <meta name="twitter:title" 　content="Cadence｜FattyCat" />
+        <meta name="twitter:title" content="Cadence｜FattyCat" />
         <meta name="twitter:description" content="跳ねて敵をやっつけよう！！当サークルで制作している「FattyCat」についての情報です。" />
         <meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
         <meta name="”keywords”" content="サウンド,大阪電気通信大学,自作ゲーム">
@@ -32,6 +32,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
         <!-- Icon -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <!-- Document Title -->
         <title>Cadence｜FattyCat</title>
@@ -110,7 +111,7 @@
                 <section id="main-works">
                     <div class="Two-column">
                         <div class="left center-Photo">
-                            <img src="https://oecusoundserver.github.io/Cadence/img/fattytitle.png" alt="CatKeynote" width=90%
+                            <img src="https://oecusoundserver.github.io/Cadence/img/fattytitle.png" alt="CatKeynote" width="90%"
                                 style="display: block; margin: auto;">
                         </div>
                 
@@ -185,10 +186,10 @@
                     <p id="check">インストーラーの設定ミスの都合でインストーラーから直接起動できません。</p>
                     <p>デフォルトの状態ですと「C:\Program Files (x86)\FattyCat」にフォルダが生成されます。その中にある「FattyCat_UE5.exe」からゲームを起動してください。</p>
                     <hr>
-                    <p><span id="check">BOOTHからダウンローできるデータは現状の最新版です。</span>Disc版を購入された方は、お手数ですがBOOTHから最新版をダウンロードしてください。</p>
+                    <p><span class="check">BOOTHからダウンローできるデータは現状の最新版です。</span>Disc版を購入された方は、お手数ですがBOOTHから最新版をダウンロードしてください。</p>
                     <p>Disc版は過去のバージョンで遊びたい人向けになる予定です。</p>
                     <hr>
-                    <p>Original Sound Trackは、<span id="check">けもケット13など、イベント当日に頒布のポストカードかDisc版を購入して頂いた人のみの予定です。</span></p>
+                    <p>Original Sound Trackは、<span class="check">けもケット13など、イベント当日に頒布のポストカードかDisc版を購入して頂いた人のみの予定です。</span></p>
                     <p>効果音18種とBGM1種あります。</p>
                     <p>ポストカードに載せているキーをzip解凍時に入力して下さい。</p>
                     
@@ -300,21 +301,30 @@
             
         </div>
         <div id="pagetop" hidden>
-            <img src="../img/TOP.png" .png" width="80">
+            <img src="../img/TOP.png" width="80">
         </div>
 
         <!-- フッター -->
         <footer id="footer" class="dark">
-            <div id="copyrights">
-                <div class="container clearfix">
-                    <div class="col_half">
-                        <!-- Copyrights -->
-                        Copyrights &copy; Cadence<br>
-                        <a href="../about/index.html">About This Circle</a>
+        <div id="copyrights">
+            <div class="container clearfix">
+                <div class="Two-column">
+                    <div class="left">
+                        <div class="col_half">
+                            <!-- Copyrights -->
+                            Copyrights &copy; Cadence<br>
+                            <a href="../about/index.html">About This Circle</a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <!-- 共有ボタン置き場 -->
+                        <div id="share-buttons" class="share-bar" data-hashtags="Cadence" data-share-title="テストテキスト"></div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
         
         <!-- jQuery JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -324,7 +334,8 @@
         <script src="../js/pagetop.js"></script>
         <script src="../js/stkr.js"></script>
         <script src="../js/emoji.js"></script>
-        <script src='../js/loader.js'></script>
+        <script src="../js/loader.js"></script>
         <script src="../js/timer.js"></script>
+        <script src="../js/share.js"></script>
     </body>
 </html>
