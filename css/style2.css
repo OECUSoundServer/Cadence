@@ -36,6 +36,7 @@
   - Blog
   - Articles
   - SNS
+  - Lyrics
 
 -----------------------------------------------------------------------------------*/
 
@@ -2970,4 +2971,356 @@ td:nth-child(6) {
   #share-buttons {
     justify-content: center;
   }
+}
+
+/* ----------------------------------------------------------------
+	Lyrics
+-----------------------------------------------------------------*/
+
+#lyrics-modal { 
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999; 
+}
+
+#lyrics-modal.open { 
+  display: block; 
+}
+
+#lyrics-modal .ly-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+}
+
+#lyrics-modal .ly-dialog {
+  position: absolute; 
+  inset: 10% auto auto 50%;
+  transform: translateX(-50%) scale(.98);
+  width: min(900px, 92vw); 
+  max-height: 82vh;
+  overflow: hidden;
+  background: #fff; 
+  color:#111;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  transition: transform .18s ease, opacity .18s ease; opacity: 0;
+}
+
+#lyrics-modal.open .ly-dialog { 
+  transform: translateX(-50%) scale(1); 
+  opacity: 1;
+}
+
+#lyrics-modal .lyrics,
+.lyrics-text { 
+  user-select: none; 
+  -webkit-user-select: none; 
+}
+
+.ly-head { 
+  position: sticky;
+  top:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.9rem 1rem;
+  background: linear-gradient(#ffffff, #fafafa);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  z-index:1;
+}
+
+.ly-title {
+  margin:0;
+  font-size:
+  clamp(16px, 2.2vw, 20px);
+  font-weight: 700;
+}
+
+.ly-actions {
+  display:flex;
+  gap:.5rem;
+}
+
+.ly-open {
+  padding:.35rem .65rem;
+  border:1px solid #ddd;
+  border-radius: 999px;
+  text-decoration:none;
+  color:inherit;
+  background:#fff;
+  font-size:.9rem;
+}
+
+.ly-open:hover {
+  background:#f5f5f5;
+}
+
+.ly-close {
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1px solid #ddd;
+  background:#fff;
+  cursor:pointer;
+  font-size:18px;
+  line-height:1;
+}
+
+.ly-close:hover {
+  background:#f5f5f5;
+}
+
+.ly-body {
+  padding: 1rem 1.1rem;
+  overflow:auto;
+  max-height: calc(82vh - 56px);
+}
+
+.ly-loading {
+  opacity:.8;
+}
+
+.ly-error {
+  color:#c0392b;
+}
+
+.lyrics {
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.lyrics p {
+  margin: .5rem 0;
+}
+
+.lyrics ruby rt {
+  font-size: .72em; 
+  color: #666;
+}
+
+.lyrics h2,
+.lyrics h3 {
+  margin: .8rem 0 .4rem;
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark){
+  #lyrics-modal .ly-dialog {
+    background:#1f1f1f;
+    color:#eee;
+  }
+
+  .ly-head { 
+    background: linear-gradient(#1f1f1f, #1a1a1a);
+    border-bottom-color: rgba(255,255,255,.08);
+  }
+
+  .ly-open,
+  .ly-close {
+    border-color:#444;
+    background:#2a2a2a;
+    color:#eee;
+  }
+
+  .ly-open:hover,
+  .ly-close:hover {
+    background:#333;
+  }
+}
+
+.lyrics-meta {
+  margin-bottom: 1em;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.lyrics-meta p {
+  margin: 0.2em 0;
+}
+
+.lyrics-text {
+  font-family: inherit;
+  line-height: 1.8;
+}
+
+.lyrics-btn {
+  display: inline-block;
+  padding: 0.1em 0.8em;
+  font-size: 0.95em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1abc9c;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.lyrics-btn:hover {
+  background-color: #16a085;
+  transform: translateY(-2px);
+}
+
+.lyrics-btn:active {
+  background-color: #148f77;
+  transform: translateY(0);
+}
+
+body.modal-locked {
+  overflow: hidden;
+}
+
+.release { 
+  margin: 2rem 0 0;
+}
+.release-card {
+  display:grid;
+  gap:3rem;
+  align-items:start;
+  grid-template-columns: 240px 1fr;
+  padding:1rem;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:12px;
+  background:#fff;
+}
+@media (max-width: 640px){
+  .release-card{ 
+    grid-template-columns: 1fr;
+  }
+}
+.release-media img {
+  width:240px;
+  height:240px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.release-title {
+  margin:.1rem 0 .25rem;
+  font-size:1.25rem;
+  font-weight:700;
+}
+.release-sub {
+  color:#666;
+  font-size:.9rem;
+  margin-bottom:.5rem;
+}
+
+.release-meta { 
+  display:grid;
+  gap:.4rem;
+  margin:.5rem 0 1rem;
+}
+.release-meta > div {
+  display:grid;
+  grid-template-columns: 6em 1fr;
+  gap:.6rem; 
+}
+.release-meta dt {
+  color:#555; 
+  font-weight:600;
+}
+.release-meta dd {
+  margin:0;
+  color:#222;
+}
+
+.release-actions {
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.btn {
+  display:inline-block;
+  padding:.5rem 1rem;
+  border-radius:9999px;
+  font-weight:700;
+  text-decoration:none;
+  border:1px solid transparent;
+}
+.btn.primary{
+  background:#1abc9c;
+  color:#fff;
+}
+.btn.primary:hover {
+  background:#16a085;
+}
+.btn.ghost {
+  background:#fff;
+  color:#1abc9c;
+  border-color:#1abc9c;
+}
+.btn.ghost:hover {
+  background:#ecfffb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .release-card {
+    background:#171717;
+    border-color:rgba(255,255,255,.12);
+  }
+  .release-sub { 
+    color:#aaa;
+  }
+  .release-meta dt { 
+    color:#bbb;
+  }
+  .release-meta dd {
+    color:#eee;
+  }
+  .btn.ghost {
+    background:transparent;
+    color:#9bf0df;
+    border-color:#2bbbad;
+  }
+  .btn.ghost:hover {
+    background:rgba(43,187,173,.08);
+  }
+}
+
+.media-follow{
+  display:grid;
+  gap:1rem;
+  grid-template-columns: 1fr 390px; /* 右カラム幅 */
+  align-items:start;
+}
+@media (max-width: 768px){
+  .media-follow{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 右側のレールは常に視界内 */
+.media-follow__side{
+  position: sticky;
+  top: 72px; /* ヘッダーの高さに合わせて調整 */
+}
+
+/* 実際に上下へ“滑らか移動”する箱 */
+.media-follow__box{
+  width:100%;
+  height:150px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  background:#000;
+  transform: translateY(0);
+  will-change: transform;
+}
+.media-follow__box iframe{ 
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* 自動で打つ不可視アンカー */
+.ly-anchor{ 
+  position:relative;
+  display:block;
+  height:0;
+  margin:0;
+  padding:0;
 }
