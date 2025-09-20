@@ -1,0 +1,360 @@
+[
+  {
+    "title": "DLC",
+    "href": "../special/dl.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["other"],
+    "date": "2022-06-29",
+    "captions": ["DLC", "2022/06/29"],
+    "pin": true
+  },
+  {
+    "title": "コミックマーケット106",
+    "href": "../event/c106.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2025-08-17",
+    "captions": ["お品書き", "2025/08/17 コミックマーケット106"]
+  },
+  {
+    "title": "関西けもケット10",
+    "href": "../event/kkk10.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2025-05-18",
+    "captions": ["お品書き", "2025/05/18 関西けもケット10"]
+  },
+  {
+    "title": "ケモノパレード",
+    "href": "../event/CAD-0010.html",
+    "image": "../img/FurryParade.png",
+    "fullImage": "../img/FurryParade.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2025-05-18",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/6959057", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["VGM Remix", "2025/05/18 関西けもケット10"]
+  },
+  {
+    "title": "Rebooting World",
+    "href": "../event/CAD-0009.html",
+    "image": "../img/RebootingWorld.png",
+    "fullImage": "../img/RebootingWorld.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2025-05-18",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/6959011", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["OneShot限定", "2025/05/18 関西けもケット10"]
+  },
+  {
+    "title": "机上世界",
+    "href": "../event/vocakore2025.html",
+    "image": "../img/DesktopWorld_sq.png",
+    "fullImage": "../img/DesktopWorld_sq.png",
+    "categories": ["sound", "movie"],
+    "date": "2025-02-21",
+    "captions": ["オリジナル", "2025/02/21 ボカコレ2025冬"]
+  },
+  {
+    "title": "新春けもケット11",
+    "href": "../event/skk11.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2025-01-19",
+    "captions": ["お品書き", "2025/01/19 新春けもケット11"]
+  },
+  {
+    "title": "REFRAIN",
+    "href": "../event/CAD-0008.html",
+    "image": "../img/Refrain.png",
+    "fullImage": "../img/Refrain.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2025-01-19",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/6502449", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["Changed限定", "2025/01/19 新春けもケット11"]
+  },
+  {
+    "title": "東方紅楼夢20",
+    "href": "../event/skk11.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2024-10-06",
+    "captions": ["お品書き", "2024/10/06 東方紅楼夢20"]
+  },
+  {
+    "title": "東方アレンジコンピアルバム",
+    "href": "../event/CAD-0007.html",
+    "image": "../img/touhou_logo.png",
+    "fullImage": "../img/touhou_logo.png",
+    "categories": ["sound", "booth", "cd", "card"],
+    "date": "2024-10-06",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/6165787", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["東方アレンジコンピ", "2024/10/06 東方紅楼夢20"]
+  },
+  {
+    "title": "進捗どうですか？",
+    "href": "../event/CAD-0006.html",
+    "image": "../img/shintyoku_rogo.png",
+    "fullImage": "../img/shintyoku_rogo.png",
+    "categories": ["sound", "booth", "cd", "card"],
+    "date": "2024-10-06",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/6165736", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["進捗どうですか？", "2024/10/06 東方紅楼夢20"]
+  },
+  {
+    "title": "Vtuberデビュー！",
+    "href": "../blog/self-introduction.html",
+    "image": "../img/alius.png",
+    "fullImage": "../img/alius.png",
+    "categories": ["blog", "entertainment"],
+    "date": "2024-08-23",
+    "captions": ["この度、Vtuberデビュー致しました。今後はゲーム配信や自主制作作品の作業配信を行っていこうかと考えております。", "2024/08/23 alius"]
+  },
+  {
+    "title": "【Question】BOX",
+    "href": "../portfolio/vocaeri.html",
+    "image": "../img/QuestionBOX_logo.png",
+    "fullImage": "../img/QuestionBOX_logo.png",
+    "categories": ["sound", "movie"],
+    "date": "2024-08-10",
+    "captions": ["オリジナル", "2024/08/10 ぼかえり2024夏"]
+  },
+  {
+    "title": "サンプル記事",
+    "href": "../sample.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["other", "blog"],
+    "date": "2024-06-04",
+    "captions": ["サンプル記事の内容を簡単に書くところ。続きを読む想定。", "2024/06/04 mixtuti桜餅"]
+  },
+  {
+    "title": "PACLAN",
+    "href": "../event/paclan.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2023-12-03",
+    "captions": ["お品書き", "2023/12/03 PACLAN"]
+  },
+  {
+    "title": "アクリルキーホルダー",
+    "href": "#",
+    "image": "../img/MarinLook.png",
+    "fullImage": "../img/MarinLook.png",
+    "categories": ["keyring"],
+    "date": "2023-12-02",
+    "captions": ["オリジナル", "2023/12/02 オリComi Osaka10"]
+  },
+  {
+    "title": "オリComi Osaka10",
+    "href": "../event/oricomi10.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2023-12-02",
+    "captions": ["お品書き", "2023/12/02 オリComi Osaka10"]
+  },
+  {
+    "title": "Youthful Blue",
+    "href": "../event/CAD-0005.html",
+    "image": "../img/YouthfulBlue.png",
+    "fullImage": "../img/YouthfulBlue.png",
+    "categories": ["sound", "booth", "cd", "card"],
+    "date": "2023-11-05",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/5515850", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["ブルーアーカイブ", "2023/11/05 大学祭"]
+  },
+  {
+    "title": "Pretty Furry VGM Remix Collection",
+    "href": "../event/CAD-0004.html",
+    "image": "../img/PrettyFurry.png",
+    "fullImage": "../img/PrettyFurry.png",
+    "categories": ["sound", "booth", "cd", "card"],
+    "date": "2023-11-05",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/5525775", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["VGM Remix", "2023/11/05 大学祭"]
+  },
+  {
+    "title": "アクリルスタンド(20cm)",
+    "href": "#",
+    "image": "../img/Keychain.png",
+    "fullImage": "../img/Keychain.png",
+    "categories": ["keyring", "discontinued"],
+    "date": "2023-11-05",
+    "captions": ["オリジナル", "2023/11/05 大学祭"]
+  },
+  {
+    "title": "アクリルキーホルダー",
+    "href": "#",
+    "image": "../img/Keychain.png",
+    "fullImage": "../img/Keychain.png",
+    "categories": ["keyring"],
+    "date": "2023-11-05",
+    "captions": ["オリジナル", "2023/11/05 大学祭"]
+  },
+  {
+    "title": "大学祭",
+    "href": "../event/daigakusai.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2023-11-05",
+    "captions": ["お品書き", "2023/11/05 大学祭"]
+  },
+  {
+    "title": "ToyBox",
+    "href": "../event/CAD-0002.html",
+    "image": "../img/ToyBox.png",
+    "fullImage": "../img/ToyBox.png",
+    "categories": ["sound", "booth", "cd", "card"],
+    "date": "2023-08-13",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/5515748", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/08/13 コミックマーケット102"]
+  },
+  {
+    "title": "ToyBox(会場購入特典)",
+    "href": "../event/CAD-0002.html",
+    "image": "../img/ToyBox-Tokuten.png",
+    "fullImage": "../img/ToyBox-Tokuten.png",
+    "categories": ["free", "card"],
+    "date": "2023-08-13",
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/08/13 コミックマーケット102"]
+  },
+  {
+    "title": "コミックマーケット102",
+    "href": "../event/c102.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2023-08-13",
+    "captions": ["お品書き", "2023/08/13 コミックマーケット102"]
+  },
+  {
+    "title": "作詞作曲体験会",
+    "href": "../event/taikenkai.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event"],
+    "date": "2023-05-14",
+    "captions": ["イベント", "2023/05/14 作詞作曲体験会"]
+  },
+  {
+    "title": "ふぁってい・きゃっと",
+    "href": "../portfolio/fatty.html",
+    "image": "../img/kemo.png",
+    "fullImage": "../img/kemo.png",
+    "categories": ["sound", "game", "booth", "card"],
+    "date": "2023-05-06",
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/4713030", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"},
+      {"href": "https://unityroom.com/games/fattycat", "label": "Unity", "class": "button button-3d button-mini button-rounded button-green2"}
+    ],
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/05/06 けもケット13"]
+  },
+  {
+    "title": "宇宙ネコ",
+    "href": "#",
+    "image": "../img/spaceCat_card.png",
+    "fullImage": "../img/spaceCat_card.png",
+    "categories": ["card"],
+    "date": "2023-05-06",
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/05/06 けもケット13"]
+  },
+  {
+    "title": "正方形ステッカー",
+    "href": "#",
+    "image": "../img/sticker.png",
+    "fullImage": "../img/sticker.png",
+    "categories": ["card", "discontinued"],
+    "date": "2023-05-06",
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/05/06 けもケット13"]
+  },
+  {
+    "title": "お座りステッカー",
+    "href": "#",
+    "image": "../img/sticker2.png",
+    "fullImage": "../img/sticker2.png",
+    "categories": ["card"],
+    "date": "2023-05-06",
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/05/06 けもケット13"]
+  },
+  {
+    "title": "ジャンプステッカー",
+    "href": "#",
+    "image": "../img/sticker3.png",
+    "fullImage": "../img/sticker3.png",
+    "categories": ["card"],
+    "date": "2023-05-06",
+    "squareImage": true,
+    "captions": ["オリジナル", "2023/05/06 けもケット13"]
+  },
+  {
+    "title": "けもケット13",
+    "href": "../event/kk13.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2023-05-06",
+    "captions": ["お品書き", "2023/05/06 けもケット13"]
+  },
+  {
+    "title": "サウンド+デザインジャム",
+    "href": "../event/SDFirst.html",
+    "image": "../img/SD_1.jpg",
+    "fullImage": "../img/SD_1.jpg",
+    "categories": ["event"],
+    "date": "2022-08-28",
+    "captions": ["イベント", "2022/08/28 サウンド＋デザインジャム"]
+  },
+  {
+    "title": "なわフェス2022",
+    "href": "../event/Nawafes.html",
+    "image": "../img/Nawafes_1.png",
+    "fullImage": "../img/Nawafes_1.png",
+    "categories": ["event"],
+    "date": "2022-11-03",
+    "captions": ["オリジナル", "2022/11/03 なわフェス2022"]
+  },
+  {
+    "title": "サイコロタイムジェリー",
+    "href": "../portfolio/vocaeri.html",
+    "image": "../img/dice_1.jpg",
+    "fullImage": "../img/dice_1.jpg",
+    "categories": ["sound", "movie"],
+    "date": "2022-10-10",
+    "captions": ["オリジナル", "2022/10/10 ボカコレ2022秋"]
+  }
+]
