@@ -1,12 +1,86 @@
 [
   {
+    "title": "過去のミーム大募集！！",
+    "url": "../special/bosyu.html#meam",
+    "status": "closed",
+    "deadline": "2022-09-10T23:59:59+09:00",
+    "theme": "gray",
+    "summary": "ボカコレに出展する作品内で必要なので、貴方の知っている過去のミームを教えてください！！",
+    "tags": ["アンケート"]
+  },
+    {
+    "title": "サウンド＋デザインジャム",
+    "url": "../special/bosyu.html#sd",
+    "status": "closed",
+    "deadline": "2022-08-25T23:59:59+09:00",
+    "theme": "gray",
+    "summary": "大阪電気通信大学の学生が参加できます。詳細と応募方法は募集ページをご覧ください。",
+    "tags": ["公募"]
+  },
+    {
+    "title": "なわフェス2022",
+    "url": "../special/bosyu.html#nawafes",
+    "status": "closed",
+    "deadline": "2022-08-31T23:59:59+09:00",
+    "theme": "gray",
+    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "tags": ["公募"]
+  },
+  {
+    "title": "ボカロコンピアルバム",
+    "url": "../special/bosyu.html#korabocd",
+    "status": "closed",
+    "deadline": "2023-06-30T23:59:59+09:00",
+    "theme": "gray",
+    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "tags": ["アレンジ", "CD", "公募", "ボカロ"]
+  },
+  {
+    "title": "ブルアカアレンジCD",
+    "url": "../special/bosyu.html#bluarc",
+    "status": "closed",
+    "deadline": "2023-10-01T23:59:59+09:00",
+    "theme": "gray",
+    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "tags": ["アレンジ", "CD", "公募", "ブルアカ"]
+  },
+  {
+    "title": "東方ProjectアレンジCD",
+    "url": "../special/bosyu.html#touhou",
+    "status": "closed",
+    "deadline": "2024-05-31T23:59:59+09:00",
+    "theme": "gray",
+    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "tags": ["アレンジ", "CD", "公募"]
+  },
+  {
     "title": "Changed アレンジCD 参加募集",
     "url": "../special/bosyu.html#changed",
     "status": "closed",
-    "deadline": "2025-11-15T23:59:59+09:00",
-    "theme": "green",
+    "deadline": "2024-11-15T23:59:59+09:00",
+    "theme": "gray",
     "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
-    "tags": ["アレンジ", "CD", "公募"]
+    "tags": ["アレンジ", "CD", "公募"],
+    "archive": {
+      "cover": "../img/Changed_CD_SKK.png",
+      "outline": "2025/01/19に開催される、新春けもケット11での頒布を目指し制作します。",
+      "notes": [
+        "本企画で制作いただいた楽曲を収録したCDは、有償で頒布予定です。",
+        "参加費など費用のお支払いは一切ありません。",
+        "参加者には完成CDを1部お渡しします。",
+        "著作権は各制作者に帰属します。頒布日以降は個人の作品として自由に公開可。",
+        "イベントの当落によりスケジュールが変更になる場合があります。"
+      ],
+      "links": [
+        { "label": "イベント詳細", "href": "../event/skk11.html" },
+        { "label": "BOOTH", "href": "#" }
+      ],
+      "period": {
+        "applyEnd": "2024/11/15",
+        "arrangeEnd": "2024/12/15",
+        "masterUp": "2024/12/25"
+      }
+    }
   },
   {
     "title": "風のクロノア／エアライド アレンジCD 参加者募集",
@@ -25,11 +99,39 @@
     "tags": ["アレンジ", "CD"]
   },
   {
-    "title": "秘封風／東方ジャズ風 アレンジCD 参加者募集",
-    "url": "../special/bosyu.html#jazz",
-    "status": "planned",
-    "theme": "blue",
-    "summary": "紅楼夢・秋季例大祭に向けて頒布予定です。正式公開までお待ちください。",
-    "tags": ["東方", "アレンジ", "CD", "紅楼夢", "秋季例大祭"]
+    "id": "touhou-cafe",
+    "title": "東方ProjectアレンジCD",
+    "url": "../special/bosyu.html#touhouCafe",
+    "status": "open",
+    "deadline": "2026-05-06T23:59:59+09:00",
+    "theme": "green",
+    "summary": "おしゃれなカフェ／ラウンジで流れていそうなアレンジをテーマにした企画です。",
+    "hero": { "image": "../img/Touhou_kokuti.png", "alt": "告知画像" },
+    "info": {
+      "themeText": "カフェ／ラウンジ系アレンジ",
+      "target": "どなたでも参加可"
+    },
+    "notes": [
+      "本企画で制作いただいた楽曲を収録したCDは、有償で頒布予定です。",
+      "参加費など費用のお支払いは一切ありません。",
+      "参加者には完成CDを1部お渡しします。",
+      "著作権は各制作者に帰属します。頒布日以降は個人公開可。",
+      "当落によりスケジュールが変更になる場合があります。"
+    ],
+    "timeline": [
+      { "date": "2026/05/06", "title": "参加者募集締切", "desc": "参加後は随時制作開始OKです。" },
+      { "date": "2026/08/31", "title": "アレンジ提出締切" },
+      { "date": "2026/09/15", "title": "マスターアップ" }
+    ],
+    "events": [
+      { "label": "東方紅楼夢（2026年10月予定）" },
+      { "label": "博麗神社例大祭（2026年10月予定）" },
+      { "label": "配置：未定" }
+    ],
+    "links": [
+      { "label": "要項PDF", "href": "#" }
+    ],
+    "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfwaKswuSc5od5tZ5rupFlCBGaXy8xeLfjOw_DgndIutSkzSA/viewform?embedded=true",
+    "tags": ["東方", "アレンジ", "CD"]
   }
 ]
