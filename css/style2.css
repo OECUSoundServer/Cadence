@@ -3597,3 +3597,226 @@ main .card + .card {
     font-size: 15px;
   }
 }
+
+/* 一括操作ボタン */
+.events-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin: 8px 0 12px;
+}
+.events-action-btn {
+  border: 1px solid rgba(26, 188, 156, 0.35);
+  background: rgba(26, 188, 156, 0.08);
+  color: #0e9f6e;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.06s ease;
+}
+.events-action-btn:hover {
+  background: rgba(26, 188, 156, 0.13);
+}
+.events-action-btn:active {
+  transform: translateY(1px);
+}
+
+/* 年見出し（summary） */
+.events-group {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 2px 10px 10px;
+  margin: 12px 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+.events-year {
+  list-style: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  color: #0e9f6e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 6px;
+  border-radius: 10px;
+  user-select: none;
+}
+.events-year::before {
+  content: "🐾";
+  font-size: 1rem;
+}
+.events-year::after {
+  margin-left: auto;
+  transition: transform 0.15s ease;
+  color: #0e9f6e;
+}
+.events-group[open] .events-year::after {
+  transform: rotate(180deg);
+}
+
+/* リスト（前回の可愛い肉球スタイルを流用） */
+.paw-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 6px 0 10px;
+}
+.paw-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  transition: background 0.15s ease, transform 0.08s ease;
+}
+.paw-item:hover {
+  background: rgba(26, 188, 156, 0.08);
+  transform: translateY(-1px);
+}
+.paw-bullet {
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+}
+.paw-bullet .fa-paw {
+  font-size: 20px;
+  line-height: 1;
+}
+.paw-item a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid transparent;
+}
+.paw-item a:hover {
+  border-color: rgba(26, 188, 156, 0.35);
+}
+.paw-date {
+  color: #555;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .paw-item {
+    padding: 8px;
+  }
+}
+
+/* ========== Base ========== */
+.ongoing-card {
+  --accent: #22c55e; /* テーマ未指定のデフォ色 */
+  --bg: #ecfdf5;
+  --badge-open-bg: var(--accent); /* 募集中バッジはテーマ色と揃える */
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ongoing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ongoing-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem;
+  flex-wrap: wrap;
+}
+.ongoing-title .title-left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.ongoing-title .title-left i {
+  color: var(--accent);
+} /* ← 肉球アイコンもテーマ色 */
+.ongoing-title .title-left a {
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* バッジ（丸） */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ステータス別色（募集中はテーマ色で揃える） */
+.badge-open {
+  background: var(--badge-open-bg);
+  color: #fff;
+} /* 募集中＝テーマ色 */
+.badge-planned {
+  background: #f59e0b;
+  color: #111;
+} /* 予告＝黄固定 */
+.badge-closed {
+  background: #9ca3af;
+  color: #fff;
+} /* 終了＝灰固定 */
+
+/* カウントダウン表示 */
+.ongoing-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.25rem 0 0.5rem;
+  font-weight: 600;
+}
+
+/* モバイル：行崩れ防止 */
+@media (max-width: 480px) {
+  .ongoing-title {
+    justify-content: flex-start;
+  }
+  .ongoing-title .badge {
+    order: 2;
+    margin-left: 0;
+  }
+}
+
+/* ========== Themes ========== */
+/* 緑（デフォルト） */
+.ongoing-card.theme-green {
+  --accent: #22c55e;
+  --bg: #ecfdf5;
+}
+/* 青 */
+.ongoing-card.theme-blue {
+  --accent: #3b82f6;
+  --bg: #eff6ff;
+}
+/* ピンク */
+.ongoing-card.theme-pink {
+  --accent: #ec4899;
+  --bg: #fdf2f8;
+}
+/* オレンジ */
+.ongoing-card.theme-orange {
+  --accent: #f97316;
+  --bg: #fff7ed;
+}
+
+.badge-planned {
+  background: color-mix(in srgb, var(--accent) 70%, white);
+  color: #111;
+}
