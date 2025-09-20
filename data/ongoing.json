@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Changed アレンジCD 参加募集",
+    "url": "../special/bosyu.html#changed",
+    "status": "closed",
+    "deadline": "2025-11-15T23:59:59+09:00",
+    "theme": "green",
+    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "tags": ["アレンジ", "CD", "公募"]
+  },
+  {
+    "title": "風のクロノア／エアライド アレンジCD 参加者募集",
+    "url": "../special/bosyu.html#klonoa",
+    "status": "planned",
+    "theme": "blue",
+    "summary": "新春けもケット12に向けて頒布予定です。正式公開までお待ちください。",
+    "tags": ["アレンジ", "CD", "新春けもケット"]
+  },
+  {
+    "title": "レトロマイナーゲーム アレンジCD 参加者募集",
+    "url": "../special/bosyu.html#retrospective",
+    "status": "planned",
+    "theme": "blue",
+    "summary": "ゲームアンティーク or 夏コミに向けて頒布予定です。正式公開までお待ちください。",
+    "tags": ["アレンジ", "CD"]
+  },
+  {
+    "title": "秘封風／東方ジャズ風 アレンジCD 参加者募集",
+    "url": "../special/bosyu.html#jazz",
+    "status": "planned",
+    "theme": "blue",
+    "summary": "紅楼夢・秋季例大祭に向けて頒布予定です。正式公開までお待ちください。",
+    "tags": ["東方", "アレンジ", "CD", "紅楼夢", "秋季例大祭"]
+  }
+]
