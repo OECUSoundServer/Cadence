@@ -3940,3 +3940,207 @@ main .card + .card {
 .archive-title{font-weight:700}
 .archive-meta{margin-left:auto;color:#616161;font-size:.9rem}
 @media (max-width:520px){.archive-item{flex-wrap:wrap}.archive-meta{margin-left:0}}
+
+/* メンバー */
+
+.member-grid{
+  display:grid;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+  gap:1rem;
+}
+@media (min-width: 640px){ .member-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1024px){ .member-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+/* =========================
+   Members – clean & 2-col
+   ========================= */
+
+/* レイアウト：PC 2列 / スマホ 1列（行内アイテムを同じ高さへ） */
+.members-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+  align-items: stretch;
+}
+@media (max-width: 768px){
+  .members-grid{ grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+/* カード本体：高さを行高にフィット＋縦レイアウト */
+.member-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:1.5rem;
+  text-align:left;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ホバー */
+.member-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  border-color: #d1d5db;
+}
+
+/* アバター（画像あり/なし） */
+.member-photo,
+.member-avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  border: 4px solid #eee;
+  background: #f9fafb;
+  overflow:hidden;
+}
+.member-photo{ object-fit: cover; }
+.member-avatar{ display:grid; place-items:center; }
+.member-avatar .fa-user{ font-size: 64px; color: #9ca3af; }
+
+@media (max-width: 480px){
+  .member-photo, .member-avatar{ width:160px; height:160px; }
+}
+
+/* 役職ごとのリング色（任意） */
+.role-lead  .member-photo, .role-lead  .member-avatar{ border-color:#16a34a; }
+.role-sub   .member-photo, .role-sub   .member-avatar{ border-color:#0ea5e9; }
+.role-fin   .member-photo, .role-fin   .member-avatar{ border-color:#f59e0b; }
+.role-guest .member-photo, .role-guest .member-avatar{ border-color:#a78bfa; }
+
+/* 見出し行：名前＋バッジ横並び */
+.member-headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  flex-wrap: wrap; /* 狭い時は折り返す */
+  margin: .25rem 0 .5rem;
+  text-align: left;
+}
+
+/* 名前 */
+.member-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column; /* 名前とカナを縦に */
+  align-items: flex-start;
+}
+
+/* カナ（小さく下に） */
+.member-name .kana {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: .1rem;
+}
+
+/* 役職バッジ */
+.member-role {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .25rem .65rem;
+  font-size: .85rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  margin: 0;
+
+  color: #064e3b;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+.role-lead  .member-role{ color:#065f46; background:#dcfce7; border-color:#86efac; }
+.role-sub   .member-role{ color:#0c4a6e; background:#e0f2fe; border-color:#bae6fd; }
+.role-fin   .member-role{ color:#7c2d12; background:#fff7ed; border-color:#fed7aa; }
+.role-guest .member-role{ color:#4c1d95; background:#f5f3ff; border-color:#ddd6fe; }
+
+/* 本文ラッパー：下のリンクを底に寄せる */
+.member-body{
+  flex:1 1 auto;                        /* ← 余白をここで受ける */
+  display:flex;
+  flex-direction:column;
+}
+
+.member-desc{
+  font-size:.98rem; color:#374151; line-height:1.75;
+  margin-top:.25rem;
+}
+
+/* タグ（任意） */
+.member-tags{ display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
+.member-tag{
+  font-size:.78rem; padding:.18rem .55rem; border-radius:9999px;
+  background:#f3f4f6; color:#374151; border:1px solid #e5e7eb;
+}
+
+/* SNSリンク：カード下部に吸着 */
+.member-links{
+  margin-top:auto;                      /* ← いちばん下に寄せる */
+  display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center;
+}
+.member-links a{
+  display:inline-flex; align-items:center; gap:.4rem;
+  padding:.4rem .7rem;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  background:#fff;
+  color:#374151;
+  text-decoration:none;
+  transition: color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.member-links a i{ font-size:1.1rem; }
+.member-links a:hover{
+  color:#1abc9c;
+  border-color:#1abc9c;
+  transform: translateY(-1px);
+}
+/* 名前＋バッジ 横並び */
+.member-headline {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  justify-content: center; /* 左寄せなら flex-start */
+  margin-bottom: .2rem;
+}
+
+/* 名前 */
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* 読み仮名は下に独立 */
+.member-kana {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: center; /* 左寄せなら left */
+}
+
+/* バッジ */
+.member-role {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .25rem .65rem;
+  font-size: .85rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  white-space: nowrap;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #065f46;
+}
+
