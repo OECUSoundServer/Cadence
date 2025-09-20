@@ -3358,3 +3358,21 @@ body.modal-locked {
 /* 余白の最適化 */
 main .card + .card{margin-top:0}
 .section-title{font-family:"DotGothic16",system-ui;font-size:1.2rem;margin:1.2rem 0 .6rem}
+
+
+/* ----------------------------------------------------------------
+	About
+-----------------------------------------------------------------*/
+
+.page-hero{display:flex;align-items:center;gap:.75rem;margin:0 0 1rem}
+.page-hero img{width:52px;height:52px;border-radius:12px}
+.page-hero h1{margin:0;font-family:"DotGothic16",system-ui;font-size:1.5rem}
+.lead{color:#555;margin:.25rem 0 1rem}
+.section{margin:1.25rem 0}
+.section h2{font-family:"DotGothic16",system-ui;font-size:1.25rem;margin:.25rem 0 .75rem;display:flex;align-items:center;gap:.5rem}
+.k-card{background:#fff;border:1px solid #eee;border-radius:16px;padding:1rem;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.k-list{padding-left:1.2rem}
+.k-list li{margin:.25rem 0}
+.note{background:#fff8f0;border:1px solid #ffd7a8;border-radius:12px;padding:.75rem;margin:.75rem 0}
+.columns{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:768px){.columns{grid-template-columns:1fr 1fr}}
