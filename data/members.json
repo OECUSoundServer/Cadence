@@ -1,0 +1,63 @@
+[
+  {
+    "name": "mixtuti桜餅",
+    "kana": "みっち さくらもち",
+    "role": "代表",
+    "role_key": "lead",
+    "avatar": "../img/mixtuti.png",
+    "bio": "当サークルの代表のmixtuti桜餅です。企画や編曲を主に担当しています。これからもイベントの企画を行っていくつもりなので宜しくお願いします！",
+    "tags": ["企画", "編曲"],
+    "social": {
+      "twitter": "https://x.com/OECU51904255",
+      "booth": "https://cadence.booth.pm/",
+      "website": "https://oecusoundserver.github.io/Cadence/"
+    },
+    "order": 1
+  },
+  {
+    "name": "Hiro_DG",
+    "role": "副代表",
+    "role_key": "sub",
+    "avatar": "",
+    "bio": "",
+    "tags": ["編曲"],
+    "social": {},
+    "order": 2
+  },
+  {
+    "name": "alius",
+    "role": "会計",
+    "role_key": "fin",
+    "avatar": "../img/alius.png",
+    "bio": "当サークルでCGグラフィックを担当しているaliusと申します！主にMVのVFXや３Dモデルを制作しております！",
+    "tags": ["CG", "VFX", "3D"],
+    "social": {
+      "youtube": "",
+      "twitter": ""
+    },
+    "order": 3
+  },
+  {
+    "name": "クロカビ",
+    "role": "準メンバー",
+    "role_key": "member",
+    "avatar": "",
+    "bio": "主に編曲や作曲を担当しています。クロカビ(Klokirb)です。ダンス、EDM、ハウス風のアレンジや、時折作曲をやってます。",
+    "tags": ["編曲"],
+    "social": {},
+    "order": 10
+  },
+  {
+    "name": "A.o.I_Neko",
+    "role": "準メンバー",
+    "role_key": "member",
+    "avatar": "../img/A.o.I_Neko.png",
+    "bio": "イラスト描いたり作詞したりしています、A.o.I_Neko(青い猫)です。真ん中の「o」は小文字なので間違えないでね！！ﾈｺﾁｬﾝ...",
+    "tags": ["イラスト", "作詞"],
+    "social": {
+      "pixiv": "",
+      "twitter": ""
+    },
+    "order": 11
+  }
+]
