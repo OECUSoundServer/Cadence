@@ -296,7 +296,7 @@
     "href": "#",
     "image": "../img/sticker.png",
     "fullImage": "../img/sticker.png",
-    "categories": ["card", "discontinued"],
+    "categories": ["sticker", "discontinued"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
@@ -306,7 +306,7 @@
     "href": "#",
     "image": "../img/sticker2.png",
     "fullImage": "../img/sticker2.png",
-    "categories": ["card"],
+    "categories": ["sticker"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
@@ -316,7 +316,7 @@
     "href": "#",
     "image": "../img/sticker3.png",
     "fullImage": "../img/sticker3.png",
-    "categories": ["card"],
+    "categories": ["sticker"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
