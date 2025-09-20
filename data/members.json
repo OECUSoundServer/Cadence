@@ -5,12 +5,13 @@
     "role": "代表",
     "role_key": "lead",
     "avatar": "../img/mixtuti.png",
-    "bio": "当サークルの代表のmixtuti桜餅です。企画や編曲を主に担当しています。これからもイベントの企画を行っていくつもりなので宜しくお願いします！",
+    "bio": "<p>当サークルの代表のmixtuti桜餅です。</p><p>企画や編曲を主に担当しています。これからもイベントの企画を行っていくつもりなので宜しくお願いします！</p>",
     "tags": ["企画", "編曲"],
     "social": {
-      "twitter": "https://x.com/OECU51904255",
-      "booth": "https://cadence.booth.pm/",
-      "website": "https://oecusoundserver.github.io/Cadence/"
+      "twitter": "https://x.com/mixtuti_mochi",
+      "youtube": "https://www.youtube.com/@mixtuti_mochi/featured",
+      "pixiv": "https://www.pixiv.net/users/66647210",
+      "ニコニコ動画": "https://www.nicovideo.jp/user/90083544"
     },
     "order": 1
   },
@@ -29,34 +30,38 @@
     "role": "会計",
     "role_key": "fin",
     "avatar": "../img/alius.png",
-    "bio": "当サークルでCGグラフィックを担当しているaliusと申します！主にMVのVFXや３Dモデルを制作しております！",
+    "bio": "<p>当サークルでCGグラフィックを担当しているaliusと申します！</p><p>主にMVのVFXや３Dモデルを制作しております！</p>",
     "tags": ["CG", "VFX", "3D"],
     "social": {
-      "youtube": "",
-      "twitter": ""
+      "twitter": "https://x.com/alius745638",
+      "youtube": "https://www.youtube.com/@rirevtuberproject8939/featured",
+      "twitch": "https://www.twitch.tv/aliusdaaaa"
     },
     "order": 3
   },
   {
     "name": "クロカビ",
     "role": "準メンバー",
-    "role_key": "member",
+    "role_key": "guest",
     "avatar": "",
-    "bio": "主に編曲や作曲を担当しています。クロカビ(Klokirb)です。ダンス、EDM、ハウス風のアレンジや、時折作曲をやってます。",
+    "bio": "<p>主に編曲や作曲を担当しています。クロカビ(Klokirb)です。</p><p>ダンス、EDM、ハウス風のアレンジや、時折作曲をやってます。</p>",
     "tags": ["編曲"],
-    "social": {},
+    "social": {
+        "twitter": "https://x.com/klokirb",
+        "youtube": "https://www.youtube.com/@Klokirb/featured"
+    },
     "order": 10
   },
   {
     "name": "A.o.I_Neko",
     "role": "準メンバー",
-    "role_key": "member",
+    "role_key": "guest",
     "avatar": "../img/A.o.I_Neko.png",
-    "bio": "イラスト描いたり作詞したりしています、A.o.I_Neko(青い猫)です。真ん中の「o」は小文字なので間違えないでね！！ﾈｺﾁｬﾝ...",
+    "bio": "<p>イラスト描いたり作詞したりしています、A.o.I_Neko(青い猫)です。</p><p>真ん中の「o」は小文字なので間違えないでね！！</p><p>ﾈｺﾁｬﾝ...</p>",
     "tags": ["イラスト", "作詞"],
     "social": {
-      "pixiv": "",
-      "twitter": ""
+      "twitter": "https://x.com/aoi_neko666",
+      "youtube": "https://www.youtube.com/@A.o.I_Neko"
     },
     "order": 11
   }
