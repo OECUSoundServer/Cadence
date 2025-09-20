@@ -1,194 +1,159 @@
-// 没
+// ===== 設定 =====
+const DATA_URL = "https://oecusoundserver.github.io/Cadence/data.json"; // ←あなたのJSONパスに変更OK
+const COLUMNS = ["型番","アルバム名","曲名","原曲名","番号","アーティスト名","発行日"];
 
-let currentSortColumn = null;
-let currentSortOrder = 1; // 1: 昇順, -1: 降順
+let RAW = [];   // 元データ
+let VIEW = [];  // 表示用
+let sortKey = null;   // 現在のソート列（日本語キー）
+let sortDir = 1;      // 1:昇順 / -1:降順
 
-// 外部のJSONデータを読み込む関数
-function loadExternalData() {
-    fetch('https://oecusoundserver.github.io/Cadence/data.json') // 外部ファイルのパスを指定
-        .then(response => response.json())
-        .then(data => {
-            // 読み込んだデータをテーブルに表示
-            displayTableData(data);
-        })
-        .catch(error => {
-            console.error('データの読み込みエラー:', error);
-        });
-}
+// ユーティリティ
+const esc = (s="") => String(s).replace(/[&<>"']/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const nfkc = (s="") => s.normalize("NFKC").toLowerCase(); // 全角半角ゆらぎ対策 + 大文字小文字無視
+const isDateKey = (k) => k === "発行日";
+const parseDate = (v) => {
+  // "YYYY-MM-DD" だけでなく "YYYY/M/D" なども一応吸収
+  if (!v) return null;
+  const t = (""+v).replace(/\./g,"/").replace(/-/g,"/"); 
+  const d = new Date(t);
+  return isNaN(d) ? null : d;
+};
+const fmtDate = (v) => {
+  const d = parseDate(v);
+  if (!d) return esc(v||"");
+  return `${d.getFullYear()}/${String(d.getMonth()+1).padStart(2,"0")}/${String(d.getDate()).padStart(2,"0")}`;
+};
+const regEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-// テーブル内のデータを表示する関数
-function displayTableData(data) {
-    const table = document.getElementById("albumTable");
-    table.innerHTML = ""; // テーブルの中身をクリア
+// 描画
+function renderTable() {
+  const $table = document.getElementById("albumTable");
+  if (!$table) return;
 
-    // ヘッダー行を作成
-    const thead = document.createElement("thead");
-    const headerRow = document.createElement("tr");
+  // ヘッダー
+  let thead = `<thead><tr>`;
+  COLUMNS.forEach(k => {
+    const isActive = sortKey === k;
+    const icon = !isActive ? "fa-sort" : (sortDir===1?"fa-sort-up":"fa-sort-down");
+    thead += `<th data-key="${esc(k)}">${esc(k)} <i class="fa-solid ${icon}"></i></th>`;
+  });
+  thead += `</tr></thead>`;
 
-    for (const key in data[0]) {
-        const th = document.createElement("th");
-        th.textContent = key;
-        th.addEventListener("click", () => sortTable(key));
-        const sortIcon = document.createElement("i");
-        sortIcon.classList.add("fa", "fa-sort");
-        th.appendChild(sortIcon);
-        headerRow.appendChild(th);
+  // 検索語のハイライト
+  const q = nfkc(document.getElementById("searchInput")?.value || "");
+  const hi = (text="") => {
+    if (!q) return esc(text);
+    const raw = String(text);
+    // 可視文字列用にそのまま highlight（NFKCハイライトは過剰なのでここは素直に一致ハイライト）
+    try {
+      const re = new RegExp(regEsc(textMatchTarget(raw, q)), "gi");
+      // 見つけやすさ重視：素の raw から一致箇所をハイライト
+      return esc(raw).replace(new RegExp(regEsc(q), "gi"), m => `<span class="highlight">${esc(m)}</span>`);
+    } catch {
+      return esc(raw);
     }
-    thead.appendChild(headerRow);
-    table.appendChild(thead);
+  };
+  // ↑簡素版。厳密な NFKC 対応ハイライトは実装が重いので、検索はNFKC、表示は素テキストに対して軽量ハイライト。
 
-    // データ行を作成
-    const tbody = document.createElement("tbody");
-    data.forEach(item => {
-        const row = document.createElement("tr");
-        for (const key in item) {
-            const td = document.createElement("td");
-            td.textContent = item[key];
-            row.appendChild(td);
-        }
-        tbody.appendChild(row);
+  // 行
+  let tbody = `<tbody>`;
+  VIEW.forEach(row => {
+    tbody += `<tr>`;
+    COLUMNS.forEach(k => {
+      if (k === "発行日") {
+        const disp = fmtDate(row[k]);
+        // 発行日も検索語があれば軽くハイライト（表記は YYYY/MM/DD）
+        tbody += `<td>${q ? disp.replace(new RegExp(regEsc(q),"gi"), m=>`<span class="highlight">${esc(m)}</span>`) : disp}</td>`;
+      } else {
+        tbody += `<td>${hi(row[k])}</td>`;
+      }
     });
-    table.appendChild(tbody);
-}
+    tbody += `</tr>`;
+  });
+  tbody += `</tbody>`;
 
-function sortTable(column) {
-    if (currentSortColumn === column) {
-        currentSortOrder *= -1; // クリックした列が既にソート対象の場合、昇順と降順を切り替える
-    }
-    else {
-        currentSortColumn = column;
-        currentSortOrder = 1; // 新しい列を昇順でソート
-    }
+  $table.innerHTML = thead + tbody;
 
-    const table = document.getElementById("albumTable");
-    const tbody = table.querySelector("tbody");
-    const rows = Array.from(tbody.querySelectorAll("tr"));
-
-    rows.sort((a, b) => {
-        const aValue = a.querySelector(`td:nth-child(${columnIndex(column)})`).textContent;
-        const bValue = b.querySelector(`td:nth-child(${columnIndex(column)})`).textContent;
-
-        // 日付を解析してDateオブジェクトに変換
-        const aDate = parseDate(aValue);
-        const bDate = parseDate(bValue);
-
-        // 数値の比較を行うために数値に変換
-        const aValueNumeric = parseFloat(aValue);
-        const bValueNumeric = parseFloat(bValue);
-
-        if (aDate && bDate) {
-            return (aDate - bDate) * currentSortOrder;
-        } else if (!isNaN(aValueNumeric) && !isNaN(bValueNumeric)) {
-            return (aValueNumeric - bValueNumeric) * currentSortOrder;
-        } else {
-            return aValue.localeCompare(bValue) * currentSortOrder;
-        }
+  // ソートイベント付与
+  $table.querySelectorAll("th").forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.key;
+      if (sortKey === key) {
+        sortDir *= -1;
+      } else {
+        sortKey = key;
+        sortDir = 1;
+      }
+      applySort();
+      renderTable();
     });
-
-    tbody.innerHTML = "";
-    rows.forEach(row => tbody.appendChild(row));
-
-    // ソートアイコンの更新
-    resetSortIcons();
-    const header = table.querySelector(`th:nth-child(${columnIndex(column)})`);
-    const sortIcon = header.querySelector("i.fa-sort");
-    sortIcon.classList.remove("fa-sort");
-    sortIcon.classList.add(currentSortOrder === 1 ? "fa-sort-up" : "fa-sort-down");
+  });
 }
 
-// 日付を解析してDateオブジェクトに変換する関数
-function parseDate(dateString) {
-    const dateParts = dateString.split('-');
-    if (dateParts.length === 3) {
-        const year = parseInt(dateParts[0], 10);
-        const month = parseInt(dateParts[1], 10) - 1; // 月は0から11で表現されるため
-        const day = parseInt(dateParts[2], 10);
-        return new Date(year, month, day);
+function textMatchTarget(raw, qNorm) {
+  // ハイライト元を作るためのヘルパー（簡易）
+  // 検索対象は NFKC 化して照合するが、ハイライトは raw に対して q をそのまま当てると崩れにくい
+  return qNorm; 
+}
+
+// 並べ替え
+function applySort() {
+  if (!sortKey) return;
+  VIEW.sort((a,b) => {
+    if (isDateKey(sortKey)) {
+      const ad = parseDate(a[sortKey]); const bd = parseDate(b[sortKey]);
+      const an = ad ? ad.getTime() : -Infinity;
+      const bn = bd ? bd.getTime() : -Infinity;
+      return (an - bn) * sortDir;
     }
-    return null; // 不正な日付の場合はnullを返す
+    // 日本語比較
+    const av = String(a[sortKey] ?? "");
+    const bv = String(b[sortKey] ?? "");
+    return av.localeCompare(bv, "ja") * sortDir;
+  });
 }
 
-// ソートアイコンをリセット
-function resetSortIcons() {
-    const icons = document.querySelectorAll(".fa-sort-up, .fa-sort-down");
-    icons.forEach(icon => {
-        icon.classList.remove("fa-sort-up");
-        icon.classList.remove("fa-sort-down");
-        icon.classList.add("fa-sort");
-    });
-}
-
-// 列名から列番号を取得
-function columnIndex(column) {
-    const headers = document.querySelectorAll("thead th");
-    for (let i = 0; i < headers.length; i++) {
-        if (headers[i].textContent === column) {
-            return i + 1;
-        }
-    }
-    return 0;
-}
-
-// リアルタイムでテーブルデータを検索して表示する関数
+// 検索
 function searchData() {
-    const searchInput = document.getElementById("searchInput").value.trim(); // 検索文字列を取得し、前後の空白を削除
-    const table = document.getElementById("albumTable");
-    const rows = table.getElementsByTagName("tr");
-
-    for (let i = 1; i < rows.length; i++) { // i = 1 から開始してヘッダー行をスキップ
-        const cells = rows[i].getElementsByTagName("td");
-        let found = false;
-
-        for (let j = 1; j < cells.length - 1; j++) { // すべての列を対象
-            const cellText = cells[j].textContent; // セル内のテキストを取得
-            if (cellText.includes(searchInput)) { // 検索文字列が含まれているかチェック（大文字と小文字を区別する）
-                found = true; // 一致するデータが見つかったらtrueを返す
-                cells[j].innerHTML = cellText.replace(new RegExp(searchInput, 'g'), '<span class="highlight">$&</span>'); // ハイライトする
-            }
-        }
-
-        if (found) {
-            rows[i].style.display = "";
-        } else {
-            rows[i].style.display = "none";
-        }
-    }
-
-    // 検索欄が空の場合、すべてのハイライトを消す
-    if (searchInput === "") {
-        const highlights = document.querySelectorAll(".highlight");
-        highlights.forEach(element => {
-            element.outerHTML = element.innerHTML; // ハイライトを削除
-        });
-    }
+  const q = nfkc(document.getElementById("searchInput").value || "");
+  if (!q) {
+    VIEW = [...RAW];
+    applySort();
+    renderTable();
+    return;
+  }
+  VIEW = RAW.filter(row => {
+    const hay = COLUMNS.map(k => nfkc(String(row[k] ?? ""))).join(" ");
+    return hay.includes(q);
+  });
+  applySort();
+  renderTable();
 }
 
-// ページ読み込み時に外部データを読み込む
-loadExternalData();
+// 初期化
+async function initAlbumList() {
+  try {
+    const res = await fetch(DATA_URL, { cache:"no-store" });
+    if (!res.ok) throw new Error("failed to load json");
+    const data = await res.json();
 
-// リアルタイムでテーブルデータを検索して表示する関数
-// function searchData() {
-//     const searchInput = document.getElementById("searchInput").value.toLowerCase();
-//     const table = document.getElementById("albumTable");
-//     const rows = table.getElementsByTagName("tr");
+    // 想定外キーでもとりあえず拾えるように補完
+    RAW = data.map(it => {
+      const o = {};
+      COLUMNS.forEach(k => o[k] = it[k] ?? "");
+      return o;
+    });
 
-//     for (let i = 1; i < rows.length; i++) { // i = 1 から開始してヘッダー行をスキップ
-//         const cells = rows[i].getElementsByTagName("td");
-//         let found = false;
+    // 既定：発行日降順 → 曲名昇順
+    sortKey = "発行日"; sortDir = 1;
+    VIEW = [...RAW];
+    applySort();
+    renderTable();
+  } catch (e) {
+    console.error(e);
+    const $table = document.getElementById("albumTable");
+    if ($table) $table.innerHTML = `<tbody><tr><td>データを取得できませんでした。</td></tr></tbody>`;
+  }
+}
 
-//         for (let j = 1; j < cells.length -1; j++) { // アルバム名からアーティスト名まで検索
-//             const cellText = cells[j].textContent.toLowerCase();
-//             if (cellText.includes(searchInput)) {
-//                 found = true; // 一致するデータが見つかったらtrueを返す
-//                 break;
-//             }
-//         }
-
-//         if (found) {
-//             rows[i].style.display = "";
-//         }
-//         else {
-//             rows[i].style.display = "none";
-//         }
-//     }
-// }
+document.addEventListener("DOMContentLoaded", initAlbumList);
