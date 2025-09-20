@@ -37,6 +37,7 @@
   - Articles
   - SNS
   - Lyrics
+  - Links
 
 -----------------------------------------------------------------------------------*/
 
@@ -484,6 +485,7 @@ header {
 .c-form {
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 0.5rem;
 }
 .c-form__item {
   display: flex;
@@ -3324,3 +3326,35 @@ body.modal-locked {
   margin:0;
   padding:0;
 }
+
+/* ----------------------------------------------------------------
+	Links
+-----------------------------------------------------------------*/
+
+.hero-compact{display:flex;align-items:center;gap:.75rem;padding:1rem 0 0.25rem}
+.hero-compact img{width:40px;height:40px;border-radius:10px}
+.hero-compact h1{font-size:1.4rem;margin:0;font-family:"DotGothic16",system-ui}
+.subcopy{color:#555;margin:.25rem 0 1rem}
+
+
+.link-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin:1rem 0}
+.card{grid-column:span 12;background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:1rem;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card h2{display:flex;align-items:center;gap:.5rem;font-size:1.1rem;margin:.25rem 0 .75rem}
+.card .meta{font-size:.9rem;color:#666;margin:.25rem 0 .75rem}
+.card .actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:12px;border:1px solid currentColor;text-decoration:none;font-weight:600}
+.btn.primary{background:#1abc9c;color:#fff;border-color:#1abc9c}
+.btn.ghost{background:transparent}
+.embed{aspect-ratio:16/9;width:100%;border:0;border-radius:12px;overflow:hidden}
+
+
+/* レイアウト */
+@media (min-width: 768px){
+.card.span-6{grid-column:span 6}
+.card.span-4{grid-column:span 4}
+}
+
+
+/* 余白の最適化 */
+main .card + .card{margin-top:0}
+.section-title{font-family:"DotGothic16",system-ui;font-size:1.2rem;margin:1.2rem 0 .6rem}
