@@ -3820,3 +3820,123 @@ main .card + .card {
   background: color-mix(in srgb, var(--accent) 70%, white);
   color: #111;
 }
+
+/* グレー系（終了用） */
+.ongoing-card.theme-gray {
+  --accent: #9ca3af;
+  --bg: #f3f4f6;
+}
+
+/* アーカイブのアコーディオン */
+#archive-accordion details {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  margin: 10px 0;
+}
+#archive-accordion summary {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* デフォルトの▼を消す */
+#archive-accordion summary::-webkit-details-marker {
+  display: none;
+}
+#archive-accordion .archive-grid {
+  padding: 0.5rem 1rem 1rem;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  #archive-accordion .archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  #archive-accordion .archive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bosyu-box {
+  border: 2px solid #22c55e;  /* グリーンで統一 */
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  /* background: #f0fdf4; */
+  width: 98%;
+}
+.bosyu-box h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #166534; /* 濃い緑 */
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.bosyu-box ul, .bosyu-box ol {
+  margin: .5rem 0 0;
+  padding-left: 1.25rem;
+}
+.bosyu-box li {
+  margin-bottom: .5rem;
+}
+.bosyu-box .note {
+  margin-top: .5rem;
+  font-size: .9rem;
+  color: #555;
+}
+
+/* ===== 概要のヒーロー行 ===== */
+.bosyu-hero{display:grid;grid-template-columns:180px 1fr;gap:1rem;align-items:start}
+.bosyu-hero img{width:100%;max-width:180px;border-radius:12px;border:1px solid #e5e7eb}
+.bosyu-hero-body .bosyu-h{margin:.25rem 0 .5rem;font-size:1.2rem;font-weight:800}
+@media (max-width:680px){.bosyu-hero{grid-template-columns:1fr}}
+
+/* ===== 情報グリッド（統一カード） ===== */
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:.75rem 0}
+@media (max-width:560px){.info-grid{grid-template-columns:1fr}}
+.info-card{display:flex;gap:.6rem;align-items:center;border:2px solid #22c55e;background:#f0fdf4;border-radius:10px;padding:.6rem .7rem}
+.info-card i{color:#16a34a;font-size:1.1rem}
+.info-title{font-weight:700;font-size:.92rem;color:#14532d}
+.info-text{font-size:.95rem}
+
+/* ===== ボックス（統一枠） ===== */
+.bosyu-box{border:2px solid #22c55e;background:#ecfdf5;border-radius:12px;padding:1rem;margin:.9rem 0}
+.bosyu-box h4{margin:0 0 .5rem;display:flex;align-items:center;gap:.5rem;color:#166534}
+.bosyu-box .note{margin-top:.5rem;color:#475569}
+
+/* ===== タイムライン（表→時間軸） ===== */
+.timeline{position:relative;margin:.75rem 0}
+.timeline:before{content:"";position:absolute;left:12px;top:0;bottom:0;width:2px;background:#22c55e22}
+.timeline-item{display:grid;grid-template-columns:90px 1fr;gap:.75rem;position:relative;padding:.5rem 0}
+.tl-date{font-weight:800;color:#166534}
+.tl-body{background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;padding:.6rem .8rem}
+.tl-title{font-weight:700;margin-bottom:.1rem}
+.tl-desc{color:#374151}
+.timeline-item:after{position:absolute;left:8px;top:16px;width:10px;height:10px;background:#22c55e;border-radius:50%}
+.timeline,
+.timeline li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
+/* ===== チップ ===== */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 0}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .6rem;border-radius:9999px;background:#ecfdf5;border:1px solid #bbf7d0;color:#14532d;font-size:.9rem}
+
+/* ===== アーカイブ一覧 ===== */
+.archive-list{list-style:none;margin:.5rem 0 0;padding:0;display:grid;gap:.5rem}
+.archive-item{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border:1px dashed #bbf7d0;background:#f8fffb;border-radius:10px}
+.archive-item .paw{width:1.4rem;height:1.4rem;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#22c55e;color:#fff}
+.archive-title{font-weight:700}
+.archive-meta{margin-left:auto;color:#616161;font-size:.9rem}
+@media (max-width:520px){.archive-item{flex-wrap:wrap}.archive-meta{margin-left:0}}
