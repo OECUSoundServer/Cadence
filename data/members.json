@@ -41,7 +41,7 @@
   },
   {
     "name": "クロカビ",
-    "role": "準メンバー",
+    "role": "メンバー",
     "role_key": "guest",
     "avatar": "",
     "bio": "<p>主に編曲や作曲を担当しています。クロカビ(Klokirb)です。</p><p>ダンス、EDM、ハウス風のアレンジや、時折作曲をやってます。</p>",
@@ -54,7 +54,7 @@
   },
   {
     "name": "A.o.I_Neko",
-    "role": "準メンバー",
+    "role": "メンバー",
     "role_key": "guest",
     "avatar": "../img/A.o.I_Neko.png",
     "bio": "<p>イラスト描いたり作詞したりしています、A.o.I_Neko(青い猫)です。</p><p>真ん中の「o」は小文字なので間違えないでね！！</p><p>ﾈｺﾁｬﾝ...</p>",
@@ -64,5 +64,16 @@
       "youtube": "https://www.youtube.com/@A.o.I_Neko"
     },
     "order": 11
+  },
+  {
+    "name": "DisPo",
+    "role": "準メンバー",
+    "role_key": "subguest",
+    "avatar": "",
+    "bio": "",
+    "tags": ["作詞"],
+    "social": {
+    },
+    "order": 12
   }
 ]
