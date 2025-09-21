@@ -45,6 +45,8 @@ function toMemberCard(m) {
       ? "role-sub"
       : m.role_key === "fin"
       ? "role-fin"
+      : m.role_key === "subguest"
+      ? "role-subguest"
       : m.role_key === "guest"
       ? "role-guest"
       : "";
@@ -92,7 +94,7 @@ async function initMembers() {
     const data = await res.json();
 
     // 並び順：役職優先→表示順→名前
-    const roleOrder = { lead: 0, sub: 1, fin: 2, member: 3, guest: 4 };
+    const roleOrder = { lead: 0, sub: 1, fin: 2, member: 3, subguest: 5, guest: 4 };
     data.sort((a, b) => {
       const ra = roleOrder[a.role_key] ?? 99;
       const rb = roleOrder[b.role_key] ?? 99;
