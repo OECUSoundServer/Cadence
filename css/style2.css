@@ -4013,6 +4013,7 @@ main .card + .card {
 .role-sub   .member-photo, .role-sub   .member-avatar{ border-color:#0ea5e9; }
 .role-fin   .member-photo, .role-fin   .member-avatar{ border-color:#f59e0b; }
 .role-guest .member-photo, .role-guest .member-avatar{ border-color:#a78bfa; }
+.role-subguest .member-photo,.role-subguest .member-avatar{ border-color:#ec4899; }
 
 /* 見出し行：名前＋バッジ横並び */
 .member-headline {
@@ -4064,6 +4065,7 @@ main .card + .card {
 .role-sub   .member-role{ color:#0c4a6e; background:#e0f2fe; border-color:#bae6fd; }
 .role-fin   .member-role{ color:#7c2d12; background:#fff7ed; border-color:#fed7aa; }
 .role-guest .member-role{ color:#4c1d95; background:#f5f3ff; border-color:#ddd6fe; }
+.role-subguest .member-role {color:#831843;background:#fce7f3;border-color:#f9a8d4; }
 
 /* 本文ラッパー：下のリンクを底に寄せる */
 .member-body{
