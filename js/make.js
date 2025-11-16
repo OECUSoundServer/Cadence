@@ -226,7 +226,7 @@ function generateHTML() {
 			<div>
 				<h2 class="DotGothic16 blogTitle">${titleText}</h2>
 				<h3 class="author"><i class="far fa-user-circle"></i> ${authorName}</h3>
-				<h4 class="blogTag">Tags：<a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=blog" class="js-btn-link" data-radio-value="blog"><i class="fas fa-hashtag"></i>ブログ</a>
+				<h4 class="blogTag">Tags：<a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=blog&cat=blog&page=1" class="js-btn-link" data-radio-value="blog"><i class="fas fa-hashtag"></i>ブログ</a>
 					${tagsHTML} 
 				</h4>
 				<div class="title"></div>
@@ -341,3 +341,4 @@ function downloadHTML() {
     // 使用後にa要素を削除
     document.body.removeChild(a);
 }
+
