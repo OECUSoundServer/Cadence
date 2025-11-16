@@ -80,12 +80,13 @@
   },
   {
     "id": "touhou-cafe",
-    "title": "東方ProjectアレンジCD",
+    "title": "夢と現のアティチュード(仮称)",
     "url": "../special/bosyu.html#touhouCafe",
     "status": "open",
-    "deadline": "2026-05-06T23:59:59+09:00",
+    "deadline": "2026-09-15T23:59:59+09:00",
     "theme": "green",
-    "summary": "おしゃれなカフェ／ラウンジで流れていそうなアレンジをテーマにした企画です。",
+    "summary": "「東方Project」を題材に、参加者それぞれが感じる“幻想郷の世界観”を音楽として自由に表現していただく企画です。",
     "tags": ["東方", "アレンジ", "CD"]
   }
 ]
+
