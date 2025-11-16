@@ -64,7 +64,7 @@ function generateHTML() {
 		var tagEN = tagInputs[i].querySelector(".tag-en").value;
 		
 		tagsHTML += `
-			<a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=${tagEN}" class="js-btn-link" data-radio-value="${tagEN}"><i class="fas fa-hashtag"></i>${tagName}</a>
+			<a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=${tagEN}&cat=${tagEN}&page=1" class="js-btn-link" data-radio-value="${tagEN}"><i class="fas fa-hashtag"></i>${tagName}</a>
 		`;
 	}
 	
@@ -341,4 +341,5 @@ function downloadHTML() {
     // 使用後にa要素を削除
     document.body.removeChild(a);
 }
+
 
