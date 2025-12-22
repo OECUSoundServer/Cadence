@@ -75,10 +75,9 @@
   {
     "title": "レトロマイナーゲーム アレンジCD 参加者募集",
     "url": "../special/bosyu.html#retrospective",
-    "status": "open",
-    "deadline": "2026-06-31T23:59:59+09:00",
-    "theme": "green",
-    "summary": "「レトロゲーム」「マイナーゲーム」を題材にアレンジを作成する企画です。夏コミに向けて頒布予定です。",
+    "status": "planned",
+    "theme": "blue",
+    "summary": "ゲームアンティーク or 夏コミに向けて頒布予定です。正式公開までお待ちください。",
     "tags": ["アレンジ", "CD"]
   },
   {
