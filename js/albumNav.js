@@ -5,7 +5,7 @@
     pad: 4,                 // 0009 の桁数
     holes: [1, 3],          // 欠番
     min: 2,                 // 最初の有効番号
-    max: 10,                // 最新番号（新作時に更新）
+    max: 11,                // 最新番号（新作時に更新）
     injectBefore: "#footer",
     fetchNeighborTitle: true,
     // ページ内の作品名を探す候補（上から優先）
