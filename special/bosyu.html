@@ -795,7 +795,7 @@
                     />
                     <label class="tab-label" for="TAB-KL-05">イベント</label>
                     <div class="tab-content">
-                      <p>持ち込み予定イベントなどをここに記載してください。</p>
+                      <!-- <p>持ち込み予定イベントなどをここに記載してください。</p> -->
                       <div class="chips">
                         <span class="chip"
                           ><i class="fa-regular fa-calendar"></i>
@@ -826,6 +826,255 @@
             </div>
           </section>
           <!-- ===== ここまで Klonoa 募集ブロック ===== -->
+
+          <!-- ===== ここから レトロマイナー 募集ブロック ===== -->
+          <a name="retrospective"></a>
+          <h2 class="title DotGothic16">
+            レトロマイナーゲーム アレンジCD <span class="Title">- 募集概要 -</span>
+          </h2>
+
+          <section id="content_retrospective">
+            <div class="content-wrap">
+              <div class="Two-column">
+                <!-- 左側：タブ -->
+                <div class="left">
+                  <div class="tab-wrap">
+                    <!-- 概要 -->
+                    <input
+                      id="TAB-RETRO-01"
+                      type="radio"
+                      name="TABRETRO"
+                      class="tab-switch"
+                      checked
+                    />
+                    <label class="tab-label" for="TAB-RETRO-01">概要</label>
+                    <div class="tab-content">
+                      <div class="bosyu-hero">
+                        <img
+                          src="../img/retrospective.png"
+                          alt="レトロマイナー告知画像"
+                        />
+                        <div class="bosyu-hero-body">
+                          <h3 class="bosyu-h">  ー埋もれたゲーム音楽を、もう一度表舞台へ。</h3>
+                          <p>「レトロゲーム」「マイナーゲーム」を題材に、自由な発想でアレンジ曲を制作し、コンピレーションCDとしてまとめる企画です。夏コミでの頒布を目指して制作します。</p>
+                          <p>中心となるのは <b>2000年以前のゲーム</b>ですが、<b>2000年以降の作品でも、マイナーゲームであれば参加可能</b>です。</p>
+                          <p>家庭用／アーケード／PC／携帯機など<b>プラットフォーム不問、ジャンル不問</b>です。</p>
+                          <p><b>“知る人ぞ知る名曲”</b>から、<b>“ほとんど知られていないマイナーゲームのBGM”</b>まで、作品を自由に選んでアレンジしてください。</p>
+                          <p>原曲の雰囲気を尊重しつつ、アレンジの方向性は自由です。初心者の方も歓迎します。</p>
+
+                          <!-- 情報カード -->
+                          <div class="info-grid">
+                            <div class="info-card">
+                              <i class="fa-solid fa-bullseye"></i>
+                              <div>
+                                <div class="info-title">テーマ</div>
+                                <div class="info-text">
+                                  レトロマイナーゲームオンリー
+                                </div>
+                              </div>
+                            </div>
+                            <div class="info-card">
+                              <i class="fa-regular fa-clock"></i>
+                              <div>
+                                <div class="info-title">参加締切</div>
+                                <div class="info-text">
+                                  <span id="deadline-date-retrospective"
+                                    >2026/07/01</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="info-card">
+                              <i class="fa-solid fa-paw"></i>
+                              <div>
+                                <div class="info-title">対象</div>
+                                <div class="info-text">どなたでも参加可</div>
+                              </div>
+                            </div>
+                            <div class="info-card">
+                              <i class="fa-solid fa-hourglass-half"></i>
+                              <div>
+                                <div class="info-title">残り時間</div>
+                                <div class="info-text">
+                                  <span
+                                    class="countdown"
+                                    data-deadline="2026-07-01T23:59:59+09:00"
+                                    >–</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 備考：統一枠 -->
+                          <div class="bosyu-box">
+                            <h4>
+                              <i class="fa-regular fa-note-sticky"></i> 備考
+                              (Notes)
+                            </h4>
+                            <ul>
+                              <li>
+                                本企画で制作いただいた楽曲を収録したCDは、有償で頒布予定です。
+                              </li>
+                              <li>
+                                参加費など<strong
+                                  >費用のお支払いは一切ありません。</strong
+                                >
+                              </li>
+                              <li>参加者には完成CDを1部お渡しします。</li>
+                              <li>
+                                著作権は各制作者に帰属します。頒布日以降は個人の作品として自由に公開可。
+                              </li>
+                              <li>
+                                イベントの当落によりスケジュールが変更になる場合があります。
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 応募要項 -->
+                    <input
+                      id="TAB-RETRO-02"
+                      type="radio"
+                      name="TABRETRO"
+                      class="tab-switch"
+                    />
+                    <label class="tab-label" for="TAB-RETRO-02">応募要項</label>
+                    <div class="tab-content">
+                      <div class="bosyu-box">
+                        <h4>
+                          <i class="fa-solid fa-circle-check"></i> 参加条件
+                        </h4>
+                        <ul>
+                          <li>提出期限を守れる方</li>
+                          <li>遅れる場合は事前に連絡できる方</li>
+                          <li>Discordで定期的に連絡が取れる方</li>
+                        </ul>
+                      </div>
+
+                      <div class="timeline">
+                        <div class="timeline-item">
+                          <div class="tl-date">~2026/07/01</div>
+                          <div class="tl-body">
+                            <div class="tl-title">参加者募集締切</div>
+                            <div class="tl-desc">
+                              参加後は<strong>随時制作開始OK</strong>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="tl-date">2026/07/01</div>
+                          <div class="tl-body">
+                            <div class="tl-title">提出締切</div>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="tl-date">2026/08/01</div>
+                          <div class="tl-body">
+                            <div class="tl-title">
+                              マスターアップ
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 応募方法 -->
+                    <input
+                      id="TAB-RETRO-03"
+                      type="radio"
+                      name="TABRETRO"
+                      class="tab-switch"
+                    />
+                    <label class="tab-label" for="TAB-RETRO-03">応募方法</label>
+                    <div class="tab-content">
+                      <div class="bosyu-box">
+                        <h4>
+                          <i class="fa-solid fa-paper-plane"></i> 応募の流れ
+                        </h4>
+                        <ol>
+                          <li>
+                            フォームに必要事項を記入（本ページ右側のフォーム）。
+                          </li>
+                          <li>
+                            Discordサーバーに参加（未参加の方）：
+                            <a href="https://discord.gg/MUDbQzjvfV" class="btn"
+                              >サーバー参加リンク</a
+                            >
+                          </li>
+                          <li>
+                            イベント開始前に<strong>サーバールール</strong>でのロール割り振り投稿に反応
+                            → 登録完了。
+                          </li>
+                        </ol>
+                        <p class="note">
+                          ※既にサーバー内の方はフォーム記入は必須ではありません。DMや雑談チャンネルで参加希望をお知らせください。
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- 締め切り -->
+                    <input
+                      id="TAB-RETRO-04"
+                      type="radio"
+                      name="TABRETRO"
+                      class="tab-switch"
+                    />
+                    <label class="tab-label" for="TAB-RETRO-04">締め切り</label>
+                    <div class="tab-content">
+                      <p class="simekiri">
+                        参加締切：<strong>2026/07/01</strong><br />
+                        残り時間：
+                        <span
+                          class="countdown"
+                          data-deadline="2026-07-01T23:59:59+09:00"
+                          >–</span
+                        >
+                      </p>
+                    </div>
+
+                    <!-- イベント -->
+                    <input
+                      id="TAB-RETRO-05"
+                      type="radio"
+                      name="TABRETRO"
+                      class="tab-switch"
+                    />
+                    <label class="tab-label" for="TAB-RETRO-05">イベント</label>
+                    <div class="tab-content">
+                      <!-- <p>持ち込み予定イベントなどをここに記載してください。</p> -->
+                      <div class="chips">
+                        <span class="chip"
+                          ><i class="fa-regular fa-calendar"></i>
+                          コミックマーケット（2026年8月）</span
+                        >
+                        <span class="chip"
+                          ><i class="fa-solid fa-location-dot"></i>
+                          配置：未定</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 右側：Googleフォーム（既存のまま） -->
+                <div class="right">
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfwaKswuSc5od5tZ5rupFlCBGaXy8xeLfjOw_DgndIutSkzSA/viewform?embedded=true"
+                    width="100%"
+                    height="903"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0"
+                    >読み込んでいます…</iframe
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ===== ここまで レトロマイナー 募集ブロック ===== -->
         </div>
 
         <h2 class="title DotGothic16">募集アーカイブ</h2>
