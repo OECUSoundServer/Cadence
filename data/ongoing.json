@@ -1,94 +1,112 @@
 [
   {
+    "id": "meme-2022",
+    "eventCode": "CAD-003-22-QST",
     "title": "過去のミーム大募集！！",
     "url": "../special/bosyu.html#meam",
     "status": "closed",
     "deadline": "2022-09-10T23:59:59+09:00",
     "theme": "gray",
-    "summary": "ボカコレに出展する作品内で必要なので、貴方の知っている過去のミームを教えてください！！",
+    "summary": "ボカコレ出展作品内で使用するため、過去のミームに関する情報を募集するアンケート企画です。",
     "tags": ["アンケート"]
   },
-    {
+  {
+    "id": "sound-design-jam-2022",
+    "eventCode": "CAD-001-22-JAM",
     "title": "サウンド＋デザインジャム",
     "url": "../special/bosyu.html#sd",
     "status": "closed",
     "deadline": "2022-08-25T23:59:59+09:00",
     "theme": "gray",
-    "summary": "大阪電気通信大学の学生が参加できます。詳細と応募方法は募集ページをご覧ください。",
-    "tags": ["公募"]
+    "summary": "学生を対象とした、サウンドおよびデザイン制作のジャムイベントです。",
+    "tags": ["ジャム", "公募"]
   },
-    {
+  {
+    "id": "nawafes-2022",
+    "eventCode": "CAD-002-22-EVT",
     "title": "なわフェス2022",
     "url": "../special/bosyu.html#nawafes",
     "status": "closed",
     "deadline": "2022-08-31T23:59:59+09:00",
     "theme": "gray",
-    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
-    "tags": ["公募"]
+    "summary": "どなたでも参加可能なイベント企画です。詳細は募集ページをご確認ください。",
+    "tags": ["イベント", "公募"]
   },
   {
+    "id": "vocaloid-compilation-2023",
+    "eventCode": "CAD-004-23-CD",
     "title": "ボカロコンピアルバム",
     "url": "../special/bosyu.html#korabocd",
     "status": "closed",
     "deadline": "2023-06-30T23:59:59+09:00",
     "theme": "gray",
-    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "summary": "ボーカロイド楽曲によるコンピレーションアルバム制作企画です。",
     "tags": ["アレンジ", "CD", "公募", "ボカロ"]
   },
   {
+    "id": "blue-archive-cd-2023",
+    "eventCode": "CAD-005-23-CD",
     "title": "ブルアカアレンジCD",
     "url": "../special/bosyu.html#bluarc",
     "status": "closed",
     "deadline": "2023-10-01T23:59:59+09:00",
     "theme": "gray",
-    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "summary": "『ブルーアーカイブ』を題材としたアレンジ楽曲のCD制作企画です。",
     "tags": ["アレンジ", "CD", "公募", "ブルアカ"]
   },
   {
+    "id": "touhou-arrange-cd-2024",
+    "eventCode": "CAD-006-24-CD",
     "title": "東方ProjectアレンジCD",
     "url": "../special/bosyu.html#touhou",
     "status": "closed",
     "deadline": "2024-05-31T23:59:59+09:00",
     "theme": "gray",
-    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
-    "tags": ["アレンジ", "CD", "公募"]
+    "summary": "『東方Project』を題材としたアレンジ楽曲のCD制作企画です。",
+    "tags": ["東方", "アレンジ", "CD", "公募"]
   },
   {
+    "id": "changed-cd-2024",
+    "eventCode": "CAD-007-24-CD",
     "title": "Changed アレンジCD 参加募集",
     "url": "../special/bosyu.html#changed",
     "status": "closed",
     "deadline": "2024-11-15T23:59:59+09:00",
     "theme": "gray",
-    "summary": "どなたでも参加可能。詳細と応募方法は募集ページをご覧ください。",
+    "summary": "『Changed』を題材としたアレンジ楽曲のCD制作企画です。",
     "tags": ["アレンジ", "CD", "公募"]
   },
   {
-    "id": "klonoa",
+    "id": "klonoa-cd",
+    "eventCode": "CAD-008-25-CD",
     "title": "風のクロノア アレンジCD 参加者募集",
     "url": "../special/bosyu.html#klonoa",
     "status": "open",
     "deadline": "2025-12-31T23:59:59+09:00",
     "theme": "green",
-    "summary": "新春けもケット12に向けて頒布予定です。風のクロノアが題材のアレンジを作成する企画です。",
-    "tags": ["アレンジ", "CD", "新春けもケット"]
+    "summary": "『風のクロノア』を題材としたアレンジ楽曲のCD制作企画です。新春けもケット12での頒布を予定しています。",
+    "tags": ["アレンジ", "CD", "クロノア", "即売会"]
   },
   {
+    "id": "retro-minor-game-cd",
+    "eventCode": "CAD-009-26-CD",
     "title": "レトロマイナーゲーム アレンジCD 参加者募集",
     "url": "../special/bosyu.html#retrospective",
     "status": "open",
-    "deadline": "2026-06-31T23:59:59+09:00",
+    "deadline": "2026-07-01T23:59:59+09:00",
     "theme": "green",
-    "summary": "「レトロゲーム」「マイナーゲーム」を題材にアレンジを作成する企画です。夏コミに向けて頒布予定です。",
-    "tags": ["アレンジ", "CD"]
+    "summary": "レトロゲームおよびマイナーゲームを題材としたアレンジ楽曲のCD制作企画です。夏コミでの頒布を予定しています。",
+    "tags": ["アレンジ", "CD", "レトロゲーム"]
   },
   {
     "id": "touhou-cafe",
-    "title": "夢と現のアティチュード(仮称)",
+    "eventCode": "CAD-010-26-CD",
+    "title": "夢と現のアティチュード（仮称）",
     "url": "../special/bosyu.html#touhouCafe",
     "status": "open",
     "deadline": "2026-09-01T23:59:59+09:00",
     "theme": "green",
-    "summary": "「東方Project」を題材に、参加者それぞれが感じる“幻想郷の世界観”を音楽として自由に表現していただく企画です。",
+    "summary": "『東方Project』を題材に、幻想郷の世界観をカフェ／ラウンジテイストの音楽として表現するアレンジCD制作企画です。",
     "tags": ["東方", "アレンジ", "CD"]
   }
 ]
