@@ -254,6 +254,29 @@
             <p class="ongoing-meta" style="margin-top: 0.5rem">
               ※ 制作経験やジャンルは不問です。はじめての方も歓迎します。
             </p>
+
+            <hr>
+            <p class="illustration-lead">
+              Cadenceでは、音楽だけでなく、作品の世界観を形にしてくださる
+              <strong>ジャケットイラスト制作者</strong>の募集も行っています。
+            </p>
+            <p>各企画で制作される楽曲をまとめるCDのジャケットイラストをご担当いただける方を募集しています。</p>
+
+            <div class="bosyu-box">
+              <h4><i class="fa-solid fa-paintbrush"></i> 募集条件（イラスト）</h4>
+              <ul>
+                <li>デジタルイラストを制作できる方</li>
+                <li>締切までに提出が可能な方</li>
+                <li>Discordで連絡が取れる方</li>
+              </ul>
+              <div class="note">
+                <ul>
+                  <li>※ 年齢・経験・使用ソフトは問いません。</li>
+                  <li>※ 実績公開が可能な方を歓迎します（必須ではありません）。</li>
+                  <li>※ ジャケットイラスト募集は、音楽制作への参加とは別枠です。イラストのみのご参加も歓迎しています。</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div class="right">
@@ -263,10 +286,7 @@
             <div class="bosyu-box">
               <ol>
                 <li>フォームに必要事項を記入してください。</li>
-                <li>Discordサーバーに参加してください。<br /></li>
-                <li>
-                  イベント開始前に<strong>サーバールール</strong>でのロール割り振り投稿に反応してください。
-                </li>
+                <li>Discordサーバーに参加してください。</li>
               </ol>
               <p>
                 ※既にサーバー参加済みの方は、フォーム記入は必須ではありません。
@@ -274,13 +294,10 @@
             </div>
 
             <p>
-              フォームの確認後、<strong>通常は数週間以内</strong>にメールでご連絡します（例外あり）。
+              フォーム送信後、Discordサーバーへ参加していただき、<strong>運営側で参加確認およびロール付与を行った時点で、正式参加</strong>となります。
             </p>
             <p>
-              すでにサーバー参加済みの方は、メール連絡を省略する場合がありますが、<strong>応募は受理されています</strong>のでご安心ください。
-            </p>
-            <p>
-              ロール付与が完了し、関連チャンネルが閲覧できるようになった時点で<strong>登録完了</strong>です。
+              ロール付与が完了し、関連チャンネルが閲覧できるようになった時点で、登録完了となります。
             </p>
           </div>
         </div>
@@ -323,7 +340,7 @@
         </div>
 
         <div>
-          <!-- <h2 class="title-U-line-blank" >イベント概要</h2> -->
+          <!-- ===== ここから 東方 募集ブロック ===== -->
           <a name="touhouCafe"></a>
           <h2 class="title DotGothic16">
             夢と現のアティチュード(仮称) <span class="Title">- 募集概要 -</span>
@@ -335,14 +352,8 @@
                 <div class="left">
                   <div class="tab-wrap">
                     <!-- 概要 -->
-                    <input
-                      id="TAB-01"
-                      type="radio"
-                      name="TAB"
-                      class="tab-switch"
-                      checked
-                    />
-                    <label class="tab-label" for="TAB-01">概要</label>
+                    <input id="touhou-cafe__tab-overview" type="radio" name="tab-touhou-cafe" class="tab-switch" checked />
+                    <label class="tab-label" for="touhou-cafe__tab-overview">概要</label>
                     <div class="tab-content">
                       <div class="bosyu-hero">
                         <img
@@ -409,6 +420,37 @@
                             </div>
                           </div>
 
+                          <div class="bosyu-box">
+                            <h4>
+                              <i class="fa-solid fa-code"></i>
+                              応募イベントコード
+                            </h4>
+
+                            <p>
+                              応募内容に応じて、以下のコードのいずれかを
+                              フォームに記入してください。
+                            </p>
+
+                            <div class="event-code-sticky">
+                              <div class="event-code-row">
+                                <span class="event-code-desc">音楽制作（楽曲参加）</span>
+                                <code class="eventCode">CAD-010-26-CD</code>
+                                <button type="button" class="copy-btn">コピー</button>
+                              </div>
+
+                              <div class="event-code-row">
+                                <span class="event-code-desc">ジャケットイラスト制作</span>
+                                <code class="eventCode">CAD-010-26-ILL</code>
+                                <button type="button" class="copy-btn">コピー</button>
+                              </div>
+                            </div>
+
+                            <p class="note">
+                              ※ 音楽・イラストの両方に応募される場合は、
+                              <strong>両方のコードを記入</strong>してください。
+                            </p>
+                          </div>
+
                           <!-- 備考：統一枠 -->
                           <div class="bosyu-box">
                             <h4>
@@ -437,14 +479,9 @@
                       </div>
                     </div>
 
-                    <!-- 応募要項（表→タイムラインへ） -->
-                    <input
-                      id="TAB-02"
-                      type="radio"
-                      name="TAB"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-02">応募要項</label>
+                    <!-- 応募要項 -->
+                    <input id="touhou-cafe__tab-requirements" type="radio" name="tab-touhou-cafe" class="tab-switch" />
+                    <label class="tab-label" for="touhou-cafe__tab-requirements">応募要項</label>
                     <div class="tab-content">
                       <div class="bosyu-box">
                         <h4>
@@ -482,14 +519,9 @@
                       </div>
                     </div>
 
-                    <!-- 応募方法（番号付き・統一枠） -->
-                    <input
-                      id="TAB-03"
-                      type="radio"
-                      name="TAB"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-03">応募方法</label>
+                    <!-- 応募方法 -->
+                    <input id="touhou-cafe__tab-howto" type="radio" name="tab-touhou-cafe" class="tab-switch" />
+                    <label class="tab-label" for="touhou-cafe__tab-howto">応募方法</label>
                     <div class="tab-content">
                       <div class="bosyu-box">
                         <h4>
@@ -506,8 +538,7 @@
                             >
                           </li>
                           <li>
-                            イベント開始前に<strong>サーバールール</strong>でのロール割り振り投稿に反応
-                            → 登録完了。
+                            運営側で参加確認およびロール付与を行い、関連チャンネルが閲覧できるようになった時点で、登録完了となります。
                           </li>
                         </ol>
                         <p class="note">
@@ -516,14 +547,9 @@
                       </div>
                     </div>
 
-                    <!-- 締め切り（そのまま見やすく） -->
-                    <input
-                      id="TAB-04"
-                      type="radio"
-                      name="TAB"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-04">締め切り</label>
+                    <!-- 締め切り -->
+                    <input id="touhou-cafe__tab-deadline" type="radio" name="tab-touhou-cafe" class="tab-switch" />
+                    <label class="tab-label" for="touhou-cafe__tab-deadline">締め切り</label>
                     <div class="tab-content">
                       <p class="simekiri">
                         参加締切：<strong>2026/09/01</strong><br />
@@ -535,14 +561,9 @@
                       </p>
                     </div>
 
-                    <!-- イベント（チップで要点だけ） -->
-                    <input
-                      id="TAB-05"
-                      type="radio"
-                      name="TAB"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-05">イベント</label>
+                    <!-- イベント -->
+                    <input id="touhou-cafe__tab-event" type="radio" name="tab-touhou-cafe" class="tab-switch" />
+                    <label class="tab-label" for="touhou-cafe__tab-event">イベント</label>
                     <div class="tab-content">
                       <p>持ち込み予定（当落により変更の可能性あり）</p>
                       <div class="chips">
@@ -566,18 +587,20 @@
                 <!-- 右側：Googleフォーム（既存のまま） -->
                 <div class="right">
                   <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfwaKswuSc5od5tZ5rupFlCBGaXy8xeLfjOw_DgndIutSkzSA/viewform?embedded=true"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeoYshfFZFMPb_OTgIIxS0y-SP34_p9gMLWYGy4PdOcPCrkVg/viewform?embedded=true&entry.616039945=CAD-010-26-CD"
                     width="100%"
-                    height="903"
+                    height="1200"
                     frameborder="0"
                     marginheight="0"
                     marginwidth="0"
-                    >読み込んでいます…</iframe
                   >
+                    読み込んでいます…
+                  </iframe>
                 </div>
               </div>
             </div>
           </section>
+          <!-- ===== ここまで 東方 募集ブロック ===== -->
 
           <!-- ===== ここから Klonoa 募集ブロック ===== -->
           <a name="klonoa"></a>
@@ -592,23 +615,16 @@
                 <div class="left">
                   <div class="tab-wrap">
                     <!-- 概要 -->
-                    <input
-                      id="TAB-KL-01"
-                      type="radio"
-                      name="TABKL"
-                      class="tab-switch"
-                      checked
-                    />
-                    <label class="tab-label" for="TAB-KL-01">概要</label>
+                    <input id="klonoa__tab-overview" type="radio" name="tab-klonoa" class="tab-switch" checked />
+                    <label class="tab-label" for="klonoa__tab-overview">概要</label>
                     <div class="tab-content">
                       <div class="bosyu-hero">
-                        <img
-                          src="../img/klonoa.jpg"
-                          alt="New Vision告知画像"
-                        />
+                        <img src="../img/klonoa.jpg" alt="New Vision告知画像" />
                         <div class="bosyu-hero-body">
                           <h3 class="bosyu-h">New Vision</h3>
-                          <p>この企画は、「風のクロノア」を題材に、参加者が自由な発想で曲をアレンジし、CDを作成するという企画です。</p>
+                          <p>
+                            この企画は、「風のクロノア」を題材に、参加者が自由な発想で曲をアレンジし、CDを作成するという企画です。
+                          </p>
                           <p>
                             2026年1月18日開催の<strong>新春けもケット12</strong>での頒布を目指し制作します。
                           </p>
@@ -619,9 +635,7 @@
                               <i class="fa-solid fa-bullseye"></i>
                               <div>
                                 <div class="info-title">テーマ</div>
-                                <div class="info-text">
-                                  風のクロノア
-                                </div>
+                                <div class="info-text">風のクロノア</div>
                               </div>
                             </div>
                             <div class="info-card">
@@ -657,6 +671,23 @@
                             </div>
                           </div>
 
+                          <div class="bosyu-box">
+                            <h4>
+                              <i class="fa-solid fa-code"></i>
+                              応募イベントコード
+                            </h4>
+
+                            <div>
+                              <div class="info-text"></div>
+                              <div class="event-code-sticky">
+                                <div class="event-code-row">
+                                  <code class="eventCode">CAD-008-25-CD</code>
+                                  <button type="button" class="copy-btn">コピー</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                           <!-- 備考：統一枠 -->
                           <div class="bosyu-box">
                             <h4>
@@ -686,13 +717,8 @@
                     </div>
 
                     <!-- 応募要項 -->
-                    <input
-                      id="TAB-KL-02"
-                      type="radio"
-                      name="TABKL"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-KL-02">応募要項</label>
+                    <input id="klonoa__tab-requirements" type="radio" name="tab-klonoa" class="tab-switch" />
+                    <label class="tab-label" for="klonoa__tab-requirements">応募要項</label>
                     <div class="tab-content">
                       <div class="bosyu-box">
                         <h4>
@@ -724,22 +750,15 @@
                         <div class="timeline-item">
                           <div class="tl-date">2026/01/04</div>
                           <div class="tl-body">
-                            <div class="tl-title">
-                              マスターアップ
-                            </div>
+                            <div class="tl-title">マスターアップ</div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <!-- 応募方法 -->
-                    <input
-                      id="TAB-KL-03"
-                      type="radio"
-                      name="TABKL"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-KL-03">応募方法</label>
+                    <input id="klonoa__tab-howto" type="radio" name="tab-klonoa" class="tab-switch" />
+                    <label class="tab-label" for="klonoa__tab-howto">応募方法</label>
                     <div class="tab-content">
                       <div class="bosyu-box">
                         <h4>
@@ -756,8 +775,7 @@
                             >
                           </li>
                           <li>
-                            イベント開始前に<strong>サーバールール</strong>でのロール割り振り投稿に反応
-                            → 登録完了。
+                            運営側で参加確認およびロール付与を行い、関連チャンネルが閲覧できるようになった時点で、登録完了となります。
                           </li>
                         </ol>
                         <p class="note">
@@ -767,13 +785,8 @@
                     </div>
 
                     <!-- 締め切り -->
-                    <input
-                      id="TAB-KL-04"
-                      type="radio"
-                      name="TABKL"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-KL-04">締め切り</label>
+                    <input id="klonoa__tab-deadline" type="radio" name="tab-klonoa" class="tab-switch" />
+                    <label class="tab-label" for="klonoa__tab-deadline">締め切り</label>
                     <div class="tab-content">
                       <p class="simekiri">
                         参加締切：<strong>2025/12/31</strong><br />
@@ -787,13 +800,8 @@
                     </div>
 
                     <!-- イベント -->
-                    <input
-                      id="TAB-KL-05"
-                      type="radio"
-                      name="TABKL"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-KL-05">イベント</label>
+                    <input id="klonoa__tab-event" type="radio" name="tab-klonoa" class="tab-switch" />
+                    <label class="tab-label" for="klonoa__tab-event">イベント</label>
                     <div class="tab-content">
                       <!-- <p>持ち込み予定イベントなどをここに記載してください。</p> -->
                       <div class="chips">
@@ -813,14 +821,15 @@
                 <!-- 右側：Googleフォーム（既存のまま） -->
                 <div class="right">
                   <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfwaKswuSc5od5tZ5rupFlCBGaXy8xeLfjOw_DgndIutSkzSA/viewform?embedded=true"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeoYshfFZFMPb_OTgIIxS0y-SP34_p9gMLWYGy4PdOcPCrkVg/viewform?embedded=true&entry.616039945=CAD-008-25-CD"
                     width="100%"
-                    height="903"
+                    height="1200"
                     frameborder="0"
                     marginheight="0"
                     marginwidth="0"
-                    >読み込んでいます…</iframe
                   >
+                    読み込んでいます…
+                  </iframe>
                 </div>
               </div>
             </div>
@@ -830,7 +839,8 @@
           <!-- ===== ここから レトロマイナー 募集ブロック ===== -->
           <a name="retrospective"></a>
           <h2 class="title DotGothic16">
-            レトロマイナーゲーム アレンジCD <span class="Title">- 募集概要 -</span>
+            レトロマイナーゲーム アレンジCD
+            <span class="Title">- 募集概要 -</span>
           </h2>
 
           <section id="content_retrospective">
@@ -840,14 +850,8 @@
                 <div class="left">
                   <div class="tab-wrap">
                     <!-- 概要 -->
-                    <input
-                      id="TAB-RETRO-01"
-                      type="radio"
-                      name="TABRETRO"
-                      class="tab-switch"
-                      checked
-                    />
-                    <label class="tab-label" for="TAB-RETRO-01">概要</label>
+                    <input id="retrospective__tab-overview" type="radio" name="tab-retrospective" class="tab-switch" checked />
+                    <label class="tab-label" for="retrospective__tab-overview">概要</label>
                     <div class="tab-content">
                       <div class="bosyu-hero">
                         <img
@@ -855,12 +859,27 @@
                           alt="レトロマイナー告知画像"
                         />
                         <div class="bosyu-hero-body">
-                          <h3 class="bosyu-h">  ー埋もれたゲーム音楽を、もう一度表舞台へ。</h3>
-                          <p>「レトロゲーム」「マイナーゲーム」を題材に、自由な発想でアレンジ曲を制作し、コンピレーションCDとしてまとめる企画です。夏コミでの頒布を目指して制作します。</p>
-                          <p>中心となるのは <b>2000年以前のゲーム</b>ですが、<b>2000年以降の作品でも、マイナーゲームであれば参加可能</b>です。</p>
-                          <p>家庭用／アーケード／PC／携帯機など<b>プラットフォーム不問、ジャンル不問</b>です。</p>
-                          <p><b>“知る人ぞ知る名曲”</b>から、<b>“ほとんど知られていないマイナーゲームのBGM”</b>まで、作品を自由に選んでアレンジしてください。</p>
-                          <p>原曲の雰囲気を尊重しつつ、アレンジの方向性は自由です。初心者の方も歓迎します。</p>
+                          <h3 class="bosyu-h">
+                            ー埋もれたゲーム音楽を、もう一度表舞台へ。
+                          </h3>
+                          <p>
+                            「レトロゲーム」「マイナーゲーム」を題材に、自由な発想でアレンジ曲を制作し、コンピレーションCDとしてまとめる企画です。夏コミでの頒布を目指して制作します。
+                          </p>
+                          <p>
+                            中心となるのは
+                            <b>2000年以前のゲーム</b
+                            >ですが、<b>2000年以降の作品でも、マイナーゲームであれば参加可能</b>です。
+                          </p>
+                          <p>
+                            家庭用／アーケード／PC／携帯機など<b>プラットフォーム不問、ジャンル不問</b>です。
+                          </p>
+                          <p>
+                            <b>“知る人ぞ知る名曲”</b
+                            >から、<b>“ほとんど知られていないマイナーゲームのBGM”</b>まで、作品を自由に選んでアレンジしてください。
+                          </p>
+                          <p>
+                            原曲の雰囲気を尊重しつつ、アレンジの方向性は自由です。初心者の方も歓迎します。
+                          </p>
 
                           <!-- 情報カード -->
                           <div class="info-grid">
@@ -906,6 +925,23 @@
                             </div>
                           </div>
 
+                          <div class="bosyu-box">
+                            <h4>
+                              <i class="fa-solid fa-code"></i>
+                              応募イベントコード
+                            </h4>
+
+                            <div>
+                              <div class="info-text"></div>
+                              <div class="event-code-sticky">
+                                <div class="event-code-row">
+                                  <code class="eventCode">CAD-009-26-CD</code>
+                                  <button type="button" class="copy-btn">コピー</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                           <!-- 備考：統一枠 -->
                           <div class="bosyu-box">
                             <h4>
@@ -935,13 +971,8 @@
                     </div>
 
                     <!-- 応募要項 -->
-                    <input
-                      id="TAB-RETRO-02"
-                      type="radio"
-                      name="TABRETRO"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-RETRO-02">応募要項</label>
+                    <input id="retrospective__tab-requirements" type="radio" name="tab-retrospective" class="tab-switch" />
+                    <label class="tab-label" for="retrospective__tab-requirements">応募要項</label>
                     <div class="tab-content">
                       <div class="bosyu-box">
                         <h4>
@@ -973,22 +1004,15 @@
                         <div class="timeline-item">
                           <div class="tl-date">2026/08/01</div>
                           <div class="tl-body">
-                            <div class="tl-title">
-                              マスターアップ
-                            </div>
+                            <div class="tl-title">マスターアップ</div>
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <!-- 応募方法 -->
-                    <input
-                      id="TAB-RETRO-03"
-                      type="radio"
-                      name="TABRETRO"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-RETRO-03">応募方法</label>
+                    <input id="retrospective__tab-howto" type="radio" name="tab-retrospective" class="tab-switch" />
+                    <label class="tab-label" for="retrospective__tab-howto">応募方法</label>
                     <div class="tab-content">
                       <div class="bosyu-box">
                         <h4>
@@ -1005,8 +1029,7 @@
                             >
                           </li>
                           <li>
-                            イベント開始前に<strong>サーバールール</strong>でのロール割り振り投稿に反応
-                            → 登録完了。
+                            運営側で参加確認およびロール付与を行い、関連チャンネルが閲覧できるようになった時点で、登録完了となります。
                           </li>
                         </ol>
                         <p class="note">
@@ -1016,13 +1039,8 @@
                     </div>
 
                     <!-- 締め切り -->
-                    <input
-                      id="TAB-RETRO-04"
-                      type="radio"
-                      name="TABRETRO"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-RETRO-04">締め切り</label>
+                    <input id="retrospective__tab-deadline" type="radio" name="tab-retrospective" class="tab-switch" />
+                    <label class="tab-label" for="retrospective__tab-deadline">締め切り</label>
                     <div class="tab-content">
                       <p class="simekiri">
                         参加締切：<strong>2026/07/01</strong><br />
@@ -1036,13 +1054,8 @@
                     </div>
 
                     <!-- イベント -->
-                    <input
-                      id="TAB-RETRO-05"
-                      type="radio"
-                      name="TABRETRO"
-                      class="tab-switch"
-                    />
-                    <label class="tab-label" for="TAB-RETRO-05">イベント</label>
+                    <input id="retrospective__tab-event" type="radio" name="tab-retrospective" class="tab-switch" />
+                    <label class="tab-label" for="retrospective__tab-event">イベント</label>
                     <div class="tab-content">
                       <!-- <p>持ち込み予定イベントなどをここに記載してください。</p> -->
                       <div class="chips">
@@ -1062,14 +1075,15 @@
                 <!-- 右側：Googleフォーム（既存のまま） -->
                 <div class="right">
                   <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfwaKswuSc5od5tZ5rupFlCBGaXy8xeLfjOw_DgndIutSkzSA/viewform?embedded=true"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSeoYshfFZFMPb_OTgIIxS0y-SP34_p9gMLWYGy4PdOcPCrkVg/viewform?embedded=true&entry.616039945=CAD-009-26-CD"
                     width="100%"
-                    height="903"
+                    height="1200"
                     frameborder="0"
                     marginheight="0"
                     marginwidth="0"
-                    >読み込んでいます…</iframe
                   >
+                    読み込んでいます…
+                  </iframe>
                 </div>
               </div>
             </div>
