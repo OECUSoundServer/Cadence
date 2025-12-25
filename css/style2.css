@@ -1927,6 +1927,61 @@ pre {
   margin-top: 5px;
 }
 
+.event-box{
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  max-width:520px;
+}
+
+/* 見出し */
+.event-box__title{
+  background:#e8f5e9;
+  color:#2e7d32;
+  font-weight:700;
+  text-align:center;
+  padding:10px 12px;
+  border-bottom:1px solid #e6e6e6;
+}
+
+/* 本文 */
+.event-box__body{
+  padding:12px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* 行 */
+.event-row{
+  display:grid;
+  grid-template-columns:18px 6.5em 1fr;
+  gap:8px;
+  align-items:start;
+  line-height:1.6;
+}
+
+.event-row i{
+  margin-top:3px;
+  text-align:center;
+  opacity:0.85;
+}
+
+/* ★ イベントlabel */
+.event-label{
+  color:#000;
+  font-weight:600;
+  white-space:nowrap;
+  text-align:left;
+}
+
+/* ★ イベントvalue */
+.event-value{
+  font-weight:500;
+}
+
+
 .kadomarubox {
   display: inline-block;
   padding: 5px;
