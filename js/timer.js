@@ -29,25 +29,38 @@
 // }
 // countdown();
 // setInterval(countdown,1000);
-let countdown = setInterval(function(){
-    document.querySelectorAll('.countdown').forEach(function (elem) {
-        const now = new Date()  //今の日時
-        const targetTime = new Date(elem.getAttribute("data-target-time"))  //ターゲット日時を取得
-        const remainTime = targetTime - now  //差分を取る（ミリ秒で返ってくる
+document.addEventListener("DOMContentLoaded", () => {
+  const pad2 = (n) => String(n).padStart(2, "0");
 
-        // 指定の日時を過ぎていたらスキップ
-        if(remainTime < 0) return true
+  const tick = () => {
+    const now = new Date();
 
-        // //差分の日・時・分・秒を取得
-        const difDay = Math.floor(remainTime / 1000 / 60 / 60 / 24) % 365
-        const difHour = Math.floor(remainTime / 1000 / 60 / 60 ) % 24
-        const difMin = Math.floor(remainTime / 1000 / 60) % 60
-        const difSec = Math.floor(remainTime / 1000) % 60
+    document.querySelectorAll(".countdown").forEach((elem) => {
+      const raw =
+        elem.getAttribute("data-deadline") ||
+        elem.getAttribute("data-target-time");
 
-        // //残りの日時を上書き
-        elem.querySelectorAll('.countdown-day')[0].textContent = difDay
-        elem.querySelectorAll('.countdown-hour')[0].textContent = difHour
-        elem.querySelectorAll('.countdown-min')[0].textContent = difMin
-        elem.querySelectorAll('.countdown-sec')[0].textContent = difSec
+      if (!raw) return;
+
+      const target = new Date(raw);
+      if (Number.isNaN(target.getTime())) return;
+
+      const remain = target - now;
+      if (remain <= 0) {
+        elem.textContent = "締切";
+        return;
+      }
+
+      const totalSec = Math.floor(remain / 1000);
+      const days = Math.floor(totalSec / 86400);
+      const hours = Math.floor((totalSec % 86400) / 3600);
+      const mins = Math.floor((totalSec % 3600) / 60);
+      const secs = totalSec % 60;
+
+      elem.textContent = `${days}日 ${pad2(hours)}:${pad2(mins)}:${pad2(secs)}`;
     });
-}, 1000)    //1秒間に1度処理
+  };
+
+  tick();
+  setInterval(tick, 1000);
+});
