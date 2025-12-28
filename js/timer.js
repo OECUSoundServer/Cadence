@@ -1,3 +1,53 @@
+(() => {
+  console.log("countdown js loaded:", location.pathname);
+
+  const init = () => {
+    const tick = () => {
+      const now = new Date();
+
+      document.querySelectorAll(".countdown").forEach((elem) => {
+        const raw =
+          elem.getAttribute("data-deadline") ||
+          elem.getAttribute("data-target-time");
+        if (!raw) return;
+
+        const target = new Date(raw);
+        if (Number.isNaN(target.getTime())) return;
+
+        const remainMs = target - now;
+        if (remainMs <= 0) {
+          elem.textContent = "締切";
+          return;
+        }
+
+        const totalSec = Math.floor(remainMs / 1000);
+        const days = Math.floor(totalSec / 86400);
+        const hours = Math.floor((totalSec % 86400) / 3600);
+        const mins = Math.floor((totalSec % 3600) / 60);
+        const secs = totalSec % 60;
+
+        elem.textContent =
+          `残り：${days}日 ` +
+          `${hours}時間 ` +
+          `${mins}分 ` +
+          `${secs}秒`;
+      });
+    };
+
+    tick();
+    setInterval(tick, 1000);
+  };
+
+  // DOMContentLoaded 前後どちらでも確実に初期化
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();
+
+
+
 // JavaScript Document
 // タイマーの日付を設定
 // const day = document.getElementById("day");
@@ -29,8 +79,10 @@
 // }
 // countdown();
 // setInterval(countdown,1000);
-document.addEventListener("DOMContentLoaded", () => {
-  const pad2 = (n) => String(n).padStart(2, "0");
+ddocument.addEventListener("DOMContentLoaded", () => {
+  // 二重起動ガード
+  if (window.__countdownStarted) return;
+  window.__countdownStarted = true;
 
   const tick = () => {
     const now = new Date();
@@ -39,28 +91,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const raw =
         elem.getAttribute("data-deadline") ||
         elem.getAttribute("data-target-time");
-
       if (!raw) return;
 
       const target = new Date(raw);
       if (Number.isNaN(target.getTime())) return;
 
-      const remain = target - now;
-      if (remain <= 0) {
+      const remainMs = target - now;
+      if (remainMs <= 0) {
         elem.textContent = "締切";
         return;
       }
 
-      const totalSec = Math.floor(remain / 1000);
-      const days = Math.floor(totalSec / 86400);
-      const hours = Math.floor((totalSec % 86400) / 3600);
-      const mins = Math.floor((totalSec % 3600) / 60);
-      const secs = totalSec % 60;
+      // 分単位に丸め（秒で毎秒表示が変わらない）
+      const totalMin = Math.ceil(remainMs / 60000);
 
-      elem.textContent = `${days}日 ${pad2(hours)}:${pad2(mins)}:${pad2(secs)}`;
+      const days = Math.floor(totalMin / 1440);      // 1440 = 24*60
+      const hours = Math.floor((totalMin % 1440) / 60);
+      const mins = totalMin % 60;
+
+      // 表示を統一
+      elem.textContent = `${days}日 ${hours}時間 ${mins}分`;
     });
   };
 
   tick();
-  setInterval(tick, 1000);
+  // 秒で更新する必要がないので、1秒より長くして目にも優しい
+  setInterval(tick, 10_000); // 10秒ごと（必要なら 60_000 にして1分更新でもOK）
 });
