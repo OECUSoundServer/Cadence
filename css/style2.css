@@ -1806,6 +1806,10 @@ figure {
   opacity: 0.6;
 }
 
+.cover-img.topView {
+  object-position: 50% 20%;
+}
+
 .cover-square {
   height: 350px;
   width: auto;
