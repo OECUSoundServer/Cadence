@@ -10,6 +10,19 @@
     "pin": true
   },
   {
+    "title": "Non Stop",
+    "href": "../event/CAD-0011.html",
+    "image": "../img/airride_Logo.png",
+    "fullImage": "../img/airride_Logo.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2026-01-18",
+    "buttons": [
+      {"href": "#", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["VGM Remix", "2026/01/18 新春けもケット12"]
+  },
+  {
     "title": "コミックマーケット106",
     "href": "../event/c106.html",
     "image": "../img/yellow.png",
