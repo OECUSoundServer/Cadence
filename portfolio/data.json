@@ -10,6 +10,28 @@
     "pin": true
   },
   {
+    "title": "新春けもケット12",
+    "href": "../event/skk12.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2026-01-18",
+    "captions": ["お品書き", "2026/01/18 新春けもケット12"]
+  },
+  {
+    "title": "New Vision",
+    "href": "../event/CAD-0012.html",
+    "image": "../img/klonoa_Logo.png",
+    "fullImage": "../img/klonoa_Logo.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2026-01-18",
+    "buttons": [
+      {"href": "#", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["風のクロノア限定", "2026/01/18 新春けもケット12"]
+  },
+  {
     "title": "Non Stop",
     "href": "../event/CAD-0011.html",
     "image": "../img/airride_Logo.png",
@@ -20,7 +42,7 @@
       {"href": "#", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
     ],
     "squareImage": true,
-    "captions": ["VGM Remix", "2026/01/18 新春けもケット12"]
+    "captions": ["カービィのエアライド限定", "2026/01/18 新春けもケット12"]
   },
   {
     "title": "コミックマーケット106",
