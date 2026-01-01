@@ -1839,6 +1839,10 @@ figure {
   background-color: #5cb85c;
 }
 
+.label-new{
+  background:#ff4d4d;
+}
+
 .label {
   display: inline;
   padding: 0.2em 0.6em 0.3em;
