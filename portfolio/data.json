@@ -26,7 +26,7 @@
     "categories": ["sound", "booth", "cd"],
     "date": "2026-01-18",
     "buttons": [
-      {"href": "#", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+      {"href": "https://cadence.booth.pm/items/7835707", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
     ],
     "squareImage": true,
     "captions": ["風のクロノア限定", "2026/01/18 新春けもケット12"]
@@ -39,7 +39,7 @@
     "categories": ["sound", "booth", "cd"],
     "date": "2026-01-18",
     "buttons": [
-      {"href": "#", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+      {"href": "https://cadence.booth.pm/items/7835670", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
     ],
     "squareImage": true,
     "captions": ["カービィのエアライド限定", "2026/01/18 新春けもケット12"]
