@@ -1,0 +1,180 @@
+{
+  "skk12": {
+    "items": [
+      { "id": "CAD-0012", "isNew": true },
+      { "id": "CAD-0011", "isNew": true },
+      { "id": "CAD-0010" },
+      { "id": "CAD-0009" },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "c106": {
+    "items": [
+      { "id": "CAD-0010" },
+      { "id": "CAD-0009" },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "kkk10": {
+    "items": [
+      { "id": "CAD-0010", "isNew": true },
+      { "id": "CAD-0009", "isNew": true },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "skk11": {
+    "items": [
+      { "id": "CAD-0008", "isNew": true },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "kouroumu20": {
+    "items": [
+      { "id": "CAD-0007", "isNew": true },
+      { "id": "CAD-0007-CARD", "isNew": true, "squareImage": true },
+      { "id": "CAD-0006", "isNew": true },
+      { "id": "CAD-0006-CARD", "isNew": true, "squareImage": true },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0004-CARD", "squareImage": true },
+      { "id": "CAD-0005" },
+      { "id": "CAD-0005-CARD", "squareImage": true },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-CARD", "squareImage": true },
+      { "id": "CAD-0002-TOKUTEN", "squareImage": true },
+      { "id": "FATTY-DISC" },
+      { "id": "FATTY-CARD", "squareImage": true },
+      { "id": "SPACE-CAT-CARD", "squareImage": true },
+      { "id": "STICKER-001" },
+      { "id": "STICKER-002" },
+      { "id": "STICKER-003" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "paclan": {
+    "items": [
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0004-CARD", "squareImage": true },
+      { "id": "CAD-0005" },
+      { "id": "CAD-0005-CARD", "squareImage": true },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "ITEM-STAND-001" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-CARD", "squareImage": true },
+      { "id": "CAD-0002-TOKUTEN", "squareImage": true },
+      { "id": "FATTY-DISC" },
+      { "id": "FATTY-CARD", "squareImage": true },
+      { "id": "SPACE-CAT-CARD", "squareImage": true },
+      { "id": "STICKER-001" },
+      { "id": "STICKER-002" },
+      { "id": "STICKER-003" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "oricomi10": {
+    "items": [
+      { "id": "ITEM-KEYRING-001", "isNew": true },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0004-CARD", "squareImage": true },
+      { "id": "CAD-0005" },
+      { "id": "CAD-0005-CARD", "squareImage": true },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "ITEM-STAND-001" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-CARD", "squareImage": true },
+      { "id": "CAD-0002-TOKUTEN", "squareImage": true },
+      { "id": "FATTY-DISC" },
+      { "id": "FATTY-CARD", "squareImage": true },
+      { "id": "SPACE-CAT-CARD", "squareImage": true },
+      { "id": "STICKER-001" },
+      { "id": "STICKER-002" },
+      { "id": "STICKER-003" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "daigakusai": {
+    "items": [
+      { "id": "CAD-0004", "isNew": true },
+      { "id": "CAD-0004-CARD", "squareImage": true, "isNew": true },
+      { "id": "CAD-0005", "isNew": true },
+      { "id": "CAD-0005-CARD", "squareImage": true, "isNew": true },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "ITEM-STAND-001" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-CARD", "squareImage": true },
+      { "id": "CAD-0002-TOKUTEN", "squareImage": true },
+      { "id": "FATTY-DISC" },
+      { "id": "FATTY-CARD", "squareImage": true },
+      { "id": "SPACE-CAT-CARD", "squareImage": true },
+      { "id": "STICKER-001" ,"price": 200 },
+      { "id": "STICKER-002", "price": 200 },
+      { "id": "STICKER-003", "price": 200 },
+      { "id": "DLC" }
+    ]
+  },
+
+  "c102": {
+    "items": [
+      { "id": "CAD-0002", "isNew": true },
+      { "id": "CAD-0002-CARD", "squareImage": true, "isNew": true },
+      { "id": "CAD-0002-TOKUTEN", "squareImage": true, "isNew": true },
+      { "id": "itaku", "squareImage": true, "isNew": true },
+      { "id": "DLC" }
+    ]
+  },
+
+  "kk13": {
+    "items": [
+      { "id": "FATTY-DISC", "isNew": true },
+      { "id": "FATTY-CARD", "squareImage": true, "isNew": true },
+      { "id": "SPACE-CAT-CARD", "squareImage": true, "isNew": true },
+      { "id": "STICKER-001" ,"price": 200, "isNew": true },
+      { "id": "STICKER-002", "price": 200, "isNew": true },
+      { "id": "STICKER-003", "price": 200, "isNew": true }
+    ]
+  }
+}
