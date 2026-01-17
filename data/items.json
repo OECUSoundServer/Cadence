@@ -1,0 +1,268 @@
+{
+  "CAD-0012": {
+    "name": "New Vision(CD版)",
+    "thumb": "../img/NewVision_CD.png",
+    "detail": "../event/CAD-0012.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "風のクロノア限定",
+    "releaseText": "2026/01/18 新春けもケット12"
+  },
+  "CAD-0011": {
+    "name": "NON STOP(CD版)",
+    "thumb": "../img/NONSTOP_CD.png",
+    "detail": "../event/CAD-0011.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "カービィのエアライド限定",
+    "releaseText": "2026/01/18 新春けもケット12"
+  },
+  "CAD-0010": {
+    "name": "ケモノパレード(CD版)",
+    "thumb": "../img/KemoParade_CD.png",
+    "detail": "../event/CAD-0010.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "VGM Remix",
+    "releaseText": "2025/05/18 関西けもケット10"
+  },
+  "CAD-0009": {
+    "name": "Rebooting World(CD版)",
+    "thumb": "../img/RW_CD.png",
+    "detail": "../event/CAD-0009.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "OneShot限定",
+    "releaseText": "2025/05/18 関西けもケット10"
+  },
+  "CAD-0008": {
+    "name": "REFRAIN(CD版)",
+    "thumb": "../img/REFRAIN_CD.png",
+    "detail": "../event/CAD-0008.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "Changed限定",
+    "releaseText": "2025/01/19 新春けもケット11"
+  },
+  "CAD-0007": {
+    "name": "東方アレンジコンピアルバム(CD版)",
+    "thumb": "../img/Comp_CD.png",
+    "detail": "../event/CAD-0007.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "東方アレンジ",
+    "releaseText": "2024/10/06 東方紅楼夢20"
+  },
+  "CAD-0006": {
+    "name": "進捗どうですか？(CD版)",
+    "thumb": "../img/Progress_CD.png",
+    "detail": "../event/CAD-0006.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "東方アレンジ",
+    "releaseText": "2024/10/06 東方紅楼夢20"
+  },
+  "ITEM-KEYRING-001": {
+    "name": "アクリルキーホルダー",
+    "thumb": "../img/MarinLook.png",
+    "detail": "#",
+    "categories": ["keyring"],
+    "price": 500,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/12/02 オリComi Osaka10"
+  },
+  "CAD-0004": {
+    "name": "Pretty Furry VGM Remix Collection(CD版)",
+    "thumb": "../img/PrettyFurry_label.png",
+    "detail": "../event/CAD-0004.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "VGM Remix",
+    "releaseText": "2023/11/05 大学祭"
+  },
+  "CAD-0005": {
+    "name": "Youthful Blue(CD版)",
+    "thumb": "../img/YouthfulBlue_label.png",
+    "detail": "../event/CAD-0005.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "ブルーアーカイブ",
+    "releaseText": "2023/11/05 大学祭"
+  },
+  "ITEM-KEYRING-002": {
+    "name": "アクリルキーホルダー",
+    "thumb": "../img/Keychain.png",
+    "detail": "#",
+    "categories": ["keyring"],
+    "price": 500,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/11/05 大学祭"
+  },
+  "ITEM-STAND-001": {
+    "name": "アクリルスタンド(20cm)",
+    "thumb": "../img/Keychain.png",
+    "detail": "#",
+    "categories": ["keyring"],
+    "price": 3500,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/11/05 大学祭"
+  },
+  "CAD-0002": {
+    "name": "ToyBox(CD版)",
+    "thumb": "../img/CD.png",
+    "detail": "../event/CAD-0002.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/08/13 コミックマーケット102"
+  },
+  "CAD-0002-TOKUTEN": {
+    "name": "ToyBox(会場購入特典)",
+    "thumb": "../img/ToyBox-Tokuten.png",
+    "detail": "../event/CAD-0002.html",
+    "categories": ["card", "free"],
+    "price": 0,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/08/13 コミックマーケット102",
+    "squareImage": true
+  },
+  "DLC": {
+    "name": "DLC",
+    "thumb": "../img/yellow.png",
+    "detail": "../special/dl.html",
+    "categories": ["other"],
+    "price": 0,
+    "captionDefault": "DLC",
+    "releaseText": "2022/06/29"
+  },
+  "CAD-0007-CARD": {
+    "name": "東方アレンジコンピアルバム(ポストカード版)",
+    "thumb": "../img/Comp_card.png",
+    "detail": "../event/CAD-0007.html",
+    "categories": ["card"],
+    "price": 200,
+    "captionDefault": "東方アレンジ",
+    "releaseText": "2024/10/06 東方紅楼夢20",
+    "squareImage": true
+  },
+  "CAD-0006-CARD": {
+    "name": "進捗どうですか？(ポストカード版)",
+    "thumb": "../img/Progress_Card.png",
+    "detail": "../event/CAD-0006.html",
+    "categories": ["card"],
+    "price": 200,
+    "captionDefault": "東方アレンジ",
+    "releaseText": "2024/10/06 東方紅楼夢20",
+    "squareImage": true
+  },
+  "CAD-0004-CARD": {
+    "name": "Pretty Furry VGM Remix Collection(ポストカード版)",
+    "thumb": "../img/PrettyFurry_Card.png",
+    "detail": "../event/CAD-0004.html",
+    "categories": ["card"],
+    "price": 200,
+    "captionDefault": "VGM Remix",
+    "releaseText": "2023/11/05 大学祭",
+    "squareImage": true
+  },
+  "CAD-0005-CARD": {
+    "name": "Youthful Blue(ポストカード版)",
+    "thumb": "../img/YouthfulBlue_card.png",
+    "detail": "../event/CAD-0005.html",
+    "categories": ["card"],
+    "price": 200,
+    "captionDefault": "ブルーアーカイブ",
+    "releaseText": "2023/11/05 大学祭",
+    "squareImage": true
+  },
+  "CAD-0002-CARD": {
+    "name": "ToyBox(ポストカード版)",
+    "thumb": "../img/ToyBox-Postcard.png",
+    "detail": "../event/CAD-0002.html",
+    "categories": ["card"],
+    "price": 200,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/08/13 コミックマーケット102",
+    "squareImage": true
+  },
+
+  "FATTY-DISC": {
+    "name": "ふぁってい・きゃっと(Disc版)",
+    "thumb": "../img/Game.png",
+    "detail": "../portfolio/fatty.html",
+    "categories": ["cd", "booth"],
+    "price": 200,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/05/06 けもケット13",
+    "links": [
+      { "label": "booth", "url": "https://cadence.booth.pm/items/4713030" },
+      { "label": "Unity", "url": "https://unityroom.com/games/fattycat" }
+    ]
+  },
+  "FATTY-CARD": {
+    "name": "ふぁってい・きゃっと(ポストカード版)",
+    "thumb": "../img/fatty_card.png",
+    "detail": "../portfolio/fatty.html",
+    "categories": ["card", "booth"],
+    "price": 100,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/05/06 けもケット13",
+    "squareImage": true,
+    "links": [
+      { "label": "booth", "url": "https://cadence.booth.pm/items/4713030" },
+      { "label": "Unity", "url": "https://unityroom.com/games/fattycat" }
+    ]
+  },
+
+  "SPACE-CAT-CARD": {
+    "name": "宇宙ネコ",
+    "thumb": "../img/spaceCat_card.png",
+    "detail": "#",
+    "categories": ["card"],
+    "price": 100,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/05/06 けもケット13",
+    "squareImage": true
+  },
+
+  "STICKER-001": {
+    "name": "正方形ステッカー",
+    "thumb": "../img/sticker.png",
+    "detail": "#",
+    "categories": ["sticker"],
+    "price": 100,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/05/06 けもケット13",
+    "priceOld": 200
+  },
+  "STICKER-002": {
+    "name": "お座りステッカー",
+    "thumb": "../img/sticker2.png",
+    "detail": "#",
+    "categories": ["sticker"],
+    "price": 100,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/05/06 けもケット13",
+    "priceOld": 200
+  },
+  "STICKER-003": {
+    "name": "ジャンプステッカー",
+    "thumb": "../img/sticker3.png",
+    "detail": "#",
+    "categories": ["sticker"],
+    "price": 100,
+    "captionDefault": "オリジナル",
+    "releaseText": "2023/05/06 けもケット13",
+    "priceOld": 200
+  },
+  "itaku": {
+    "name": "アルと不思議の塔",
+    "thumb": "../img/Tower.png",
+    "detail": "#",
+    "categories": ["card"],
+    "price": 300,
+    "captionDefault": "委託元作品",
+    "releaseText": "2023/08/13 コミックマーケット102",
+    "squareImage": true
+  }
+}
