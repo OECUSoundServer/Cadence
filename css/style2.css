@@ -1024,7 +1024,9 @@ body {
   transform: translateX(-200vw);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.0001s 1s, transform 0.0001s 2s;
+  transition:
+    opacity 0.0001s 1s,
+    transform 0.0001s 2s;
 }
 
 .loaded #loftloader-wrapper.slide-vertical {
@@ -1839,8 +1841,8 @@ figure {
   background-color: #5cb85c;
 }
 
-.label-new{
-  background:#ff4d4d;
+.label-new {
+  background: #ff4d4d;
 }
 
 .label {
@@ -1935,60 +1937,59 @@ pre {
   margin-top: 5px;
 }
 
-.event-box{
-  border:1px solid #e6e6e6;
-  border-radius:10px;
-  overflow:hidden;
-  background:#fff;
-  max-width:520px;
+.event-box {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  max-width: 520px;
 }
 
 /* 見出し */
-.event-box__title{
-  background:#e8f5e9;
-  color:#2e7d32;
-  font-weight:700;
-  text-align:center;
-  padding:10px 12px;
-  border-bottom:1px solid #e6e6e6;
+.event-box__title {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 /* 本文 */
-.event-box__body{
-  padding:12px 14px;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+.event-box__body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 /* 行 */
-.event-row{
-  display:grid;
-  grid-template-columns:18px 6.5em 1fr;
-  gap:8px;
-  align-items:start;
-  line-height:1.6;
+.event-row {
+  display: grid;
+  grid-template-columns: 18px 6.5em 1fr;
+  gap: 8px;
+  align-items: start;
+  line-height: 1.6;
 }
 
-.event-row i{
-  margin-top:3px;
-  text-align:center;
-  opacity:0.85;
+.event-row i {
+  margin-top: 3px;
+  text-align: center;
+  opacity: 0.85;
 }
 
 /* ★ イベントlabel */
-.event-label{
-  color:#000;
-  font-weight:600;
-  white-space:nowrap;
-  text-align:left;
+.event-label {
+  color: #000;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: left;
 }
 
 /* ★ イベントvalue */
-.event-value{
-  font-weight:500;
+.event-value {
+  font-weight: 500;
 }
-
 
 .kadomarubox {
   display: inline-block;
@@ -2271,7 +2272,8 @@ style-msg2 .sb-msg {
 
 .notes-masking {
   background-color: #ffffff;
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       -45deg,
       rgba(250, 215, 215, 0.5) 25%,
       transparent 25%,
@@ -3095,7 +3097,9 @@ td:nth-child(6) {
   color: #111;
   border-radius: 14px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  transition: transform 0.18s ease, opacity 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease;
   opacity: 0;
 }
 
@@ -3244,7 +3248,9 @@ td:nth-child(6) {
   background-color: #1abc9c;
   border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .lyrics-btn:hover {
@@ -3412,6 +3418,118 @@ body.modal-locked {
   height: 0;
   margin: 0;
   padding: 0;
+}
+
+#lyrics-index {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+#lyrics-index h2 {
+  margin-bottom: 10px;
+}
+
+.index-lead {
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.lyrics-toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.toolbar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toolbar-group label {
+  font-weight: bold;
+}
+
+.toolbar-group input,
+.toolbar-group select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.lyrics-count {
+  margin: 0 0 20px;
+  color: #555;
+}
+
+#lyrics-index .lyrics-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 700px) {
+  #lyrics-index .lyrics-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lyrics-card {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.lyrics-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.lyrics-meta p {
+  margin: 6px 0;
+}
+
+.lyrics-description {
+  margin: 18px 0 14px;
+  line-height: 1.8;
+}
+
+.lyrics-preview {
+  padding: 14px 16px;
+  border-left: 4px solid #1abc9c;
+  background: #f7fdfb;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  min-height: 5.5em;
+}
+
+.lyrics-actions {
+  margin-top: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.btn.primary {
+  background: #1abc9c;
+  color: #fff;
+}
+
+.lyrics-empty {
+  margin-top: 24px;
+  color: #666;
 }
 
 /* ----------------------------------------------------------------
@@ -3603,7 +3721,10 @@ main .card + .card {
   background: transparent;
   cursor: pointer;
   color: #1abc9c; /* 肉球の色（テーマに合わせて） */
-  transition: transform 0.15s ease, color 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    color 0.2s ease,
+    filter 0.2s ease;
 }
 
 /* 肉球アイコン */
@@ -3675,7 +3796,9 @@ main .card + .card {
   border-radius: 999px;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.06s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.06s ease;
 }
 .events-action-btn:hover {
   background: rgba(26, 188, 156, 0.13);
@@ -3730,7 +3853,9 @@ main .card + .card {
   gap: 8px;
   padding: 8px 10px;
   border-radius: 12px;
-  transition: background 0.15s ease, transform 0.08s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.08s ease;
 }
 .paw-item:hover {
   background: rgba(26, 188, 156, 0.08);
@@ -3775,7 +3900,9 @@ main .card + .card {
   background: var(--bg);
   border-radius: 16px;
   padding: 1rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 .ongoing-card:hover {
   transform: translateY(-2px);
@@ -4170,7 +4297,6 @@ main .card + .card {
   }
 }
 
-
 /* レイアウト：PC 2列 / スマホ 1列（行内アイテムを同じ高さへ） */
 .members-grid {
   display: grid;
@@ -4193,7 +4319,9 @@ main .card + .card {
   border-radius: 16px;
   padding: 1.5rem;
   text-align: left;
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
     border-color 0.15s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 
@@ -4382,7 +4510,10 @@ main .card + .card {
   background: #fff;
   color: #374151;
   text-decoration: none;
-  transition: color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 .member-links a i {
   font-size: 1.1rem;
@@ -4471,7 +4602,9 @@ main .card + .card {
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
 }
 
 .event-code-row button:hover {
@@ -4483,7 +4616,7 @@ main .card + .card {
 }
 
 .event-code-desc {
-  width: 100%;          /* ← 強制的に改行 */
+  width: 100%; /* ← 強制的に改行 */
   font-size: 0.85rem;
   color: #555;
 }
