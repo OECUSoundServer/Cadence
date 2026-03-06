@@ -3532,6 +3532,42 @@ body.modal-locked {
   color: #666;
 }
 
+.lyrics-meta {
+  margin-bottom: 1rem;
+  line-height: 1.9;
+}
+
+.lyrics-meta p {
+  margin: 0.2rem 0;
+}
+
+.lyrics-text[lang] {
+  white-space: normal;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.8rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.lang-btn.is-active {
+  background: #1abc9c;
+  color: #fff;
+  border-color: #1abc9c;
+}
+
 /* ----------------------------------------------------------------
 	Links
 -----------------------------------------------------------------*/
