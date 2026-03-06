@@ -3568,6 +3568,148 @@ body.modal-locked {
   border-color: #1abc9c;
 }
 
+#lyrics-index {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0px 20px 20px;
+}
+
+#lyrics-index h2 {
+  margin-bottom: 10px;
+}
+
+#lyrics-index .index-lead {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.lyrics-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.lyrics-card {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.lyrics-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.lyrics-meta p {
+  margin: 6px 0;
+}
+
+.lyrics-description {
+  margin: 18px 0 14px;
+  line-height: 1.8;
+}
+
+.lyrics-preview {
+  padding: 14px 16px;
+  border-left: 4px solid #1abc9c;
+  background: #f7fdfb;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.lyrics-actions {
+  margin-top: 12px;
+}
+
+.lyrics-actions .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.lyrics-actions .primary {
+  background: #1abc9c;
+  color: #fff;
+}
+
+.lyrics-actions .ghost {
+  border: 1px solid #1abc9c;
+  color: #1abc9c;
+  background: transparent;
+}
+
+.lyrics-toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.toolbar-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.toolbar-group input,
+.toolbar-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.tag-filter,
+.lyrics-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #1abc9c;
+  background: #fff;
+  color: #1abc9c;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tag-chip.is-active {
+  background: #1abc9c;
+  color: #fff;
+}
+
+.lyrics-tags {
+  margin: 12px 0 14px;
+}
+
+.lyrics-tags .tag-chip {
+  cursor: default;
+}
+
+.lyrics-count {
+  margin: 8px 0 20px;
+  font-weight: bold;
+}
+
+.lyrics-empty {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f7f7f7;
+}
+
 /* ----------------------------------------------------------------
 	Links
 -----------------------------------------------------------------*/
