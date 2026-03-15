@@ -1,4 +1,42 @@
 {
+  "reitaisai23": {
+    "items": [
+      { "id": "CAD-0012" },
+      { "id": "CAD-0011" },
+      { "id": "CAD-0010" },
+      { "id": "CAD-0009" },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+  
+  "kkk11": {
+    "items": [
+      { "id": "CAD-0012" },
+      { "id": "CAD-0011" },
+      { "id": "CAD-0010" },
+      { "id": "CAD-0009" },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+  
   "skk12": {
     "items": [
       { "id": "CAD-0012", "isNew": true },
