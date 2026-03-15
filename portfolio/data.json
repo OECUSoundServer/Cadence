@@ -10,6 +10,24 @@
     "pin": true
   },
   {
+    "title": "博麗神社例大祭23",
+    "href": "../event/e.html?e=reitaisai23",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2026-05-04",
+    "captions": ["お品書き", "2026/05/04 博麗神社例大祭23"]
+  },
+  {
+    "title": "関西けもケット11",
+    "href": "../event/e.html?e=kkk11",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2026-04-19",
+    "captions": ["お品書き", "2026/04/19 関西けもケット11"]
+  },
+  {
     "title": "新春けもケット12",
     "href": "../event/skk12.html",
     "image": "../img/yellow.png",
