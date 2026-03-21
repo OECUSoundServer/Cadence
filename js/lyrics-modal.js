@@ -1,5 +1,8 @@
-/*! lyrics-modal v2 - fetch page & extract fragment by selector + polished UI */
+/*! lyrics-modal v3 - per-track unlock support */
 document.addEventListener("DOMContentLoaded", () => {
+  // 必要なら全体の既定公開日時
+  const DEFAULT_UNLOCK_AT = "2026-08-15T00:00:00+09:00";
+
   // ---- modal skeleton ----
   const modal = document.createElement("div");
   modal.id = "lyrics-modal";
@@ -18,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(modal);
 
   const overlay = modal.querySelector(".ly-overlay");
-  const dialog  = modal.querySelector(".ly-dialog");
   const body    = modal.querySelector(".ly-body");
   const titleEl = modal.querySelector(".ly-title");
   const openEl  = modal.querySelector(".ly-open");
@@ -27,56 +29,145 @@ document.addEventListener("DOMContentLoaded", () => {
   function openModal() {
     modal.classList.add("open");
     document.body.classList.add("modal-locked");
-    // フォーカスを閉じるボタンに
     setTimeout(() => closeEl.focus(), 0);
   }
+
   function closeModal() {
     modal.classList.remove("open");
     document.body.classList.remove("modal-locked");
     body.innerHTML = "";
     titleEl.textContent = "";
     openEl.hidden = true;
+    openEl.removeAttribute("href");
   }
 
   overlay.addEventListener("click", closeModal);
   closeEl.addEventListener("click", closeModal);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    if (e.key === "Escape" && modal.classList.contains("open")) {
+      closeModal();
+    }
   });
 
-  // ---- main action ----
   function autoSelector(doc, prefer) {
     if (prefer && doc.querySelector(prefer)) return prefer;
-    const cands = [prefer, "[data-lyrics]", ".lyrics-content", "#lyrics", "article .lyrics", "main .lyrics"]
-      .filter(Boolean);
+    const cands = [
+      prefer,
+      "[data-lyrics]",
+      ".lyrics-content",
+      "#lyrics",
+      "article .lyrics",
+      "main .lyrics"
+    ].filter(Boolean);
+
     for (const sel of cands) {
-      const el = doc.querySelector(sel);
-      if (el) return sel;
+      if (doc.querySelector(sel)) return sel;
     }
     return null;
   }
 
   async function fetchFragment(url, selector) {
-    // 絶対URL化 & キャッシュ回避
     const u = new URL(url, location.href);
     u.searchParams.set("_t", Date.now());
+
     const res = await fetch(u.toString(), { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
     const html = await res.text();
     const doc  = new DOMParser().parseFromString(html, "text/html");
     const sel  = autoSelector(doc, selector);
     if (!sel) return { html: null, selector: null };
+
     const node = doc.querySelector(sel);
     return { html: node.innerHTML, selector: sel };
   }
 
-  // bind buttons
+  function parseUnlockTime(value) {
+    if (!value) return null;
+    const time = new Date(value).getTime();
+    return Number.isNaN(time) ? null : time;
+  }
+
+  function isLyricsUnlocked(unlockAtValue) {
+    const unlockTime =
+      parseUnlockTime(unlockAtValue) ??
+      parseUnlockTime(DEFAULT_UNLOCK_AT);
+
+    if (unlockTime == null) return true;
+    return Date.now() >= unlockTime;
+  }
+
+  function formatUnlockText(unlockAtValue) {
+    const unlockTime =
+      parseUnlockTime(unlockAtValue) ??
+      parseUnlockTime(DEFAULT_UNLOCK_AT);
+
+    if (unlockTime == null) return "";
+
+    const d = new Date(unlockTime);
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const dd = String(d.getDate()).padStart(2, "0");
+    const hh = String(d.getHours()).padStart(2, "0");
+    const mi = String(d.getMinutes()).padStart(2, "0");
+
+    return `${yyyy}/${mm}/${dd} ${hh}:${mi}`;
+  }
+
+  function applyLyricsPreview(container, unlockAtValue) {
+    const lyricsRoot = container.querySelector(".lyrics");
+    if (!lyricsRoot) return;
+
+    const cut = lyricsRoot.querySelector(".lyrics-cut");
+    if (!cut) return;
+
+    // カット以降を隠す
+    let node = cut.nextSibling;
+    while (node) {
+      const next = node.nextSibling;
+
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        node.classList.add("lyrics-cut-hidden");
+      } else if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = "";
+      }
+
+      node = next;
+    }
+
+    cut.classList.add("lyrics-cut-hidden");
+    lyricsRoot.classList.add("lyrics-preview-fade");
+
+    const note = document.createElement("div");
+    note.className = "ly-preview-note";
+
+    const unlockText = formatUnlockText(unlockAtValue);
+    note.textContent = unlockText
+      ? `この続きの歌詞は ${unlockText} に公開予定です。`
+      : "発売前のため、歌詞はここまでの公開です。";
+
+    const wrap = document.createElement("div");
+    wrap.className = "lyrics-preview-wrap";
+
+    lyricsRoot.parentNode.insertBefore(wrap, lyricsRoot);
+    wrap.appendChild(lyricsRoot);
+    wrap.appendChild(note);
+  }
+
   document.querySelectorAll(".lyrics-btn").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const src   = btn.dataset.lyricsSrc;
       const sel   = btn.dataset.lyricsSelector;
-      const head  = btn.dataset.lyricsTitle || btn.closest(".list-group-item")?.querySelector("h4")?.textContent?.trim() || "歌詞";
-      const full  = btn.dataset.lyricsUrl || src;
+      const head  =
+        btn.dataset.lyricsTitle ||
+        btn.closest(".list-group-item")?.querySelector("h4")?.textContent?.trim() ||
+        "歌詞";
+
+      const full         = btn.dataset.lyricsUrl || src;
+      const previewMode  = btn.dataset.lyricsPreview || "cut";
+      const unlockAt     = btn.dataset.lyricsUnlock || "";
+      const unlocked     = isLyricsUnlocked(unlockAt);
+      const shouldPreview = previewMode !== "full" && !unlocked;
 
       titleEl.textContent = head;
       body.innerHTML = `<div class="ly-loading">読み込み中…</div>`;
@@ -84,19 +175,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const { html, selector } = await fetchFragment(src, sel);
-        if (html) {
-          openEl.hidden = !full;
-          if (full) openEl.href = new URL(full, location.href).toString();
-          body.innerHTML = `<div class="lyrics">${html}</div>`;
-          if (typeof window.setupLyricLocks === 'function') {
-            setupLyricLocks(body, head); // 追加
-          }
+
+        if (!html) {
+          body.innerHTML = `
+            <div class="ly-error">
+              指定の要素が見つかりませんでした。<br>
+              <small>selector: ${sel || "(auto)"}</small>
+            </div>`;
+          return;
+        }
+
+        // 全文を開くは、公開済み or previewMode=full の時だけ出す
+        if (full && (unlocked || previewMode === "full")) {
+          openEl.hidden = false;
+          openEl.href = new URL(full, location.href).toString();
         } else {
-          body.innerHTML = `<div class="ly-error">指定の要素が見つかりませんでした。<br><small>selector: ${sel || "(auto)"}</small></div>`;
+          openEl.hidden = true;
+          openEl.removeAttribute("href");
+        }
+
+        body.innerHTML = `<div class="lyrics">${html}</div>`;
+
+        if (shouldPreview) {
+          applyLyricsPreview(body, unlockAt);
+        }
+
+        if (typeof window.setupLyricLocks === "function") {
+          setupLyricLocks(body, head);
         }
       } catch (e) {
         console.error("[lyrics-modal]", e);
-        body.innerHTML = `<div class="ly-error">歌詞の読み込みに失敗しました。<br><small>${e.message}</small></div>`;
+        body.innerHTML = `
+          <div class="ly-error">
+            歌詞の読み込みに失敗しました。<br>
+            <small>${e.message}</small>
+          </div>`;
       }
     });
   });

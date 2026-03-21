@@ -1,25 +1,39 @@
-const langButtons = document.querySelectorAll(".lang-btn");
-const lyricBlocks = document.querySelectorAll(".lyrics-text[data-lang]");
+document.addEventListener("DOMContentLoaded", () => {
+  const langButtons = document.querySelectorAll(".lang-btn");
+  const lyricBlocks = document.querySelectorAll(".lyrics-text[data-lang]");
 
-langButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const selectedLang = button.dataset.lang;
+  function applyPreviewToVisibleLyrics() {
+    if (!window.LyricsPreview) return;
 
-    // ボタン見た目切り替え
-    langButtons.forEach((btn) => {
-      btn.classList.remove("is-active");
-    });
-    button.classList.add("is-active");
-
-    // 歌詞表示切り替え
     lyricBlocks.forEach((block) => {
-      if (block.dataset.lang === selectedLang) {
-        block.hidden = false;
-        block.classList.add("is-active");
-      } else {
-        block.hidden = true;
-        block.classList.remove("is-active");
+      if (!block.hidden) {
+        LyricsPreview.apply(block);
       }
     });
+  }
+
+  langButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedLang = button.dataset.lang;
+
+      langButtons.forEach((btn) => {
+        btn.classList.remove("is-active");
+      });
+      button.classList.add("is-active");
+
+      lyricBlocks.forEach((block) => {
+        if (block.dataset.lang === selectedLang) {
+          block.hidden = false;
+          block.classList.add("is-active");
+        } else {
+          block.hidden = true;
+          block.classList.remove("is-active");
+        }
+      });
+
+      applyPreviewToVisibleLyrics();
+    });
   });
+
+  applyPreviewToVisibleLyrics();
 });
