@@ -154,6 +154,23 @@ document.addEventListener("DOMContentLoaded", () => {
     wrap.appendChild(note);
   }
 
+  function appendFullViewButton(container, fullUrl) {
+    if (!fullUrl) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "ly-fullview-wrap";
+
+    const link = document.createElement("a");
+    link.className = "ly-fullview-btn";
+    link.href = new URL(fullUrl, location.href).toString();
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "全文を見る";
+
+    wrap.appendChild(link);
+    container.appendChild(wrap);
+  }
+
   document.querySelectorAll(".lyrics-btn").forEach((btn) => {
     btn.addEventListener("click", async () => {
       const src   = btn.dataset.lyricsSrc;
@@ -164,17 +181,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "歌詞";
 
       const full         = btn.dataset.lyricsUrl || src;
-      const previewMode  = btn.dataset.lyricsPreview || "cut";
+      const previewMode  = btn.dataset.lyricsPreview; // 未指定は未指定のまま扱う
       const unlockAt     = btn.dataset.lyricsUnlock || "";
       const unlocked     = isLyricsUnlocked(unlockAt);
-      const shouldPreview = previewMode !== "full" && !unlocked;
+      const shouldPreview = previewMode === "cut" && !unlocked;
 
       titleEl.textContent = head;
       body.innerHTML = `<div class="ly-loading">読み込み中…</div>`;
       openModal();
 
       try {
-        const { html, selector } = await fetchFragment(src, sel);
+        const { html } = await fetchFragment(src, sel);
 
         if (!html) {
           body.innerHTML = `
@@ -185,8 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        // 全文を開くは、公開済み or previewMode=full の時だけ出す
-        if (full && (unlocked || previewMode === "full")) {
+        // ヘッダーの「全文を開く」：
+        // preview未指定 または previewMode=full の時だけ表示
+        if (full && (!previewMode || previewMode === "full")) {
           openEl.hidden = false;
           openEl.href = new URL(full, location.href).toString();
         } else {
@@ -202,6 +220,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (typeof window.setupLyricLocks === "function") {
           setupLyricLocks(body, head);
+        }
+
+        // 本文下の「全文を見る」：
+        // preview未指定 または previewMode=full の時だけ表示
+        if (full && (!previewMode || previewMode === "full")) {
+          appendFullViewButton(body, full);
         }
       } catch (e) {
         console.error("[lyrics-modal]", e);
