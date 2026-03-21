@@ -3765,6 +3765,42 @@ body.modal-locked {
   background: #f7f7f7;
 }
 
+.lyrics-preview-wrap {
+  position: relative;
+}
+
+.lyrics-preview-fade {
+  position: relative;
+  overflow: hidden;
+}
+
+.lyrics-preview-fade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7em;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0),
+    rgba(20, 20, 20, 0.88) 65%,
+    rgba(20, 20, 20, 1) 100%
+  );
+}
+
+.ly-preview-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.lyrics-cut-hidden {
+  display: none !important;
+}
+
 /* ----------------------------------------------------------------
 	Links
 -----------------------------------------------------------------*/
