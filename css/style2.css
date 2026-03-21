@@ -120,6 +120,16 @@ li {
   background-color: #ff69b4;
 }
 
+.selgray ::selection {
+  color: #fff;
+  background-color: #888888;
+}
+
+.selorange ::selection {
+  color: #fff;
+  background-color: #e67e22;
+}
+
 .clear {
   clear: both;
   display: block;
@@ -2341,6 +2351,18 @@ style-msg2 .sb-msg {
   padding-bottom: 2em;
 }
 
+.notes-sticky.gray {
+  background: #ebebeb;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
+.notes-sticky.orange {
+  background: #fff0e0;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  padding-bottom: 2em;
+}
+
 span.marker {
   background: linear-gradient(transparent 40%, #21ff00 90%);
 }
@@ -2355,6 +2377,18 @@ span.marker.blue {
 
 span.marker.pink {
   background: linear-gradient(transparent 40%, #ff33cc 90%);
+}
+
+span.marker.gray {
+  background: linear-gradient(transparent 40%, #d3d3d3 90%);
+}
+
+span.marker.cool-gray {
+  background: linear-gradient(transparent 40%, #cbd5e0 90%);
+}
+
+span.marker.orange {
+  background: linear-gradient(transparent 40%, #ffaa00 90%);
 }
 
 .check {
@@ -2608,6 +2642,27 @@ details[open] .icon_d {
     #ffb6c1 5px,
     #ffb8e6 5px,
     #ffb8e6 10px
+  );
+}
+
+.stripe.gray {
+  background: repeating-linear-gradient(
+    135deg,
+    #b0b0b0,
+    #b0b0b0 5px,
+    #c8c8c8 5px,
+    #c8c8c8 10px
+  );
+  /* color: #333; */
+}
+
+.stripe.orange {
+  background: repeating-linear-gradient(
+    135deg,
+    #ff9d5c, /* ベースのオレンジ */
+    #ff9d5c 5px,
+    #ffb385 5px, /* 少し明るいオレンジ */
+    #ffb385 10px
   );
 }
 
