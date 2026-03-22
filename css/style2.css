@@ -3801,6 +3801,51 @@ body.modal-locked {
   display: none !important;
 }
 
+.lyrics-lang-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  flex-wrap: wrap;
+}
+
+.lyrics-lang-tab {
+  border: 1px solid #bfc9c7;
+  background: #f7f9f9;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #444;
+  transition: all 0.15s ease;
+}
+
+/* hover */
+.lyrics-lang-tab:hover {
+  background: #e8f8f5;
+  border-color: #1abc9c;
+  color: #148f77;
+}
+
+/* 選択中 */
+.lyrics-lang-tab.is-active {
+  background: #1abc9c;
+  border-color: #1abc9c;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px rgba(26,188,156,0.25);
+}
+
+/* 押したとき */
+.lyrics-lang-tab:active {
+  transform: translateY(1px);
+}
+
+/* 非表示言語 */
+.lyrics-lang[hidden],
+.lyrics-text[hidden] {
+  display: none !important;
+}
+
 /* ----------------------------------------------------------------
 	Links
 -----------------------------------------------------------------*/
@@ -4110,7 +4155,7 @@ main .card + .card {
   transform: rotate(180deg);
 }
 
-/* リスト（前回の可愛い肉球スタイルを流用） */
+/* リスト（可愛い肉球スタイルを流用） */
 .paw-list {
   list-style: none;
   padding-left: 0;
