@@ -25,13 +25,36 @@ window.LyricsPreview = (() => {
     return `${yyyy}/${mm}/${dd} ${hh}:${mi}`;
   }
 
+  function getGroup(root) {
+    return (
+      root.closest("[data-lyrics-group]") ||
+      root.closest(".lyrics-content") ||
+      root.parentElement ||
+      root
+    );
+  }
+
   function apply(root, options = {}) {
     if (!root) return;
 
-    const unlockAt = options.unlockAt || root.dataset.lyricsUnlock || "";
-    const previewMode = options.previewMode || root.dataset.lyricsPreview || "cut";
+    const group = getGroup(root);
+
+    const unlockAt =
+      options.unlockAt ||
+      group.dataset.lyricsUnlock ||
+      root.dataset.lyricsUnlock ||
+      "";
+
+    const previewMode =
+      options.previewMode ||
+      group.dataset.lyricsPreview ||
+      root.dataset.lyricsPreview ||
+      "cut";
 
     if (previewMode === "full" || isUnlocked(unlockAt)) return;
+
+    // すでに同じ要素に適用済みなら何もしない
+    if (root.dataset.lyricsPreviewApplied === "true") return;
 
     const cut = root.querySelector(".lyrics-cut");
     if (!cut) return;
@@ -49,20 +72,35 @@ window.LyricsPreview = (() => {
 
     cut.classList.add("lyrics-cut-hidden");
     root.classList.add("lyrics-preview-fade");
+    root.dataset.lyricsPreviewApplied = "true";
 
     if (!root.parentElement?.classList.contains("lyrics-preview-wrap")) {
       const wrap = document.createElement("div");
       wrap.className = "lyrics-preview-wrap";
       root.parentNode.insertBefore(wrap, root);
       wrap.appendChild(root);
+    }
 
-      const note = document.createElement("div");
+    // note はグループ内で 1 個だけにする
+    group.querySelectorAll(".ly-preview-note").forEach((el, index) => {
+      if (index > 0) el.remove();
+    });
+
+    let note = group.querySelector(".ly-preview-note");
+    if (!note) {
+      note = document.createElement("div");
       note.className = "ly-preview-note";
+
       const unlockText = formatUnlock(unlockAt);
       note.textContent = unlockText
         ? `この続きの歌詞は ${unlockText} に公開予定です。`
         : "この続きの歌詞は後日公開予定です。";
-      wrap.appendChild(note);
+
+      const anchor =
+        group.querySelector(".lyrics-preview-wrap:last-of-type") ||
+        root.parentElement;
+
+      anchor?.insertAdjacentElement("afterend", note);
     }
   }
 

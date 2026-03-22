@@ -28,12 +28,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function getLanguageLabel(code) {
+    if (!code) return "";
+
     const map = {
       ja: "日本語",
       en: "English",
       zh: "中文",
+      "zh-cn": "中文(简体)",
+      "zh-hans": "中文(简体)",
+      "zh-tw": "中文(繁體)",
+      "zh-hant": "中文(繁體)",
+      ko: "한국어",
+      fr: "Français",
+      de: "Deutsch",
+      es: "Español",
+      it: "Italiano",
     };
-    return map[code] || code;
+
+    const normalized = code.toLowerCase();
+
+    if (map[normalized]) {
+      return map[normalized];
+    }
+
+    // 不明な言語コードはそのまま表示
+    // 例: "vi" → "vi"
+    return normalized;
   }
 
   function getCardData(card) {
