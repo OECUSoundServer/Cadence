@@ -430,8 +430,8 @@
   {
     "title": "サイコロタイムジェリー",
     "href": "../portfolio/vocakore.html",
-    "image": "../img/dice_1.jpg",
-    "fullImage": "../img/dice_1.jpg",
+    "image": "../img/dice_square.png",
+    "fullImage": "../img/dice_square.png",
     "categories": ["sound", "movie"],
     "date": "2022-10-10",
     "captions": ["オリジナル", "2022/10/10 ボカコレ2022秋"]
