@@ -1,4 +1,22 @@
 {
+  "CAD-0014": {
+    "name": "気の向くままに、夕焼けに揺られて(CD版)",
+    "thumb": "../img/Touhou_Yuyake_CD.png",
+    "detail": "../event/CAD-0014.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "東方限定",
+    "releaseText": "2026/05/04 博麗神社例大祭23"
+  },
+  "CAD-0013": {
+    "name": "REVERIE(CD版)",
+    "thumb": "../img/REVERIE_CD.png",
+    "detail": "../event/CAD-0013.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "Changed限定",
+    "releaseText": "2026/04/19 関西けもケット11"
+  },
   "CAD-0012": {
     "name": "New Vision(CD版)",
     "thumb": "../img/NewVision_CD.png",
