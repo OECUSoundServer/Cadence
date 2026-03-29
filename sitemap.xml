@@ -1,195 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/about/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/portfolio/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/special/bosyu.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/link.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/Other/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/about/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/special/bosyu.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/e.html?e=reitaisai23</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/e.html?e=kkk11</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/skk12.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/c106.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/kkk10.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/vocakore2025.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/skk11.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/kouroumu.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/paclan.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/oricomi10.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/daigakusai.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/c102.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/taikenkai.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/kk13.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/SDFirst.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/event/Nawafes.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/portfolio/vocakore.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0002.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 
-<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/</loc>
-  <priority>1.0</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/index.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/about/index.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/index.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/index.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/special/bosyu.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/link.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/Other/index.html</loc>
-  <priority>0.8</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/special/dl.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/kkk10.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0010.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0009.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/vocakore2025.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/skk11.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0008.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/kouroumu.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0007.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0006.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/blog/self-introduction.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/vocaeri.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/sample.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/paclan.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/oricomi10.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0005.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0004.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/daigakusai.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0002.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/c102.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/taikenkai.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/fatty.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/kk13.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/SDFirst.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/event/Nawafes.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/vocakore.html</loc>
-  <priority>0.7</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/Other/about/index.html</loc>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=blog</loc>
-  <priority>0.6</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=entertainment</loc>
-  <priority>0.6</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
-<url>
-  <loc>https://oecusoundserver.github.io/Cadence/portfolio/index.html?category=other</loc>
-  <priority>0.6</priority>
-  <lastmod>2025-06-25T08:14:00+09:00</lastmod>
-</url>
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0004.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0005.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0006.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0007.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0008.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0009.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0010.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0011.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0012.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0013.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://oecusoundserver.github.io/Cadence/event/CAD-0014.html</loc>
+        <lastmod>2026-03-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
