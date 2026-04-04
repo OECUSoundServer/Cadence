@@ -41,6 +41,19 @@
     "captions": ["お品書き", "2026/04/19 関西けもケット11"]
   },
   {
+    "title": "RECORD",
+    "href": "../portfolio/Record.html",
+    "image": "../img/Record.png",
+    "fullImage": "../img/Record.png",
+    "categories": ["other", "booth"],
+    "date": "2026-04-19",
+    "buttons": [
+      {"href": "", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
+    "squareImage": true,
+    "captions": ["Changed限定", "2026/04/19 関西けもケット11"]
+  },
+  {
     "title": "REVERIE",
     "href": "../event/CAD-0013.html",
     "image": "../img/REVERIE.png",
