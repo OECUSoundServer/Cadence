@@ -26,7 +26,7 @@
     "categories": ["sound", "booth", "cd"],
     "date": "2026-05-04",
     "buttons": [
-      {"href": "", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+      {"href": "https://cadence.booth.pm/items/8162451", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
     ],
     "squareImage": true,
     "captions": ["東方Project限定", "2026/05/04 博麗神社例大祭23"]
@@ -61,7 +61,7 @@
     "categories": ["sound", "booth", "cd"],
     "date": "2026-04-19",
     "buttons": [
-      {"href": "", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+      {"href": "https://cadence.booth.pm/items/8162451", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
     ],
     "squareImage": true,
     "captions": ["Changed限定", "2026/04/19 関西けもケット11"]
