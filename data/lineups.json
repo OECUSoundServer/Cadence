@@ -22,6 +22,7 @@
   
   "kkk11": {
     "items": [
+      { "id": "CADB-0001", "isNew": true, "squareImage": true },
       { "id": "CAD-0013", "isNew": true },
       { "id": "CAD-0012" },
       { "id": "CAD-0011" },

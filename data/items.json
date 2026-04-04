@@ -8,6 +8,15 @@
     "captionDefault": "東方Project限定",
     "releaseText": "2026/05/04 博麗神社例大祭23"
   },
+  "CADB-0001": {
+    "name": "RECORD",
+    "thumb": "../img/Record.png",
+    "detail": "../portfolio/Record.html",
+    "categories": ["other"],
+    "price": 500,
+    "captionDefault": "Changed限定",
+    "releaseText": "2026/04/19 関西けもケット11"
+  },
   "CAD-0013": {
     "name": "REVERIE(CD版)",
     "thumb": "../img/REVERIE_CD.png",
