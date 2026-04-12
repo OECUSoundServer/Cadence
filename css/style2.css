@@ -5153,3 +5153,75 @@ main .card+.card {
   font-size: 0.85rem;
   color: #555;
 }
+
+/* ----------------------------------------------------------------
+	SetItem
+-----------------------------------------------------------------*/
+
+.set-slider {
+  position: relative;
+  width: 100%;
+}
+
+/* 表示領域 */
+.set-slider-viewport {
+  position: relative;
+  width: 100%;
+}
+
+/* 各スライド */
+.set-slide {
+  display: none;
+  width: 100%;
+}
+
+.set-slide.is-active {
+  display: block;
+}
+
+.set-slide-square {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:transparent;
+}
+
+.set-slide-square img {
+  max-width: 100%;
+  max-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* 左右ボタン */
+.set-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  border: none;
+  cursor: pointer;
+
+  padding: 0.4em 0.7em;
+  font-size: 1.4rem;
+  line-height: 1;
+
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+}
+
+.set-slider-btn.prev {
+  left: 8px;
+}
+
+.set-slider-btn.next {
+  right: 8px;
+}
