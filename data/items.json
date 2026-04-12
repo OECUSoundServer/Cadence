@@ -8,6 +8,36 @@
     "captionDefault": "東方Project限定",
     "releaseText": "2026/05/04 博麗神社例大祭23"
   },
+  "SET-CAD13-CADB1": {
+    "name": "Changed 新譜＋イラスト本セット",
+    "price": 800,
+    "categories": ["other", "set"],
+    "thumb": "../img/yellow.png",
+    "detail": "../portfolio/index.html",
+    "setItems": ["CAD-0013", "CADB-0001"],
+    "setLabel": "対象作品",
+    "memo": "セット頒布"
+  },
+  "SET-CAD8-CADB1": {
+    "name": "Changed 旧譜＋イラスト本セット",
+    "price": 800,
+    "categories": ["other", "set"],
+    "thumb": "../img/yellow.png",
+    "detail": "../portfolio/index.html",
+    "setItems": ["CAD-0008", "CADB-0001"],
+    "setLabel": "対象作品",
+    "memo": "セット頒布"
+  },
+  "SET-CADB1-CAD8-CAD13": {
+    "name": "Changed コンプリートセット",
+    "price": 1200,
+    "categories": ["other", "set"],
+    "thumb": "../img/yellow.png",
+    "detail": "../portfolio/index.html",
+    "setItems": ["CADB-0001", "CAD-0008", "CAD-0013"],
+    "setLabel": "対象作品",
+    "memo": "セット頒布"
+  },
   "CADB-0001": {
     "name": "RECORD",
     "thumb": "../img/Record.png",

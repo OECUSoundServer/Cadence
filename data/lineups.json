@@ -22,6 +22,10 @@
   
   "kkk11": {
     "items": [
+      { "id": "CAD-0014", "isNew": true , "memo": "特別先行頒布"},
+      { "id": "SET-CADB1-CAD8-CAD13" },
+      { "id": "SET-CAD13-CADB1" },
+      { "id": "SET-CAD8-CADB1" },
       { "id": "CADB-0001", "isNew": true, "squareImage": true },
       { "id": "CAD-0013", "isNew": true },
       { "id": "CAD-0012" },
