@@ -25,7 +25,6 @@
     });
   }
 
-  // 表示用カテゴリ名（必要なら増やしてOK）
   function categoryLabel(c) {
     const map = {
       cd: "CD",
@@ -36,6 +35,7 @@
       bandcamp: "Bandcamp",
       free: "無料",
       other: "Other",
+      set: "セット",
     };
     return map[c] ?? c.toUpperCase();
   }
@@ -49,12 +49,9 @@
       .replaceAll("'", "&#39;");
   }
 
-  // リンクボタンの見た目プリセット（あなたの既存HTMLに寄せる）
   function linkPreset(labelRaw) {
     const label = String(labelRaw || "").toLowerCase();
 
-    // class だけ変える（色は既存CSSに依存）
-    // 既存で使ってた: button-red, button-green2
     if (label === "booth") {
       return { className: "button-red", text: "booth", style: "color:#fff;" };
     }
@@ -62,15 +59,12 @@
       return { className: "button-green2", text: "Unity", style: "color:#fff;" };
     }
     if (label === "bandcamp") {
-      // ※ button-blue が無ければ button-red 等に置き換えてOK
       return { className: "button-blue", text: "Bandcamp", style: "color:#fff;" };
     }
 
-    // 不明なラベルは無難にグレー
     return { className: "button-dark", text: labelRaw, style: "color:#fff;" };
   }
 
-  // links: [{label,url}] から <a class="button ..."> を作る
   function buildLinkButtons(item) {
     const links = Array.isArray(item.links) ? item.links : [];
     if (!links.length) return "";
@@ -82,7 +76,6 @@
         const text = escapeHtml(preset.text ?? x.label ?? "link");
         const url = escapeHtml(x.url);
 
-        // ※ target="_blank" は好み。既存に合わせたいなら外してOK。
         return `
           <a href="${url}"
              class="button button-3d button-mini button-rounded ${preset.className}"
@@ -94,50 +87,168 @@
       .join("");
   }
 
-  // ★eventText を受け取らず、releaseText を item から出す
-  function buildItem(item, eventDateISO) {
+  function buildSetLinks(item, allItems) {
+    const ids = Array.isArray(item.setItems) ? item.setItems : [];
+    if (!ids.length) return "";
+
+    return ids
+      .map((id) => {
+        const ref = allItems[id];
+        if (!ref) return `<span>${escapeHtml(id)}</span>`;
+
+        const name = escapeHtml(ref.name ?? id);
+        const url = escapeHtml(ref.detail ?? "#");
+        return `<a href="${url}">${name}</a>`;
+      })
+      .join(" / ");
+  }
+
+  // セット画像を左右ボタンで切り替えるHTMLを作る
+  function buildSetImageSlider(item, allItems, sliderId) {
+    const ids = Array.isArray(item.setItems) ? item.setItems : [];
+    if (!ids.length) return "";
+
+    const slides = ids
+      .map((id, index) => {
+
+        const ref = allItems[id];
+        if (!ref || !ref.thumb) return "";
+
+        const thumb = escapeHtml(ref.thumb);
+        const detail = escapeHtml(ref.detail ?? "#");
+        const name = escapeHtml(ref.name ?? id);
+
+        return `
+          <a href="${detail}" class="set-slide ${index === 0 ? "is-active" : ""}">
+            <div class="set-slide-square">
+              <img src="${thumb}" alt="${name}">
+            </div>
+          </a>
+        `;
+      })
+      .filter(Boolean)
+      .join("");
+
+    if (!slides) return "";
+
+    return `
+      <div class="set-slider" id="${sliderId}">
+        <button type="button" class="set-slider-btn prev">‹</button>
+
+        <div class="set-slider-viewport">
+          ${slides}
+        </div>
+
+        <button type="button" class="set-slider-btn next">›</button>
+      </div>
+    `;
+  }
+
+  function calcSetDiscount(item, allItems) {
+    const ids = Array.isArray(item.setItems) ? item.setItems : [];
+    if (!ids.length) return null;
+
+    const sum = ids.reduce((total, id) => {
+      const ref = allItems[id];
+      const price = Number(ref?.price ?? 0);
+      return total + price;
+    }, 0);
+
+    const setPrice = Number(item.price ?? 0);
+
+    if (!sum || !setPrice) return null;
+
+    const discount = sum - setPrice;
+    if (discount <= 0) return null;
+
+    const rate = Math.round((discount / sum) * 100);
+
+    return { sum, discount, rate };
+  }
+
+  function initSlider(root) {
+    if (!root) return;
+
+    const slides = Array.from(root.querySelectorAll(".set-slide"));
+    if (slides.length <= 1) {
+      const prevBtn = root.querySelector(".prev");
+      const nextBtn = root.querySelector(".next");
+      if (prevBtn) prevBtn.style.display = "none";
+      if (nextBtn) nextBtn.style.display = "none";
+      return;
+    }
+
+    let current = slides.findIndex((el) => el.classList.contains("is-active"));
+    if (current < 0) current = 0;
+
+    function render() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("is-active", index === current);
+      });
+    }
+
+    const prevBtn = root.querySelector(".prev");
+    const nextBtn = root.querySelector(".next");
+
+    prevBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      current = (current - 1 + slides.length) % slides.length;
+      render();
+    });
+
+    nextBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      current = (current + 1) % slides.length;
+      render();
+    });
+
+    render();
+  }
+
+  function buildItem(item, eventDateISO, allItems, itemIndex) {
     const cats = new Set(item.categories || []);
     if (item.isNew) cats.add("new");
 
-    // ★現価格
     const hasPrice =
       item.price !== undefined &&
       item.price !== null &&
       !Number.isNaN(Number(item.price));
     const priceNow = hasPrice ? Number(item.price) : null;
 
-    // ★旧価格
     const hasOldPrice =
       item.priceOld !== undefined &&
       item.priceOld !== null &&
       !Number.isNaN(Number(item.priceOld));
     const priceOld = hasOldPrice ? Number(item.priceOld) : null;
 
-    // ★旧価格は「現価格と違う時だけ」表示（同額なら出さない）
     const showOldPrice = priceOld !== null && priceNow !== null && priceOld !== priceNow;
+
+    const discountInfo = calcSetDiscount(item, allItems);
+    const releaseText = item.releaseText ?? "";
+    const setLinksHtml = buildSetLinks(item, allItems);
+    const sliderId = `set-slider-${itemIndex}-${String(item.id ?? "item").replace(/[^a-zA-Z0-9_-]/g, "")}`;
+    const setSliderHtml = buildSetImageSlider(item, allItems, sliderId);
 
     const li = document.createElement("li");
     li.className = "target";
     li.dataset.category = Array.from(cats).join(" ");
 
-    const releaseText = item.releaseText ?? "";
-
-    // ★特典など：正方形画像にしたい場合
-    const imageHtml = item.squareImage
-      ? `
-        <div class="square-image">
+    const imageHtml = setSliderHtml || (
+      item.squareImage
+        ? `
+          <div class="square-image">
+            <a href="${escapeHtml(item.detail)}">
+              <img src="${escapeHtml(item.thumb)}" alt="">
+            </a>
+          </div>
+        `
+        : `
           <a href="${escapeHtml(item.detail)}">
             <img src="${escapeHtml(item.thumb)}" alt="">
           </a>
-        </div>
-      `
-      : `
-        <a href="${escapeHtml(item.detail)}">
-          <img src="${escapeHtml(item.thumb)}" alt="">
-        </a>
-      `;
+        `
+    );
 
-    // ★リンクボタン（booth / Unity / etc）
     const buttonsHtml = buildLinkButtons(item);
 
     li.innerHTML = `
@@ -147,10 +258,10 @@
           <div class="hover-mask">
             <p>
               <div class="circle">
-                <h2><a href="${escapeHtml(item.thumb)}"><i class="fa fa-plus"></i></a></h2>
+                <h2><a href="${escapeHtml(item.thumb ?? "#")}"><i class="fa fa-plus"></i></a></h2>
               </div>
               <div class="circle">
-                <h2><a href="${escapeHtml(item.detail)}"><i class="fa fa-bars"></i></a></h2>
+                <h2><a href="${escapeHtml(item.detail ?? "#")}"><i class="fa fa-bars"></i></a></h2>
               </div>
             </p>
           </div>
@@ -159,7 +270,7 @@
         ${buttonsHtml}
 
         <h2 class="target-title">
-          <a href="${escapeHtml(item.detail)}">${escapeHtml(item.name)}</a>
+          <a href="${escapeHtml(item.detail ?? "#")}">${escapeHtml(item.name)}</a>
         </h2>
 
         <ol class="target-categories">
@@ -175,8 +286,24 @@
         ${showOldPrice ? `<figcaption><s>${priceOld}円</s></figcaption>` : ""}
         ${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ""}
         ${releaseText ? `<figcaption>${escapeHtml(releaseText)}</figcaption>` : ""}
+        ${item.memo ? `<figcaption style="color:#e74c3c;font-weight:bold;">${escapeHtml(item.memo)}</figcaption>` : ""}
+        ${setLinksHtml ? `
+          <figcaption>
+            <span style="font-weight:bold;">${escapeHtml(item.setLabel ?? "セット内容")}：</span>
+            ${setLinksHtml}
+          </figcaption>
+        ` : ""}
+        ${discountInfo ? `
+          <figcaption style="color:#27ae60;font-weight:bold;">
+            ${discountInfo.discount}円お得（${discountInfo.rate}%OFF）
+          </figcaption>
+        ` : ""}
       </figure>
     `;
+
+    const sliderRoot = li.querySelector(`#${CSS.escape(sliderId)}`);
+    initSlider(sliderRoot);
+
     return li;
   }
 
@@ -199,45 +326,37 @@
       return;
     }
 
-    // イベント情報反映（ページ上部の表）
     setInfoTable(event);
 
-    // ページタイトル
     if (event.pageTitle) document.title = event.pageTitle;
 
-    // time datetime 用（表示の固定テキストとは別物）
     const eventDateISO = (event.date || "").replace(/\//g, "-");
 
     const targetList = document.querySelector("ol.targets");
     if (!targetList) return;
 
-    // 一覧をデータから生成し直す
     targetList.innerHTML = "";
 
-    lineup.items.forEach((row) => {
+    lineup.items.forEach((row, index) => {
       const master = items[row.id];
       if (!master) return;
 
-      // 合成（イベント側 row が上書き）
       const merged = {
         ...master,
         ...row,
 
-        // 表示系
         caption: row.caption ?? master.captionDefault,
         releaseText: row.releaseText ?? master.releaseText,
+        memo: row.memo ?? master.memo,
+        setItems: row.setItems ?? master.setItems,
+        setLabel: row.setLabel ?? master.setLabel,
 
-        // 画像形状
         squareImage: row.squareImage ?? master.squareImage,
-
-        // 旧価格（row で上書き可能）
         priceOld: row.priceOld ?? master.priceOld,
-
-        // リンク（row で上書き可能）
         links: row.links ?? master.links,
       };
 
-      targetList.appendChild(buildItem(merged, eventDateISO));
+      targetList.appendChild(buildItem(merged, eventDateISO, items, index));
     });
   } catch (err) {
     console.error("Event injector error:", err);
