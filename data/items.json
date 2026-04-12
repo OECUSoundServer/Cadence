@@ -1,4 +1,14 @@
 {
+  "SET-CAD6-CAD7-CAD14": {
+    "name": "東方アレンジコンプリートセット",
+    "price": 1200,
+    "categories": ["other", "set"],
+    "thumb": "../img/yellow.png",
+    "detail": "../portfolio/index.html",
+    "setItems": ["CAD-0006", "CAD-0007", "CAD-0014"],
+    "setLabel": "対象作品",
+    "memo": "セット頒布"
+  },
   "CAD-0014": {
     "name": "気の向くままに、夕焼けに揺られて(CD版)",
     "thumb": "../img/Touhou_Yuyake_CD.png",
@@ -7,6 +17,16 @@
     "price": 500,
     "captionDefault": "東方Project限定",
     "releaseText": "2026/05/04 博麗神社例大祭23"
+  },
+  "SET-CAD8-CAD13": {
+    "name": "Changed 新譜＋旧譜セット",
+    "price": 800,
+    "categories": ["other", "set"],
+    "thumb": "../img/yellow.png",
+    "detail": "../portfolio/index.html",
+    "setItems": ["CAD-0008", "CAD-0013"],
+    "setLabel": "対象作品",
+    "memo": "セット頒布"
   },
   "SET-CAD13-CADB1": {
     "name": "Changed 新譜＋イラスト本セット",
