@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>イベント頒布管理シート生成</title>
+  <style>
+    :root {
+      --border: #222;
+      --muted: #666;
+      --bg: #f6f6f6;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #111;
+    }
+
+    .app {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .control-panel {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr auto;
+      gap: 14px;
+      align-items: end;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    select,
+    input,
+    button {
+      font: inherit;
+      box-sizing: border-box;
+    }
+
+    select,
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #bbb;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: 1px solid #111;
+      border-radius: 10px;
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    button.secondary {
+      background: #fff;
+      color: #111;
+    }
+
+    .print-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .product-picker {
+      margin-top: 18px;
+      border-top: 1px dashed #ccc;
+      padding-top: 16px;
+    }
+
+    .product-picker-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .section-label {
+      grid-column: 1 / -1;
+      font-size: 14px;
+      font-weight: 900;
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #eee;
+      border-radius: 10px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 10px;
+      background: #fafafa;
+    }
+
+    .product-card label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .product-meta {
+      font-size: 12px;
+      color: #555;
+      margin-left: 24px;
+      margin-bottom: 2px;
+    }
+
+    .sheet {
+      background: #fff;
+      padding: 18px;
+      border: 1px solid #ddd;
+      color: #111;
+    }
+
+    .sheet-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .sheet-title {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 0 0 4px;
+    }
+
+    .sheet-subtitle {
+      font-size: 14px;
+      color: #333;
+      margin: 0;
+    }
+
+    .summary-box {
+      border: 2px solid var(--border);
+      padding: 8px 12px;
+      min-width: 180px;
+      font-size: 14px;
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px dotted #aaa;
+      padding: 3px 0;
+    }
+
+    .summary-line:last-child {
+      border-bottom: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 12px;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 6px;
+      vertical-align: middle;
+      word-break: break-word;
+    }
+
+    th {
+      background: #eaeaea;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .col-id { width: 38px; text-align: center; }
+    .col-name { width: 300px; }
+    .col-release { width: 90px; text-align: center; }
+    .col-genre { width: 120px; }
+    .col-price { width: 75px; text-align: right; }
+    .col-code { width: 58px; text-align: center; }
+    .col-type { width: 58px; text-align: center; }
+    .col-memo { width: 310px; }
+
+    .memo-space {
+      min-height: 44px;
+    }
+
+    .footer-notes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .note-box {
+      border: 1px solid var(--border);
+      min-height: 72px;
+      padding: 8px;
+    }
+
+    @media (max-width: 800px) {
+      .control-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 8mm;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .app {
+        max-width: none;
+        padding: 0;
+      }
+
+      .control-panel {
+        display: none;
+      }
+
+      .sheet {
+        border: 0;
+        padding: 0;
+      }
+
+      .sheet-title {
+        font-size: 20px;
+      }
+
+      table {
+        font-size: 10.5px;
+      }
+
+      th,
+      td {
+        padding: 4px;
+      }
+
+      .memo-space {
+        min-height: 38px;
+      }
+
+      .footer-notes {
+        break-inside: avoid;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="control-panel">
+      <h1>イベント頒布管理シート生成</h1>
+      <div class="control-grid">
+        <div>
+          <label for="eventSelect">イベント</label>
+          <select id="eventSelect"></select>
+        </div>
+        <div>
+          <label for="visitorCount">来客数</label>
+          <input id="visitorCount" type="text" value="" placeholder="例：50人 / 約100人" />
+        </div>
+        <div class="print-buttons">
+          <button type="button" id="printButton">印刷する</button>
+          <button type="button" class="secondary" id="downloadPng">PNG出力</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="secondary" type="button" id="loadEventDefaults">このイベントの販売予定を読み込み</button>
+        <button class="secondary" type="button" id="selectReleasedByDate">開催日時点で発売済みを選択</button>
+        <button class="secondary" type="button" id="selectAll">全商品を選択</button>
+        <button class="secondary" type="button" id="clearAll">全解除</button>
+      </div>
+
+      <p class="hint">
+        イベントごとの販売予定を登録しておくと、「このイベントでは売らない商品」を除外できます。<br />
+        下のチェックを直接変更すれば、当日の販売内容も調整できます。
+      </p>
+
+      <div class="product-picker">
+        <div class="product-picker-header">
+          <strong>販売商品</strong>
+          <span id="selectedCount" class="hint"></span>
+        </div>
+        <div id="productList" class="product-list"></div>
+      </div>
+    </section>
+
+    <section id="printSheet" class="sheet"></section>
+  </main>
+
+  <script>
+    const products = [
+      { id: 1, name: "ふぁってい・きゃっと", production: 30, stock: 13, price: 500, code: "", release: "2023/05/06", genre: "オリジナルゲーム", memo: "" },
+      { id: 2, name: "ToyBox", production: 25, stock: 17, price: 500, code: "無", release: "2023/08/13", genre: "オリジナル、ボカロ", memo: "" },
+      { id: 3, name: "Pretty Furry VGM Remix Collection", production: 30, stock: 16, price: 500, code: "無", release: "2023/11/05", genre: "ゲームごちゃ混ぜ", memo: "" },
+      { id: 4, name: "Youthful Blue", production: 30, stock: 21, price: 500, code: "有", release: "2023/11/05", genre: "ブルーアーカイブ", memo: "" },
+      { id: 5, name: "アクリルキーホルダー(ゲーム)", production: 30, stock: 16, price: 500, code: "無", release: "2023/11/05", genre: "オリジナル", memo: "" },
+      { id: 6, name: "アクリルキーホルダー(マリンルック)", production: 30, stock: 26, price: 500, code: "無", release: "2023/12/02", genre: "オリジナル", memo: "" },
+      { id: 7, name: "進捗どうですか？", production: 30, stock: 19, price: 500, code: "有", release: "2024/10/06", genre: "東方Project", memo: "" },
+      { id: 8, name: "東方アレンジコンピアルバム", production: 30, stock: 17, price: 500, code: "有", release: "2024/10/06", genre: "東方Project", memo: "" },
+      { id: 9, name: "REFRAIN", production: 30, stock: 9, price: 500, code: "有", release: "2025/01/19", genre: "Changed", memo: "" },
+      { id: 10, name: "Rebooting World", production: 30, stock: 9, price: 500, code: "有", release: "2025/05/18", genre: "OneShot", memo: "" },
+      { id: 11, name: "ケモノパレード", production: 30, stock: 17, price: 500, code: "有", release: "2025/05/18", genre: "ゲームごちゃ混ぜ", memo: "" },
+      { id: 12, name: "NON STOP", production: 30, stock: 21, price: 500, code: "有", release: "2026/01/18", genre: "エアライド", memo: "" },
+      { id: 13, name: "New Vision", production: 30, stock: 15, price: 500, code: "有", release: "2026/01/18", genre: "風のクロノアシリーズ", memo: "" },
+      { id: 14, name: "RECORD", production: 43, stock: 18, price: 500, code: "有", release: "2026/04/19", genre: "Changedイラスト本", memo: "" },
+      { id: 15, name: "REVERIE", production: 30, stock: 21, price: 500, code: "有", release: "2026/04/19", genre: "Changed", memo: "" },
+      { id: 16, name: "気の向くままに、夕焼けに揺られて", production: 30, stock: 27, price: 500, code: "有", release: "2026/05/04", genre: "東方Project", memo: "" }
+    ];
+
+    const setProducts = [
+      {
+        id: "SET1",
+        name: "Changedコンプリートセット",
+        productIds: [9, 14, 15],
+        price: 1200,
+        code: "有",
+        release: "2026/04/19",
+        genre: "Changed",
+        memo: "REFRAIN + RECORD + REVERIE"
+      },
+      {
+        id: "SET2",
+        name: "Changed 新譜＋イラスト本セット",
+        productIds: [14, 15],
+        price: 1200,
+        code: "有",
+        release: "2026/04/19",
+        genre: "Changed",
+        memo: "RECORD + REVERIE"
+      },
+      {
+        id: "SET3",
+        name: "Changed 旧譜＋イラスト本セット",
+        productIds: [9, 14],
+        price: 800,
+        code: "有",
+        release: "2026/04/19",
+        genre: "Changed",
+        memo: "RECORD + REFRAIN"
+      },
+      {
+        id: "SET4",
+        name: "Changed Changed 新譜＋旧譜セット",
+        productIds: [9, 15],
+        price: 800,
+        code: "有",
+        release: "2026/04/19",
+        genre: "Changed",
+        memo: "REFRAIN + REVERIE"
+      },
+      {
+        id: "SET5",
+        name: "東方セット",
+        productIds: [7, 8, 16],
+        price: 1200,
+        code: "有",
+        release: "2026/05/04",
+        genre: "東方Project",
+        memo: "進捗どうですか？ + 東方アレンジコンピアルバム + 気の向くままに、夕焼けに揺られて"
+      }
+    ];
+
+    const events = [
+      { id: "EV1", name: "けもケット13", date: "2023/05/06" },
+      { id: "EV2", name: "コミックマーケット102", date: "2023/08/13" },
+      { id: "EV3", name: "大学祭", date: "2023/11/05" },
+      { id: "EV4", name: "オリComi Osaka10", date: "2023/12/02" },
+      { id: "EV5", name: "東方紅楼夢20", date: "2024/10/06" },
+      { id: "EV6", name: "新春けもケット11", date: "2025/01/19" },
+      { id: "EV7", name: "関西けもケット10", date: "2025/05/18" },
+      { id: "EV8", name: "コミックマーケット106", date: "2025/08/17" },
+      { id: "EV9", name: "新春けもケット12", date: "2026/01/18" },
+      { id: "EV10", name: "関西けもケット11", date: "2026/04/19" },
+      { id: "EV11", name: "博麗神社例大祭23", date: "2026/05/04" }
+    ];
+
+    // イベントごとの販売予定商品。
+    // productIds に、そのイベントで販売する通常商品IDだけを登録してください。
+    // setIds に、そのイベントで販売するセットIDだけを登録してください。
+    const eventSalesPlans = {
+      EV1: { productIds: [1], setIds: [] },
+      EV2: { productIds: [2], setIds: [] },
+      EV3: { productIds: [1, 2, 3, 4, 5], setIds: [] },
+      EV4: { productIds: [1, 2, 3, 4, 5, 6], setIds: [] },
+      EV5: { productIds: [2, 3, 4, 5, 6, 7, 8], setIds: [] },
+      EV6: { productIds: [2, 3, 4, 5, 6, 7, 8, 9], setIds: [] },
+      EV7: { productIds: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], setIds: [] },
+      EV8: { productIds: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], setIds: [] },
+      EV9: { productIds: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], setIds: [] },
+      EV10: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15], setIds: ["SET1", "SET2", "SET3", "SET4"] },
+      EV11: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 15, 16], setIds: ["SET5"] }
+    };
+
+    const state = {
+      selectedProductIds: new Set(),
+      selectedSetIds: new Set()
+    };
+
+    function parseDate(value) {
+      const [year, month, day] = value.split('/').map(Number);
+      return new Date(year, month - 1, day);
+    }
+
+    function formatYen(value) {
+      return `¥${Number(value).toLocaleString('ja-JP')}`;
+    }
+
+    function currentEvent() {
+      const eventId = document.getElementById('eventSelect').value;
+      return events.find(event => event.id === eventId) || events[events.length - 1];
+    }
+
+    function initEvents() {
+      const select = document.getElementById('eventSelect');
+      select.innerHTML = events.map(event => (
+        `<option value="${event.id}">${event.id}：${event.name}（${event.date}）</option>`
+      )).join('');
+      select.value = events[events.length - 1].id;
+    }
+
+    function renderProductPicker() {
+      const list = document.getElementById('productList');
+      const productCards = products.map(product => {
+        const checked = state.selectedProductIds.has(product.id) ? 'checked' : '';
+        return `
+          <div class="product-card">
+            <label>
+              <input type="checkbox" data-kind="product" data-id="${product.id}" ${checked} />
+              <span>${product.id}. ${product.name}</span>
+            </label>
+            <div class="product-meta">
+              ${product.genre} / 在庫 ${product.stock} / ${formatYen(product.price)} / 発売日 ${product.release}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const setCards = setProducts.map(setItem => {
+        const checked = state.selectedSetIds.has(setItem.id) ? 'checked' : '';
+        return `
+          <div class="product-card">
+            <label>
+              <input type="checkbox" data-kind="set" data-id="${setItem.id}" ${checked} />
+              <span>${setItem.id}. ${setItem.name}</span>
+            </label>
+            <div class="product-meta">
+              セット / ${setItem.genre} / ${formatYen(setItem.price)} / 構成：${setItem.memo}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      list.innerHTML = `
+        <div class="section-label">通常商品</div>
+        ${productCards}
+        <div class="section-label">セット販売</div>
+        ${setCards}
+      `;
+
+      list.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        input.addEventListener('change', event => {
+          const kind = event.target.dataset.kind;
+          const rawId = event.target.dataset.id;
+          const id = kind === 'product' ? Number(rawId) : rawId;
+          const targetSet = kind === 'product' ? state.selectedProductIds : state.selectedSetIds;
+
+          if (event.target.checked) {
+            targetSet.add(id);
+          } else {
+            targetSet.delete(id);
+          }
+
+          updateSelectedCount();
+          renderSheet();
+        });
+      });
+
+      updateSelectedCount();
+    }
+
+    function updateSelectedCount() {
+      document.getElementById('selectedCount').textContent = `通常${state.selectedProductIds.size}件 / セット${state.selectedSetIds.size}件 選択中`;
+    }
+
+    function loadEventDefaults() {
+      const plan = eventSalesPlans[currentEvent().id];
+      state.selectedProductIds.clear();
+      state.selectedSetIds.clear();
+
+      if (plan) {
+        (plan.productIds || []).forEach(id => state.selectedProductIds.add(id));
+        (plan.setIds || []).forEach(id => state.selectedSetIds.add(id));
+      } else {
+        selectReleasedByDate(false);
+      }
+
+      renderProductPicker();
+      renderSheet();
+    }
+
+    function selectReleasedByDate(shouldRender = true) {
+      const eventDate = parseDate(currentEvent().date);
+      state.selectedProductIds.clear();
+      state.selectedSetIds.clear();
+
+      products.forEach(product => {
+        if (parseDate(product.release) <= eventDate && product.stock > 0) {
+          state.selectedProductIds.add(product.id);
+        }
+      });
+
+      if (shouldRender) {
+        renderProductPicker();
+        renderSheet();
+      }
+    }
+
+    function selectAll() {
+      products.forEach(product => state.selectedProductIds.add(product.id));
+      setProducts.forEach(setItem => state.selectedSetIds.add(setItem.id));
+      renderProductPicker();
+      renderSheet();
+    }
+
+    function clearAll() {
+      state.selectedProductIds.clear();
+      state.selectedSetIds.clear();
+      renderProductPicker();
+      renderSheet();
+    }
+
+    function selectedProducts() {
+      return products
+        .filter(product => state.selectedProductIds.has(product.id))
+        .map(product => ({ ...product, type: '通常', sortDate: product.release }))
+        .sort((a, b) => parseDate(b.release) - parseDate(a.release) || b.id - a.id);
+    }
+
+    function selectedSets() {
+      return setProducts
+        .filter(setItem => state.selectedSetIds.has(setItem.id))
+        .map(setItem => ({ ...setItem, type: 'セット', sortDate: setItem.release }))
+        .sort((a, b) => parseDate(b.release) - parseDate(a.release) || String(b.id).localeCompare(String(a.id)));
+    }
+
+    function selectedSaleItems() {
+      return [...selectedProducts(), ...selectedSets()]
+        .sort((a, b) => parseDate(b.sortDate) - parseDate(a.sortDate) || String(b.id).localeCompare(String(a.id)));
+    }
+
+    function safeFileName(value) {
+      return value.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, '_');
+    }
+
+    function renderSheet() {
+      const event = currentEvent();
+      const rows = selectedSaleItems();
+      const visitorText = document.getElementById('visitorCount').value.trim();
+      const sheet = document.getElementById('printSheet');
+
+      if (rows.length === 0) {
+        sheet.innerHTML = `
+          <div class="sheet-header">
+            <div>
+              <h2 class="sheet-title">${event.name} 頒布管理シート</h2>
+              <p class="sheet-subtitle">開催日：${event.date} / イベントID：${event.id}</p>
+            </div>
+          </div>
+          <p>販売商品を選択してください。</p>
+        `;
+        return;
+      }
+
+      sheet.innerHTML = `
+        <div class="sheet-header">
+          <div>
+            <h2 class="sheet-title">${event.name} 頒布管理シート</h2>
+            <p class="sheet-subtitle">開催日：${event.date} / イベントID：${event.id}</p>
+            <p class="sheet-subtitle">来客数：${visitorText || '　　　　　　　　　　　　　　　'}</p>
+          </div>
+          <div class="summary-box">
+            <div class="summary-line"><span>販売商品数</span><strong>${rows.length}種</strong></div>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="col-id">No.</th>
+              <th class="col-name">商品名</th>
+              <th class="col-release">発売日</th>
+              <th class="col-genre">ジャンル</th>
+              <th class="col-price">単価</th>
+              <th class="col-type">種別</th>
+              <th class="col-code">コード</th>
+              <th class="col-memo">購入数</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((item, index) => `
+              <tr>
+                <td class="col-id">${index + 1}</td>
+                <td class="col-name"><strong>${item.name}</strong>${item.type === 'セット' ? `<br><small>構成：${item.memo}</small>` : ''}</td>
+                <td class="col-release">${item.release}</td>
+                <td class="col-genre">${item.genre}</td>
+                <td class="col-price">${formatYen(item.price)}</td>
+                <td class="col-type">${item.type}</td>
+                <td class="col-code">${item.code || '-'}</td>
+                <td class="col-memo"><div class="memo-space"></div></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <div class="footer-notes">
+          <div class="note-box"><strong>現金メモ</strong><br>開始金額：<br>終了金額：<br>差額：</div>
+          <div class="note-box"><strong>来客メモ</strong><br>来客数：${visitorText || ''}<br></div>
+          <div class="note-box"><strong>備考</strong><br></div>
+        </div>
+      `;
+    }
+
+    async function downloadSheetAsPng() {
+      const sheet = document.getElementById('printSheet');
+      const event = currentEvent();
+
+      if (typeof html2canvas === 'undefined') {
+        alert('html2canvasを読み込めませんでした。インターネット接続またはCDNの読み込みを確認してください。');
+        return;
+      }
+
+      if (!sheet || !sheet.innerHTML.trim()) {
+        alert('PNG出力するシートがありません。');
+        return;
+      }
+
+      try {
+        const canvas = await html2canvas(sheet, {
+          backgroundColor: '#ffffff',
+          scale: 2,
+          useCORS: true,
+          logging: false
+        });
+
+        canvas.toBlob(blob => {
+          if (!blob) {
+            alert('PNG出力に失敗しました。');
+            return;
+          }
+
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = `${safeFileName(event.name)}_頒布管理シート.png`;
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(url);
+        }, 'image/png');
+      } catch (error) {
+        console.error(error);
+        alert('PNG出力に失敗しました。ブラウザの印刷→PDF保存も試してください。');
+      }
+    }
+
+    function runTests() {
+      console.assert(products.length === 16, '商品数は16件であること');
+      console.assert(setProducts.length >= 2, 'セット商品が登録されていること');
+      console.assert(events.length === 11, 'イベント数は11件であること');
+      console.assert(formatYen(500) === '¥500', '金額表示が正しいこと');
+      console.assert(safeFileName('A/B:C*D?E"F<G>H|I') === 'A_B_C_D_E_F_G_H_I', 'ファイル名に使えない文字を置換すること');
+
+      state.selectedProductIds = new Set([7, 8, 16]);
+      state.selectedSetIds = new Set(['SET2']);
+      const sortedProducts = selectedProducts().map(product => product.id);
+      console.assert(JSON.stringify(sortedProducts) === JSON.stringify([16, 8, 7]), '通常商品が発売日の新しい順に並ぶこと');
+      const mixedItems = selectedSaleItems();
+      console.assert(mixedItems.some(item => item.type === 'セット'), '販売項目にセット商品を含められること');
+      state.selectedProductIds.clear();
+      state.selectedSetIds.clear();
+    }
+
+    document.getElementById('printButton').addEventListener('click', () => window.print());
+    document.getElementById('downloadPng').addEventListener('click', downloadSheetAsPng);
+    document.getElementById('loadEventDefaults').addEventListener('click', loadEventDefaults);
+    document.getElementById('selectReleasedByDate').addEventListener('click', () => selectReleasedByDate(true));
+    document.getElementById('selectAll').addEventListener('click', selectAll);
+    document.getElementById('clearAll').addEventListener('click', clearAll);
+    document.getElementById('visitorCount').addEventListener('input', renderSheet);
+    document.getElementById('eventSelect').addEventListener('change', loadEventDefaults);
+
+    initEvents();
+    runTests();
+    loadEventDefaults();
+  </script>
+</body>
+</html>
