@@ -212,7 +212,7 @@ function toTargetHTML(item) {
         <p>
           <div class="circle">
             <h2><a href="${esc(
-              item.fullImage || item.image || "../img/yellow.png"
+              item.fullImage || item.image || "https://oecusoundserver.github.io/Cadence/img/yellow.png"
             )}"><i class="fa fa-plus"></i></a></h2>
           </div>
           <div class="circle">
