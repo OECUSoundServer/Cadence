@@ -206,7 +206,7 @@ function toTargetHTML(item) {
   <figure>
     ${squareWrapStart}
       <a href="${esc(item.href || "#")}"> <img src="${esc(
-    item.image || "../img/yellow.png"
+    item.image || "https://oecusoundserver.github.io/Cadence/img/yellow.png"
   )}" alt=""> </a>
       <div class="hover-mask">
         <p>
