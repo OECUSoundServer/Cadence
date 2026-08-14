@@ -1,4 +1,55 @@
 {
+  "kouroumu22": {
+    "items": [
+      { "id": "CAD-0016" },
+      { "id": "CAD-0014" },
+      { "id": "CAD-0013" },
+      { "id": "CAD-0012" },
+      { "id": "CAD-0011" },
+      { "id": "CAD-0010" },
+      { "id": "CAD-0009" },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+
+  "kk17": {
+    "items": [
+      { "id": "CAD-0016", "isNew": true , "memo": "特別先行頒布"},
+      { "id": "CAD-0015", "isNew": true },
+      { "id": "CADB-0002", "isNew": true, "squareImage": true },
+      { "id": "CAD-0014" },
+      { "id": "SET-CADB1-CAD8-CAD13" },
+      { "id": "SET-CAD13-CADB1" },
+      { "id": "SET-CAD8-CADB1" },
+      { "id": "SET-CAD8-CAD13" },
+      { "id": "CADB-0001","squareImage": true },
+      { "id": "CAD-0013" },
+      { "id": "CAD-0012" },
+      { "id": "CAD-0011" },
+      { "id": "CAD-0010" },
+      { "id": "CAD-0009" },
+      { "id": "CAD-0008" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "ITEM-KEYRING-001" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0005" },
+      { "id": "ITEM-KEYRING-002" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
+
   "reitaisai23": {
     "items": [
       { "id": "SET-CAD6-CAD7-CAD14" },

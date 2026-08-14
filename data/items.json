@@ -1,4 +1,31 @@
 {
+  "CAD-0016": {
+    "name": "二人の未来地図",
+    "thumb": "../img/FutureMap_label.png",
+    "detail": "../event/CAD-0016.html",
+    "categories": ["cd"],
+    "price": 500,
+    "captionDefault": "東方Project限定",
+    "releaseText": "2026/10/11 東方紅楼夢22"
+  },
+  "CAD-0015": {
+    "name": "百兽日常 -おまけCD-",
+    "thumb": "../img/Baishou_CD.png",
+    "detail": "../event/CAD-0015.html",
+    "categories": ["cd"],
+    "price": 300,
+    "captionDefault": "有兽焉限定",
+    "releaseText": "2026/09/20 けもケット17"
+  },
+  "CADB-0002": {
+    "name": "百兽日常",
+    "thumb": "../img/BaiShou.png",
+    "detail": "../portfolio/CADB-0002.html",
+    "categories": ["other"],
+    "price": 500,
+    "captionDefault": "有兽焉限定",
+    "releaseText": "2026/09/20 けもケット17"
+  },
   "SET-CAD6-CAD7-CAD14": {
     "name": "東方アレンジコンプリートセット",
     "price": 1200,
