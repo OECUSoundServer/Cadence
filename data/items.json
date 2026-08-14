@@ -61,7 +61,7 @@
   "CADB-0001": {
     "name": "RECORD",
     "thumb": "../img/Record.png",
-    "detail": "../portfolio/Record.html",
+    "detail": "../portfolio/CADB-0001.html",
     "categories": ["other"],
     "price": 500,
     "captionDefault": "Changed限定",
