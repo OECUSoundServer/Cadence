@@ -10,6 +10,54 @@
     "pin": true
   },
   {
+    "title": "東方紅楼夢22",
+    "href": "../event/e.html?e=kouroumu22",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "22026/10/11",
+    "captions": ["お品書き", "2026/10/11 東方紅楼夢22"]
+  },
+  {
+    "title": "二人の未来地図",
+    "href": "../event/CAD-0016.html",
+    "image": "../img/FutureMap_logo.png",
+    "fullImage": "../img/FutureMap_logo.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2026-10-11",
+    "squareImage": true,
+    "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
+  },
+  {
+    "title": "けもケット17",
+    "href": "../event/e.html?e=kk17",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki"],
+    "date": "2026-09-20",
+    "captions": ["お品書き", "2026/09/20 けもケット17"]
+  },
+  {
+    "title": "百兽日常 -おまけCD-(仮)",
+    "href": "../portfolio/CAD-0015.html",
+    "image": "../img/Baishou_CD.png",
+    "fullImage": "../img/Baishou_CD.png",
+    "categories": ["sound", "booth"],
+    "date": "2026-09-20",
+    "squareImage": true,
+    "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
+  },
+  {
+    "title": "百兽日常(仮)",
+    "href": "../portfolio/CADB-0002.html",
+    "image": "../img/BaiShou_logo.png",
+    "fullImage": "../img/BaiShou_logo.png",
+    "categories": ["other", "booth"],
+    "date": "2026-09-20",
+    "squareImage": true,
+    "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
+  },
+  {
     "title": "博麗神社例大祭23",
     "href": "../event/e.html?e=reitaisai23",
     "image": "../img/yellow.png",
