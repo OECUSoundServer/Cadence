@@ -1,7 +1,8 @@
 {
   "kouroumu22": {
     "items": [
-      { "id": "CAD-0016" },
+      { "id": "CAD-0017", "isNew": true },
+      { "id": "CAD-0016", "isNew": true },
       { "id": "CAD-0014" },
       { "id": "CAD-0013" },
       { "id": "CAD-0012" },

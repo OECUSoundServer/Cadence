@@ -19,6 +19,16 @@
     "captions": ["お品書き", "2026/10/11 東方紅楼夢22"]
   },
   {
+    "title": "夢と現のアティチュード",
+    "href": "../event/CAD-0017.html",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["sound", "booth", "cd"],
+    "date": "2026-10-11",
+    "squareImage": true,
+    "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
+  },
+  {
     "title": "二人の未来地図",
     "href": "../event/CAD-0016.html",
     "image": "../img/FutureMap_logo.png",
@@ -38,7 +48,7 @@
     "captions": ["お品書き", "2026/09/20 けもケット17"]
   },
   {
-    "title": "百兽日常 -おまけCD-(仮)",
+    "title": "百兽日常 -おまけCD-",
     "href": "../event/CAD-0015.html",
     "image": "../img/Baishou_CD.png",
     "fullImage": "../img/Baishou_CD.png",
@@ -48,7 +58,7 @@
     "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
   },
   {
-    "title": "百兽日常(仮)",
+    "title": "百兽日常",
     "href": "../portfolio/CADB-0002.html",
     "image": "../img/BaiShou_logo.png",
     "fullImage": "../img/BaiShou_logo.png",
