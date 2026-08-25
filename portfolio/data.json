@@ -14,7 +14,7 @@
     "href": "../event/e.html?e=kouroumu22",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "touhou"],
     "date": "22026/10/11",
     "captions": ["お品書き", "2026/10/11 東方紅楼夢22"]
   },
@@ -23,7 +23,7 @@
     "href": "../event/CAD-0017.html",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "touhou"],
     "date": "2026-10-11",
     "squareImage": true,
     "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
@@ -33,7 +33,7 @@
     "href": "../event/CAD-0016.html",
     "image": "../img/FutureMap_logo.png",
     "fullImage": "../img/FutureMap_logo.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "touhou"],
     "date": "2026-10-11",
     "squareImage": true,
     "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
@@ -52,7 +52,7 @@
     "href": "../event/CAD-0015.html",
     "image": "../img/Baishou_CD.png",
     "fullImage": "../img/Baishou_CD.png",
-    "categories": ["sound", "cd", "booth"],
+    "categories": ["sound", "cd"],
     "date": "2026-09-20",
     "squareImage": true,
     "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
@@ -62,7 +62,7 @@
     "href": "../portfolio/CADB-0002.html",
     "image": "../img/BaiShou_logo.png",
     "fullImage": "../img/BaiShou_logo.png",
-    "categories": ["other", "booth"],
+    "categories": ["doujin"],
     "date": "2026-09-20",
     "squareImage": true,
     "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
@@ -72,7 +72,7 @@
     "href": "../event/e.html?e=reitaisai23",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "touhou"],
     "date": "2026-05-04",
     "captions": ["お品書き", "2026/05/04 博麗神社例大祭23"]
   },
@@ -81,7 +81,7 @@
     "href": "../event/CAD-0014.html",
     "image": "../img/Touhou_Yuyake_logo.png",
     "fullImage": "../img/Touhou_Yuyake_logo.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "touhou"],
     "date": "2026-05-04",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/8162451", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -103,7 +103,7 @@
     "href": "../portfolio/CADB-0001.html",
     "image": "../img/Record.png",
     "fullImage": "../img/Record.png",
-    "categories": ["other", "booth"],
+    "categories": ["doujin"],
     "date": "2026-04-19",
     "squareImage": true,
     "captions": ["Changed限定", "2026/04/19 関西けもケット11"]
@@ -236,7 +236,7 @@
     "href": "../event/skk11.html",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "touhou"],
     "date": "2024-10-06",
     "captions": ["お品書き", "2024/10/06 東方紅楼夢20"]
   },
@@ -245,7 +245,7 @@
     "href": "../event/CAD-0007.html",
     "image": "../img/touhou_logo.png",
     "fullImage": "../img/touhou_logo.png",
-    "categories": ["sound", "booth", "cd", "card"],
+    "categories": ["sound", "booth", "cd", "card", "touhou"],
     "date": "2024-10-06",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/6165787", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -258,7 +258,7 @@
     "href": "../event/CAD-0006.html",
     "image": "../img/shintyoku_rogo.png",
     "fullImage": "../img/shintyoku_rogo.png",
-    "categories": ["sound", "booth", "cd", "card"],
+    "categories": ["sound", "booth", "cd", "card", "touhou"],
     "date": "2024-10-06",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/6165736", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}

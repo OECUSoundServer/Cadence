@@ -17,6 +17,7 @@ const LABELS = {
   event: "イベント",
   movie: "映像",
   game: "ゲーム",
+  doujin: "同人誌",
   other: "その他",
   booth: "BOOTH",
   discontinued: "在庫切れ",
@@ -28,6 +29,7 @@ const LABELS = {
   blog: "ブログ",
   oshinagaki: "お品書き",
   entertainment: "エンタメ",
+  touhou: "東方",
 };
 
 let ALL = [];

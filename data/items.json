@@ -1,6 +1,6 @@
 {
   "CAD-0017": {
-    "name": "夢と現のアティチュード",
+    "name": "夢と現のアティチュード(CD版)",
     "thumb": "../img/yellow.png",
     "detail": "../event/CAD-0017.html",
     "categories": ["cd"],
@@ -9,13 +9,23 @@
     "releaseText": "2026/10/11 東方紅楼夢22"
   },
   "CAD-0016": {
-    "name": "二人の未来地図",
+    "name": "二人の未来地図(CD版)",
     "thumb": "../img/FutureMap_label.png",
     "detail": "../event/CAD-0016.html",
     "categories": ["cd"],
     "price": 500,
     "captionDefault": "東方Project限定",
     "releaseText": "2026/10/11 東方紅楼夢22"
+  },
+  "SET-CADB2-CAD15": {
+    "name": "百兽日常おまけCD付き",
+    "price": 800,
+    "categories": ["other", "set"],
+    "thumb": "../img/yellow.png",
+    "detail": "../portfolio/index.html",
+    "setItems": ["CADB-0002", "CAD-0015"],
+    "setLabel": "対象作品",
+    "memo": "セット頒布"
   },
   "CAD-0015": {
     "name": "百兽日常 -おまけCD-",
