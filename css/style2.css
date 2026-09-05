@@ -3547,11 +3547,14 @@ body.modal-locked {
 /* 実際に上下へ“滑らか移動”する箱 */
 .media-follow__box {
   width: 100%;
-  height: 150px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   background: #000;
+
   transform: translateY(0);
   will-change: transform;
 }

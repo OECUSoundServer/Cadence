@@ -1,0 +1,1153 @@
+{
+  "lost_deram": {
+    "title": "夢を失くしたその先へ",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["Mai2"],
+    "genre": "ボカロ",
+    "tags": ["東方","Mai2"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/y6fkmDVIldQ"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "lost_deram-ja.txt"
+      }
+    }
+  },
+  "traverses_time_and_space": {
+    "title": "時空を渡る風",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/Gyn0mvxGYI0"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "traverses_time_and_space-ja.txt"
+      }
+    }
+  },
+  "yin_and_yang": {
+    "title": "陰陽を廻る風",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/V9z85dP8YLE"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "yin_and_yang-ja.txt"
+      }
+    }
+  },
+  "echoes_stained_crimson": {
+    "title": "紅に染まる残響",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/Sjnk3phZDac"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "echoes_stained_crimson-ja.txt"
+      }
+    }
+  },
+  "your_nostalgic_shadow": {
+    "title": "懐かしき君の影",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/GknP97H6Vwc"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "your_nostalgic_shadow-ja.txt"
+      }
+    }
+  },
+  "wishes_lingering_snow": {
+    "title": "雪に残る願い",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/QHMmOM-Yi_E"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "wishes_lingering_snow-ja.txt"
+      }
+    }
+  },
+  "cowardly_thoughts": {
+    "title": "臆病な想い",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/Mb__vXKj8Oc"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "cowardly_thoughts-ja.txt"
+      }
+    }
+  },
+  "end_sealed_signpost": {
+    "title": "封じられた道標の果てに",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/P1-7NdN76CY"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "end_sealed_signpost-ja.txt"
+      }
+    }
+  },
+  "melting_fragrance_flowers": {
+    "title": "華の香に溶けて",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/6miKQ3mxrZ4"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "melting_fragrance_flowers-ja.txt"
+      }
+    }
+  },
+  "sound_of_bells": {
+    "title": "鈴の音は届かなくても",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/VsUbUt74T4o"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "sound_of_bells-ja.txt"
+      }
+    }
+  },
+  "embraced_by_current": {
+    "title": "流れに抱かれて",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/s31BRRIiqpo"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "embraced_by_current-ja.txt"
+      }
+    }
+  },
+  "closed_eyes": {
+    "title": "瞳閉ざして映る世界",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/0KBk_7siKcU"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "closed_eyes-ja.txt"
+      }
+    }
+  },
+  "who_was_she_playing": {
+    "title": "彼女は誰を演じていたのか？",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/qTOMldaN4Fw"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "who_was_she_playing-ja.txt"
+      }
+    }
+  },
+  "fate_the_moonlight": {
+    "title": "月明かりの運命",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/zMVDld2sQW0"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "fate_the_moonlight-ja.txt"
+      }
+    }
+  },
+  "two_people_weave_poetry": {
+    "title": "二人、詩を紡ぐ",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "",
+      "title": "",
+      "image": "../img/yellow.png",
+      "event": "",
+      "date": "",
+      "url": "",
+      "format": ""
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/QlGnRmTmvOM"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "two_people_weave_poetry-ja.txt"
+      }
+    }
+  },
+  "firefly_light": {
+    "title": "月に寄る蛍火",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0017",
+      "title": "夢と現のアティチュード",
+      "image": "../img/attitude_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0017.html",
+      "format": "CD / DL"
+    },
+    "publish": {
+      "page": "2026-09-05T12:00:00+09:00",
+      "fullLyrics": "2026-09-20T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "firefly_light-ja.txt"
+      }
+    }
+  },
+  "heart_wavering": {
+    "title": "ココロ、揺らめいて",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0017",
+      "title": "夢と現のアティチュード",
+      "image": "../img/attitude_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0017.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/fnIuCrlhDKI"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "heart_wavering-ja.txt"
+      }
+    }
+  },
+  "across_countless_stars": {
+    "title": "数多の星を越えて",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子","Mai2"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子","Mai2"],
+    "release": {
+      "catalog": "CAD-0017",
+      "title": "夢と現のアティチュード",
+      "image": "../img/attitude_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0017.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/9aQfXsLxd6M"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "across_countless_stars-ja.txt"
+      }
+    }
+  },
+  "clearest_light": {
+    "title": "最も澄みわたる光へ",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["Mai2"],
+    "genre": "ボカロ",
+    "tags": ["東方","Mai2"],
+    "release": {
+      "catalog": "CAD-0016",
+      "title": "二人の未来地図",
+      "image": "../img/FutureMap_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0016.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/V_Qry2irxQY"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "clearest_light-ja.txt"
+      }
+    }
+  },
+  "memories_unraveled_by_wind": {
+    "title": "風にほどけた記憶",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0016",
+      "title": "二人の未来地図",
+      "image": "../img/FutureMap_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0016.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/o1IZKuCwWrQ"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "memories_unraveled_by_wind-ja.txt"
+      }
+    }
+  },
+  "melodies_blend_old_bars": {
+    "title": "旧き酒場に溶ける旋律",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0016",
+      "title": "二人の未来地図",
+      "image": "../img/FutureMap_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0016.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/1PqU8xBM92M"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "melodies_blend_old_bars-ja.txt"
+      }
+    }
+  },
+  "future_map": {
+    "title": "二人の未来地図",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0016",
+      "title": "二人の未来地図",
+      "image": "../img/FutureMap_logo.png",
+      "event": "東方紅楼夢22",
+      "date": "2026-10-11",
+      "url": "../event/CAD-0016.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/EFGzXgm3iiU"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "future_map-ja.txt"
+      }
+    }
+  },
+  "syndrome": {
+    "title": "故意と破壊の症候群(2025 ver)",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["さくらもち"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0014",
+      "title": "気の向くままに、夕焼けに揺られて",
+      "image": "../img/Touhou_Yuyake.png",
+      "event": "博麗神社例大祭23",
+      "date": "2026-05-04",
+      "url": "../event/CAD-0014.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/CiGY9P55rJU"
+    },
+    "publish": {
+      "page": "2026-03-29T12:00:00+09:00",
+      "fullLyrics": "2026-05-04T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "syndrome-ja.txt"
+      }
+    }
+  },
+  "star_and_moon_observer": {
+    "title": "星と月の観測者",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子","夏語遙"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子","夏語遙"],
+    "release": {
+      "catalog": "CAD-0014",
+      "title": "気の向くままに、夕焼けに揺られて",
+      "image": "../img/Touhou_Yuyake.png",
+      "event": "博麗神社例大祭23",
+      "date": "2026-05-04",
+      "url": "../event/CAD-0014.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/z04YEHN2Mo8"
+    },
+    "publish": {
+      "page": "2026-03-29T12:00:00+09:00",
+      "fullLyrics": "2026-05-04T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "star_and_moon_observer-ja.txt"
+      },
+      "zh-cn": {
+        "name": "中文(简体)",
+        "file": "star_and_moon_observer-ch.txt"
+      }
+    }
+  },
+  "yuyake": {
+    "title": "気の向くままに、夕焼けに揺られて",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子","Mai2"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子","Mai2"],
+    "release": {
+      "catalog": "CAD-0014",
+      "title": "気の向くままに、夕焼けに揺られて",
+      "image": "../img/Touhou_Yuyake.png",
+      "event": "博麗神社例大祭23",
+      "date": "2026-05-04",
+      "url": "../event/CAD-0014.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/v6KFayx7MsA"
+    },
+    "publish": {
+      "page": "2026-03-29T12:00:00+09:00",
+      "fullLyrics": "2026-05-04T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "yuyake-ja.txt"
+      },
+      "en": {
+        "name": "English",
+        "file": "yuyake-en.txt"
+      },
+      "zh-cn": {
+        "name": "中文(简体)",
+        "file": "yuyake-ch.txt"
+      }
+    }
+  },
+  "Eastern_Story": {
+    "title": "拝啓、東の国のお伽へ~ Theme of Eastern Story",
+    "arranger": ["Hiro_DG"],
+    "lyricist": ["DisPo"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "NPFM-0006",
+      "title": "悠久楽土の祈繰曲　～ Repeated Eastern Prayers",
+      "image": "../img/yellow.png",
+      "event": "大東方神居祭",
+      "date": "2025-9-13",
+      "url": "https://youtu.be/yTW_j3yGWIY",
+      "format": "CD"
+    },
+    "publish": {
+      "page": "2025-09-01T12:00:00+09:00",
+      "fullLyrics": "2025-09-13T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "Eastern_Story-ja.txt"
+      }
+    }
+  },
+  "wings_carve_destiny": {
+    "title": "運命刻ム翼",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko","DisPo"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "NPFM-0006",
+      "title": "悠久楽土の祈繰曲　～ Repeated Eastern Prayers",
+      "image": "../img/yellow.png",
+      "event": "大東方神居祭",
+      "date": "2025-9-13",
+      "url": "https://youtu.be/yTW_j3yGWIY",
+      "format": "CD"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/BfBNzEadvKM"
+    },
+    "publish": {
+      "page": "2025-09-01T12:00:00+09:00",
+      "fullLyrics": "2025-09-13T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "wings_carve_destiny-ja.txt"
+      }
+    }
+  },
+  "sword_of_faith": {
+    "title": "信念の剣",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "NPFM-0006",
+      "title": "悠久楽土の祈繰曲　～ Repeated Eastern Prayers",
+      "image": "../img/yellow.png",
+      "event": "大東方神居祭",
+      "date": "2025-9-13",
+      "url": "https://youtu.be/yTW_j3yGWIY",
+      "format": "CD"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/yBmn6wGog1g"
+    },
+    "publish": {
+      "page": "2025-09-01T12:00:00+09:00",
+      "fullLyrics": "2025-09-13T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "sword_of_faith-ja.txt"
+      }
+    }
+  },
+  "chains_of_freedom": {
+    "title": "自由への鎖",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "NPFM-0006",
+      "title": "悠久楽土の祈繰曲　～ Repeated Eastern Prayers",
+      "image": "../img/yellow.png",
+      "event": "大東方神居祭",
+      "date": "2025-9-13",
+      "url": "https://youtu.be/yTW_j3yGWIY",
+      "format": "CD"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/_FuqiI2Ws_I"
+    },
+    "publish": {
+      "page": "2025-09-01T12:00:00+09:00",
+      "fullLyrics": "2025-09-13T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "chains_of_freedom-ja.txt"
+      }
+    }
+  },
+  "endless_prayer": {
+    "title": "終わりなき祈り",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "NPFM-0006",
+      "title": "悠久楽土の祈繰曲　～ Repeated Eastern Prayers",
+      "image": "../img/yellow.png",
+      "event": "大東方神居祭",
+      "date": "2025-9-13",
+      "url": "https://youtu.be/yTW_j3yGWIY",
+      "format": "CD"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/qmW83Mu-c7Y"
+    },
+    "publish": {
+      "page": "2025-09-01T12:00:00+09:00",
+      "fullLyrics": "2025-09-13T00:00:00+09:00"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "endless_prayer-ja.txt"
+      }
+    }
+  },
+  "desk_world": {
+    "title": "机上世界",
+    "composer": ["Hiro_DG"],
+    "arranger": ["Hiro_DG"],
+    "lyricist": ["Hiro_DG"],
+    "vocal": ["可不"],
+    "genre": "ボカロ",
+    "tags": ["オリジナル","可不"],
+    "release": {
+      "catalog": "",
+      "title": "机上世界",
+      "image": "../img/DesktopWorld_sq.png",
+      "event": "ボカコレ2025冬",
+      "date": "2025-2-21",
+      "url": "../event/vocakore2025.html",
+      "format": "-"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/bBvLKmC3oFg"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "desk_world-ja.txt"
+      }
+    }
+  },
+  "cannot_reach_your_face": {
+    "title": "届かぬ君の面影(2024 Vocal Remix)",
+    "arranger": ["クロカビ"],
+    "lyricist": ["さくらもち"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0007",
+      "title": "東方アレンジコンピアルバム",
+      "image": "../img/touhou_logo.png",
+      "event": "東方紅楼夢20",
+      "date": "2024-10-6",
+      "url": "../event/CAD-0007.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/H_JyyRUJmFE"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "cannot_reach_your_face-ja.txt"
+      }
+    }
+  },
+  "rainbow": {
+    "title": "Rainbow",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子","Mai2"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子","Mai2"],
+    "release": {
+      "catalog": "CAD-0007",
+      "title": "東方アレンジコンピアルバム",
+      "image": "../img/touhou_logo.png",
+      "event": "東方紅楼夢20",
+      "date": "2024-10-6",
+      "url": "../event/CAD-0007.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/Sm-ZOcYUcbQ"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "rainbow-ja.txt"
+      },
+      "en": {
+        "name": "English",
+        "file": "rainbow-en.txt"
+      },
+      "zh-cn": {
+        "name": "中文(简体)",
+        "file": "rainbow-ch.txt"
+      }
+    }
+  },
+  "past_reflected_in_your_eyes": {
+    "title": "瞳に映る過去",
+    "arranger": ["クロカビ"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0006",
+      "title": "進捗どうですか?",
+      "image": "../img/shintyoku_rogo.png",
+      "event": "東方紅楼夢20",
+      "date": "2024-10-6",
+      "url": "../event/CAD-0006.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/BSau-HLipuI"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "past_reflected_in_your_eyes-ja.txt"
+      }
+    }
+  },
+  "egosearch_syndrome": {
+    "title": "エゴサ症候群",
+    "arranger": ["mixtuti桜餅","クロカビ"],
+    "lyricist": ["A.o.I_Neko","さくらもち"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0006",
+      "title": "進捗どうですか?",
+      "image": "../img/shintyoku_rogo.png",
+      "event": "東方紅楼夢20",
+      "date": "2024-10-6",
+      "url": "../event/CAD-0006.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/es5SRGs3tM0"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "egosearch_syndrome-ja.txt"
+      }
+    }
+  },
+  "how_is_your_progress": {
+    "title": "How Is Your Progress?(2024 ver)",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["さくらもち"],
+    "vocal": ["狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","狐子"],
+    "release": {
+      "catalog": "CAD-0006",
+      "title": "進捗どうですか?",
+      "image": "../img/shintyoku_rogo.png",
+      "event": "東方紅楼夢20",
+      "date": "2024-10-6",
+      "url": "../event/CAD-0006.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/Kr8rglrExN4"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "how_is_your_progress-ja.txt"
+      }
+    }
+  },
+  "please_arona": {
+    "title": "おねがいアロナ！",
+    "arranger": ["よっさーん"],
+    "lyricist": ["よっさーん"],
+    "vocal": ["星界"],
+    "genre": "ボカロ",
+    "tags": ["ブルーアーカイブ","星界"],
+    "release": {
+      "catalog": "CAD-0005",
+      "title": "Youthful Blue",
+      "image": "../img/YouthfulBlue.png",
+      "event": "大学祭",
+      "date": "2023-11-5",
+      "url": "../event/CAD-0005.html",
+      "format": "CD / DL"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "please_arona-ja.txt"
+      }
+    }
+  },
+  "spring": {
+    "title": "陽春",
+    "arranger": ["mixtuti桜餅","Hiro_DG"],
+    "lyricist": ["alcatraz"],
+    "vocal": ["可不"],
+    "genre": "ボカロ",
+    "tags": ["東方","可不"],
+    "release": {
+      "catalog": "",
+      "title": "「東方ニコ楽祭・現世」 Disc.1",
+      "image": "../img/yellow.png",
+      "event": "東方紅楼夢19",
+      "date": "2023-10-15",
+      "url": "https://nicogakusai.github.io/portal/10_utsushiyo.html",
+      "format": "CD"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/-iWcu0WHR8A"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "spring-ja.txt"
+      }
+    }
+  },
+  "toybox_future": {
+    "title": "ToyBox Future",
+    "composer": ["Infill"],
+    "arranger": ["Infill"],
+    "lyricist": ["Infill"],
+    "vocal": ["初音ミク"],
+    "genre": "ボカロ",
+    "tags": ["オリジナル","初音ミク"],
+    "release": {
+      "catalog": "CAD-0002",
+      "title": "ToyBox",
+      "image": "../img/ToyBox.png",
+      "event": "コミックマーケット102",
+      "date": "2023-8-13",
+      "url": "../event/CAD-0002.html",
+      "format": "CD / DL"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "toybox_future-ja.txt"
+      }
+    }
+  },
+  "question_box": {
+    "title": "【Question】BOX",
+    "composer": ["Hiro_DG"],
+    "arranger": ["Hiro_DG"],
+    "lyricist": ["Hiro_DG"],
+    "vocal": ["可不"],
+    "genre": "ボカロ",
+    "tags": ["オリジナル","可不"],
+    "release": {
+      "catalog": "CAD-0002",
+      "title": "ToyBox",
+      "image": "../img/ToyBox.png",
+      "event": "コミックマーケット102",
+      "date": "2023-8-13",
+      "url": "../event/CAD-0002.html",
+      "format": "CD / DL"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/aLuUnRz_eZ4"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "question_box-ja.txt"
+      }
+    }
+  },
+  "dice_time_jelly": {
+    "title": "サイコロタイムジェリー",
+    "composer": ["YY"],
+    "arranger": ["YY","さくらもち"],
+    "lyricist": ["YY"],
+    "vocal": ["可不"],
+    "genre": "ボカロ",
+    "tags": ["オリジナル","可不"],
+    "release": {
+      "catalog": "",
+      "title": "サイコロタイムジェリー",
+      "image": "../img/dice_1.jpg",
+      "event": "ボカコレ2022秋",
+      "date": "2022-10-10",
+      "url": "../portfolio/vocakore.html",
+      "format": "-"
+    },
+    "video": {
+      "type": "youtube",
+      "url": "https://www.youtube.com/embed/9QlH0fQZBUw"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "dice-ja.txt"
+      }
+    }
+  }
+}
