@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cadence DLC Generator</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.7;
+        }
+
+        .field {
+            margin-bottom: 24px;
+        }
+
+        .field label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 180px;
+            font-family: monospace;
+        }
+
+        button {
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        .output {
+            margin-top: 35px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row input {
+            flex: 1;
+        }
+
+        small {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Cadence DLC Generator</h1>
+
+
+    <div class="field">
+        <label for="product-name">
+            商品名
+        </label>
+
+        <input type="text" id="product-name" placeholder="ToyBox">
+    </div>
+
+
+    <div class="field">
+        <label for="purchase-code">
+            購入者配布用コード
+        </label>
+
+        <input type="text" id="purchase-code" placeholder="ToyBox">
+
+        <small>
+            半角英数字とハイフンのみ
+        </small>
+    </div>
+
+
+    <button type="button" onclick="generateAll()">
+        認証データ生成
+    </button>
+
+
+    <div class="field output">
+        <label for="product-key">
+            商品別ランダムキー
+        </label>
+
+        <div class="row">
+            <input type="text" id="product-key" readonly>
+
+            <button type="button" onclick="copyValue('product-key')">
+                コピー
+            </button>
+        </div>
+    </div>
+
+
+    <div class="field">
+        <label for="product-token">
+            内部Token
+        </label>
+
+        <div class="row">
+            <input type="text" id="product-token" readonly>
+
+            <button type="button" onclick="copyValue('product-token')">
+                コピー
+            </button>
+        </div>
+    </div>
+
+
+    <div class="field">
+        <label for="final-hash">
+            最終認証ハッシュ
+        </label>
+
+        <div class="row">
+            <input type="text" id="final-hash" readonly>
+
+            <button type="button" onclick="copyValue('final-hash')">
+                コピー
+            </button>
+        </div>
+    </div>
+
+
+    <div class="field">
+        <label for="key-id">
+            暗号データID
+        </label>
+
+        <div class="row">
+            <input type="text" id="key-id" readonly>
+
+            <button type="button" onclick="copyValue('key-id')">
+                コピー
+            </button>
+        </div>
+    </div>
+
+
+    <div class="field">
+        <label for="decrypt-key">
+            商品別復号キー
+        </label>
+
+        <div class="row">
+            <input type="text" id="decrypt-key" readonly>
+
+            <button type="button" onclick="copyValue('decrypt-key')">
+                コピー
+            </button>
+        </div>
+    </div>
+
+    <div class="field">
+        <label for="zip-password">
+            ZIPパスワード
+        </label>
+
+        <div class="row">
+            <input type="text" id="zip-password" readonly>
+
+            <button type="button" onclick="copyValue('zip-password')">
+                コピー
+            </button>
+        </div>
+
+        <small>
+            ZIPファイル解凍用・ランダム8文字
+        </small>
+    </div>
+
+
+    <div class="output">
+
+        <h2>
+            ENCRYPTED_PRODUCTS 追記用
+        </h2>
+
+        <textarea id="encrypted-output" readonly></textarea>
+
+        <button type="button" onclick="copyValue('encrypted-output')">
+            コピー
+        </button>
+
+    </div>
+
+
+    <div class="output">
+
+        <h2>
+            AUTH_SECRETS 追記用
+        </h2>
+
+        <textarea id="decrypt-output" readonly></textarea>
+
+        <button type="button" onclick="copyValue('decrypt-output')">
+            コピー
+        </button>
+
+    </div>
+
+
+    <div class="output">
+
+        <h2>
+            確認用 PRODUCTS
+        </h2>
+
+        <textarea id="products-output" readonly></textarea>
+
+        <button type="button" onclick="copyValue('products-output')">
+            コピー
+        </button>
+
+    </div>
+
+
+    <div class="output">
+
+        <h2>
+            downloads.json 追記用
+        </h2>
+
+        <textarea id="json-output" readonly></textarea>
+
+        <button type="button" onclick="copyValue('json-output')">
+            コピー
+        </button>
+
+    </div>
+
+
+    <script>
+
+        // ==========================================
+        // ランダム文字列
+        // ==========================================
+        function randomString(length) {
+
+            const chars =
+                "ABCDEFGHJKLMNPQRSTUVWXYZ" +
+                "abcdefghijkmnopqrstuvwxyz" +
+                "23456789";
+
+            const values =
+                new Uint32Array(length);
+
+            crypto.getRandomValues(values);
+
+            let result = "";
+
+            for (let i = 0; i < length; i++) {
+
+                result +=
+                    chars[
+                    values[i] %
+                    chars.length
+                    ];
+            }
+
+            return result;
+        }
+
+
+        // ==========================================
+        // ランダムHEX
+        // ==========================================
+        function randomHex(length) {
+
+            const bytes =
+                new Uint8Array(
+                    Math.ceil(length / 2)
+                );
+
+            crypto.getRandomValues(bytes);
+
+            return bytesToHex(bytes)
+                .slice(0, length);
+        }
+
+
+        // ==========================================
+        // Byte → HEX
+        // ==========================================
+        function bytesToHex(bytes) {
+
+            return Array.from(bytes)
+                .map(
+                    byte =>
+                        byte
+                            .toString(16)
+                            .padStart(2, "0")
+                )
+                .join("");
+        }
+
+
+        // ==========================================
+        // SHA-256
+        // ==========================================
+        async function sha256(text) {
+
+            const data =
+                new TextEncoder()
+                    .encode(text);
+
+            const hash =
+                await crypto.subtle.digest(
+                    "SHA-256",
+                    data
+                );
+
+            return bytesToHex(
+                new Uint8Array(hash)
+            );
+        }
+
+
+        // ==========================================
+        // 認証ハッシュ
+        // ==========================================
+        async function createAuthHash(
+            code,
+            productKey
+        ) {
+
+            // 1段目
+            const firstHash =
+                await sha256(code);
+
+            // 商品別ランダムキーを混ぜる
+            const source =
+                productKey +
+                ":" +
+                firstHash +
+                ":Cadence-DLC";
+
+            // 2段目
+            return await sha256(source);
+        }
+
+
+        // ==========================================
+        // AESキー生成
+        //
+        // 商品別復号キー
+        // ↓
+        // SHA-256
+        // ↓
+        // AES-256-GCM
+        // ==========================================
+        async function createAesKey(secret) {
+
+            const source =
+                new TextEncoder()
+                    .encode(secret);
+
+            const hash =
+                await crypto.subtle.digest(
+                    "SHA-256",
+                    source
+                );
+
+            return await crypto.subtle.importKey(
+                "raw",
+                hash,
+                {
+                    name: "AES-GCM"
+                },
+                false,
+                [
+                    "encrypt"
+                ]
+            );
+        }
+
+
+        // ==========================================
+        // 1商品分をAES-GCM暗号化
+        // ==========================================
+        async function encryptProduct(
+            product,
+            secret
+        ) {
+
+            // AES-GCM推奨の96bit IV
+            const iv =
+                new Uint8Array(12);
+
+            crypto.getRandomValues(iv);
+
+
+            const key =
+                await createAesKey(secret);
+
+
+            const plain =
+                new TextEncoder()
+                    .encode(
+                        JSON.stringify(product)
+                    );
+
+
+            const encrypted =
+                await crypto.subtle.encrypt(
+                    {
+                        name: "AES-GCM",
+                        iv: iv
+                    },
+                    key,
+                    plain
+                );
+
+
+            return {
+
+                iv:
+                    bytesToHex(iv),
+
+                data:
+                    bytesToHex(
+                        new Uint8Array(
+                            encrypted
+                        )
+                    )
+            };
+        }
+
+
+        // ==========================================
+        // 一括生成
+        // ==========================================
+        async function generateAll() {
+
+            const productName =
+                document
+                    .getElementById(
+                        "product-name"
+                    )
+                    .value
+                    .trim();
+
+
+            const purchaseCode =
+                document
+                    .getElementById(
+                        "purchase-code"
+                    )
+                    .value
+                    .trim();
+
+
+            if (!productName) {
+
+                alert(
+                    "商品名を入力してください。"
+                );
+
+                return;
+            }
+
+
+            if (!purchaseCode) {
+
+                alert(
+                    "購入者配布用コードを入力してください。"
+                );
+
+                return;
+            }
+
+
+            if (
+                !/^[a-zA-Z0-9-]+$/
+                    .test(purchaseCode)
+            ) {
+
+                alert(
+                    "購入者配布用コードは半角英数字とハイフンのみ使用できます。"
+                );
+
+                return;
+            }
+
+
+            // ======================================
+            // 商品ごとの値をすべて生成
+            // ======================================
+
+            // 認証ハッシュ用ランダムキー
+            const productKey =
+                randomString(24);
+
+            // DLCページ内部Token
+            const token =
+                randomHex(16);
+
+            // 暗号データと復号キーを紐付けるID
+            const keyId =
+                randomHex(12);
+
+            // 商品専用AES復号キー
+            const decryptKey =
+                randomString(32);
+
+            // ZIP解凍パスワード
+            const zipPassword =
+                randomString(8);
+
+            // 購入コード認証用最終ハッシュ
+            const finalHash =
+                await createAuthHash(
+                    purchaseCode,
+                    productKey
+                );
+
+
+            // ======================================
+            // 暗号化する商品情報
+            //
+            // 商品名や購入コードは入れない
+            // ======================================
+
+            const product = {
+
+                key:
+                    productKey,
+
+                hash:
+                    finalHash,
+
+                token:
+                    token,
+
+                zipPassword:
+                    zipPassword
+            };
+
+
+            // ======================================
+            // AES-GCM暗号化
+            // ======================================
+
+            const encrypted =
+                await encryptProduct(
+                    product,
+                    decryptKey
+                );
+
+
+            // ======================================
+            // 個別値表示
+            // ======================================
+
+            document.getElementById(
+                "product-key"
+            ).value =
+                productKey;
+
+
+            document.getElementById(
+                "product-token"
+            ).value =
+                token;
+
+
+            document.getElementById(
+                "final-hash"
+            ).value =
+                finalHash;
+
+
+            document.getElementById(
+                "key-id"
+            ).value =
+                keyId;
+
+            document.getElementById(
+                "decrypt-key"
+            ).value =
+                decryptKey;
+
+            document.getElementById(
+                "zip-password"
+            ).value =
+                zipPassword;
+
+
+            // ======================================
+            // pw.js
+            //
+            // ENCRYPTED_PRODUCTSへ追記
+            // ======================================
+
+            document.getElementById(
+                "encrypted-output"
+            ).value =
+                `{
+                id: "${keyId}",
+                iv: "${encrypted.iv}",
+                data: "${encrypted.data}"
+            }`;
+
+
+            // ======================================
+            // auth-decrypt.js
+            //
+            // AUTH_SECRETSへ追記
+            // ======================================
+
+            document.getElementById(
+                "decrypt-output"
+            ).value =
+                `"${keyId}":
+                "${decryptKey}"`;
+
+
+            // ======================================
+            // 確認用
+            //
+            // 公開サイトには置かない
+            // ======================================
+
+            document.getElementById(
+                "products-output"
+            ).value =
+                `{
+                // ${productName}
+                key: "${productKey}",
+                hash: "${finalHash}",
+                token: "${token}",
+                zipPassword: "${zipPassword}"
+            }`;
+
+
+            // ======================================
+            // downloads.json
+            // ======================================
+
+            document.getElementById(
+                "json-output"
+            ).value =
+                `"${token}": {
+                "title": "${escapeJson(productName)}",
+                "description": "${escapeJson(productName)}のDLCを入手できます。",
+                "cover": "",
+                "page": "",
+                "icon": {
+                    "type": "image",
+                    "src": "",
+                    "alt": ""
+                },
+                "files": [
+                    {
+                        "format": "zip",
+                        "size": "",
+                        "url": ""
+                    }
+                ]
+            }`;
+        }
+
+
+        // ==========================================
+        // JSONエスケープ
+        // ==========================================
+        function escapeJson(value) {
+
+            return String(value)
+                .replaceAll(
+                    "\\",
+                    "\\\\"
+                )
+                .replaceAll(
+                    '"',
+                    '\\"'
+                );
+        }
+
+
+        // ==========================================
+        // コピー
+        // ==========================================
+        async function copyValue(id) {
+
+            const element =
+                document.getElementById(id);
+
+            const value =
+                element.value;
+
+
+            if (!value) {
+                return;
+            }
+
+
+            try {
+
+                await navigator
+                    .clipboard
+                    .writeText(value);
+
+            } catch (error) {
+
+                element.select();
+
+                document.execCommand(
+                    "copy"
+                );
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

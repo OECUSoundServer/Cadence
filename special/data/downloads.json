@@ -1,0 +1,376 @@
+{
+  "285d6c93ed75c4c3": {
+    "title": "夢と現のアティチュード",
+    "description": "夢と現のアティチュードのDLCを入手できます。",
+    "cover": "../img/attitude_logo.png",
+    "page": "../event/CAD-0017.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-mug-hot",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "418MB",
+        "url": "https://drive.google.com/uc?export=download&id=18ivgyjnA9stgXq0TzevoiyJL7H1sAgJz"
+      }
+    ]
+  },
+  "d952c62f2806609a": {
+    "title": "二人の未来地図",
+    "description": "二人の未来地図のDLCを入手できます。",
+    "cover": "../img/FutureMap_logo.png",
+    "page": "../event/CAD-0016.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-star-half-alt",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "559MB",
+        "url": "https://drive.google.com/uc?export=download&id=1nJEtRiHabzdCQ4WWpNpt92kEYy4EgTXh"
+      }
+    ]
+  },
+  "0c44db5bcf4c8b45": {
+    "title": "百兽日常 -おまけCD-",
+    "description": "百兽日常 -おまけCD-のDLCを入手できます。",
+    "cover": "../img/Baishou_CD.png",
+    "page": "../event/CAD-0015.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-paw",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "113.4MB",
+        "url": "https://drive.google.com/uc?export=download&id=14Ercx6F-ZhOReWvokmwRAdqMaeUtftgZ"
+      }
+    ]
+  },
+  "4b8ad27515e543e7": {
+    "title": "百兽日常",
+    "description": "百兽日常のDLCを入手できます。",
+    "cover": "../img/BaiShou_001.png",
+    "page": "../portfolio/CADB-0002.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-paw",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "pdf",
+        "size": "39.6MB",
+        "url": "https://drive.google.com/uc?export=download&id=1BIjCtSnBrYRzFVu84rrtuyG5LlNN_RL4"
+      },
+      {
+        "format": "png",
+        "size": "40.8MB",
+        "url": "https://drive.google.com/uc?export=download&id=1ukb3ve0ZWK7JOLXsJr_HyHypKXCw-5MV"
+      }
+    ]
+  },
+  "cb9dae432ade9e3d": {
+    "title": "RECORD",
+    "description": "RECORDのDLCを入手できます。",
+    "cover": "../img/Record_001.png",
+    "page": "../portfolio/CADB-0001.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-paw",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "pdf",
+        "size": "43MB",
+        "url": "https://drive.google.com/uc?export=download&id=1A69nl0ZckpnhYofuu5MWSjHmZUstdkTI"
+      },
+      {
+        "format": "png",
+        "size": "45MB",
+        "url": "https://drive.google.com/uc?export=download&id=1glUv3bV53AXg6kdBRdSGzr493UiFKnAG"
+      }
+    ]
+  },
+  "f5a0798705ca212d": {
+    "title": "気の向くままに、夕焼けに揺られて",
+    "description": "気の向くままに、夕焼けに揺られてのDLCを入手できます。",
+    "cover": "../img/Touhou_Yuyake_logo.png",
+    "page": "../event/CAD-0014.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-cat",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "431",
+        "url": "https://drive.google.com/uc?export=download&id=1JRuSWb8E7dyvpLvfeQAMT292zTk0ViEo"
+      }
+    ]
+  },
+  "2557b63c775ff083": {
+    "title": "REVERIE",
+    "description": "REVERIEのDLCを入手できます。",
+    "cover": "../img/REVERIE.png",
+    "page": "../event/CAD-0013.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-paw",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "221MB",
+        "url": "https://drive.google.com/uc?export=download&id=1SaSe0hXp-fOye0abouygaPPkVnPs4f3O"
+      }
+    ]
+  },
+  "40707038d29dc4a6": {
+    "title": "New Vision",
+    "description": "New VisionのDLCを入手できます。",
+    "cover": "../img/klonoa_Logo.png",
+    "page": "../event/CAD-0012.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-ring",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "344MB",
+        "url": "https://drive.google.com/uc?export=download&id=13zJ14E2ypMzThxOD9kg7CYSkjWS1-H3b"
+      }
+    ]
+  },
+  "8d40cfe6b3d482b8": {
+    "title": "Non Stop",
+    "description": "Non StopのDLCを入手できます。",
+    "cover": "../img/airride_Logo.png",
+    "page": "../event/CAD-0011.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-flag-checkered",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "292.7MB",
+        "url": "https://drive.google.com/uc?export=download&id=1mBJc71CBQ-aLDwuFnNQHu46VmvlePbK7"
+      }
+    ]
+  },
+  "5e74b18e6f04319a": {
+    "title": "ケモノパレード",
+    "description": "ケモノパレードのDLCを入手できます。",
+    "cover": "../img/FurryParade.png",
+    "page": "../event/CAD-0010.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-paw",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "327MB",
+        "url": "https://drive.google.com/uc?export=download&id=1Pq0CbdgLVtmzjsWQHr1CK6k3qBnydW2_"
+      }
+    ]
+  },
+  "a070b8b221d7fdc1": {
+    "title": "Rebooting World",
+    "description": "Rebooting WorldのDLCを入手できます。",
+    "cover": "../img/RebootingWorld.png",
+    "page": "../event/CAD-0009.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-lightbulb",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "366.2MB",
+        "url": "https://drive.google.com/uc?export=download&id=1DENQJwUYNyQCZmfBh4u1Uayrkc6-iyRB"
+      }
+    ]
+  },
+  "a9334a71c495daf2": {
+    "title": "REFRAIN",
+    "description": "REFRAINのDLCを入手できます。",
+    "cover": "../img/Refrain.png",
+    "page": "../event/CAD-0008.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-paw",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "305MB",
+        "url": "https://drive.google.com/uc?export=download&id=1R2WWxECxLH80lWE9W0Z-KHUukG5en8iE"
+      }
+    ]
+  },
+  "cdba43f002fda5c2": {
+    "title": "東方アレンジコンピアルバム",
+    "description": "東方アレンジコンピアルバムのDLCを入手できます。",
+    "cover": "../img/Comp_card.png",
+    "page": "../event/CAD-0007.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-yin-yang",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "363.6MB",
+        "url": "https://drive.google.com/uc?export=download&id=1Kg-CJ3zluDp7bA0GA02Zd8uPMO0M5sz8"
+      },
+      {
+        "format": "txt",
+        "size": "2KB",
+        "url": "https://drive.google.com/uc?export=download&id=1J5N7VODh0-wKDKnjCEjSbB3Hh-Kc6Mc8"
+      }
+    ]
+  },
+  "01019c42b43d794c": {
+    "title": "進捗どうですか?",
+    "description": "進捗どうですか?のDLCを入手できます。",
+    "cover": "../img/Progress_Card.png",
+    "page": "../event/CAD-0006.html",
+    "icon": {
+      "type": "fa",
+      "class": "fas fa-cat",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "285MB",
+        "url": "https://drive.google.com/uc?export=download&id=1lEerMUbkc3mRVe7KEYP3a38uh98AUUfL"
+      },
+      {
+        "format": "txt",
+        "size": "4KB",
+        "url": "https://drive.google.com/uc?export=download&id=1J3JCDrk9P5G3zuq9NndhUws3AqtPkt8c"
+      }
+    ]
+  },
+  "486ed64ee923f1d5": {
+    "title": "Youthful Blue",
+    "description": "Youthful BlueのDLCを入手できます。",
+    "cover": "../img/YouthfulBlue_card.png",
+    "page": "../event/CAD-0005.html",
+    "icon": {
+      "type": "image",
+      "src": "../img/nikukyu.svg",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "197MB",
+        "url": "https://drive.google.com/uc?export=download&id=1LyugXBXnfQVHzjzCvnkHevWJ_A5ZXv48"
+      },
+      {
+        "format": "txt",
+        "size": "2KB",
+        "url": "https://drive.google.com/uc?export=download&id=1R0J28GfFYSHkj70P3Jl-F6aSCvEcVS1w"
+      }
+    ]
+  },
+  "05191fa801b4c697": {
+    "title": "Pretty Furry VGM Remix Collection",
+    "description": "Pretty Furry VGM Remix CollectionのDLCを入手できます。",
+    "cover": "../img/PrettyFurry_Card.png",
+    "page": "../event/CAD-0004.html",
+    "icon": {
+      "type": "image",
+      "src": "../img/nikukyu.svg",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "wav",
+        "size": "372.7MB",
+        "url": "https://drive.google.com/uc?export=download&id=1Vwmsro36ly7Ho4ovwgPDAd5N7c88gSgU"
+      }
+    ]
+  },
+  "3c626a652f482030": {
+    "title": "ToyBox 会場購入特典",
+    "description": "ToyBox 会場購入特典のDLCを入手できます。",
+    "cover": "../img/ToyBox-Tokuten.png",
+    "page": "../event/CAD-0002.html",
+    "icon": {
+      "type": "image",
+      "src": "../img/bear.svg",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "mp3",
+        "size": "7.1MB",
+        "url": "https://drive.google.com/uc?export=download&id=1zHpFRjeTm9EfPvlipjwRPQ2YsS_PRgDH"
+      },
+      {
+        "format": "wav",
+        "size": "61.7MB",
+        "url": "https://drive.google.com/uc?export=download&id=175vmZRJQTvWpi0ktEdeID-FqtulYVsfq"
+      },
+      {
+        "format": "flac",
+        "size": "35.1MB",
+        "url": "https://drive.google.com/uc?export=download&id=1J1jvBAhzxyxAPkruDwJnZHnu8UY2GtmM"
+      }
+    ]
+  },
+  "4871ebe0e2bb8540": {
+    "title": "ToyBox",
+    "description": "ToyBoxのDLCを入手できます。",
+    "cover": "../img/ToyBox-Postcard.png",
+    "page": "../event/CAD-0002.html",
+    "icon": {
+      "type": "image",
+      "src": "../img/bear.svg",
+      "alt": ""
+    },
+    "files": [
+      {
+        "format": "mp3",
+        "size": "25.8 MB",
+        "url": "https://drive.google.com/uc?export=download&id=1YdGVHu_UIZtSnIXz2c6V19TIKFzsnfdU"
+      },
+      {
+        "format": "wav",
+        "size": "129.8 MB",
+        "url": "https://drive.google.com/uc?export=download&id=1lZP5EkOatUQ_8MFt8vOhqpg8OIRWFhFV"
+      },
+      {
+        "format": "flac",
+        "size": "83.2 MB",
+        "url": "https://drive.google.com/uc?export=download&id=1XFgVTlNe3dJcMfRV-eXYJwS5yfGcw_T5"
+      },
+      {
+        "format": "txt",
+        "size": "2 KB",
+        "url": "https://drive.google.com/uc?export=download&id=10t6TcZFFgwq7pMOLkSqFPYfzkRisatrN"
+      }
+    ]
+  }
+}

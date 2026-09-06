@@ -27,8 +27,8 @@
   },
   {
     "name": "alius",
-    "role": "会計",
-    "role_key": "fin",
+    "role": "副代表",
+    "role_key": "sub",
     "avatar": "../img/alius.png",
     "bio": "<p>当サークルでCGグラフィックを担当しているaliusと申します！</p><p>主にMVのVFXや３Dモデルを制作しております！</p>",
     "tags": ["CG", "VFX", "3D"],

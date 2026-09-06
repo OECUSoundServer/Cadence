@@ -79,7 +79,7 @@
 // }
 // countdown();
 // setInterval(countdown,1000);
-ddocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   // 二重起動ガード
   if (window.__countdownStarted) return;
   window.__countdownStarted = true;

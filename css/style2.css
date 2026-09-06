@@ -5228,3 +5228,459 @@ main .card+.card {
 .set-slider-btn.next {
   right: 8px;
 }
+
+/* =========================================================
+   DLC PAGE
+========================================================= */
+
+#download-page {
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+
+/* =========================================================
+   TITLE ICON
+========================================================= */
+
+.download-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 0.35em;
+    vertical-align: middle;
+}
+
+.download-icon img {
+    width: 1.35em;
+    height: 1.35em;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.download-icon i {
+    color: #000;
+}
+
+
+/* =========================================================
+   PRODUCT
+========================================================= */
+
+.download-product-wrap {
+    display: grid;
+    grid-template-columns:
+        minmax(300px, 36%)
+        minmax(0, 1fr);
+
+    gap: 48px;
+    align-items: start;
+    margin-top: 30px;
+}
+
+.download-cover {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.download-cover-wrap {
+    width: 100%;
+}
+
+.download-product-info {
+    min-width: 0;
+
+    padding-top: 8px;
+}
+
+#download-thanks {
+    margin-top: 0;
+    margin-bottom: 22px;
+
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.download-description {
+    line-height: 1.9;
+}
+
+.download-detail-link {
+    display: inline-block;
+
+    margin-top: 6px;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.download-detail-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DOWNLOAD AREA
+========================================================= */
+
+.download-area {
+    margin-top: 28px;
+    padding: 18px 22px 20px;
+
+    background: rgba(26, 188, 156, 0.07);
+    border-top: 3px solid #1abc9c;
+}
+
+.download-area::before {
+    content: "";
+
+    position: absolute;
+
+    top: -4px;
+    right: 0;
+
+    width: 100px;
+    height: 4px;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.9) 2px,
+            transparent 2px,
+            transparent 5px
+        );
+}
+
+.download-area-title {
+    margin:
+        0 0 18px;
+
+    color: #1abc9c;
+
+    font-size: 1.15rem;
+}
+
+.download-area-title i {
+    margin-right: 7px;
+}
+
+
+/* =========================================================
+   FILE SELECT
+========================================================= */
+
+.download-selector {
+    max-width: 480px;
+}
+
+.download-selector-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.download-format-select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        11px 38px
+        11px 14px;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.25);
+
+    background: #fff;
+
+    font: inherit;
+
+    cursor: pointer;
+}
+
+.download-format-select:focus {
+    outline:
+        2px solid rgba(26, 188, 156, 0.3);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   DOWNLOAD BUTTON
+========================================================= */
+
+.download-button-area {
+    margin-top: 15px;
+}
+
+.download-main-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        11px 21px;
+
+    background: #1abc9c;
+
+    border:
+        2px solid #1abc9c;
+
+    color: #fff;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    box-shadow:
+        3px 3px 0
+        rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.download-main-button:hover {
+    transform:
+        translate(-1px, -1px);
+
+    box-shadow:
+        5px 5px 0
+        rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   SINGLE FILE
+========================================================= */
+
+.download-single {
+    max-width: 520px;
+}
+
+.download-single-info {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.download-format-name {
+    font-size: 1.15rem;
+}
+
+.download-file-size {
+    font-size: 0.9rem;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.download-notes {
+    margin-top: 55px;
+
+    padding:
+        22px 28px;
+
+    background:
+        rgba(26, 188, 156, 0.12);
+
+    border-left:
+        5px solid #1abc9c;
+
+    box-shadow:
+        3px 3px 6px
+        rgba(0, 0, 0, 0.08);
+}
+
+.download-notes h3 {
+    margin-top: 0;
+}
+
+.download-notes h3 i {
+    margin-right: 6px;
+
+    color: #1abc9c;
+}
+
+.download-notes h3 span {
+    margin-left: 6px;
+
+    font-size: 0.75em;
+}
+
+.download-notes ul {
+    margin-bottom: 18px;
+}
+
+.download-notes li {
+    margin:
+        7px 0;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .download-product-wrap {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .download-cover {
+        max-width: 300px;
+    }
+
+    .download-product-info {
+        padding-top: 0;
+    }
+
+    .download-area {
+        margin-top: 28px;
+
+        padding:
+            20px 18px;
+    }
+
+    .download-main-button {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+    .download-notes {
+        padding:
+            20px 18px;
+    }
+
+}
+
+.zip-password-area {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.zip-password-label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.zip-password-canvas-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fafafa;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#zip-password-canvas {
+    display: block;
+    width: 360px;
+    max-width: 100%;
+    height: auto;
+}
+
+.zip-password-note {
+    margin-top: 6px;
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* =========================================
+   Download + ZIP Password
+========================================= */
+
+.download-content-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* 左側 */
+#download-file-area {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 右側 */
+.zip-password-area {
+    flex: 0 0 360px;
+
+    /* 以前の縦配置用CSSを解除 */
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.zip-password-label {
+    margin: 0 0 8px;
+    font-weight: bold;
+}
+
+.zip-password-canvas-wrap {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fafafa;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#zip-password-canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.zip-password-note {
+    margin: 8px 0 0;
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* スマホでは縦に戻す */
+@media screen and (max-width: 768px) {
+
+    .download-content-row {
+        display: block;
+    }
+
+    .zip-password-area {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+}
