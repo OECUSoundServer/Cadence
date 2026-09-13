@@ -5816,3 +5816,58 @@ main .card+.card {
 
     font-weight: bold;
 }
+
+/* =========================================
+   スマホ
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* 2カラムを解除 */
+    .album-listen-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+    /* アルバム情報を上 */
+    .album-info-column {
+        order: 1;
+        width: 100%;
+    }
+
+
+    /* 曲一覧を下 */
+    .album-track-column {
+        order: 2;
+        width: 100%;
+
+        /* PC用の内部スクロールも解除 */
+        max-height: none;
+        overflow-y: visible;
+    }
+
+
+    /* 固定表示も解除 */
+    .album-info-sticky {
+        position: static;
+    }
+
+
+    /* ジャケット */
+    .album-listen-cover {
+        width: 100%;
+        max-width: 320px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* BandLab */
+    .bandlab-player {
+        width: 100%;
+    }
+
+}
