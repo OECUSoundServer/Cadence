@@ -234,7 +234,7 @@
 
     .footer-notes {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 0.7fr 2.3fr;
       gap: 12px;
       margin-top: 12px;
       font-size: 13px;
@@ -244,6 +244,58 @@
       border: 1px solid var(--border);
       min-height: 72px;
       padding: 8px;
+    }
+
+    .management-page {
+      margin-bottom: 18px;
+    }
+
+    .management-page + .management-page {
+      border-top: 2px dashed #bbb;
+      padding-top: 18px;
+    }
+
+    .page-number {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .memo-page {
+      margin-top: 18px;
+      border-top: 2px solid var(--border);
+      padding-top: 14px;
+    }
+
+    .memo-page-title {
+      font-size: 20px;
+      font-weight: 900;
+      margin: 0 0 10px;
+    }
+
+    .large-memo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .large-memo-box {
+      border: 1.5px solid var(--border);
+      min-height: 190px;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 13px;
+    }
+
+    .large-memo-box.full {
+      grid-column: 1 / -1;
+      min-height: 280px;
+    }
+
+    .memo-label {
+      font-weight: 900;
+      margin-bottom: 8px;
+      display: block;
     }
 
     @media (max-width: 800px) {
@@ -295,6 +347,38 @@
 
       .footer-notes {
         break-inside: avoid;
+      }
+
+      .management-page {
+        break-after: page;
+        page-break-after: always;
+        margin-bottom: 0;
+      }
+
+      .management-page + .management-page {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .management-page:last-of-type {
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .memo-page {
+        break-before: page;
+        page-break-before: always;
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .large-memo-box {
+        min-height: 180px;
+      }
+
+      .large-memo-box.full {
+        min-height: 260px;
       }
     }
   </style>
@@ -360,7 +444,11 @@
       { id: 13, name: "New Vision", production: 30, stock: 15, price: 500, code: "有", release: "2026/01/18", genre: "風のクロノアシリーズ", memo: "" },
       { id: 14, name: "RECORD", production: 43, stock: 18, price: 500, code: "有", release: "2026/04/19", genre: "Changedイラスト本", memo: "" },
       { id: 15, name: "REVERIE", production: 30, stock: 21, price: 500, code: "有", release: "2026/04/19", genre: "Changed", memo: "" },
-      { id: 16, name: "気の向くままに、夕焼けに揺られて", production: 30, stock: 27, price: 500, code: "有", release: "2026/05/04", genre: "東方Project", memo: "" }
+      { id: 16, name: "気の向くままに、夕焼けに揺られて", production: 30, stock: 27, price: 500, code: "有", release: "2026/05/04", genre: "東方Project", memo: "" },
+      { id: 17, name: "百兽日常", production: 55, stock: 55, price: 500, code: "有", release: "2026/09/20", genre: "有兽焉イラスト本", memo: "" },
+      { id: 18, name: "百兽日常 -おまけCD-", production: 25, stock: 25, price: 300, code: "有", release: "2026/09/20", genre: "有兽焉", memo: "" },
+      { id: 19, name: "二人の未来地図", production: 30, stock: 30, price: 500, code: "有", release: "2026/10/11", genre: "秘封倶楽部", memo: "" },
+      { id: 20, name: "夢と現のアティチュード", production: 30, stock: 30, price: 500, code: "有", release: "2026/10/11", genre: "東方Project", memo: "" },
     ];
 
     const setProducts = [
@@ -396,7 +484,7 @@
       },
       {
         id: "SET4",
-        name: "Changed Changed 新譜＋旧譜セット",
+        name: "Changed 新譜＋旧譜セット",
         productIds: [9, 15],
         price: 800,
         code: "有",
@@ -413,6 +501,16 @@
         release: "2026/05/04",
         genre: "東方Project",
         memo: "進捗どうですか？ + 東方アレンジコンピアルバム + 気の向くままに、夕焼けに揺られて"
+      },
+      {
+        id: "SET6",
+        name: "有兽焉セット",
+        productIds: [17, 18],
+        price: 800,
+        code: "有",
+        release: "2026/09/20",
+        genre: "有兽焉",
+        memo: "百兽日常 + 百兽日常 -おまけCD-"
       }
     ];
 
@@ -427,7 +525,9 @@
       { id: "EV8", name: "コミックマーケット106", date: "2025/08/17" },
       { id: "EV9", name: "新春けもケット12", date: "2026/01/18" },
       { id: "EV10", name: "関西けもケット11", date: "2026/04/19" },
-      { id: "EV11", name: "博麗神社例大祭23", date: "2026/05/04" }
+      { id: "EV11", name: "博麗神社例大祭23", date: "2026/05/04" },
+      { id: "EV12", name: "けもケット17", date: "2026/09/20" },
+      { id: "EV13", name: "東方紅楼夢22", date: "2026/10/11" },
     ];
 
     // イベントごとの販売予定商品。
@@ -444,7 +544,9 @@
       EV8: { productIds: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11], setIds: [] },
       EV9: { productIds: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], setIds: [] },
       EV10: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15], setIds: ["SET1", "SET2", "SET3", "SET4"] },
-      EV11: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 15, 16], setIds: ["SET5"] }
+      EV11: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 15, 16], setIds: ["SET5"] },
+      EV12: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19], setIds: ["SET1", "SET2", "SET3", "SET4", "SET6"] },
+      EV13: { productIds: [2, 3, 4, 7, 8, 9, 10, 11, 12, 13, 15, 16, 19, 20] },
     };
 
     const state = {
@@ -608,6 +710,71 @@
       return value.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, '_');
     }
 
+    const MANAGEMENT_ROWS_PER_PAGE = 10;
+
+    function chunkRows(rows, size) {
+      const pages = [];
+      for (let i = 0; i < rows.length; i += size) {
+        pages.push(rows.slice(i, i + size));
+      }
+      return pages;
+    }
+
+    function renderManagementPage(event, pageRows, pageIndex, pageCount, totalRows, visitorText) {
+      const startNo = pageIndex * MANAGEMENT_ROWS_PER_PAGE;
+
+      return `
+        <section class="management-page">
+          <div class="sheet-header">
+            <div>
+              <h2 class="sheet-title">${event.name} 頒布管理シート</h2>
+              <p class="sheet-subtitle">開催日：${event.date} / イベントID：${event.id}</p>
+              <p class="sheet-subtitle">来客数：${visitorText || '　　　　　　　　　　　　　　　'}</p>
+              <p class="page-number">管理表 ${pageIndex + 1} / ${pageCount}</p>
+            </div>
+            <div class="summary-box">
+              <div class="summary-line"><span>販売商品数</span><strong>${totalRows}種</strong></div>
+              <div class="summary-line"><span>このページ</span><strong>${pageRows.length}種</strong></div>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th class="col-id">No.</th>
+                <th class="col-name">商品名</th>
+                <th class="col-release">発売日</th>
+                <th class="col-genre">ジャンル</th>
+                <th class="col-price">単価</th>
+                <th class="col-type">種別</th>
+                <th class="col-code">コード</th>
+                <th class="col-memo">購入数</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${pageRows.map((item, index) => `
+                <tr>
+                  <td class="col-id">${startNo + index + 1}</td>
+                  <td class="col-name"><strong>${item.name}</strong>${item.type === 'セット' ? `<br><small>構成：${item.memo}</small>` : ''}</td>
+                  <td class="col-release">${item.release}</td>
+                  <td class="col-genre">${item.genre}</td>
+                  <td class="col-price">${formatYen(item.price)}</td>
+                  <td class="col-type">${item.type}</td>
+                  <td class="col-code">${item.code || '-'}</td>
+                  <td class="col-memo"><div class="memo-space"></div></td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+
+          <div class="footer-notes">
+            <div class="note-box"><strong>来客数</strong><br>${visitorText || ''}<br></div>
+            <div class="note-box"><strong>簡易メモ</strong><br></div>
+          </div>
+        </section>
+      `;
+    }
+
     function renderSheet() {
       const event = currentEvent();
       const rows = selectedSaleItems();
@@ -627,53 +794,48 @@
         return;
       }
 
+      const managementPages = chunkRows(rows, MANAGEMENT_ROWS_PER_PAGE);
+
       sheet.innerHTML = `
-        <div class="sheet-header">
-          <div>
-            <h2 class="sheet-title">${event.name} 頒布管理シート</h2>
-            <p class="sheet-subtitle">開催日：${event.date} / イベントID：${event.id}</p>
-            <p class="sheet-subtitle">来客数：${visitorText || '　　　　　　　　　　　　　　　'}</p>
-          </div>
-          <div class="summary-box">
-            <div class="summary-line"><span>販売商品数</span><strong>${rows.length}種</strong></div>
-          </div>
-        </div>
+        ${managementPages.map((pageRows, pageIndex) =>
+          renderManagementPage(event, pageRows, pageIndex, managementPages.length, rows.length, visitorText)
+        ).join('')}
 
-        <table>
-          <thead>
-            <tr>
-              <th class="col-id">No.</th>
-              <th class="col-name">商品名</th>
-              <th class="col-release">発売日</th>
-              <th class="col-genre">ジャンル</th>
-              <th class="col-price">単価</th>
-              <th class="col-type">種別</th>
-              <th class="col-code">コード</th>
-              <th class="col-memo">購入数</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${rows.map((item, index) => `
-              <tr>
-                <td class="col-id">${index + 1}</td>
-                <td class="col-name"><strong>${item.name}</strong>${item.type === 'セット' ? `<br><small>構成：${item.memo}</small>` : ''}</td>
-                <td class="col-release">${item.release}</td>
-                <td class="col-genre">${item.genre}</td>
-                <td class="col-price">${formatYen(item.price)}</td>
-                <td class="col-type">${item.type}</td>
-                <td class="col-code">${item.code || '-'}</td>
-                <td class="col-memo"><div class="memo-space"></div></td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
-
-        <div class="footer-notes">
-          <div class="note-box"><strong>現金メモ</strong><br>開始金額：<br>終了金額：<br>差額：</div>
-          <div class="note-box"><strong>来客メモ</strong><br>来客数：${visitorText || ''}<br></div>
-          <div class="note-box"><strong>備考</strong><br></div>
-        </div>
+        <section class="memo-page">
+          <h3 class="memo-page-title">${event.name} メモ</h3>
+          <div class="large-memo-grid">
+            <div class="large-memo-box">
+              <span class="memo-label">来客・反応メモ</span>
+            </div>
+            <div class="large-memo-box">
+              <span class="memo-label">売れ行き・在庫メモ</span>
+            </div>
+            <div class="large-memo-box full">
+              <span class="memo-label">備考・次回への引き継ぎ</span>
+            </div>
+          </div>
+        </section>
       `;
+    }
+
+    function canvasToBlob(canvas) {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob(blob => {
+          if (blob) resolve(blob);
+          else reject(new Error('PNGの生成に失敗しました。'));
+        }, 'image/png');
+      });
+    }
+
+    function downloadBlob(blob, fileName) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
     }
 
     async function downloadSheetAsPng() {
@@ -690,39 +852,61 @@
         return;
       }
 
-      try {
-        const canvas = await html2canvas(sheet, {
-          backgroundColor: '#ffffff',
-          scale: 2,
-          useCORS: true,
-          logging: false
+      const managementPages = [...sheet.querySelectorAll('.management-page')];
+      const memoPage = sheet.querySelector('.memo-page');
+
+      if (managementPages.length === 0) {
+        alert('PNG出力する管理ページがありません。販売商品を選択してください。');
+        return;
+      }
+
+      const targets = managementPages.map((element, index) => ({
+        element,
+        fileName: `${safeFileName(event.name)}_頒布管理シート_${index + 1}.png`
+      }));
+
+      if (memoPage) {
+        targets.push({
+          element: memoPage,
+          fileName: `${safeFileName(event.name)}_頒布管理シート_メモ.png`
         });
+      }
 
-        canvas.toBlob(blob => {
-          if (!blob) {
-            alert('PNG出力に失敗しました。');
-            return;
-          }
+      const button = document.getElementById('downloadPng');
+      const originalText = button.textContent;
+      button.disabled = true;
 
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = `${safeFileName(event.name)}_頒布管理シート.png`;
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-          URL.revokeObjectURL(url);
-        }, 'image/png');
+      try {
+        for (let i = 0; i < targets.length; i++) {
+          button.textContent = `PNG出力中 ${i + 1}/${targets.length}`;
+          const { element, fileName } = targets[i];
+
+          const canvas = await html2canvas(element, {
+            backgroundColor: '#ffffff',
+            scale: 2,
+            useCORS: true,
+            logging: false
+          });
+
+          const blob = await canvasToBlob(canvas);
+          downloadBlob(blob, fileName);
+
+          // ブラウザが連続ダウンロードを処理しやすいよう少し間隔を空ける。
+          await new Promise(resolve => setTimeout(resolve, 250));
+        }
       } catch (error) {
         console.error(error);
-        alert('PNG出力に失敗しました。ブラウザの印刷→PDF保存も試してください。');
+        alert('PNG出力に失敗しました。ブラウザの複数ファイルのダウンロード許可も確認してください。');
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
       }
     }
 
     function runTests() {
-      console.assert(products.length === 16, '商品数は16件であること');
+      console.assert(products.length === 20, '商品数は20件であること');
       console.assert(setProducts.length >= 2, 'セット商品が登録されていること');
-      console.assert(events.length === 11, 'イベント数は11件であること');
+      console.assert(events.length === 13, 'イベント数は13件であること');
       console.assert(formatYen(500) === '¥500', '金額表示が正しいこと');
       console.assert(safeFileName('A/B:C*D?E"F<G>H|I') === 'A_B_C_D_E_F_G_H_I', 'ファイル名に使えない文字を置換すること');
 
