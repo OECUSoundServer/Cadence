@@ -5687,3 +5687,132 @@ main .card+.card {
         border-top: 1px solid #ddd;
     }
 }
+
+/* =========================================
+   Listen 全体
+========================================= */
+
+.album-listen-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        300px;
+
+    gap: 48px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   左：曲一覧
+========================================= */
+
+.album-track-column {
+    min-width: 0;
+
+    /* 曲一覧の表示高さ */
+    max-height: 700px;
+
+    /* スクロール可能 */
+    overflow-y: auto;
+
+    /* スクロールバーを非表示 */
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* 旧Edge / IE */
+}
+
+/* Chrome / Edge / Safari */
+.album-track-column::-webkit-scrollbar {
+    display: none;
+}
+
+
+.album-track {
+    margin-bottom: 32px;
+}
+
+.album-track:last-child {
+    margin-bottom: 0;
+}
+
+.album-track-title {
+    margin: 0 0 8px;
+
+    font-weight: bold;
+}
+
+
+/* BandLab */
+.bandlab-player {
+    display: block;
+
+    width: 100%;
+    height: 300px;
+
+    border: 0;
+}
+
+
+/* =========================================
+   右：アルバム情報
+========================================= */
+
+.album-info-column {
+    min-width: 0;
+}
+
+.album-info-sticky {
+    position: sticky;
+
+    top: 30px;
+}
+
+
+.album-listen-cover {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    margin-bottom: 18px;
+}
+
+
+.album-listen-name {
+    margin: 0 0 18px;
+
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+
+.album-listen-meta {
+    margin: 0;
+}
+
+
+.album-listen-meta > div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.album-listen-meta dt {
+    opacity: 0.65;
+}
+
+
+.album-listen-meta dd {
+    margin: 0;
+
+    font-weight: bold;
+}

@@ -107,7 +107,7 @@
 
             <!-- =========================================
              タイトル
-        ========================================== -->
+            ========================================== -->
 
             <h2 class="title DotGothic16">
 
@@ -125,7 +125,7 @@
 
             <!-- =========================================
              商品情報
-        ========================================== -->
+            ========================================== -->
 
             <div class="download-product-wrap">
 
@@ -196,10 +196,55 @@
 
             </div>
 
+            <!-- =========================================
+                Album Player
+            ========================================== -->
+
+            <div id="album-player-area" class="album-player-area" hidden>
+
+                <h3 class="album-listen-title DotGothic16">
+                    <i class="fas fa-headphones"></i>
+                    Listen
+                </h3>
+
+                <p class="album-player-description">
+                    アルバム収録曲をブラウザ上で再生できます。
+                </p>
+                <hr>
+
+                <div class="album-listen-layout">
+
+                    <!-- 左：曲一覧 -->
+                    <div class="album-track-column">
+                        <div id="album-track-list"></div>
+                    </div>
+
+                    <!-- 右：アルバム情報 -->
+                    <aside class="album-info-column">
+                        <div class="album-info-sticky">
+                            <img id="album-listen-cover" class="album-listen-cover" src="" alt="">
+                            <h4 id="album-listen-name" class="album-listen-name"></h4>
+                            <dl class="album-listen-meta">
+                                <div>
+                                    <dt>Tracks</dt>
+                                    <dd id="album-track-count">-</dd>
+                                </div>
+
+                                <div>
+                                    <dt>Total</dt>
+                                    <dd id="album-total-time">-</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </aside>
+                </div>
+                <hr>
+            </div>
+
 
             <!-- =========================================
              Notes
-        ========================================== -->
+            ========================================== -->
 
             <div class="download-notes">
 
@@ -208,11 +253,14 @@
                     備考
                     <span>Notes</span>
                 </h3>
-
+                
                 <ul>
                     <li>
-                        ダウンロードしたファイルの
-                        無断転載・再配布は禁止しています。
+                        本ページは購入者専用です。
+                        ページURLおよび掲載されているBandLabの試聴リンクを第三者へ共有・公開することは禁止しています。
+                    </li>
+                    <li>
+                        ダウンロードしたファイルの無断転載・再配布は禁止しています。
                     </li>
 
                     <li>
@@ -220,8 +268,7 @@
                     </li>
 
                     <li>
-                        ファイルのダウンロードや再生に問題がある場合は、
-                        お問い合わせフォームよりご連絡ください。
+                        ファイルのダウンロードや再生に問題がある場合は、お問い合わせフォームよりご連絡ください。
                     </li>
                 </ul>
 
@@ -242,6 +289,7 @@
         <img src="../img/TOP.png" width="80">
     </div>
     <!-- InstanceEndEditable -->
+
     <!-- InstanceBeginEditable name="footer" -->
     <footer id="footer" class="dark">
         <div id="copyrights">

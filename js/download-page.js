@@ -462,6 +462,10 @@
             data.icon
         );
 
+        renderTracks(
+            data
+        );
+
         renderFiles(
             data.files
         );
@@ -834,6 +838,291 @@
             true;
     }
 
+    // =========================================================
+    // アルバム試聴 / BandLab
+    // =========================================================
+    function renderTracks(data) {
+
+        const tracks =
+            data.tracks;
+
+
+        const area =
+            document.getElementById(
+                "album-player-area"
+            );
+
+        const root =
+            document.getElementById(
+                "album-track-list"
+            );
+
+        const cover =
+            document.getElementById(
+                "album-listen-cover"
+            );
+
+        const name =
+            document.getElementById(
+                "album-listen-name"
+            );
+
+        const count =
+            document.getElementById(
+                "album-track-count"
+            );
+
+        const total =
+            document.getElementById(
+                "album-total-time"
+            );
+
+
+        if (!area || !root) {
+
+            return;
+        }
+
+
+        root.replaceChildren();
+
+
+        // 曲が設定されていない場合
+        if (
+            !Array.isArray(tracks) ||
+            tracks.length === 0
+        ) {
+
+            area.hidden = true;
+
+            return;
+        }
+
+
+        // =========================================
+        // 右側：アルバム情報
+        // =========================================
+
+        if (cover) {
+            if (data.cover) {
+
+                cover.src =
+                    data.cover;
+
+                cover.alt =
+                    data.title || "";
+
+                cover.hidden =
+                    false;
+            }
+            else {
+                cover.hidden =
+                    true;
+            }
+        }
+
+
+        if (name) {
+            name.textContent =
+                data.title || "";
+        }
+
+
+        if (count) {
+            count.textContent =
+                `${tracks.length} Tracks`;
+        }
+
+
+        if (total) {
+            total.textContent =
+                calculateTotalTime(
+                    tracks
+                );
+        }
+
+
+        // =========================================
+        // 左側：曲一覧
+        // =========================================
+
+        tracks.forEach(
+            (
+                track,
+                index
+            ) => {
+
+                if (
+                    !track ||
+                    !track.bandlab
+                ) {
+
+                    return;
+                }
+
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "album-track";
+
+
+                // 曲名
+                const title =
+                    document.createElement(
+                        "p"
+                    );
+
+                title.className =
+                    "album-track-title";
+
+                title.textContent =
+                    track.title ||
+                    `Track ${index + 1}`;
+
+
+                // BandLab Player
+                const iframe =
+                    document.createElement(
+                        "iframe"
+                    );
+
+                iframe.className =
+                    "bandlab-player";
+
+                iframe.src =
+                    "https://www.bandlab.com/embed/shout/?id=" +
+                    encodeURIComponent(
+                        track.bandlab
+                    );
+
+                iframe.width =
+                    "100%";
+
+                iframe.height =
+                    "240";
+
+                iframe.loading =
+                    "lazy";
+
+                iframe.title =
+                    `${title.textContent} を再生`;
+
+                iframe.setAttribute(
+                    "allowfullscreen",
+                    ""
+                );
+
+
+                item.appendChild(
+                    title
+                );
+
+                item.appendChild(
+                    iframe
+                );
+
+                root.appendChild(
+                    item
+                );
+            }
+        );
+
+
+        // 有効な曲がなかった場合
+        if (
+            root.children.length === 0
+        ) {
+
+            area.hidden = true;
+
+            return;
+        }
+
+
+        area.hidden = false;
+    }
+
+    // =========================================================
+    // アルバム総再生時間
+    // =========================================================
+    function calculateTotalTime(tracks) {
+
+        let totalSeconds = 0;
+
+
+        tracks.forEach(track => {
+
+            if (
+                !track ||
+                !track.duration
+            ) {
+
+                return;
+            }
+
+
+            const parts =
+                String(track.duration)
+                    .split(":")
+                    .map(Number);
+
+
+            // mm:ss
+            if (parts.length === 2) {
+
+                totalSeconds +=
+                    parts[0] * 60 +
+                    parts[1];
+            }
+
+
+            // hh:mm:ss
+            else if (parts.length === 3) {
+
+                totalSeconds +=
+                    parts[0] * 3600 +
+                    parts[1] * 60 +
+                    parts[2];
+            }
+
+        });
+
+
+        const hours =
+            Math.floor(
+                totalSeconds / 3600
+            );
+
+        const minutes =
+            Math.floor(
+                (totalSeconds % 3600) / 60
+            );
+
+        const seconds =
+            totalSeconds % 60;
+
+
+        // 1時間以上
+        if (hours > 0) {
+
+            return (
+                `${hours}:` +
+                `${String(minutes).padStart(2, "0")}:` +
+                `${String(seconds).padStart(2, "0")}`
+            );
+        }
+
+
+        // 1時間未満
+        return (
+            `${minutes}:` +
+            `${String(seconds).padStart(2, "0")}`
+        );
+    }
 
     // =========================================================
     // ファイル
