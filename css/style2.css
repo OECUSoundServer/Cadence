@@ -2442,6 +2442,10 @@ span.marker.orange {
   background: linear-gradient(transparent 40%, #ffaa00 90%);
 }
 
+span.marker.red {
+  background: linear-gradient(transparent 40%, #ff4d6d 90%);
+}
+
 .check {
   color: #f00;
   font-weight: bold;
@@ -4118,11 +4122,11 @@ main .card+.card {
 }
 
 .note {
-  background: #fff8f0;
-  border: 1px solid #ffd7a8;
-  border-radius: 12px;
-  padding: 0.75rem;
-  margin: 0.75rem 0;
+	background: #edfaf6;
+	border: 1px solid #8edbc9;
+	border-radius: 12px;
+	padding: 0.75rem;
+	margin: 0.75rem 0;
 }
 
 .columns {
