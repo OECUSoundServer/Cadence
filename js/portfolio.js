@@ -29,7 +29,14 @@ const LABELS = {
   blog: "ブログ",
   oshinagaki: "お品書き",
   entertainment: "エンタメ",
+  furry: "ケモノ",
   touhou: "東方",
+  youshouyan: "有兽焉",
+  changed: "Changed",
+  oneshot: "OneShot",
+  klonoa: "風のクロノア",
+  kirby: "星のカービィ",
+  bluearchive: "ブルーアーカイブ",
 };
 
 let ALL = [];

@@ -47,7 +47,7 @@
     "href": "../event/e.html?e=kk17",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "furry"],
     "date": "2026-09-20",
     "captions": ["お品書き", "2026/09/20 けもケット17"]
   },
@@ -56,7 +56,7 @@
     "href": "../event/CAD-0015.html",
     "image": "../img/Baishou_CD.png",
     "fullImage": "../img/Baishou_CD.png",
-    "categories": ["sound", "cd"],
+    "categories": ["sound", "cd", "furry", "youshouyan"],
     "date": "2026-09-20",
     "squareImage": true,
     "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
@@ -66,7 +66,7 @@
     "href": "../portfolio/CADB-0002.html",
     "image": "../img/BaiShou_logo.png",
     "fullImage": "../img/BaiShou_logo.png",
-    "categories": ["doujin"],
+    "categories": ["doujin", "furry", "youshouyan"],
     "date": "2026-09-20",
     "squareImage": true,
     "captions": ["有兽焉限定", "2026/09/20 けもケット17"]
@@ -98,7 +98,7 @@
     "href": "../event/e.html?e=kkk11",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "furry"],
     "date": "2026-04-19",
     "captions": ["お品書き", "2026/04/19 関西けもケット11"]
   },
@@ -107,7 +107,7 @@
     "href": "../portfolio/CADB-0001.html",
     "image": "../img/Record.png",
     "fullImage": "../img/Record.png",
-    "categories": ["doujin"],
+    "categories": ["doujin", "furry", "changed"],
     "date": "2026-04-19",
     "squareImage": true,
     "captions": ["Changed限定", "2026/04/19 関西けもケット11"]
@@ -117,7 +117,7 @@
     "href": "../event/CAD-0013.html",
     "image": "../img/REVERIE.png",
     "fullImage": "../img/REVERIE.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "furry", "changed"],
     "date": "2026-04-19",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/8162451", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -130,7 +130,7 @@
     "href": "../event/skk12.html",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "furry"],
     "date": "2026-01-18",
     "captions": ["お品書き", "2026/01/18 新春けもケット12"]
   },
@@ -139,7 +139,7 @@
     "href": "../event/CAD-0012.html",
     "image": "../img/klonoa_Logo.png",
     "fullImage": "../img/klonoa_Logo.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "furry", "klonoa"],
     "date": "2026-01-18",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/7835707", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -152,7 +152,7 @@
     "href": "../event/CAD-0011.html",
     "image": "../img/airride_Logo.png",
     "fullImage": "../img/airride_Logo.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "kirby"],
     "date": "2026-01-18",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/7835670", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -174,7 +174,7 @@
     "href": "../event/kkk10.html",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "furry"],
     "date": "2025-05-18",
     "captions": ["お品書き", "2025/05/18 関西けもケット10"]
   },
@@ -183,7 +183,7 @@
     "href": "../event/CAD-0010.html",
     "image": "../img/FurryParade.png",
     "fullImage": "../img/FurryParade.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "furry"],
     "date": "2025-05-18",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/6959057", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -196,7 +196,7 @@
     "href": "../event/CAD-0009.html",
     "image": "../img/RebootingWorld.png",
     "fullImage": "../img/RebootingWorld.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "furry", "oneshot"],
     "date": "2025-05-18",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/6959011", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -218,7 +218,7 @@
     "href": "../event/skk11.html",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "furry"],
     "date": "2025-01-19",
     "captions": ["お品書き", "2025/01/19 新春けもケット11"]
   },
@@ -227,7 +227,7 @@
     "href": "../event/CAD-0008.html",
     "image": "../img/Refrain.png",
     "fullImage": "../img/Refrain.png",
-    "categories": ["sound", "booth", "cd"],
+    "categories": ["sound", "booth", "cd", "furry", "changed"],
     "date": "2025-01-19",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/6502449", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -311,7 +311,7 @@
     "href": "#",
     "image": "../img/MarinLook.png",
     "fullImage": "../img/MarinLook.png",
-    "categories": ["keyring"],
+    "categories": ["keyring", "furry"],
     "date": "2023-12-02",
     "captions": ["オリジナル", "2023/12/02 オリComi Osaka10"]
   },
@@ -329,7 +329,7 @@
     "href": "../event/CAD-0005.html",
     "image": "../img/YouthfulBlue.png",
     "fullImage": "../img/YouthfulBlue.png",
-    "categories": ["sound", "booth", "cd", "card"],
+    "categories": ["sound", "booth", "cd", "card", "bluearchive"],
     "date": "2023-11-05",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/5515850", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -342,7 +342,7 @@
     "href": "../event/CAD-0004.html",
     "image": "../img/PrettyFurry.png",
     "fullImage": "../img/PrettyFurry.png",
-    "categories": ["sound", "booth", "cd", "card"],
+    "categories": ["sound", "booth", "cd", "card", "furry"],
     "date": "2023-11-05",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/5525775", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
@@ -355,7 +355,7 @@
     "href": "#",
     "image": "../img/Keychain.png",
     "fullImage": "../img/Keychain.png",
-    "categories": ["keyring", "discontinued"],
+    "categories": ["keyring", "discontinued", "furry"],
     "date": "2023-11-05",
     "captions": ["オリジナル", "2023/11/05 大学祭"]
   },
@@ -364,7 +364,7 @@
     "href": "#",
     "image": "../img/Keychain.png",
     "fullImage": "../img/Keychain.png",
-    "categories": ["keyring"],
+    "categories": ["keyring", "furry"],
     "date": "2023-11-05",
     "captions": ["オリジナル", "2023/11/05 大学祭"]
   },
@@ -423,7 +423,7 @@
     "href": "../portfolio/fatty.html",
     "image": "../img/kemo.png",
     "fullImage": "../img/kemo.png",
-    "categories": ["sound", "game", "booth", "card"],
+    "categories": ["sound", "game", "booth", "card", "furry"],
     "date": "2023-05-06",
     "buttons": [
       {"href": "https://cadence.booth.pm/items/4713030", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"},
@@ -437,7 +437,7 @@
     "href": "#",
     "image": "../img/spaceCat_card.png",
     "fullImage": "../img/spaceCat_card.png",
-    "categories": ["card"],
+    "categories": ["card", "furry"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
@@ -447,7 +447,7 @@
     "href": "#",
     "image": "../img/sticker.png",
     "fullImage": "../img/sticker.png",
-    "categories": ["sticker", "discontinued"],
+    "categories": ["sticker", "discontinued", "furry"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
@@ -457,7 +457,7 @@
     "href": "#",
     "image": "../img/sticker2.png",
     "fullImage": "../img/sticker2.png",
-    "categories": ["sticker"],
+    "categories": ["sticker", "furry"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
@@ -467,7 +467,7 @@
     "href": "#",
     "image": "../img/sticker3.png",
     "fullImage": "../img/sticker3.png",
-    "categories": ["sticker"],
+    "categories": ["sticker", "furry"],
     "date": "2023-05-06",
     "squareImage": true,
     "captions": ["オリジナル", "2023/05/06 けもケット13"]
@@ -477,7 +477,7 @@
     "href": "../event/kk13.html",
     "image": "../img/yellow.png",
     "fullImage": "../img/yellow.png",
-    "categories": ["event", "oshinagaki"],
+    "categories": ["event", "oshinagaki", "furry"],
     "date": "2023-05-06",
     "captions": ["お品書き", "2023/05/06 けもケット13"]
   },

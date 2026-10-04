@@ -1,34 +1,84 @@
 /*! Cadence Album Nav - same-folder prev/next generator with holes (fixed & title fetch) */
+
 (function () {
-  const CONFIG = {
-    prefix: "CAD-",
-    pad: 4,                 // 0009 の桁数
-    holes: [1, 3],          // 欠番
-    min: 2,                 // 最初の有効番号
-    max: 17,                // 最新番号（新作時に更新）
-    injectBefore: "#footer",
-    fetchNeighborTitle: true,
-    // ページ内の作品名を探す候補（上から優先）
-    titleSelectors: [".album-title", "h1 .entry-title", "h1"],
-    trimSiteSuffix: true    // 「 | Cadence」「 - Cadence」等の末尾除去
+
+  const CONFIGS = {
+
+    CAD: {
+      prefix: "CAD-",
+      pad: 4,                 // 0009 の桁数
+      holes: [1, 3],          // 欠番
+      min: 2,                 // 最初の有効番号
+      max: 17                 // 最新番号（新作時に更新）
+    },
+
+    CADB: {
+      prefix: "CADB-",
+      pad: 4,                 // 0001 の桁数
+      holes: [],              // 欠番
+      min: 1,                 // 最初の有効番号
+      max: 2                  // 最新番号（新作時に更新）
+    }
+
   };
 
-  const q  = (s, r = document) => r.querySelector(s);
+  const CONFIG = {
+    injectBefore: "#footer",
+    fetchNeighborTitle: true,
+
+    // ページ内の作品名を探す候補（上から優先）
+    titleSelectors: [".album-title", "h1 .entry-title", "h1"],
+
+    trimSiteSuffix: true      // 「 | Cadence」「 - Cadence」等の末尾除去
+  };
+
+  const q = (s, r = document) => r.querySelector(s);
+
   const pad = (n, len) => String(n).padStart(len, "0");
+
   const basePath = () => location.pathname.replace(/[^/]+$/, "");
-  const buildUrl = (n) => `${basePath()}${CONFIG.prefix}${pad(n, CONFIG.pad)}.html`;
 
-  function getCurrentNumber() {
-    const m = location.pathname.match(new RegExp(`${CONFIG.prefix}(\\d{${CONFIG.pad}})\\.html$`));
-    return m ? parseInt(m[1], 10) : null;
+  function getCurrentConfig() {
+
+    for (const config of Object.values(CONFIGS)) {
+
+      const m = location.pathname.match(
+        new RegExp(`${config.prefix}(\\d{${config.pad}})\\.html$`)
+      );
+
+      if (m) {
+        return {
+          config,
+          number: parseInt(m[1], 10)
+        };
+      }
+
+    }
+
+    return null;
   }
-  const isHole = (n) => CONFIG.holes.includes(n);
 
-  function findPrev(curr) { for (let i = curr - 1; i >= CONFIG.min; i--) if (!isHole(i)) return i; return null; }
-  function findNext(curr) { for (let i = curr + 1; i <= CONFIG.max; i++) if (!isHole(i)) return i; return null; }
+  const buildUrl = (config, n) =>
+    `${basePath()}${config.prefix}${pad(n, config.pad)}.html`;
+
+  const isHole = (config, n) => config.holes.includes(n);
+
+  function findPrev(config, curr) {
+    for (let i = curr - 1; i >= config.min; i--)
+      if (!isHole(config, i)) return i;
+    return null;
+  }
+
+  function findNext(config, curr) {
+    for (let i = curr + 1; i <= config.max; i++)
+      if (!isHole(config, i)) return i;
+    return null;
+  }
 
   function tidyTitle(s) {
+
     if (!s) return s;
+
     s = s.trim();
 
     // 先頭の「Cadence｜」または「Cadence -」を削除
@@ -36,31 +86,53 @@
 
     // 末尾の「｜Cadence」または「- Cadence」も削除
     if (CONFIG.trimSiteSuffix) {
-        s = s.replace(/\s*[｜\|\-–—]\s*Cadence\s*$/i, "");
+      s = s.replace(/\s*[｜\|\-–—]\s*Cadence\s*$/i, "");
     }
+
     return s.trim();
   }
 
   async function fetchPrettyTitle(url) {
+
     try {
+
       const res = await fetch(url, { cache: "no-cache" });
+
       if (!res.ok) return null;
+
       const html = await res.text();
+
       const doc = new DOMParser().parseFromString(html, "text/html");
 
       for (const sel of CONFIG.titleSelectors) {
+
         const el = doc.querySelector(sel);
-        if (el && el.textContent.trim()) return tidyTitle(el.textContent);
+
+        if (el && el.textContent.trim())
+          return tidyTitle(el.textContent);
+
       }
-      const og = doc.querySelector('meta[property="og:title"]');
-      if (og && og.content) return tidyTitle(og.content);
-      if (doc.title) return tidyTitle(doc.title);
+
+      const og = doc.querySelector('meta[property="og\\:title"]');
+
+      if (og && og.content)
+        return tidyTitle(og.content);
+
+      if (doc.title)
+        return tidyTitle(doc.title);
+
       return null;
-    } catch { return null; }
+
+    } catch {
+      return null;
+    }
+
   }
 
   function injectStylesOnce() {
+
     if (q("#album-nav-style")) return;
+
     const css = `
       .album-nav{
         display:flex;justify-content:space-between;
@@ -82,64 +154,113 @@
         .album-nav a:hover{background:#2a2a2a;}
       }
     `;
+
     const style = document.createElement("style");
+
     style.id = "album-nav-style";
     style.textContent = css;
+
     document.head.appendChild(style);
   }
 
   async function main() {
-    const curr = getCurrentNumber();
-    if (curr == null) return;
 
-    const prevNum = findPrev(curr);
-    const nextNum = findNext(curr);
+    const current = getCurrentConfig();
 
-    const nav  = document.createElement("nav");
+    if (current == null) return;
+
+    const config = current.config;
+    const curr = current.number;
+
+    const prevNum = findPrev(config, curr);
+    const nextNum = findNext(config, curr);
+
+    const nav = document.createElement("nav");
+
     nav.className = "album-nav";
 
     const prevA = document.createElement("a");
     const nextA = document.createElement("a");
 
     if (prevNum) {
-      prevA.href = buildUrl(prevNum);
-      prevA.innerHTML = `<span class="label_nav">← 前の作品</span><span class="title_nav">${CONFIG.prefix}${pad(prevNum, CONFIG.pad)}</span>`;
+
+      prevA.href = buildUrl(config, prevNum);
+
+      prevA.innerHTML =
+        `<span class="label_nav">← 前の作品</span><span class="title_nav">${config.prefix}${pad(prevNum, config.pad)}</span>`;
+
     } else {
+
       prevA.className = "disabled";
-      prevA.innerHTML = `<span class="label_nav">← 前の作品</span><span class="title_nav">なし</span>`;
+
+      prevA.innerHTML =
+        `<span class="label_nav">← 前の作品</span><span class="title_nav">なし</span>`;
+
     }
 
     if (nextNum) {
-      nextA.href = buildUrl(nextNum);
-      nextA.innerHTML = `<span class="label_nav">次の作品 →</span><span class="title_nav">${CONFIG.prefix}${pad(nextNum, CONFIG.pad)}</span>`;
+
+      nextA.href = buildUrl(config, nextNum);
+
+      nextA.innerHTML =
+        `<span class="label_nav">次の作品 →</span><span class="title_nav">${config.prefix}${pad(nextNum, config.pad)}</span>`;
+
     } else {
+
       nextA.className = "disabled";
-      nextA.innerHTML = `<span class="label_nav">次の作品 →</span><span class="title_nav">なし</span>`;
+
+      nextA.innerHTML =
+        `<span class="label_nav">次の作品 →</span><span class="title_nav">なし</span>`;
+
     }
 
     nav.appendChild(prevA);
     nav.appendChild(nextA);
 
     const anchor = CONFIG.injectBefore ? q(CONFIG.injectBefore) : null;
-    if (anchor && anchor.parentElement) anchor.parentElement.insertBefore(nav, anchor);
-    else document.body.appendChild(nav);
+
+    if (anchor && anchor.parentElement)
+      anchor.parentElement.insertBefore(nav, anchor);
+    else
+      document.body.appendChild(nav);
 
     // タイトル差し替え
     if (CONFIG.fetchNeighborTitle) {
+
       if (prevNum && prevA.href) {
+
         const t = await fetchPrettyTitle(prevA.href);
-        if (t) prevA.querySelector(".title_nav").textContent = t;
+
+        if (t)
+          prevA.querySelector(".title_nav").textContent = t;
+
       }
+
       if (nextNum && nextA.href) {
+
         const t = await fetchPrettyTitle(nextA.href);
-        if (t) nextA.querySelector(".title_nav").textContent = t;
+
+        if (t)
+          nextA.querySelector(".title_nav").textContent = t;
+
       }
+
     }
+
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => { injectStylesOnce(); main(); });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      injectStylesOnce();
+      main();
+    });
+
   } else {
-    injectStylesOnce(); main();
+
+    injectStylesOnce();
+    main();
+
   }
+
 })();
