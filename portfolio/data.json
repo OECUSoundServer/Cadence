@@ -25,7 +25,9 @@
     "fullImage": "../img/attitude_logo.png",
     "categories": ["sound", "booth", "cd", "touhou"],
     "date": "2026-10-11",
-    "squareImage": true,
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/8936094", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
     "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
   },
   {
@@ -35,7 +37,9 @@
     "fullImage": "../img/FutureMap_logo.png",
     "categories": ["sound", "booth", "cd", "touhou"],
     "date": "2026-10-11",
-    "squareImage": true,
+    "buttons": [
+      {"href": "https://cadence.booth.pm/items/8936018", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
+    ],
     "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
   },
   {
