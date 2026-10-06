@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <meta name="theme-color" content="#1abc9c">
+
+    <link rel="manifest" href="./manifest.json">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>
+        Cadence POS System
+    </title>
+</head>
+
+<body>
+
+    <!-- ========================================
+         ヘッダー
+    ========================================= -->
+    <header>
+
+        <div>
+            <strong>
+                Cadence POS SYSTEM
+            </strong>
+
+            <small id="eventName">
+                仮イベント
+            </small>
+        </div>
+
+        <div class="headerBtns">
+
+            <button id="zoomBtn" type="button">
+                100%
+            </button>
+
+            <button id="menuBtn" type="button">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+         商品一覧
+    ========================================= -->
+    <main>
+
+        <section id="status" class="status">
+            ● オフライン対応準備中
+        </section>
+
+        <section id="products" class="grid"></section>
+
+    </main>
+
+
+    <!-- ========================================
+         カート
+    ========================================= -->
+    <footer id="cartBar">
+
+        <div>
+
+            <small>
+                選択中
+            </small>
+
+            <strong>
+                <span id="cartCount">
+                    0
+                </span>
+                点　
+
+                <span id="cartTotal">
+                    ¥0
+                </span>
+            </strong>
+
+            <small id="discountText"></small>
+
+        </div>
+
+        <button id="checkoutBtn" type="button" disabled>
+            会計へ
+        </button>
+
+    </footer>
+
+
+    <!-- ========================================
+         商品詳細
+    ========================================= -->
+    <dialog id="detailDialog">
+
+        <button class="close" type="button">
+            ×
+        </button>
+
+        <div id="detailBody"></div>
+
+    </dialog>
+
+
+    <!-- ========================================
+         会計確認
+    ========================================= -->
+    <dialog id="checkoutDialog">
+
+        <button class="close" type="button">
+            ×
+        </button>
+
+        <h2>
+            会計確認
+        </h2>
+
+        <div id="checkoutBody"></div>
+
+        <button class="primary wide" id="confirmSale" type="button">
+            会計確定
+        </button>
+
+    </dialog>
+
+
+    <!-- ========================================
+         売上URL受信
+    ========================================= -->
+    <dialog id="salesImportDialog">
+
+        <button class="close" id="salesImportClose" type="button">
+            ×
+        </button>
+
+        <h2>
+            売上データを受信しました
+        </h2>
+
+        <div id="salesImportBody"></div>
+
+        <button class="primary wide" id="salesImportConfirm" type="button">
+            売上データを取り込む
+        </button>
+
+    </dialog>
+
+
+    <!-- ========================================
+         データ管理
+    ========================================= -->
+    <dialog id="menuDialog">
+
+        <button class="close" type="button">
+            ×
+        </button>
+
+        <h2>
+            データ管理
+        </h2>
+
+
+        <!-- イベント情報 -->
+        <div class="menuStats" id="menuStats"></div>
+
+
+        <!-- 売上 -->
+        <section class="menuSection">
+
+            <h3>
+                売上
+            </h3>
+
+            <button class="wide" id="historyBtn" type="button">
+                販売履歴
+            </button>
+
+        </section>
+
+
+        <!-- 売上データを渡す -->
+        <section class="menuSection">
+
+            <h3>
+                売上データを渡す
+            </h3>
+
+            <button class="wide primary" id="shareUrlBtn" type="button">
+                売上URLをコピー
+            </button>
+
+        </section>
+
+
+        <!-- 売上データを受け取る -->
+        <section class="menuSection">
+
+            <h3>
+                売上データを受け取る
+            </h3>
+
+            <input class="wideInput" id="salesUrlInput" type="url" placeholder="売上URLを貼り付け">
+
+            <button class="wide" id="importUrlBtn" type="button">
+                URLから売上を読み込む
+            </button>
+
+        </section>
+
+
+        <!-- バックアップ -->
+        <section class="menuSection">
+
+            <h3>
+                バックアップ
+            </h3>
+
+            <button class="wide" id="exportBtn" type="button">
+                JSONを書き出す
+            </button>
+
+            <label class="wide fileBtn">
+                JSONを読み込む
+
+                <input id="importInput" type="file" accept=".json,application/json">
+            </label>
+
+        </section>
+
+
+        <!-- この端末 -->
+        <section class="menuSection dangerSection">
+
+            <h3>
+                この端末
+            </h3>
+
+            <button class="wide danger" id="clearBtn" type="button">
+                ローカルデータを削除
+            </button>
+
+        </section>
+
+    </dialog>
+
+
+    <!-- ========================================
+         販売履歴
+    ========================================= -->
+    <dialog id="historyDialog">
+
+        <button class="close" type="button">
+            ×
+        </button>
+
+        <h2>
+            販売履歴
+        </h2>
+
+        <div id="historyBody"></div>
+
+    </dialog>
+
+
+    <!-- ========================================
+         JavaScript
+    ========================================= -->
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
