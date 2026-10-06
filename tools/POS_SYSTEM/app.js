@@ -240,6 +240,33 @@ const setMaster = [
 ];
 
 /* ==============================
+   初期在庫
+============================== */
+
+const initialInventory = {
+    cd_001: 10,
+    cd_002: 10,
+    cd_003: 10,
+    cd_004: 10,
+    cd_005: 10,
+
+    cd_006: 20,
+    cd_007: 10,
+    cd_008: 10,
+    cd_009: 10,
+    cd_010: 10,
+
+    cd_011: 15,
+    cd_012: 10,
+    cd_013: 10,
+    cd_014: 10,
+    cd_015: 10,
+
+    book_001: 8,
+    book_002: 8
+};
+
+/* ==============================
    イベント設定
 ============================== */
 const events = {
@@ -517,7 +544,16 @@ function getProductData(product) {
     };
 }
 
-const K = 'cadence-pos-demo-sales';
+// const K = 'cadence-pos-demo-sales';
+
+function getSalesStorageKey() {
+    return (
+        'cadence-pos-sales:'
+        + eventData.eventId
+        + ':'
+        + eventData.registerId
+    );
+}
 
 let cart = {};
 let zoom = 100;
@@ -829,6 +865,14 @@ function render() {
                         ${yen(p.price)}
                     </div>
 
+                    <div class="stock">
+                        推定在庫：
+                        ${
+                            getEstimatedStock(p.id)
+                            ?? '未設定'
+                        }
+                    </div>
+
 
                     <div class="actions">
 
@@ -1058,7 +1102,6 @@ function showDetail(id) {
                             <li class="track">
 
                                 <b>
-                                    ${String(track['番号']).padStart(2, '0')}
                                     ${track['曲名']}
                                 </b>
 
@@ -1299,7 +1342,10 @@ function checkout() {
  */
 function sales() {
     return JSON.parse(
-        localStorage.getItem(K) || '[]'
+        localStorage.getItem(
+            getSalesStorageKey()
+        )
+        || '[]'
     );
 }
 
@@ -1307,10 +1353,80 @@ function sales() {
 /**
  * 販売データを保存
  */
-function saveSales(v) {
+function saveSales(data) {
     localStorage.setItem(
-        K,
-        JSON.stringify(v)
+        getSalesStorageKey(),
+        JSON.stringify(data)
+    );
+}
+
+/**
+ * 商品ごとの販売数を取得
+ *
+ * @param {string} productId 商品ID
+ * @return {number}
+ */
+function getSoldQuantity(productId) {
+    return sales().reduce(
+        (total, transaction) => {
+
+            const transactionQuantity =
+                transaction.items.reduce(
+                    (sum, item) => {
+
+                        if (
+                            item.productId
+                            !== productId
+                        ) {
+                            return sum;
+                        }
+
+                        return (
+                            sum
+                            + item.quantity
+                        );
+                    },
+                    0
+                );
+
+            return (
+                total
+                + transactionQuantity
+            );
+        },
+        0
+    );
+}
+
+
+/**
+ * 商品の推定在庫を取得
+ *
+ * 初期在庫 - 販売数
+ *
+ * @param {string} productId 商品ID
+ * @return {number|null}
+ */
+function getEstimatedStock(productId) {
+    const initialStock =
+        initialInventory[
+            productId
+        ];
+
+    if (
+        initialStock === undefined
+    ) {
+        return null;
+    }
+
+    const soldQuantity =
+        getSoldQuantity(
+            productId
+        );
+
+    return (
+        initialStock
+        - soldQuantity
     );
 }
 
@@ -2592,7 +2708,7 @@ function clearLocal() {
 
 
     localStorage.removeItem(
-        K
+        getSalesStorageKey()
     );
 
 
