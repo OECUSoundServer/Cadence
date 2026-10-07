@@ -346,3 +346,18 @@ body.zoom150 {
     margin-top:
         30px;
 }
+
+.newBadge {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 7px;
+
+    border-radius: 999px;
+
+    background: #1abc9c;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.4;
+}

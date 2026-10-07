@@ -199,6 +199,36 @@
 
         </section>
 
+        <button
+            class="wide"
+            id="shareQrBtn"
+        >
+            QRコードで売上を渡す
+        </button>
+
+        <dialog id="salesQrDialog">
+            <div class="dialogBody">
+
+                <h2>
+                    売上共有QR
+                </h2>
+
+                <p class="muted">
+                    取り込み先の端末で読み取ってください
+                </p>
+
+                <div id="salesQr"></div>
+
+                <button
+                    class="wide close"
+                    type="button"
+                >
+                    閉じる
+                </button>
+
+            </div>
+        </dialog>
+
 
         <!-- 売上データを受け取る -->
         <section class="menuSection">
@@ -273,6 +303,7 @@
     <!-- ========================================
          JavaScript
     ========================================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="./app.js"></script>
 
 </body>

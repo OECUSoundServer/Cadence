@@ -274,6 +274,9 @@ const events = {
         name:
             '東方紅楼夢22',
 
+        date:
+            '2026-10-18',
+
         productIds: [
             'cd_001',
             'cd_002',
@@ -290,7 +293,10 @@ const events = {
             'cd_013',
             'cd_014',
             'cd_015',
-            'cd_016',
+        ],
+        newProductIds: [
+            'cd_015',
+            'cd_014'
         ],
         setIds: []
     },
@@ -364,7 +370,14 @@ const eventData = {
             })
             .filter(set => {
                 return set;
-            })
+            }),
+
+    newProductIds:
+        selectedEvent.newProductIds
+        || [],
+
+    date:
+        selectedEvent.date,
 };
 
 /* ==============================
@@ -859,6 +872,13 @@ function render() {
 
                     <div class="name">
                         ${p.name || 'タイトル未取得'}
+
+                        ${eventData.newProductIds.includes(
+            p.id
+        )
+                ? '<span class="newBadge">NEW</span>'
+                : ''
+            }
                     </div>
 
                     <div class="price">
@@ -867,10 +887,9 @@ function render() {
 
                     <div class="stock">
                         推定在庫：
-                        ${
-                            getEstimatedStock(p.id)
-                            ?? '未設定'
-                        }
+                        ${getEstimatedStock(p.id)
+            ?? '未設定'
+            }
                     </div>
 
 
@@ -1410,7 +1429,7 @@ function getSoldQuantity(productId) {
 function getEstimatedStock(productId) {
     const initialStock =
         initialInventory[
-            productId
+        productId
         ];
 
     if (
@@ -1945,54 +1964,537 @@ async function importJson(file) {
 /* ========================================
    URL共有
 ======================================== */
+
 /**
- * 売上データをURL転送用の
- * コンパクト形式へ変換
+ * 商品IDをURL共有用の数値IDへ変換
+ *
+ * cd_001   → 1
+ * book_001 → 1001
+ *
+ * @param {string} productId 商品ID
+ * @return {number}
+ */
+function compactProductId(productId) {
+    if (
+        productId.startsWith(
+            'cd_'
+        )
+    ) {
+        return parseInt(
+            productId.substring(
+                'cd_'.length
+            ),
+            10
+        );
+    }
+
+
+    if (
+        productId.startsWith(
+            'book_'
+        )
+    ) {
+        return (
+            1000
+            + parseInt(
+                productId.substring(
+                    'book_'.length
+                ),
+                10
+            )
+        );
+    }
+
+
+    throw new Error(
+        `URL共有に対応していない商品IDです：${productId}`
+    );
+}
+
+
+/**
+ * URL共有用の数値IDから
+ * 商品IDを復元
+ *
+ * 1    → cd_001
+ * 1001 → book_001
+ *
+ * @param {number} compactId 数値ID
+ * @return {string}
+ */
+function expandProductId(compactId) {
+    if (
+        compactId >= 1000
+    ) {
+        return (
+            'book_'
+            + String(
+                compactId - 1000
+            ).padStart(
+                3,
+                '0'
+            )
+        );
+    }
+
+
+    return (
+        'cd_'
+        + String(
+            compactId
+        ).padStart(
+            3,
+            '0'
+        )
+    );
+}
+
+
+/**
+ * セットIDをURL共有用の数値IDへ変換
+ *
+ * set_001 → 1
+ *
+ * @param {string} setId セットID
+ * @return {number}
+ */
+function compactSetId(setId) {
+    if (
+        !setId.startsWith(
+            'set_'
+        )
+    ) {
+        throw new Error(
+            `URL共有に対応していないセットIDです：${setId}`
+        );
+    }
+
+
+    return parseInt(
+        setId.substring(
+            'set_'.length
+        ),
+        10
+    );
+}
+
+
+/**
+ * URL共有用の数値IDから
+ * セットIDを復元
+ *
+ * 1 → set_001
+ *
+ * @param {number} compactId 数値ID
+ * @return {string}
+ */
+function expandSetId(compactId) {
+    return (
+        'set_'
+        + String(
+            compactId
+        ).padStart(
+            3,
+            '0'
+        )
+    );
+}
+
+
+/**
+ * ISO日時から
+ * 日本時間のHH:mmを取得
+ *
+ * @param {string} timestamp ISO日時
+ * @return {string}
+ */
+function compactTransactionTime(timestamp) {
+    return new Date(
+        timestamp
+    ).toLocaleTimeString(
+        'ja-JP',
+        {
+            timeZone:
+                'Asia/Tokyo',
+
+            hour:
+                '2-digit',
+
+            minute:
+                '2-digit',
+
+            hour12:
+                false
+        }
+    );
+}
+
+
+/**
+ * HH:mmとイベント開催日から
+ * ISO日時を復元
+ *
+ * @param {string} time HH:mm
+ * @return {string}
+ */
+function expandTransactionTime(time) {
+    if (
+        !eventData.date
+    ) {
+        throw new Error(
+            'イベント開催日が設定されていません。'
+        );
+    }
+
+
+    return new Date(
+        `${eventData.date}T${time}:00+09:00`
+    ).toISOString();
+}
+
+
+/**
+ * 商品数量をURL共有用形式へ変換
+ *
+ * 数量1：
+ * 15
+ *
+ * 数量2以上：
+ * [15, 2]
+ *
+ * @param {Object} item 商品
+ * @return {number|Array}
+ */
+function compactItem(item) {
+    const productId =
+        compactProductId(
+            item.productId
+        );
+
+
+    if (
+        item.quantity === 1
+    ) {
+        return productId;
+    }
+
+
+    return [
+        productId,
+        item.quantity
+    ];
+}
+
+
+/**
+ * URL共有用商品データを復元
+ *
+ * @param {number|Array} compactItemData 商品データ
+ * @return {Object}
+ */
+function expandItem(compactItemData) {
+    if (
+        Array.isArray(
+            compactItemData
+        )
+    ) {
+        return {
+            productId:
+                expandProductId(
+                    compactItemData[0]
+                ),
+
+            quantity:
+                compactItemData[1]
+        };
+    }
+
+
+    return {
+        productId:
+            expandProductId(
+                compactItemData
+            ),
+
+        quantity:
+            1
+    };
+}
+
+
+/**
+ * セット数量をURL共有用形式へ変換
+ *
+ * 数量1：
+ * 1
+ *
+ * 数量2以上：
+ * [1, 2]
+ *
+ * @param {Object} set セット
+ * @return {number|Array}
+ */
+function compactAppliedSet(set) {
+    const setId =
+        compactSetId(
+            set.setId
+        );
+
+
+    if (
+        set.quantity === 1
+    ) {
+        return setId;
+    }
+
+
+    return [
+        setId,
+        set.quantity
+    ];
+}
+
+
+/**
+ * URL共有用セットデータを復元
+ *
+ * @param {number|Array} compactSetData セットデータ
+ * @return {Object}
+ */
+function expandAppliedSet(compactSetData) {
+    if (
+        Array.isArray(
+            compactSetData
+        )
+    ) {
+        return {
+            setId:
+                expandSetId(
+                    compactSetData[0]
+                ),
+
+            quantity:
+                compactSetData[1]
+        };
+    }
+
+
+    return {
+        setId:
+            expandSetId(
+                compactSetData
+            ),
+
+        quantity:
+            1
+    };
+}
+
+
+/**
+ * 復元した商品とセットから
+ * 会計金額を再構築
+ *
+ * @param {Array} items 商品一覧
+ * @param {Array} appliedSets 適用セット一覧
+ * @return {Object}
+ */
+function restorePricing(
+    items,
+    appliedSets
+) {
+    let subtotal = 0;
+
+
+    /*
+     * 通常価格の合計
+     */
+    for (
+        const item
+        of items
+    ) {
+        const product =
+            pmap[
+            item.productId
+            ];
+
+
+        if (!product) {
+            throw new Error(
+                `商品 ${item.productId} が見つかりません。`
+            );
+        }
+
+
+        subtotal +=
+            product.price
+            * item.quantity;
+    }
+
+
+    let discount = 0;
+
+
+    /*
+     * セットごとの割引額を計算
+     */
+    for (
+        const appliedSet
+        of appliedSets
+    ) {
+        const set =
+            setMaster.find(
+                item => {
+                    return (
+                        item.id
+                        === appliedSet.setId
+                    );
+                }
+            );
+
+
+        if (!set) {
+            throw new Error(
+                `セット ${appliedSet.setId} が見つかりません。`
+            );
+        }
+
+
+        let normalSetPrice = 0;
+
+
+        for (
+            const [
+                productId,
+                quantity
+            ]
+            of Object.entries(
+                set.requires
+            )
+        ) {
+            const product =
+                pmap[
+                productId
+                ];
+
+
+            if (!product) {
+                throw new Error(
+                    `商品 ${productId} が見つかりません。`
+                );
+            }
+
+
+            normalSetPrice +=
+                product.price
+                * quantity;
+        }
+
+
+        const setDiscount =
+            normalSetPrice
+            - set.setPrice;
+
+
+        discount +=
+            setDiscount
+            * appliedSet.quantity;
+    }
+
+
+    return {
+        subtotal,
+        discount,
+
+        total:
+            subtotal
+            - discount
+    };
+}
+
+
+/**
+ * 売上データを
+ * URL転送専用の超コンパクト形式へ変換
+ *
+ * 全体：
+ *
+ * [
+ *     eventId,
+ *     registerId,
+ *     transactions
+ * ]
+ *
+ * 取引：
+ *
+ * [
+ *     "12:34",
+ *     1,
+ *     [6, 11],
+ *     [1]
+ * ]
  *
  * @param {Object} data 通常形式の売上データ
  * @return {Array}
  */
 function compactSalesData(data) {
     return [
-        data.schemaVersion,
-
         data.eventId,
-
         data.registerId,
 
         data.transactions.map(
-            transaction => {
+            (
+                transaction,
+                index
+            ) => {
 
-                return [
-                    transaction.transactionId,
-
-                    new Date(
+                const compactTransaction = [
+                    compactTransactionTime(
                         transaction.timestamp
-                    ).getTime(),
-
-                    transaction.items.map(
-                        item => [
-                            item.productId,
-                            item.quantity
-                        ]
                     ),
 
+                    /*
+                     * URL共有時の取引番号
+                     */
+                    index + 1,
+
+                    transaction.items.map(
+                        item => {
+                            return compactItem(
+                                item
+                            );
+                        }
+                    )
+                ];
+
+
+                /*
+                 * セットが存在する場合だけ
+                 * 4番目の要素を追加
+                 */
+                const appliedSets =
                     (
                         transaction.appliedSets
                         || []
                     ).map(
-                        set => [
-                            set.setId,
-                            set.quantity
-                        ]
-                    ),
+                        set => {
+                            return compactAppliedSet(
+                                set
+                            );
+                        }
+                    );
 
-                    transaction.pricing.subtotal,
 
-                    transaction.pricing.discount,
+                if (
+                    appliedSets.length
+                ) {
+                    compactTransaction.push(
+                        appliedSets
+                    );
+                }
 
-                    transaction.pricing.total
-                ];
+
+                return compactTransaction;
             }
         )
     ];
@@ -2008,79 +2510,119 @@ function compactSalesData(data) {
  */
 function expandSalesData(compact) {
     const [
-        schemaVersion,
         eventId,
         registerId,
         transactions
     ] = compact;
 
 
+    if (
+        String(eventId)
+        !== String(
+            eventData.eventId
+        )
+    ) {
+        throw new Error(
+            '別イベントの売上データです。'
+        );
+    }
+
+
+    const expandedTransactions =
+        transactions.map(
+            transaction => {
+
+                const [
+                    time,
+                    transactionNumber,
+                    compactItems,
+                    compactSets = []
+                ] = transaction;
+
+
+                const items =
+                    compactItems.map(
+                        item => {
+                            return expandItem(
+                                item
+                            );
+                        }
+                    );
+
+
+                const appliedSets =
+                    compactSets.map(
+                        set => {
+                            return expandAppliedSet(
+                                set
+                            );
+                        }
+                    );
+
+
+                const pricing =
+                    restorePricing(
+                        items,
+                        appliedSets
+                    );
+
+
+                return {
+                    /*
+                     * イベントID＋端末ID＋端末内番号で
+                     * 一意な取引IDを復元
+                     */
+                    transactionId:
+                        `${eventId}:${registerId}:${transactionNumber}`,
+
+                    eventId:
+                        String(
+                            eventId
+                        ),
+
+                    registerId:
+                        String(
+                            registerId
+                        ),
+
+                    timestamp:
+                        expandTransactionTime(
+                            time
+                        ),
+
+                    items,
+
+                    pricing,
+
+                    appliedSets
+                };
+            }
+        );
+
+
     return {
-        schemaVersion,
+        schemaVersion:
+            1,
 
-        eventId,
+        eventId:
+            String(
+                eventId
+            ),
 
-        registerId,
+        registerId:
+            String(
+                registerId
+            ),
+
+        exportedAt:
+            new Date().toISOString(),
 
         transactions:
-            transactions.map(
-                transaction => {
-
-                    const [
-                        transactionId,
-                        timestamp,
-                        items,
-                        appliedSets,
-                        subtotal,
-                        discount,
-                        total
-                    ] = transaction;
-
-
-                    return {
-                        transactionId,
-
-                        eventId,
-
-                        registerId,
-
-                        timestamp:
-                            new Date(
-                                timestamp
-                            ).toISOString(),
-
-                        items:
-                            items.map(
-                                item => ({
-                                    productId:
-                                        item[0],
-
-                                    quantity:
-                                        item[1]
-                                })
-                            ),
-
-                        pricing: {
-                            subtotal,
-                            discount,
-                            total
-                        },
-
-                        appliedSets:
-                            appliedSets.map(
-                                set => ({
-                                    setId:
-                                        set[0],
-
-                                    quantity:
-                                        set[1]
-                                })
-                            )
-                    };
-                }
-            )
+            expandedTransactions
     };
 }
+
+
 /**
  * 売上データを圧縮して
  * Base64URL形式へ変換
@@ -2141,10 +2683,21 @@ async function encodeSalesData(data) {
     }
 
 
-    return btoa(binary)
-        .replaceAll('+', '-')
-        .replaceAll('/', '_')
-        .replaceAll('=', '');
+    return btoa(
+        binary
+    )
+        .replaceAll(
+            '+',
+            '-'
+        )
+        .replaceAll(
+            '/',
+            '_'
+        )
+        .replaceAll(
+            '=',
+            ''
+        );
 }
 
 
@@ -2158,8 +2711,15 @@ async function encodeSalesData(data) {
 async function decodeSalesData(encoded) {
     let base64 =
         encoded
-            .replaceAll('-', '+')
-            .replaceAll('_', '/');
+            .replaceAll(
+                '-',
+                '+'
+            )
+            .replaceAll(
+                '_',
+                '/'
+            );
+
 
     while (
         base64.length % 4
@@ -2222,6 +2782,7 @@ async function decodeSalesData(encoded) {
     );
 }
 
+
 /**
  * 売上共有URLを生成
  *
@@ -2244,10 +2805,17 @@ async function createSalesUrl() {
         );
 
 
+    /*
+     * ev / regなどは共有URLには不要
+     */
     url.search = '';
 
+
+    /*
+     * sales → s に短縮
+     */
     url.hash =
-        `sales=${encoded}`;
+        `s=${encoded}`;
 
 
     return url.toString();
@@ -2288,11 +2856,62 @@ async function copySalesUrl() {
     }
 }
 
+
+/**
+ * URLから圧縮データ部分を取得
+ *
+ * 新形式：
+ * #s=...
+ *
+ * 旧形式：
+ * #sales=...
+ *
+ * @param {string} hash URLハッシュ
+ * @return {string|null}
+ */
+function getEncodedSalesFromHash(
+    hash
+) {
+    /*
+     * 新形式
+     */
+    if (
+        hash.startsWith(
+            '#s='
+        )
+    ) {
+        return hash.substring(
+            '#s='.length
+        );
+    }
+
+
+    /*
+     * 旧形式も一応判定する
+     *
+     * データ形式そのものが異なるため、
+     * decodeSalesDataでは読み込めない場合がある。
+     */
+    if (
+        hash.startsWith(
+            '#sales='
+        )
+    ) {
+        return hash.substring(
+            '#sales='.length
+        );
+    }
+
+
+    return null;
+}
+
+
 /**
  * 入力されたURLから売上データを取得
  *
  * @param {string} urlText 売上共有URL
- * @return {Object}
+ * @return {Promise<Object>}
  */
 async function getSalesDataFromInputUrl(
     urlText
@@ -2303,26 +2922,15 @@ async function getSalesDataFromInputUrl(
         );
 
 
-    if (
-        !url.hash.startsWith(
-            '#sales='
-        )
-    ) {
-        throw new Error(
-            '売上データが含まれていないURLです。'
-        );
-    }
-
-
     const encoded =
-        url.hash.substring(
-            '#sales='.length
+        getEncodedSalesFromHash(
+            url.hash
         );
 
 
     if (!encoded) {
         throw new Error(
-            '売上データが空です。'
+            '売上データが含まれていないURLです。'
         );
     }
 
@@ -2332,6 +2940,10 @@ async function getSalesDataFromInputUrl(
     );
 }
 
+
+/*
+ * URL入力ボタン
+ */
 document.querySelector(
     '#importUrlBtn'
 ).onclick =
@@ -2389,8 +3001,8 @@ document.querySelector(
                 || '売上URLを読み込めませんでした。'
             );
         }
-
     };
+
 
 /**
  * URLから受信した売上データ
@@ -2410,7 +3022,8 @@ function showSalesImportDialog(data) {
 
 
     const transactions =
-        data.transactions || [];
+        data.transactions
+        || [];
 
 
     /*
@@ -2418,7 +3031,10 @@ function showSalesImportDialog(data) {
      */
     const total =
         transactions.reduce(
-            (sum, transaction) => {
+            (
+                sum,
+                transaction
+            ) => {
                 return (
                     sum
                     + (
@@ -2436,7 +3052,10 @@ function showSalesImportDialog(data) {
      */
     const itemCount =
         transactions.reduce(
-            (sum, transaction) => {
+            (
+                sum,
+                transaction
+            ) => {
 
                 const count =
                     (
@@ -2456,7 +3075,10 @@ function showSalesImportDialog(data) {
                     );
 
 
-                return sum + count;
+                return (
+                    sum
+                    + count
+                );
             },
             0
         );
@@ -2525,11 +3147,14 @@ function showSalesImportDialog(data) {
     ).showModal();
 }
 
+
 /**
  * URLから受信した売上データを取り込む
  */
 function confirmSalesImport() {
-    if (!receivedSalesData) {
+    if (
+        !receivedSalesData
+    ) {
         return;
     }
 
@@ -2575,27 +3200,15 @@ function confirmSalesImport() {
 /**
  * 現在のURLから売上データを取得
  *
- * 売上共有URLではない場合はnullを返す
+ * 売上共有URLではない場合は
+ * nullを返す
  *
- * @return {Object|null}
+ * @return {Promise<Object|null>}
  */
 async function getSalesDataFromUrl() {
-    const hash =
-        window.location.hash;
-
-
-    if (
-        !hash.startsWith(
-            '#sales='
-        )
-    ) {
-        return null;
-    }
-
-
     const encoded =
-        hash.substring(
-            '#sales='.length
+        getEncodedSalesFromHash(
+            window.location.hash
         );
 
 
@@ -2611,7 +3224,8 @@ async function getSalesDataFromUrl() {
 
 
 /**
- * URLから受信した売上をマージ
+ * URLから受信した売上を
+ * 自動的にマージ
  */
 async function importSalesFromUrl() {
     try {
@@ -2619,36 +3233,21 @@ async function importSalesFromUrl() {
             await getSalesDataFromUrl();
 
 
+        /*
+         * 普通にPOSを開いただけなら
+         * 何もしない
+         */
         if (!data) {
-            alert(
-                'URLに売上データがありません。'
-            );
-
-            return;
+            return null;
         }
 
 
         /*
-         * 取り込み前に確認
+         * 売上をマージ
+         *
+         * transactionIdが同じものは
+         * mergeSales側で除外される
          */
-        const transactionCount =
-            data.transactions?.length || 0;
-
-
-        const ok =
-            confirm(
-                '売上データを取り込みますか？\n\n'
-                + `イベント：${data.eventId}\n`
-                + `端末：${data.registerId}\n`
-                + `会計数：${transactionCount}件`
-            );
-
-
-        if (!ok) {
-            return;
-        }
-
-
         const result =
             mergeSales(
                 data
@@ -2656,24 +3255,27 @@ async function importSalesFromUrl() {
 
 
         /*
-         * URLから売上データを消す
+         * 取り込み済みの売上データを
+         * URLから削除
          *
-         * 再読み込みによる誤取り込み防止
+         * 再読み込みによる
+         * 再取り込みを防ぐ
          */
         history.replaceState(
             null,
             '',
             window.location.pathname
+            + window.location.search
         );
 
 
-        alert(
-            `${result.addedCount}件を取り込みました。\n`
-            + `重複：${result.duplicateCount}件`
-        );
+        /*
+         * 在庫・売上表示を更新
+         */
+        render();
 
 
-        showMenu();
+        return result;
     }
     catch (error) {
         console.error(
@@ -2683,7 +3285,62 @@ async function importSalesFromUrl() {
 
         alert(
             error.message
-            || '売上URLを読み込めませんでした。'
+            || '売上QRを読み込めませんでした。'
+        );
+
+
+        return null;
+    }
+}
+
+/**
+ * 売上共有QRコードを表示
+ */
+async function showSalesQr() {
+    try {
+        const url =
+            await createSalesUrl();
+
+
+        const qrContainer =
+            document.querySelector(
+                '#salesQr'
+            );
+
+
+        qrContainer.innerHTML = '';
+
+
+        new QRCode(
+            qrContainer,
+            {
+                text:
+                    url,
+
+                width:
+                    280,
+
+                height:
+                    280,
+
+                correctLevel:
+                    QRCode.CorrectLevel.M
+            }
+        );
+
+
+        document.querySelector(
+            '#salesQrDialog'
+        ).showModal();
+    }
+    catch (error) {
+        console.error(
+            error
+        );
+
+
+        alert(
+            'QRコードを作成できませんでした。'
         );
     }
 }
@@ -2872,6 +3529,10 @@ document.querySelector(
             null;
     };
 
+document.querySelector(
+    '#shareQrBtn'
+).onclick =
+    showSalesQr;
 
 /* ==============================
    JSON Import
@@ -3037,6 +3698,15 @@ async function start() {
             });
 
 
+
+    products.sort(
+        (a, b) => {
+            return (
+                new Date(b.releaseDate)
+                - new Date(a.releaseDate)
+            );
+        }
+    );
     /*
      * 商品IDから商品情報を取得できるようにする
      */
@@ -3047,6 +3717,19 @@ async function start() {
                 product
             ])
         );
+
+    const importResult =
+        await importSalesFromUrl();
+
+
+    if (
+        importResult
+    ) {
+        alert(
+            `${importResult.addedCount}件を取り込みました。\n`
+            + `重複：${importResult.duplicateCount}件`
+        );
+    }
 
 
     console.log(
@@ -3060,6 +3743,5 @@ async function start() {
      */
     render();
 }
-
 
 start();
