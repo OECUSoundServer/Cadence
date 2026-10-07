@@ -3261,7 +3261,7 @@ async function importSalesFromUrl() {
          * 再読み込みによる
          * 再取り込みを防ぐ
          */
-        history.replaceState(
+        window.history.replaceState(
             null,
             '',
             window.location.pathname
