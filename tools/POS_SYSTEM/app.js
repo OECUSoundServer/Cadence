@@ -3668,13 +3668,12 @@ async function start() {
 
 
     /*
-     * eventDataの商品と
-     * data.jsonの楽曲情報を結合
+     * イベントで指定された商品IDから
+     * 商品マスタの情報を取得する
+     *
+     * 取得した商品情報には、
+     * data.jsonの楽曲情報も結合する
      */
-    /*
-    * イベントで指定された商品IDから
-    * 商品マスタの情報を取得する
-    */
     products =
         eventData.productIds
             .map(productId => {
@@ -3698,7 +3697,9 @@ async function start() {
             });
 
 
-
+    /*
+     * 発行日の新しい順に並べる
+     */
     products.sort(
         (a, b) => {
             return (
@@ -3707,8 +3708,15 @@ async function start() {
             );
         }
     );
+
+
     /*
-     * 商品IDから商品情報を取得できるようにする
+     * 商品IDから商品情報を
+     * 取得できるマップを作成する
+     *
+     * URLから売上データを復元する際にも
+     * このpmapを使用するため、
+     * URL取り込みより先に作成する
      */
     pmap =
         Object.fromEntries(
@@ -3718,19 +3726,6 @@ async function start() {
             ])
         );
 
-    const importResult =
-        await importSalesFromUrl();
-
-
-    if (
-        importResult
-    ) {
-        alert(
-            `${importResult.addedCount}件を取り込みました。\n`
-            + `重複：${importResult.duplicateCount}件`
-        );
-    }
-
 
     console.log(
         '商品データ:',
@@ -3739,9 +3734,76 @@ async function start() {
 
 
     /*
-     * 画面描画
+     * まず通常の画面を描画する
      */
     render();
+
+
+    /*
+     * QRコード・共有URLから開かれた場合は、
+     * URL内の売上データを自動的に取り込む
+     *
+     * 通常のURLから起動した場合は
+     * 何も行わない
+     */
+    try {
+        const importResult =
+            await importSalesFromUrl();
+
+
+        /*
+         * 売上データがURLに含まれていなければ
+         * importResultはnullになる
+         */
+        if (!importResult) {
+            return;
+        }
+
+
+        /*
+         * 売上データを取り込んだので、
+         * 在庫・売上表示を更新する
+         */
+        render();
+
+
+        /*
+         * 取り込み結果を表示する
+         */
+        let message =
+            `${importResult.addedCount}件を取り込みました。`;
+
+
+        if (
+            importResult.duplicateCount
+            > 0
+        ) {
+            message +=
+                '\n'
+                + `重複：${importResult.duplicateCount}件`;
+        }
+
+
+        alert(
+            message
+        );
+    }
+    catch (error) {
+        console.error(
+            '売上データの自動取り込みに失敗しました。',
+            error
+        );
+
+
+        alert(
+            '売上データを取り込めませんでした。\n'
+            + error.message
+        );
+    }
 }
 
+
+/*
+ * POSを起動する
+ */
 start();
