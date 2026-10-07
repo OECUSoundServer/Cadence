@@ -3224,73 +3224,60 @@ async function getSalesDataFromUrl() {
 
 
 /**
- * URLから受信した売上を
- * 自動的にマージ
+ * URLに含まれている売上データを
+ * 自動的に取り込む
+ *
+ * @return {Promise<Object|null>}
+ *         取り込み結果
  */
 async function importSalesFromUrl() {
-    try {
-        const data =
-            await getSalesDataFromUrl();
+    /*
+     * URLのハッシュから
+     * 売上データを取得する
+     */
+    const data =
+        await getSalesDataFromUrl();
 
 
-        /*
-         * 普通にPOSを開いただけなら
-         * 何もしない
-         */
-        if (!data) {
-            return null;
-        }
-
-
-        /*
-         * 売上をマージ
-         *
-         * transactionIdが同じものは
-         * mergeSales側で除外される
-         */
-        const result =
-            mergeSales(
-                data
-            );
-
-
-        /*
-         * 取り込み済みの売上データを
-         * URLから削除
-         *
-         * 再読み込みによる
-         * 再取り込みを防ぐ
-         */
-        window.history.replaceState(
-            null,
-            '',
-            window.location.pathname
-            + window.location.search
-        );
-
-
-        /*
-         * 在庫・売上表示を更新
-         */
-        render();
-
-
-        return result;
-    }
-    catch (error) {
-        console.error(
-            error
-        );
-
-
-        alert(
-            error.message
-            || '売上QRを読み込めませんでした。'
-        );
-
-
+    /*
+     * 売上データが含まれていない場合は
+     * 何もしない
+     */
+    if (!data) {
         return null;
     }
+
+
+    /*
+     * 売上データを現在の端末へマージする
+     */
+    const result =
+        mergeSales(
+            data
+        );
+
+
+    /*
+     * URLから売上データ部分を削除する
+     *
+     * replaceStateを使用できない環境でも
+     * 取り込み処理自体には影響させない
+     */
+    try {
+        window.location.hash = '';
+    }
+    catch (error) {
+        console.warn(
+            'URLの売上データ部分を削除できませんでした。',
+            error
+        );
+    }
+
+
+    /*
+     * 取り込み結果を返す
+     */
+    return result;
 }
 
 /**
