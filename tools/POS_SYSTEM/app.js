@@ -3224,24 +3224,21 @@ async function getSalesDataFromUrl() {
 
 
 /**
- * URLに含まれている売上データを
- * 自動的に取り込む
+ * URLに含まれている売上データを確認して取り込む
  *
  * @return {Promise<Object|null>}
  *         取り込み結果
  */
 async function importSalesFromUrl() {
     /*
-     * URLのハッシュから
-     * 売上データを取得する
+     * URLから売上データを取得
      */
     const data =
         await getSalesDataFromUrl();
 
 
     /*
-     * 売上データが含まれていない場合は
-     * 何もしない
+     * 売上データがなければ何もしない
      */
     if (!data) {
         return null;
@@ -3249,7 +3246,67 @@ async function importSalesFromUrl() {
 
 
     /*
-     * 売上データを現在の端末へマージする
+     * マージ前の内容を確認
+     */
+    const preview =
+        previewSalesMerge(
+            data
+        );
+
+
+    /*
+     * 確認メッセージ
+     */
+    let message =
+        '売上データを取り込みます。\n\n'
+        + `送信元：端末 ${preview.registerId}\n`
+        + `データ合計：${preview.totalCount}件\n`
+        + `新規：${preview.newCount}件\n`
+        + `重複：${preview.duplicateCount}件\n`
+        + `頒布：${preview.quantity}点\n`
+        + `売上：${yen(preview.total)}\n\n`;
+
+
+    if (preview.newCount === 0) {
+        message +=
+            '新しく取り込むデータはありません。';
+
+        alert(
+            message
+        );
+
+        clearSalesHash();
+
+        return null;
+    }
+
+
+    message +=
+        `${preview.newCount}件を取り込みますか？`;
+
+
+    /*
+     * ユーザーに確認
+     */
+    const confirmed =
+        confirm(
+            message
+        );
+
+
+    /*
+     * キャンセルされた場合
+     *
+     * QRをもう一度開けば再確認できるように
+     * URLは消さない
+     */
+    if (!confirmed) {
+        return null;
+    }
+
+
+    /*
+     * 売上をマージ
      */
     const result =
         mergeSales(
@@ -3258,26 +3315,29 @@ async function importSalesFromUrl() {
 
 
     /*
-     * URLから売上データ部分を削除する
-     *
-     * replaceStateを使用できない環境でも
-     * 取り込み処理自体には影響させない
+     * 取り込み済みのQRデータを
+     * URLから削除
      */
-    try {
+    clearSalesHash();
+
+
+    return result;
+}
+
+
+/**
+ * URLから売上共有用ハッシュを削除する
+ */
+function clearSalesHash() {
+    /*
+     * history.replaceStateが使用できない環境でも
+     * 動作するようlocation.hashを使用する
+     */
+    if (
+        window.location.hash
+    ) {
         window.location.hash = '';
     }
-    catch (error) {
-        console.warn(
-            'URLの売上データ部分を削除できませんでした。',
-            error
-        );
-    }
-
-
-    /*
-     * 取り込み結果を返す
-     */
-    return result;
 }
 
 /**
