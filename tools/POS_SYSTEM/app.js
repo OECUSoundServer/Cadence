@@ -2709,6 +2709,15 @@ async function encodeSalesData(data) {
  * @return {Promise<Object>}
  */
 async function decodeSalesData(encoded) {
+    console.log(
+        '受信したencoded:',
+        encoded
+    );
+
+
+    /*
+     * Base64URL → Base64
+     */
     let base64 =
         encoded
             .replaceAll(
@@ -2728,10 +2737,26 @@ async function decodeSalesData(encoded) {
     }
 
 
+    console.log(
+        'Base64変換完了:',
+        base64
+    );
+
+
+    /*
+     * Base64をバイナリへ変換
+     */
     const binary =
         atob(
             base64
         );
+
+
+    console.log(
+        'Base64デコード完了:',
+        binary.length,
+        'bytes'
+    );
 
 
     const compressed =
@@ -2743,6 +2768,14 @@ async function decodeSalesData(encoded) {
                 );
             }
         );
+
+
+    /*
+     * gzip展開
+     */
+    console.log(
+        'gzip展開開始'
+    );
 
 
     const stream =
@@ -2765,21 +2798,59 @@ async function decodeSalesData(encoded) {
         );
 
 
+    console.log(
+        'gzip展開完了:',
+        bytes.length,
+        'bytes'
+    );
+
+
+    /*
+     * UTF-8 → JSON文字列
+     */
     const json =
         new TextDecoder().decode(
             bytes
         );
 
 
+    console.log(
+        '復元されたJSON:',
+        json
+    );
+
+
+    /*
+     * JSON解析
+     */
     const compact =
         JSON.parse(
             json
         );
 
 
-    return expandSalesData(
+    console.log(
+        'compact:',
         compact
     );
+
+
+    /*
+     * 通常形式へ復元
+     */
+    const expanded =
+        expandSalesData(
+            compact
+        );
+
+
+    console.log(
+        '復元された売上データ:',
+        expanded
+    );
+
+
+    return expanded;
 }
 
 
@@ -3220,6 +3291,107 @@ async function getSalesDataFromUrl() {
     return await decodeSalesData(
         encoded
     );
+}
+
+/**
+ * 売上データをマージした場合の内容を確認する
+ *
+ * @param {Object} data 売上データ
+ * @return {Object}
+ */
+function previewSalesMerge(data) {
+    const currentSales =
+        sales();
+
+
+    /*
+     * すでに保存されている取引ID
+     */
+    const existingIds =
+        new Set(
+            currentSales.map(
+                transaction => {
+                    return transaction.transactionId;
+                }
+            )
+        );
+
+
+    /*
+     * 新しく取り込まれる取引だけ取得
+     */
+    const newTransactions =
+        data.transactions.filter(
+            transaction => {
+                return !existingIds.has(
+                    transaction.transactionId
+                );
+            }
+        );
+
+
+    const duplicateCount =
+        data.transactions.length
+        - newTransactions.length;
+
+
+    /*
+     * 新規取引の頒布数
+     */
+    const quantity =
+        newTransactions.reduce(
+            (total, transaction) => {
+                return (
+                    total
+                    + transaction.items.reduce(
+                        (sum, item) => {
+                            return (
+                                sum
+                                + item.quantity
+                            );
+                        },
+                        0
+                    )
+                );
+            },
+            0
+        );
+
+
+    /*
+     * 新規取引の売上
+     */
+    const total =
+        newTransactions.reduce(
+            (sum, transaction) => {
+                return (
+                    sum
+                    + transaction.pricing.total
+                );
+            },
+            0
+        );
+
+
+    return {
+        registerId:
+            data.registerId,
+
+        totalCount:
+            data.transactions.length,
+
+        newCount:
+            newTransactions.length,
+
+        duplicateCount:
+            duplicateCount,
+
+        quantity:
+            quantity,
+
+        total:
+            total
+    };
 }
 
 
