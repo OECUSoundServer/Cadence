@@ -3,6 +3,7 @@
     "items": [
       { "id": "CAD-0017", "isNew": true },
       { "id": "CAD-0016", "isNew": true },
+      { "id": "CAD-0015" },
       { "id": "CAD-0014" },
       { "id": "CAD-0013" },
       { "id": "CAD-0012" },
@@ -12,10 +13,8 @@
       { "id": "CAD-0008" },
       { "id": "CAD-0007" },
       { "id": "CAD-0006" },
-      { "id": "ITEM-KEYRING-001" },
       { "id": "CAD-0004" },
       { "id": "CAD-0005" },
-      { "id": "ITEM-KEYRING-002" },
       { "id": "CAD-0002" },
       { "id": "CAD-0002-TOKUTEN" },
       { "id": "DLC" }
