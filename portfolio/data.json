@@ -10,6 +10,15 @@
     "pin": true
   },
   {
+    "title": "科学世紀のカフェテラス15",
+    "href": "../event/e.html?e=cafeterrace15",
+    "image": "../img/yellow.png",
+    "fullImage": "../img/yellow.png",
+    "categories": ["event", "oshinagaki", "touhou"],
+    "date": "22026/11/08",
+    "captions": ["お品書き", "2026/11/08 科学世紀のカフェテラス15"]
+  },
+  {
     "title": "東方紅楼夢22",
     "href": "../event/e.html?e=kouroumu22",
     "image": "../img/yellow.png",

@@ -1,4 +1,17 @@
 {
+  "cafeterrace15": {
+    "items": [
+      { "id": "CAD-0017" },
+      { "id": "CAD-0016" },
+      { "id": "CAD-0014" },
+      { "id": "CAD-0007" },
+      { "id": "CAD-0006" },
+      { "id": "CAD-0004" },
+      { "id": "CAD-0002" },
+      { "id": "CAD-0002-TOKUTEN" },
+      { "id": "DLC" }
+    ]
+  },
   "kouroumu22": {
     "items": [
       { "id": "CAD-0017", "isNew": true },
