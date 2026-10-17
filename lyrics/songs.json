@@ -570,9 +570,9 @@
     "title": "二人の未来地図",
     "arranger": ["mixtuti桜餅","クロカビ"],
     "lyricist": ["A.o.I_Neko"],
-    "vocal": ["狐子"],
+    "vocal": ["狐子", "Mai2"],
     "genre": "ボカロ",
-    "tags": ["東方","狐子"],
+    "tags": ["東方","狐子","Mai2"],
     "release": {
       "catalog": "CAD-0016",
       "title": "二人の未来地図",
@@ -590,6 +590,10 @@
       "ja": {
         "name": "日本語",
         "file": "future_map-ja.txt"
+      },
+      "en": {
+        "name": "English",
+        "file": "future_map-en.txt"
       }
     }
   },
