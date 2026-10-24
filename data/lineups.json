@@ -1,6 +1,7 @@
 {
   "cafeterrace15": {
     "items": [
+      { "id": "CAD-0018", "isNew": true },
       { "id": "CAD-0017" },
       { "id": "CAD-0016" },
       { "id": "CAD-0014" },

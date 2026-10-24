@@ -1,4 +1,27 @@
 {
+  "observation_theory": {
+    "title": "二人だけの観測理論",
+    "arranger": ["mixtuti桜餅"],
+    "lyricist": ["A.o.I_Neko"],
+    "vocal": ["Mai2", "狐子"],
+    "genre": "ボカロ",
+    "tags": ["東方","Mai2","狐子"],
+    "release": {
+      "catalog": "CAD-0018",
+      "title": "二人だけの観測理論",
+      "image": "../img/theory_Logo.png",
+      "event": "科学世紀のカフェテラス15",
+      "date": "2026-11-08",
+      "url": "../event/CAD-0018.html",
+      "format": "CD"
+    },
+    "languages": {
+      "ja": {
+        "name": "日本語",
+        "file": "observation_theory-ja.txt"
+      }
+    }
+  },
   "lost_deram": {
     "title": "夢を失くしたその先へ",
     "arranger": ["クロカビ"],

@@ -1,4 +1,13 @@
 {
+  "CAD-0018": {
+    "name": "二人だけの観測理論",
+    "thumb": "../img/theory_Logo.png",
+    "detail": "../event/CAD-0018.html",
+    "categories": ["cd"],
+    "price": 300,
+    "captionDefault": "秘封倶楽部限定",
+    "releaseText": "2026/11/08 科学世紀のカフェテラス15"
+  },
   "CAD-0017": {
     "name": "夢と現のアティチュード(CD版)",
     "thumb": "../img/attitude_CD.png",
@@ -14,7 +23,7 @@
     "detail": "../event/CAD-0016.html",
     "categories": ["cd"],
     "price": 500,
-    "captionDefault": "東方Project限定",
+    "captionDefault": "秘封倶楽部限定",
     "releaseText": "2026/10/11 東方紅楼夢22"
   },
   "SET-CADB2-CAD15": {
