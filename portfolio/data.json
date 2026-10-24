@@ -19,6 +19,15 @@
     "captions": ["お品書き", "2026/11/08 科学世紀のカフェテラス15"]
   },
   {
+    "title": "二人だけの観測理論",
+    "href": "../event/CAD-0018.html",
+    "image": "../img/theory_Logo.png",
+    "fullImage": "../img/theory_Logo.png",
+    "categories": ["sound", "cd", "touhou"],
+    "date": "2026-11-08",
+    "captions": ["秘封倶楽部限定", "2026/11/08 科学世紀のカフェテラス15"]
+  },
+  {
     "title": "東方紅楼夢22",
     "href": "../event/e.html?e=kouroumu22",
     "image": "../img/yellow.png",
@@ -49,7 +58,7 @@
     "buttons": [
       {"href": "https://cadence.booth.pm/items/8936018", "label": "booth", "class": "button button-3d button-mini button-rounded button-red"}
     ],
-    "captions": ["東方Project限定", "2026/10/11 東方紅楼夢22"]
+    "captions": ["秘封倶楽部限定", "2026/10/11 東方紅楼夢22"]
   },
   {
     "title": "けもケット17",
