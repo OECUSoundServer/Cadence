@@ -5,7 +5,7 @@
     "cover": "../img/theory_Logo.png",
     "page": "../event/CAD-0018.html",
     "icon": {
-      "type": "image",
+      "type": "fa",
       "src": "fas fa-star-half-alt",
       "alt": ""
     },
