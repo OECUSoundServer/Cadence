@@ -16,7 +16,8 @@ const AUTH_SECRETS = {
     "b16455826be9": "yVvs8qUGt4XEopzZ5USDSdgG3MLkKbek",
     "a8e61b0159c8": "xPZDxvQo3kVH8NHGZUv6dtWj93yxk9DR",
     "5c7bcb5b9c4c": "3dWPvLdaXFT9ttw5GdynfZ3z5ayKFoom",
-    "3dedafdf8da3": "zwdYQjGa2PXQmQirwagxL9BmpWM8Hgis"
+    "3dedafdf8da3": "zwdYQjGa2PXQmQirwagxL9BmpWM8Hgis",
+    "441f493e7b3c": "mgiomDMZyHMMKYwTecMrGCG4H8v9CX5p"
 };
 
 // ==========================================
