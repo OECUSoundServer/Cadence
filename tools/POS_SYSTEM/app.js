@@ -140,6 +140,15 @@ const productMaster = [
         youtube: 'https://youtu.be/D87h-ncuW-M?si=KBFTRt6UHyrQ01ko'
     },
     {
+        id: 'cd_016',
+        catalogNumber: 'CAD-0018',
+        type: 'CD',
+        price: 400,
+        cover: 'https://oecusoundserver.github.io/Cadence/img/theory_Logo.png',
+        description: '秘封倶楽部限定アレンジCD',
+        youtube: 'https://youtu.be/Db0aENREhL0?si=aR0QebCcZOK6VdOy'
+    },
+    {
         id: 'book_001',
         catalogNumber: 'CADB-0001',
         name: 'RECORD',
@@ -261,6 +270,7 @@ const initialInventory = {
     cd_013: 16,
     cd_014: 26,
     cd_015: 29,
+    cd_016: 15,
 
     book_001: 30,
     book_002: 5
@@ -305,6 +315,27 @@ const events = {
     '2': {
         name:
             '京都合同',
+        data: '2026-11-08',
+
+        productIds: [
+            'cd_002',
+            'cd_004',
+            'cd_005',
+            'cd_012',
+            'cd_014',
+            'cd_015',
+            'cd_016'
+        ],
+        newProductIds: [
+            'cd_016'
+        ],
+        setIds: []
+    },
+
+    '3': {
+        name:
+            '京都合同',
+        
 
         productIds: [
             'cd_006',
