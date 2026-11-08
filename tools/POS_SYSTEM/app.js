@@ -315,7 +315,7 @@ const events = {
     '2': {
         name:
             '京都合同',
-        data: '2026-11-08',
+        date: '2026-11-08',
 
         productIds: [
             'cd_001',
