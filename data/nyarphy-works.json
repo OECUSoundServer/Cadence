@@ -7,7 +7,7 @@
       "date": "2026-09-20",
       "category": "ILLUSTRATION BOOK",
       "circle": "Cadence",
-      "image": "../img/BaiShou_001.png",
+      "image": "https://oecusoundserver.github.io/Cadence/img/BaiShou_001.png",
       "url": "../nyarphy/works/CADB-0002.html",
       "description": {
         "ja": "「有兽焉」のキャラクターたちの日常を描いたフルカラーイラスト集。",
@@ -20,7 +20,7 @@
       "date": "2026-04-19",
       "category": "ILLUSTRATION BOOK",
       "circle": "Cadence",
-      "image": "./../img/Record_001.png",
+      "image": "https://oecusoundserver.github.io/Cadence/img/Record_001.png",
       "url": "../portfolio/CADB-0001.html",
       "description": {
         "ja": "「Changed」のキャラクターたちを描いたフルカラーイラスト集。SNSで公開した作品を中心に、加筆修正イラストや新規描き下ろしも収録しています。",
