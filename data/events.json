@@ -51,7 +51,7 @@
   "c106": {
     "pageTitle": "Cadence｜コミックマーケット106 Webお品書き",
     "eventName": "コミックマーケット106",
-    "date": "2026/08/15",
+    "date": "2025/08/15",
     "place": "東京ビッグサイト",
     "booth": "西あ-12a",
     "note": "ここに載っているもの以外の頒布は基本的に行いません。"
@@ -101,7 +101,7 @@
     "booth": "F-16",
     "note": "ここに載っているもの以外の頒布は基本的に行いません。アクスタは受注予定？"
   },
-  
+
   "daigakusai": {
     "pageTitle": "Cadence｜大学祭 Webお品書き",
     "eventName": "大学祭",
@@ -127,5 +127,31 @@
     "place": "TRC 東京流通センター",
     "booth": "G-09",
     "note": "ここに載っているもの以外の頒布は基本的に行いません。"
+  },
+
+  "vocakore2025": {
+    "eventName": "ボカコレ2025冬",
+    "date": "2025/02/21",
+    "url": "vocakore2025.html"
+  },
+  "taikenkai": {
+    "eventName": "作詞作曲体験会",
+    "date": "2023/05/14",
+    "url": "taikenkai.html"
+  },
+  "sounddesignjam": {
+    "eventName": "【入門編】サウンド＋デザインジャム",
+    "date": "2022/08/28",
+    "url": "SDFirst.html"
+  },
+  "nawafes2022": {
+    "eventName": "なわフェス2022",
+    "date": "2022/11/03",
+    "url": "Nawafes.html"
+  },
+  "vocakore2022": {
+    "eventName": "ボカコレ2022秋",
+    "date": "2022/10/10",
+    "url": "../portfolio/vocakore.html"
   }
 }
