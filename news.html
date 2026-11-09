@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEWS | Circle Portal</title>
+
+    <link rel="stylesheet" href="./css/portal.css">
+    <script src="./js/news.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="news-header-inner">
+            <a href="./index.html" class="news-back-link">
+                ← ポータルに戻る
+            </a>
+        </div>
+    </header>
+
+    <main class="container news-page-container">
+
+        <section class="news-section">
+
+            <h1>NEWS</h1>
+            <p>お知らせ一覧</p>
+
+            <div class="news-filters">
+
+                <button type="button" class="filter-button active" data-news-filter="all" aria-pressed="true">
+                    すべて
+                </button>
+
+                <button type="button" class="filter-button" data-news-filter="cadence" aria-pressed="false">
+                    Cadence
+                </button>
+
+                <button type="button" class="filter-button" data-news-filter="nyarphy" aria-pressed="false">
+                    にゃーふぃの法則
+                </button>
+
+            </div>
+
+            <div id="news-list" class="news-list" data-news-circle="all" data-news-show-all="true"
+                data-news-source="./new.html" data-news-root="./">
+                お知らせを読み込んでいます...
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

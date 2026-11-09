@@ -47,7 +47,7 @@
   },
   "CADB-0002": {
     "name": "百兽日常",
-    "thumb": "../img/BaiShou.png",
+    "thumb": "../img/BaiShou_logo.png",
     "detail": "../portfolio/CADB-0002.html",
     "categories": ["other"],
     "price": 500,

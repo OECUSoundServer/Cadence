@@ -181,6 +181,12 @@ function normalizeEvents(data) {
       return [];
     }
 
+    // Cadence以外のイベントは除外
+    // circle未指定の既存イベントはCadenceとして扱う
+    if ((event.circle || "cadence") !== "cadence") {
+        return [];
+    }
+
     const dates = parseEventDates(event);
 
     if (!dates) {
@@ -388,19 +394,13 @@ async function initEvents() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    // 開催予定・開催中
-    const upcoming = events
-      .filter(event => event.end >= today)
-      .sort((a, b) => a.start - b.start);
+    
+    // 開催予定・開催中・過去のイベントをすべて表示
+    const allEvents = events.sort((a, b) => b.start - a.start);
 
-    // 開催終了
-    const past = events
-      .filter(event => event.end < today)
-      .sort((a, b) => b.start - a.start);
+    // 既存の年別アコーディオンにまとめて表示
+    renderPastEvents(allEvents);
 
-    // HTMLへ反映
-    renderUpcomingEvents(upcoming);
-    renderPastEvents(past);
 
   } catch (error) {
     console.error("イベント情報の取得に失敗:", error);

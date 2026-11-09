@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: https://ogp.me/ns#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- BASIC META -->
+    <meta name="theme-color" content="#b77d5b">
+    <meta name="description"
+        content="にゃーふぃーの法則の作品一覧。イラスト集や同人誌など、制作・紹介している作品を掲載しています。">
+
+    <link rel="canonical"
+        href="https://oecusoundserver.github.io/Cadence/nyarphy/works/">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="にゃーふぃーの法則">
+    <meta property="og:title" content="作品一覧｜にゃーふぃーの法則">
+    <meta property="og:description"
+        content="にゃーふぃーの法則の作品一覧。イラスト集や同人誌をご紹介します。">
+    <meta property="og:url"
+        content="https://oecusoundserver.github.io/Cadence/nyarphy/works/">
+
+    <meta name="twitter:card" content="summary">
+
+    <!-- ICON -->
+    <link rel="icon" href="../../img/yellow.png">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../../css/nyarphy.css">
+
+    <!-- SCRIPTS -->
+    <script src="../../js/nyarphy-i18n.js" defer></script>
+    <script src="../../js/nyarphy-works.js" defer></script>
+    <script src="../../js/share.js"></script>
+
+    <title>作品一覧｜にゃーふぃーの法則</title>
+</head>
+
+<body data-page="works">
+
+    <!-- ======================================
+         HEADER
+         ====================================== -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <!-- LOGO -->
+            <a href="../index.html" class="site-logo">
+                <img src="../../img/nyarphy-logo.png"
+                    alt="にゃーふぃーの法則">
+            </a>
+
+            <div class="header-actions">
+
+                <!-- NAVIGATION -->
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="../index.html">HOME</a>
+                    <a href="../index.html#about">ABOUT</a>
+                    <a href="./index.html" aria-current="page">WORKS</a>
+                    <a href="../index.html#news">NEWS</a>
+                    <a href="../index.html#events">EVENTS</a>
+                    <a href="../index.html#contact">CONTACT</a>
+                    <a href="../../index.html">PORTAL</a>
+                </nav>
+
+                <!-- LANGUAGE SWITCH -->
+                <div class="language-switch"
+                    role="group"
+                    aria-label="Language selection">
+
+                    <button type="button"
+                        class="lang-button active"
+                        data-lang="ja"
+                        aria-pressed="true">
+                        JP
+                    </button>
+
+                    <button type="button"
+                        class="lang-button"
+                        data-lang="en"
+                        aria-pressed="false">
+                        EN
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ======================================
+             WORKS LIST
+             ====================================== -->
+        <section class="section works-page">
+
+            <!-- HEADING -->
+            <div class="section-heading">
+                <span class="section-label">OUR WORKS</span>
+                <h1 data-i18n="worksListTitle"></h1>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <p class="works-page-intro"
+                data-i18n="worksListDescription"></p>
+
+            <!-- ALL WORKS -->
+            <div id="works-list"
+                class="works-list"
+                data-works-root="../../"
+                data-works-limit="0"
+                data-works-layout="list">
+
+                <!-- JavaScriptで作品を自動生成 -->
+
+            </div>
+
+            <!-- BACK TO HOME -->
+            <div class="works-back">
+                <a href="../index.html"
+                    data-i18n="worksBackHome"></a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ======================================
+         FOOTER
+         ====================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- LOGO -->
+            <a href="../index.html"
+                class="footer-logo-link"
+                aria-label="にゃーふぃーの法則 トップページへ">
+
+                <img src="../../img/nyarphy-logo.png"
+                    alt="にゃーふぃーの法則"
+                    class="footer-logo">
+            </a>
+
+            <!-- SHARE -->
+            <div class="footer-share">
+                <div id="share-buttons" class="share-bar" data-hashtags="にゃーふぃーの法則" data-share-title="にゃーふぃーの法則｜公式サイト">
+                </div>
+            </div>
+
+            <!-- LINKS -->
+            <div class="footer-links">
+                <a href="../../index.html">CIRCLE PORTAL</a>
+                <a href="../../cadence.html">Cadence</a>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <small>&copy; にゃーふぃーの法則</small>
+
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+{
+  "works": [
+    {
+      "id": "CADB-0002",
+      "title": "百兽日常",
+      "date": "2026-09-20",
+      "category": "ILLUSTRATION BOOK",
+      "circle": "Cadence",
+      "image": "../img/BaiShou_001.png",
+      "url": "nyarphy/works/CADB-0002.html",
+      "description": {
+        "ja": "「有兽焉」のキャラクターたちの日常を描いたフルカラーイラスト集。",
+        "en": "A full-color illustration book featuring characters from Fabulous Beasts (You Shou Yan)."
+      }
+    },
+    {
+      "id": "CADB-0001",
+      "title": "RECORD",
+      "date": "2026-04-19",
+      "category": "ILLUSTRATION BOOK",
+      "circle": "Cadence",
+      "image": "../img/Record_001.png",
+      "url": "../portfolio/CADB-0001.html",
+      "description": {
+        "ja": "「Changed」のキャラクターたちを描いたフルカラーイラスト集。SNSで公開した作品を中心に、加筆修正イラストや新規描き下ろしも収録しています。",
+        "en": "A full-color illustration book featuring characters from \"Changed.\" It includes previously shared artwork, revised illustrations, and brand-new pieces."
+      }
+    }
+  ]
+}

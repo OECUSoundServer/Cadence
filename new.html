@@ -1,43 +1,182 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="robots" content="noindex">
-		<meta name="viewport" content="width=device-width">
-		<link href="./css/style.css" rel="stylesheet" type="text/css">
-		<link rel="icon" href="img/yellow.png">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<title>新着情報</title>
-	</head>
 
-	<body>
-		<p>2026/10/24 二人だけの観測理論のページを作成しました。</p>
-		<p>2026/10/12 科学世紀のカフェテラスのお品書きページを公開しました。</p>
-		<p>2026/09/07 歌詞やDLCの機能変更、夢と現のアティチュードのページを更新しました。</p>
-		<p>2026/08/30 <a href="../Cadence/event/e.html?e=kk17"  target="_parent" class="choice">けもケット17</a>と<a href="../Cadence/event/e.html?e=kouroumu22"  target="_parent" class="choice">東方紅楼夢22</a>の情報追加しました</p>
-		<p>2026/03/21 関西けもケット11と、博麗神社例大祭23の情報を追加しました。</p>
-		<p>2026/03/07 <a href="./lyrics/index.html" target="_parent" class="choice">歌詞ページ</a>を作成しました。</p>
-		<p>2026/01/17 お品書きのページを共通化しました。</p>
-		<p>2026/01/03 <a href="../Cadence/event/skk12.html" target="_parent" class="choice">新春けもケット12</a>のページを作成しました。NON STOP、New Visionのページを作成しました。</p>
-		<p>2026/01/03 募集のシステムを大幅に改修し、コード形式に変更しました。</p>
-		<p>2025/08/13 各種作品ページに前後の作品に遷移する機能、歌詞を表示する機能を作成しました。</p>
-		<p>2025/08/12 <a href="../Cadence/event/c106.html" target="_parent" class="choice">コミックマーケット106</a>のページを作成しました。</p>
-		<p>2025/01/13 <a href="../Cadence/event/kkk10.html" target="_parent" class="choice">関西けもケット10</a>のページを作成しました。Rebooting World、ケモノパレードのページも作成しました。</p>
-		<p>2025/02/22 <a href="../Cadence/event/vocakore2025.html" target="_parent" class="choice">机上世界</a>のページを作成しました。ボカコレ2025冬に参加しました。</p>
-		<p>2025/01/13 <a href="../Cadence/event/CAD-0008.html" target="_parent" class="choice">REFRAIN</a>のページを作成しました。新春けもケット11のページを作成しました。</p>
-		<p>2024/08/21 <a href="../Cadence/portfolio/vocaeri.html" target="_parent" class="choice">【Question】BOX</a>のページを作成しました。サークル配置を反映させました。</p>
-		<p>2024/06/19 サイトのデザインを一部変更しました。ブログ機能のβ版を作成しました。</p>
-		<p>2024/06/03 作品ページに委託先情報を記載しました。</p>
-		<p>2024/04/21 <a href="../Cadence/special/bosyu.html" target="_parent" class="choice">募集ページ</a>を変更しました。参加お待ちしております。</p>
-		<p>2023/08/01 サイト全体のデザインを一新しました。</p>
-		<p>2023/04/06 <a href="../Cadence/portfolio/index.html">作品</a>のページの最新記事にNewが着くようにしました。</p>
-		<p>2023/03/25 <a href="../Cadence/portfolio/fatty.html" target="_parent"  class="choice">ふぁってい・きゃっと</a>のページを追加しました。</p>
-		<p>2023/03/24 サイト全体のレイアウトを少し変更しました。</p>
-		<p>2023/03/17 <a href="../Cadence/special/bosyu.html" target="_parent" class="choice">募集ページ</a>と<a href="../Cadence/event/index.html" target="_parent" class="choice">イベントページ</a>を変更しました。</p>
-		<p>2023/02/08 <a href="../Cadence/special/bosyu.html" target="_parent" class="choice">募集ページ</a>を変更しました。過去ミームの応募お持ちしております。</p>
- 		<p>2023/02/04 <a href="../Cadence/index.html" target="_parent" class="choice">ホームページ</a>を開設しました。</p>
-	</body>
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width">
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="img/yellow.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<title>新着情報</title>
+</head>
+
+<body>
+	<!-- ======================================
+     共通ニュースデータ
+     data-circle:
+       cadence = Cadence
+       nyarphy = にゃーふぃの法則
+       common  = 両サークル共通
+     ====================================== -->
+
+	<div id="news-data">
+		<p data-date="2026-11-09" data-circle="nyarphy">
+			2026/11/09
+			にゃーふぃーの法則のページの仮作成を行いました。
+		</p>
+
+		<p data-date="2026-10-24" data-circle="cadence">
+			2026/10/24
+			<a href="event/CAD-0018.html">二人だけの観測理論</a>のページを作成しました。
+		</p>
+
+		<p data-date="2026-10-12" data-circle="cadence">
+			2026/10/12
+			<a href="event/e.html?e=cafeterrace15">科学世紀のカフェテラス</a>のお品書きページを公開しました。
+		</p>
+
+		<p data-date="2026-09-07" data-circle="cadence">
+			2026/09/07
+			<a href="lyrics/index.html">歌詞</a>や<a href="special/dlc.html">DLC</a>の機能変更、<a href="event/CAD-0017.html">夢と現のアティチュード</a>のページを更新しました。
+		</p>
+
+		<p data-date="2026-08-30" data-circle="cadence">
+			2026/08/30
+			<a href="event/e.html?e=kk17">けもケット17</a>
+			と
+			<a href="event/e.html?e=kouroumu22">東方紅楼夢22</a>
+			の情報を追加しました。
+		</p>
+
+		<p data-date="2026-03-21" data-circle="cadence">
+			2026/03/21
+			<a href="event/e.html?e=kkk11">関西けもケット11</a>と、<a href="event/e.html?e=reitaisai23">博麗神社例大祭23</a>の情報を追加しました。
+		</p>
+
+		<p data-date="2026-03-07" data-circle="cadence">
+			2026/03/07
+			<a href="lyrics/index.html">歌詞ページ</a>
+			を作成しました。
+		</p>
+
+		<p data-date="2026-01-17" data-circle="cadence">
+			2026/01/17
+			お品書きのページを共通化しました。
+		</p>
+
+		<p data-date="2026-01-03" data-circle="cadence">
+			2026/01/03
+			<a href="event/skk12.html">新春けもケット12</a>
+			のページを作成しました。
+			<a href="event/CAD-0011.html">NON STOP</a>、<a href="event/CAD-0012.html">New Vision</a>のページを作成しました。
+		</p>
+
+		<p data-date="2026-01-03" data-circle="cadence">
+			2026/01/03
+			<a href="special/bosyu.html">募集</a>のシステムを大幅に改修し、コード形式に変更しました。
+		</p>
+
+		<p data-date="2025-08-13" data-circle="cadence">
+			2025/08/13
+			各種作品ページに前後の作品に遷移する機能、
+			歌詞を表示する機能を作成しました。
+		</p>
+
+		<p data-date="2025-08-12" data-circle="cadence">
+			2025/08/12
+			<a href="event/c106.html">コミックマーケット106</a>
+			のページを作成しました。
+		</p>
+
+		<p data-date="2025-02-22" data-circle="cadence">
+			2025/02/22
+			<a href="event/vocakore2025.html">机上世界</a>
+			のページを作成しました。
+			<a href="event/vocakore2025.html">ボカコレ2025冬</a>に参加しました。
+		</p>
+
+		<p data-date="2025-01-13" data-circle="cadence">
+			2025/01/13
+			<a href="event/kkk10.html">関西けもケット10</a>
+			のページを作成しました。
+			<a href="event/CAD-0009.html">Rebooting World</a>、<a href="event/CAD-0010.html">ケモノパレード</a>のページも作成しました。
+		</p>
+
+		<p data-date="2025-01-13" data-circle="cadence">
+			2025/01/13
+			<a href="event/CAD-0008.html">REFRAIN</a>
+			のページを作成しました。
+			<a href="event/e.html?e=skk11">新春けもケット11</a>のページを作成しました。
+		</p>
+
+		<p data-date="2024-08-21" data-circle="cadence">
+			2024/08/21
+			<a href="portfolio/vocaeri.html">【Question】BOX</a>
+			のページを作成しました。
+			サークル配置を反映させました。
+		</p>
+
+		<p data-date="2024-06-19" data-circle="cadence">
+			2024/06/19
+			サイトのデザインを一部変更しました。
+			ブログ機能のβ版を作成しました。
+		</p>
+
+		<p data-date="2024-06-03" data-circle="cadence">
+			2024/06/03
+			作品ページに委託先情報を記載しました。
+		</p>
+
+		<p data-date="2024-04-21" data-circle="cadence">
+			2024/04/21
+			<a href="special/bosyu.html">募集ページ</a>
+			を変更しました。参加お待ちしております。
+		</p>
+
+		<p data-date="2023-08-01" data-circle="cadence">
+			2023/08/01
+			サイト全体のデザインを一新しました。
+		</p>
+
+		<p data-date="2023-04-06" data-circle="cadence">
+			2023/04/06
+			<a href="portfolio/index.html">作品</a>
+			のページの最新記事にNewが着くようにしました。
+		</p>
+
+		<p data-date="2023-03-25" data-circle="cadence">
+			2023/03/25
+			<a href="portfolio/fatty.html">ふぁってい・きゃっと</a>
+			のページを追加しました。
+		</p>
+
+		<p data-date="2023-03-24" data-circle="cadence">
+			2023/03/24
+			サイト全体のレイアウトを少し変更しました。
+		</p>
+
+		<p data-date="2023-03-17" data-circle="cadence">
+			2023/03/17
+			<a href="special/bosyu.html">募集ページ</a>
+			と
+			<a href="event/index.html">イベントページ</a>
+			を変更しました。
+		</p>
+
+		<p data-date="2023-02-08" data-circle="cadence">
+			2023/02/08
+			<a href="special/bosyu.html">募集ページ</a>
+			を変更しました。
+			過去ミームの応募お持ちしております。
+		</p>
+
+		<p data-date="2023-02-04" data-circle="cadence">
+			2023/02/04
+			<a href="cadence.html">ホームページ</a>
+			を開設しました。
+		</p>
+	</div>
+</body>
 </html>
-
-

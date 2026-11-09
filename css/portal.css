@@ -1,0 +1,1004 @@
+
+/* =========================================
+   CIRCLE PORTAL
+   ========================================= */
+
+:root {
+    --background: #ffffff;
+    --foreground: #303a42;
+    --muted: #89939c;
+    --border: #e9ecef;
+    --surface: #f7f8f7;
+
+    --accent: #6c9185;
+
+    /* Cadence：グリーン */
+    --cadence: #6c9185;
+    --cadence-bg: #f0f6f2;
+
+    /* にゃーふぃの法則：暖色 */
+    --nyarphy: #b77d5b;
+    --nyarphy-bg: #fff5ec;
+
+    --content-width: 1400px;
+}
+
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+
+    font-family:
+        "Noto Sans JP",
+        "Yu Gothic",
+        Meiryo,
+        sans-serif;
+
+    line-height: 1.7;
+}
+
+button {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.site-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    max-width: var(--content-width);
+    margin: auto;
+    padding: 20px 24px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-brand {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.brand-mark {
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+.header-label {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+.section {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.section-heading.centered {
+    display: block;
+    text-align: center;
+}
+
+.section-heading.centered p {
+    margin-top: 4px;
+}
+
+/* =========================================
+   PICK UP SLIDER
+   ========================================= */
+
+.pickup-section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slider-viewport {
+    position: relative;
+    overflow: hidden;
+
+    aspect-ratio: 16 / 6;
+
+    background: #f0f2f3;
+    border-radius: 12px;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-fallback {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    text-align: center;
+
+    background: #e9f1f9;
+    color: #547fa8;
+}
+
+.slide-fallback.nyarphy {
+    background: #fff0e4;
+    color: #b77d5b;
+}
+
+.slide-fallback.common {
+    background: #eaf1ea;
+    color: #668b7a;
+}
+
+.slide-fallback h3 {
+    margin: 0 0 8px;
+    font-size: clamp(20px, 4vw, 38px);
+}
+
+.slide-fallback p {
+    margin: 0;
+    font-size: clamp(11px, 2vw, 16px);
+}
+
+.slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+.slider-arrow {
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: white;
+    color: var(--foreground);
+
+    cursor: pointer;
+}
+
+.slider-arrow:hover {
+    background: var(--surface);
+}
+
+.slider-dots {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.slider-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+
+    background: #d7dedb;
+    cursor: pointer;
+
+    transition:
+        width 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.slider-dot.active {
+    width: 24px;
+    background: var(--accent);
+}
+
+/* =========================================
+   OUR CIRCLES
+   ========================================= */
+
+.circles-section {
+    border-top: 1px solid var(--border);
+}
+
+.circle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.circle-card {
+    display: block;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.circle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.circle-logo-area {
+    position: relative;
+
+    height: 180px;
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadence .circle-logo-area {
+    background: var(--cadence-bg);
+}
+
+.nyarphy .circle-logo-area {
+    background: var(--nyarphy-bg);
+}
+
+.circle-logo {
+    display: block;
+    max-width: 85%;
+    max-height: 130px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-fallback {
+    display: none;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 800;
+    text-align: center;
+}
+
+.cadence .logo-fallback {
+    color: var(--cadence);
+}
+
+.nyarphy .logo-fallback {
+    color: var(--nyarphy);
+}
+
+.circle-logo-area.no-image .circle-logo {
+    display: none;
+}
+
+.circle-logo-area.no-image .logo-fallback {
+    display: block;
+}
+
+.circle-info {
+    padding: 24px;
+    text-align: center;
+}
+
+.circle-info h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.circle-info p {
+    margin: 0;
+    min-height: 50px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.circle-enter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 18px;
+    padding: 12px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cadence .circle-enter {
+    background: var(--cadence-bg);
+    color: var(--cadence);
+}
+
+.nyarphy .circle-enter {
+    background: var(--nyarphy-bg);
+    color: var(--nyarphy);
+}
+
+/* =========================================
+   NEWS
+   ========================================= */
+
+.news-section {
+    border-top: 1px solid var(--border);
+    padding-bottom: 72px;
+}
+
+.news-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 24px;
+}
+
+.filter-button {
+    padding: 8px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: white;
+    color: var(--foreground);
+
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.filter-button:hover {
+    background: var(--surface);
+}
+
+.filter-button.active {
+    background: var(--foreground);
+    border-color: var(--foreground);
+    color: white;
+}
+
+.news-list {
+    border-top: 1px solid var(--border);
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 18px 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.news-date {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.news-circle {
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.news-circle.cadence {
+    background: var(--cadence-bg);
+    color: var(--cadence);
+}
+
+.news-circle.nyarphy {
+    background: #f8e9dd;
+    color: var(--nyarphy);
+}
+
+.news-category {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.news-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.news-title a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.loading-message,
+.empty-message {
+    padding: 24px 4px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.news-more {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.more-button {
+    min-width: 220px;
+    padding: 12px 24px;
+
+    background: white;
+    color: var(--foreground);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.more-button:hover {
+    background: var(--surface);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.site-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+    max-width: var(--content-width);
+    margin: auto;
+    padding: 32px 24px;
+
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-inner p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media screen and (max-width: 650px) {
+
+    .header-inner {
+        padding: 16px;
+    }
+
+    .site-brand {
+        font-size: 13px;
+    }
+
+    .header-label {
+        display: none;
+    }
+
+    .section {
+        padding: 36px 16px;
+    }
+
+    .section-heading {
+        gap: 10px;
+    }
+
+    .section-heading h1,
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .slider-viewport {
+        aspect-ratio: 16 / 9;
+    }
+
+    .circle-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .circle-logo-area {
+        height: 150px;
+    }
+
+    .circle-info {
+        padding: 20px;
+    }
+
+    .circle-info p {
+        min-height: 0;
+    }
+
+    .news-filters {
+        gap: 8px;
+    }
+
+    .filter-button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .news-meta {
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+.news-body {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--foreground);
+}
+
+.news-body a {
+    color: var(--cadence);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.news-body a:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
+   ニュース一覧ページ
+   ========================================= */
+
+.news-page-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto 100px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* ニュースセクション */
+.news-page-container .news-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 見出し */
+.news-page-container h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* フィルター */
+.news-page-container .news-filters {
+    margin: 30px 0;
+}
+
+/* ニュース一覧 */
+.news-page-container .news-list {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 各ニュース */
+.news-page-container .news-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* スマートフォン */
+@media screen and (max-width: 768px) {
+
+    .news-page-container {
+        width: 100%;
+        margin: 30px auto 60px;
+        padding: 0 20px;
+    }
+
+    .news-page-container h1 {
+        font-size: 26px;
+    }
+
+    .news-page-container .news-item {
+        padding: 16px 0;
+    }
+}
+
+/* ニュース一覧ページのヘッダー */
+
+.news-header-inner {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.news-back-link {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.news-back-link:hover {
+    opacity: 0.65;
+}
+
+/* NEWSとイベントの2カラム配置 */
+.information-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.information-news,
+.information-events {
+    min-width: 0;
+}
+
+/* イベント一覧 */
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 画面が狭い場合は縦並び */
+@media screen and (max-width: 900px) {
+    .information-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+/* =========================================
+   UPCOMING EVENTS - Ticket Card
+   ========================================= */
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) 20px;
+    align-items: center;
+    gap: 20px;
+
+    position: relative;
+    padding: 24px 20px;
+
+    background: #fff;
+    border: 1px solid #e8eaf0;
+    border-left: 4px solid #1abc9c;
+    border-radius: 12px;
+
+    color: #253040;
+    text-decoration: none;
+
+    box-shadow: 0 4px 18px rgba(30, 45, 65, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(30, 45, 65, 0.11);
+}
+
+/* サークルごとの色 */
+.event-card-cadence {
+    border-left-color: #1abc9c;
+}
+
+.event-card-nyarphy {
+    border-left-color: #e7a08a;
+}
+
+.event-card-common {
+    border-left-color: #9d91c8;
+}
+
+/* 日付 */
+.event-date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 16px;
+    border-right: 1px dashed #dce1e8;
+}
+
+.event-month {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1abc9c;
+}
+
+.event-day {
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.event-year {
+    font-size: 11px;
+    color: #8993a1;
+}
+
+/* イベント情報 */
+.event-content {
+    min-width: 0;
+}
+
+.event-circle {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.event-circle.cadence {
+    background: var(--cadence-bg);
+    color: var(--cadence);
+}
+
+.event-circle.nyarphy {
+    background: #fff0e8;
+    color: #b66b4d;
+}
+
+.event-circle.common {
+    background: #f0ebfa;
+    color: #7561a5;
+}
+
+.event-content h3 {
+    margin: 10px 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.event-content p {
+    margin: 5px 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #6b7480;
+}
+
+.event-card-arrow {
+    align-self: start;
+    font-size: 20px;
+    color: #9ca6b2;
+    transition: transform 0.2s;
+}
+
+.event-card:hover .event-card-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* スマートフォン */
+@media screen and (max-width: 600px) {
+
+    .event-card {
+        grid-template-columns: 55px minmax(0, 1fr) 14px;
+        gap: 12px;
+        padding: 18px 12px;
+    }
+
+    .event-date-box {
+        padding-right: 10px;
+    }
+
+    .event-day {
+        font-size: 30px;
+    }
+
+    .event-content h3 {
+        font-size: 15px;
+    }
+}
+
+/* =========================================
+   PORTAL HEADER - LOGO ONLY
+   ========================================= */
+
+.portal-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.portal-header-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+    box-sizing: border-box;
+}
+
+/* ロゴのリンク */
+.header-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 280px;
+    height: 80px;
+
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.header-logo-link:hover {
+    opacity: 0.75;
+    transform: translateY(-2px);
+}
+
+/* ロゴ画像 */
+.header-logo {
+    display: block;
+    width: 100%;
+    max-height: 72px;
+    object-fit: contain;
+}
+
+/* スマートフォン */
+@media screen and (max-width: 768px) {
+
+    .portal-header-inner {
+        gap: 20px;
+        padding: 12px 16px;
+    }
+
+    .header-logo-link {
+        width: 45%;
+        height: 60px;
+    }
+
+    .header-logo {
+        max-height: 52px;
+    }
+}

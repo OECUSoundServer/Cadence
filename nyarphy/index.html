@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: https://ogp.me/ns#">
+
+    <!-- BASIC META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#b77d5b">
+
+    <meta name="description" content="にゃーふぃーの法則の公式サイト。ケモノをテーマにしたイラスト集や同人誌の制作・頒布、イベント参加情報をご紹介します。">
+
+    <link rel="canonical" href="https://oecusoundserver.github.io/Cadence/nyarphy/">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="にゃーふぃーの法則">
+    <meta property="og:title" content="にゃーふぃーの法則｜公式サイト">
+    <meta property="og:description" content="ケモノをテーマにしたイラスト集や同人誌を制作する創作サークル「にゃーふぃーの法則」の公式サイト。">
+    <meta property="og:url" content="https://oecusoundserver.github.io/Cadence/nyarphy/">
+
+    <meta name="twitter:card" content="summary">
+
+    <!-- ICON -->
+    <link rel="icon" href="../img/yellow.png">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../css/nyarphy.css">
+
+    <!-- SCRIPTS -->
+    <script src="../js/news.js" defer></script>
+    <script src="../js/nyarphy-i18n.js" defer></script>
+    <script src="../js/share.js"></script>
+    <script src="../js/nyarphy-works.js" defer></script>
+    <script src="../js/nyarphy-events.js" defer></script>
+
+    <title>にゃーふぃーの法則｜公式サイト</title>
+
+</head>
+
+<body data-page="home">
+
+    <!-- ======================================
+         HEADER
+         ====================================== -->
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a href="./index.html" class="site-logo">
+                <img src="../img/nyarphy-logo.png" alt="にゃーふぃーの法則">
+            </a>
+
+            <div class="header-actions">
+
+                <nav class="site-nav" aria-label="Main navigation">
+                    <a href="#welcome">HOME</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#works">WORKS</a>
+                    <a href="#news">NEWS</a>
+                    <a href="#events">EVENTS</a>
+                    <a href="#contact">CONTACT</a>
+                    <a href="../index.html">PORTAL</a>
+                </nav>
+
+                <!-- LANGUAGE SWITCH -->
+                <div class="language-switch" role="group" aria-label="Language selection">
+
+                    <button type="button" class="lang-button active" data-lang="ja" aria-pressed="true">
+                        JP
+                    </button>
+
+                    <button type="button" class="lang-button" data-lang="en" aria-pressed="false">
+                        EN
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ======================================
+        WELCOME
+        ====================================== -->
+        <section class="welcome" id="welcome">
+            <div class="welcome-inner">
+
+                <div class="welcome-heading">
+                    <span class="welcome-label">WELCOME</span>
+                    <h1 data-i18n="welcomeTitle"></h1>
+                </div>
+
+                <div class="welcome-content">
+
+                    <p data-i18n="welcomeDescription"></p>
+
+                    <p data-i18n="welcomeGuide"></p>
+
+                    <!-- DISCLAIMER -->
+                    <div class="welcome-notice">
+
+                        <h2>
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            <span data-i18n="noticeTitle"></span>
+                        </h2>
+
+                        <p data-i18n="noticeDescription"></p>
+                        <p data-i18n="noticeRights"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================================
+        ABOUT
+        ====================================== -->
+        <section id="about" class="section">
+
+            <div class="section-heading">
+                <span class="section-label">ABOUT US</span>
+                <h2 data-i18n="aboutTitle"></h2>
+            </div>
+
+            <div class="about-card">
+
+                <!-- <h3 data-i18n="aboutCatch"></h3> -->
+
+                <p data-i18n="aboutDescription"></p>
+
+                <p data-i18n="aboutEvents"></p>
+
+                <p data-i18n="aboutPreviousWorks"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+        WORKS
+        ====================================== -->
+        <section id="works" class="section">
+
+            <div class="section-heading">
+                <span class="section-label">OUR WORKS</span>
+                <h2 data-i18n="worksTitle"></h2>
+            </div>
+
+            <!-- 最新3件 -->
+            <div id="works-list" class="works-grid" data-works-root="../" data-works-limit="3" data-works-layout="grid">
+            </div>
+
+            <div class="works-more">
+                <a href="./works/index.html" data-i18n="worksViewAll"></a>
+            </div>
+
+        </section>
+
+
+
+        <!-- ======================================
+        NEWS & EVENTS
+        ====================================== -->
+        <section class="section information-section">
+
+            <div class="information-grid">
+
+                <!-- NEWS -->
+                <div id="news" class="information-news">
+
+                    <div class="section-heading">
+                        <span class="section-label">
+                            INFORMATION
+                        </span>
+                        <h2>NEWS</h2>
+                    </div>
+
+                    <div id="news-list" class="nyarphy-news-list" data-news-circle="nyarphy"
+                        data-news-source="../new.html" data-news-root="../" data-news-show-all="true">
+                        お知らせを読み込んでいます...
+                    </div>
+
+                </div>
+
+                <!-- EVENTS -->
+                <div id="events" class="information-events">
+
+                    <div class="section-heading">
+                        <span class="section-label">
+                            EVENT SCHEDULE
+                        </span>
+                        <h2>EVENTS</h2>
+                    </div>
+
+                    <div id="nyarphy-events-list"
+                        class="nyarphy-events-list"
+                        data-events-source="../data/events.json"
+                        data-events-circle="nyarphy">
+
+                        <p data-i18n="eventPreparing"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======================================
+        CONTACT
+        ====================================== -->
+        <section id="contact" class="section">
+
+            <div class="section-heading">
+                <span class="section-label">CONTACT</span>
+                <h2 data-i18n="contactTitle"></h2>
+            </div>
+
+            <div class="contact-card">
+
+                <p class="contact-description" data-i18n="contactDescription"></p>
+
+                <form id="nyarphy-contact-form" class="nyarphy-contact-form"
+                    action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd72l7-Q94rgf1Dteg92KcfFPmXruzB0ZVZpfl1VojIsXxAwA/formResponse"
+                    method="post" target="nyarphy-contact-frame">
+
+                    <!-- NAME -->
+                    <div class="contact-field">
+                        <label for="contact-name">
+                            <span data-i18n="contactName"></span>
+                            <span class="contact-required" data-i18n="contactRequired"></span>
+                        </label>
+
+                        <input type="text" id="contact-name" name="entry.43820339" autocomplete="name" required>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="contact-field">
+                        <label for="contact-email">
+                            <span data-i18n="contactEmail"></span>
+                            <span class="contact-required" data-i18n="contactRequired"></span>
+                        </label>
+
+                        <input type="email" id="contact-email" name="entry.1438547593" autocomplete="email" required>
+                    </div>
+
+                    <!-- MESSAGE -->
+                    <div class="contact-field">
+                        <label for="contact-message">
+                            <span data-i18n="contactMessage"></span>
+                        </label>
+
+                        <textarea id="contact-message" name="entry.1307007642" rows="7"></textarea>
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="contact-submit">
+                        <button type="submit" id="contact-submit-button">
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                            <span data-i18n="contactSubmit"></span>
+                        </button>
+                    </div>
+
+                    <p class="contact-note" data-i18n="contactPrivacyNote"></p>
+
+                </form>
+
+                <iframe name="nyarphy-contact-frame" id="nyarphy-contact-frame" title="Contact form response"
+                    hidden></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================================
+    FOOTER
+    ====================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <!-- LOGO -->
+            <a href="./index.html" class="footer-logo-link" aria-label="にゃーふぃーの法則 トップページへ">
+
+                <img src="../img/nyarphy-logo.png" alt="にゃーふぃーの法則" class="footer-logo">
+            </a>
+
+            <!-- SHARE -->
+            <div class="footer-share">
+                <div id="share-buttons" class="share-bar" data-hashtags="にゃーふぃーの法則" data-share-title="にゃーふぃーの法則｜公式サイト">
+                </div>
+            </div>
+
+            <!-- LINKS -->
+            <div class="footer-links">
+                <a href="../index.html">CIRCLE PORTAL</a>
+                <a href="../cadence.html">Cadence</a>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <small>&copy; にゃーふぃーの法則</small>
+
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

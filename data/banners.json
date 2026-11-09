@@ -1,0 +1,27 @@
+
+[
+    {
+        "title": "Cadence",
+        "description": "音楽で紡ぐ、幻想の世界。",
+        "circle": "cadence",
+        "image": "https://oecusoundserver.github.io/Cadence/img/theory_Logo.png",
+        "position": "top",
+        "url": "https://oecusoundserver.github.io/Cadence/event/CAD-0018.html"
+    },
+    {
+        "title": "にゃーふぃの法則",
+        "description": "うまくいかない日も、にゃんとかなる。",
+        "circle": "nyarphy",
+        "image": "https://oecusoundserver.github.io/Cadence/img/attitude_logo.png",
+        "position": "center",
+        "url": "https://oecusoundserver.github.io/Cadence/event/CAD-0017.html"
+    },
+    {
+        "title": "Creative Activities",
+        "description": "ふたつのサークルから、最新のお知らせ。",
+        "circle": "common",
+        "image": "https://oecusoundserver.github.io/Cadence/img/FutureMap_logo.png",
+        "position": "top",
+        "url": "https://oecusoundserver.github.io/Cadence/event/CAD-0016.html"
+    }
+]

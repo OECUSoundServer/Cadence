@@ -1,257 +1,309 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head prefix="og: https://ogp.me/ns#">
-        <meta charset="utf-8" />
 
-        <!-- Primary Meta -->
+<head>
+
+    <head prefix="og: https://ogp.me/ns#">
+
+        <!-- ======================================
+         BASIC META
+         ====================================== -->
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1abc9c" id="meta-theme-color" />
+        <meta name="theme-color" content="#6c9185" id="meta-theme-color" />
         <meta name="author" content="mixtuti" />
-        <meta name="description" content="Cadenceは、「みんなで楽しみながら音楽を学ぼう」という思いから生まれたグループです。現在はどなたでも参加でき、制作や交流を広げています。" />
+        <meta name="description" content="Cadenceとにゃーふぃーの法則の公式ポータルサイト。音楽アレンジ、イラスト、漫画などの創作活動を中心に、作品情報やイベント参加情報、最新のお知らせをお届けします。" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://oecusoundserver.github.io/Cadence/" />
 
-        <!-- Open Graph / Twitter -->
+        <!-- ======================================
+         OPEN GRAPH
+         ====================================== -->
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Cadence & にゃーふぃーの法則" />
+        <meta property="og:locale" content="ja_JP" />
         <meta property="og:url" content="https://oecusoundserver.github.io/Cadence/" />
-        <meta property="og:title" content="Cadence｜トップページ" />
-        <meta property="og:description" content="Cadenceは、「みんなで楽しみながら音楽を学ぼう」という思いから生まれたグループです。現在はどなたでも参加でき、制作や交流を広げています。" />
+        <meta property="og:title" content="Cadence & にゃーふぃーの法則" />
+        <meta property="og:description" content="音楽・イラスト・漫画などの創作活動を行うCadenceとにゃーふぃーの法則の公式ポータルサイト。作品情報やイベント参加情報をお届けします。" />
         <meta property="og:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Cadence & にゃーふぃーの法則 公式ポータル" />
+
+        <!-- ======================================
+         TWITTER / X CARD
+         ====================================== -->
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@OECU51904255" />
-        <meta name="twitter:title" content="Cadence｜トップページ" />
-        <meta name="twitter:description" content="Cadenceは、「みんなで楽しみながら音楽を学ぼう」という思いから生まれたグループです。現在はどなたでも参加でき、制作や交流を広げています。" />
+        <meta name="twitter:title" content="Cadence & にゃーふぃーの法則" />
+        <meta name="twitter:description" content="Cadenceとにゃーふぃーの法則の公式ポータルサイト。最新ニュースやイベント参加情報を掲載しています。" />
         <meta name="twitter:image" content="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 
-        <!-- SEO Keywords -->
-        <meta name="keywords" content="Cadence, サウンド, 音楽サークル" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- ======================================
+         SEO
+         ====================================== -->
+        <meta name="keywords" content="Cadence,にゃーふぃーの法則" />
+        <meta name="format-detection" content="telephone=no" />
 
-        <!-- Icons -->
-        <link rel="icon" href="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+        <!-- ======================================
+         ICONS
+         ====================================== -->
+        <link rel="icon" type="image/png" href="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
 
-        <!-- Fonts & Icons -->
+        <!-- ======================================
+         FONTS
+         ====================================== -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet" />
-        
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css" />
+        <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-        <!-- Stylesheets -->
-        <link rel="stylesheet" href="css/style2.css" type="text/css" />
-        <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+        <!-- ======================================
+         FONT AWESOME
+         ====================================== -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
-        <!-- Slider CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <!-- ======================================
+         STYLESHEETS
+         ====================================== -->
+        <link rel="stylesheet" href="./css/portal.css" />
 
-        <!-- Preload hero image -->
-        <link rel="preload" as="image" href="https://oecusoundserver.github.io/Cadence/img/yellow.png" />
+        <!-- ======================================
+         PRELOAD
+         ====================================== -->
+        <!--
+    メイン画像が確定したら、必要に応じて有効化します。
 
-        <!-- Helpful meta -->
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- Document Title -->
-        <title>Cadence｜トップページ</title>
+    <link rel="preload"
+          as="image"
+          href="./img/portal/main-visual.webp" />
+    -->
+
+        <!-- ======================================
+         JAVASCRIPT
+         ====================================== -->
+        <script src="./js/portal.js" defer></script>
+        <script src="./js/news.js" defer></script>
+        <script src="./js/join_event.js" defer></script>
+
+
+        <!-- ======================================
+         DOCUMENT TITLE
+         ====================================== -->
+        <title>Cadence & にゃーふぃーの法則｜公式ポータル</title>
     </head>
 
-    <body>
-        <!-- ロード画面 -->
-        <script data-cfasync="false" data-no-defer="1">var ewww_webp_supported = false;</script>
-        <div id="loftloader-wrapper" class="pl-imgloading" data-show-close-time="5000" data-max-load-time="60000">
-            <div class="loader-section section-up"></div>
-            <div class="loader-section section-down"></div>
-            <div class="loader-inner">
-                <div id="loader">
-                    <div class="imgloading-container"><span class="lazyload"
-                            data-back="https://oecusoundserver.github.io/Cadence/img/nikukyu.png"></span>
-                    </div><img width="76" height="59" data-no-lazy="1" class="skip-lazy" alt="loader image"
-                        src="https://oecusoundserver.github.io/Cadence/img/nikukyu.png">
-                </div>
-            </div>
-            <div class="loader-close-button" style="display: none;"><span class="screen-reader-text">Close</span></div>
+<body>
+
+    <!-- ======================================
+    HEADER
+    ====================================== -->
+    <header class="site-header portal-header">
+
+        <div class="header-inner portal-header-inner">
+
+            <!-- Cadence -->
+            <a href="./cadence.html" class="header-logo-link">
+                <img src="./img/CircleLogo.png" alt="Cadence" class="header-logo">
+            </a>
+
+            <!-- にゃーふぃーの法則 -->
+            <a href="./nyarphy/index.html" class="header-logo-link">
+                <img src="./img/nyarphy-logo.png" alt="にゃーふぃーの法則" class="header-logo">
+            </a>
+
         </div>
 
-        <!-- ヘッダー -->
-        <header class="header">
-            <!-- Header Logo -->
-            <div class="logo">
-                <a href="#">
-                    <p><a href="https://oecusoundserver.github.io/Cadence/index.html"><img src="https://oecusoundserver.github.io/Cadence/img/yellow.png" alt="Cadence_Icon" class="logo"></a></p>
+    </header>
+
+    <!-- ======================================
+    MAIN
+    ====================================== -->
+    <main>
+
+        <!-- PICK UP -->
+        <section class="section pickup-section" aria-labelledby="pickup-title">
+
+            <div class="section-heading">
+                <h1 id="pickup-title">PICK UP</h1>
+                <p>注目のお知らせ</p>
+            </div>
+
+            <div class="slider" id="pickup-slider" aria-label="注目のお知らせ">
+
+                <div class="slider-viewport" id="slider-viewport" aria-live="off">
+
+                    <!-- JavaScriptでバナーを生成 -->
+                </div>
+
+                <div class="slider-controls">
+
+                    <button type="button" class="slider-arrow" id="slider-prev" aria-label="前のバナー">
+                        &#10094;
+                    </button>
+
+                    <div class="slider-dots" id="slider-dots" aria-label="バナーの切り替え">
+                    </div>
+
+                    <button type="button" class="slider-arrow" id="slider-next" aria-label="次のバナー">
+                        &#10095;
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR CIRCLES -->
+        <section class="section circles-section" aria-labelledby="circles-title">
+
+            <div class="section-heading centered">
+                <h2 id="circles-title">OUR CIRCLES</h2>
+                <p>各サークルの活動はこちらから</p>
+            </div>
+
+            <div class="circle-grid">
+
+                <!-- CADENCE -->
+                <a class="circle-card cadence" href="cadence.html">
+
+                    <div class="circle-logo-area">
+                        <img src="./img/CircleLogo.png" alt="" class="circle-logo" data-fallback="Cadence">
+
+                        <span class="logo-fallback">
+                            Cadence
+                        </span>
+                    </div>
+
+                    <div class="circle-info">
+                        <h3>Cadence</h3>
+
+                        <p>
+                            東方Projectを中心とした<br>
+                            ゲーム音楽アレンジ
+                        </p>
+
+                        <span class="circle-enter">
+                            ENTER SITE
+                            <span aria-hidden="true">↗</span>
+                        </span>
+                    </div>
                 </a>
+
+                <!-- NYARPHY -->
+                <a class="circle-card nyarphy" href="nyarphy/index.html">
+
+                    <div class="circle-logo-area">
+                        <img src="img/nyarphy-logo.png" alt="" class="circle-logo" data-fallback="にゃーふぃーの法則">
+
+                        <span class="logo-fallback">
+                            にゃーふぃーの法則
+                        </span>
+                    </div>
+
+                    <div class="circle-info">
+                        <h3>にゃーふぃーの法則</h3>
+
+                        <p>
+                            ケモノ系イラスト・漫画・同人誌
+                        </p>
+
+                        <span class="circle-enter">
+                            ENTER SITE
+                            <span aria-hidden="true">↗</span>
+                        </span>
+                    </div>
+                </a>
+
             </div>
-        
-            <!-- Menu -->
-            <div id="hamburger">
-                <div class="icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        </section>
+
+        <!-- ======================================
+        NEWS & UPCOMING EVENTS
+        ====================================== -->
+        <section class="section information-section">
+
+            <div class="information-grid">
+
+                <!-- ======================================
+                NEWS（左側）
+                ====================================== -->
+                <div class="information-news">
+
+                    <div class="section-heading">
+                        <h2 id="news-title">NEWS</h2>
+                        <p>最新情報</p>
+                    </div>
+
+                    <div class="news-filters" role="group" aria-label="ニュースの絞り込み">
+
+                        <button type="button" class="filter-button active" data-news-filter="all" aria-pressed="true">
+                            すべて
+                        </button>
+
+                        <button type="button" class="filter-button" data-news-filter="cadence" aria-pressed="false">
+                            Cadence
+                        </button>
+
+                        <button type="button" class="filter-button" data-news-filter="nyarphy" aria-pressed="false">
+                            にゃーふぃーの法則
+                        </button>
+
+                    </div>
+
+                    <div id="news-list" class="news-list" data-news-circle="all" data-news-source="./new.html"
+                        data-news-root="./">
+                        お知らせを読み込んでいます...
+                    </div>
+
+                    <div class="news-more">
+                        <a id="news-more-button" href="./news.html" class="more-button">
+                            もっと見る →
+                        </a>
+                    </div>
+
                 </div>
+
+                <!-- ======================================
+                UPCOMING EVENTS（右側）
+                ====================================== -->
+                <aside class="information-events" aria-labelledby="events-title">
+
+                    <div class="section-heading">
+                        <h2 id="events-title">EVENTS</h2>
+                        <p>参加予定イベント</p>
+                    </div>
+
+                    <div id="event-list" class="event-list" data-event-source="./data/events.json" data-event-root="./"
+                        data-event-limit="5">
+                        イベント情報を読み込んでいます...
+                    </div>
+
+                </aside>
+
             </div>
-            <!-- Nav Phon -->
-            <nav class="nav sm">
-                <ul>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/index.html">トップページ</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/about/index.html">サークルについて</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html">作品</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/event/index.html">イベント</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/special/bosyu.html">募集</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/link.html">リンク</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/Other/index.html">その他</a></li>
-                </ul>
-            </nav>
-            <!-- Nav PC -->
-            <nav class="nav pc">
-                <ul>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/index.html">トップページ</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/about/index.html">サークルについて</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/portfolio/index.html">作品</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/event/index.html">イベント</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/special/bosyu.html">募集</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/link.html">リンク</a></li>
-                    <li><a href="https://oecusoundserver.github.io/Cadence/Other/index.html">その他</a></li>
-                </ul>
-            </nav>
-        </header>
-        <hr>
 
-        <!-- スライダー制御 -->
-        <ul class="slider">
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/yellow.png" alt="Logo"></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/kemo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/SD_1.jpg" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/ToyBox.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/Nawafes_1.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/dice_square.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/PrettyFurry.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/YouthfulBlue.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/shintyoku_rogo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/touhou_logo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/Refrain.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/DesktopWorld_sq.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/RebootingWorld.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/FurryParade.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/airride_Logo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/klonoa_Logo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/REVERIE.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/Record_001.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/Touhou_Yuyake_logo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/BaiShou_001.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/Baishou_CD.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/FutureMap_logo.png" alt=""></li>
-            <li><img src="https://oecusoundserver.github.io/Cadence/img/attitude_logo.png" alt=""></li>
-        </ul>
+        </section>
 
-        <!-- 本文 -->
-        <main>
-            <article>
-                <div>
-                    <h2 class="title DotGothic16"><i class="fa-solid fa-circle-info"></i> Welcome to <span>"Cadence"</span></h2>
-                    <p>「Cadence」へようこそ！活動方針及び活動内容につきましては<a href="about/index.html">サークルについて</a>をご覧下さい。</p>
-                    <p>当サークルの<b>オリジナル作品を除いた全作品は題材となる各企業および関連会社の公認作品ではなく、すべて非公式のファン活動としてとなっています。</b>ご理解のほど、よろしくお願いします。</p>
-                </div>
+    </main>
 
-                <div class="Two-column">
-                    <div class="left">
-                        <h2 class="title-half DotGothic16"><i class="fa-solid fa-calendar-days"></i> EVENT SCHEDULE</h2>
-                        <iframe
-                            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showTitle=0&src=b2VjdS5zb3VuZC5ueXdAZ21haWwuY29t&src=bjFpN3BtYnMyNWNxc25jMXNwc2huN2l2YzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23D81B60&color=%230B8043&color=%2333B679"
-                            style="border:solid 1px #777" width="95%" height="500" frameborder="0" scrolling="no"></iframe>
-                    </div>
-                    <div class="right">
-                        <h2 class="title-half DotGothic16"><i class="fa-brands fa-x-twitter"></i> X(旧:TWITTER)</h2>
-                        <a class="twitter-timeline" data-height="500" data-width="95%" data-theme="light"
-                            href="https://twitter.com/OECU51904255?ref_src=twsrc%5Etfw">Tweets by OECU51904255</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </div>
-                </div>
+    <!-- ======================================
+         FOOTER
+         ====================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
 
-                <div class="clear"></div>
-                
-                <h2 class="title DotGothic16"><i class="fa-solid fa-clock-rotate-left"></i> 更新履歴</h2>
-                <iframe src="new.html" width="100%" height="150">
-                    インラインフレーム対応ブラウザでご覧いただけます。
-                </iframe>
-                
-                <a name="contact-info"></a>
-                <h2 class="title DotGothic16"><i class="fa-solid fa-circle-question"></i> 問い合わせ・感想など</h2>
-                
-                <form class="c-form"
-                    action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd72l7-Q94rgf1Dteg92KcfFPmXruzB0ZVZpfl1VojIsXxAwA/formResponse"
-                    method="post" target="hidden_iframe" onsubmit="submitted=true;">
-                    <div class="c-form__item">
-                        <label class="c-form__label" for="field-name">名前(PN)<span class="c-form__required">必須</span></label>
-                        <input name="entry.43820339" class="c-form__input" id="field-name" placeholder="山田　太郎" type="text"
-                            required="required" />
-                    </div>
-                
-                    <div class="c-form__item">
-                        <label class="c-form__label" for="field-mail">メールアドレス<span class="c-form__required">必須</span></label>
-                        <input name="entry.1438547593" class="c-form__input" id="field-mail" placeholder="sample@gmail.com" type="email"
-                            required="required" />
-                    </div>
-                
-                    <div class="c-form__item">
-                        <label class="c-form__label" for="field-message">メッセージ内容</label>
-                        <textarea name="entry.1307007642" class="c-form__input" id="field-message" placeholder="問い合わせ・感想など"></textarea>
-                    </div>
-                
-                    <div class="c-form__submit">
-                        <button type="submit">送信</button>
-                    </div>
-                </form>
-                <script>
-                    let submitted = false;
+            <div class="footer-links">
+                <a href="cadence.html">Cadence</a>
+                <a href="nyarphy/index.html">にゃーふぃーの法則</a>
+            </div>
 
-                    const page_transition = function () {
-                        if (submitted) {
-                            window.location = 'thanks.html';
-                        }
-                    }
-                </script>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="page_transition()">
-                </iframe>
-            </article>
-        </main>
+            <p>
+                &copy; Cadence / にゃーふぃーの法則
+            </p>
 
-        <!-- ページトップ -->
-        <div id="pagetop" hidden>
-            <img src="img/TOP.png" width="80">
         </div>
+    </footer>
 
-        <!-- フッター -->
-        <footer id="footer" class="dark">
-            <div id="copyrights">
-                <div class="container clearfix">
-                    <div class="Two-column">
-                        <div class="left">
-                            <div class="col_half">
-                                <!-- Copyrights -->
-                                &copy; <span id="year-range"></span> Cadence<br>
-                                <a href="./about/index.html">About This Circle</a>
-                            </div>
-                        </div>
+</body>
 
-                        <div class="right">
-                            <!-- 共有ボタン置き場 -->
-                            <div id="share-buttons" class="share-bar" data-hashtags="Cadence" data-share-title="テストテキスト"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- jQuery JavaScript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script src="js/menu.js"></script>
-        <script src="js/slider.js"></script>
-        <script src="js/pagetop.js"></script>
-        <script src="js/stkr.js"></script>
-        <script src="js/emoji.js"></script>
-        <script src="js/loader.js"></script>
-        <script src="js/share.js"></script>
-        <script src="js/year.js" defer></script>
-    </body>
 </html>

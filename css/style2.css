@@ -5875,3 +5875,34 @@ main .card+.card {
     }
 
 }
+
+/* =========================================
+   CADENCE NEWS
+   ========================================= */
+
+.cadence-news-list {
+    max-height: 150px;
+    overflow-y: auto;
+
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cadence-news-list .news-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cadence-news-list .news-item:last-child {
+    border-bottom: none;
+}
+
+/* Cadence専用ページではサークル名を非表示 */
+.cadence-news-list .news-circle {
+    display: none;
+}

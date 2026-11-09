@@ -1,0 +1,34 @@
+
+{
+    "Test": {
+        "time": "12:00～16:00",
+        "officialUrl": "",
+        "menuImage": "",
+        "description": {
+            "ja": "イベントに参加します。当日はよろしくお願いいたします！",
+            "en": "We will be attending this event!"
+        },
+        "products": [
+            {
+                "workId": "CADB-0002",
+                "type": "existing",
+                "price": "¥500"
+            },
+            {
+                "workId": "CADB-0001",
+                "type": "existing",
+                "price": "¥500"
+            }
+        ],
+        "notices": {
+            "ja": [
+                "お支払いの際は、できるだけお釣りの出ないようご協力ください。",
+                "混雑時は周囲の方へのご配慮をお願いいたします。"
+            ],
+            "en": [
+                "Please prepare exact change whenever possible.",
+                "Please be considerate of others when the venue is crowded."
+            ]
+        }
+    }
+}
